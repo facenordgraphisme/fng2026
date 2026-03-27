@@ -171,7 +171,7 @@ export async function getServiceBySlug(slug: string) {
         ]
       }
     };
-    
+
     if (contentMap[slug]) {
       return { ...contentMap[slug], slug: { current: slug } };
     }
@@ -270,7 +270,7 @@ export async function getProjectBySlug(slug: string) {
         ]
       }
     };
-    
+
     if (contentMap[slug]) {
       return { ...contentMap[slug], slug: { current: slug } };
     }
@@ -336,7 +336,7 @@ export async function getPostBySlug(slug: string) {
         ]
       }
     };
-    
+
     if (contentMap[slug]) {
       return { ...contentMap[slug], slug: { current: slug } };
     }
@@ -361,20 +361,43 @@ export async function getLegalBySlug(slug: string) {
       "mentions-legales": {
         title: "Mentions Légales",
         content: [
-          block("Éditeur du site", "h2"),
-          block("Face Nord Graphisme"),
-          block("Mise à jour et respect de la RGPD.", "normal")
+          block("1. Éditeur du site", "h2"),
+          block("Le site www.facenordgraphisme.fr est édité par la micro-entreprise Face Nord Graphisme, représentée par François-Xavier Pin."),
+          block("Siège social : 45 impasse du Serre 05200 Puy Sanières"),
+          block("SIRET : 919495200"),
+          block("Email de contact : contact@facenordgraphisme.fr"),
+          block("2. Directeur de la publication", "h2"),
+          block("François-Xavier Pin"),
+          block("3. Hébergement du site", "h2"),
+          block("Ce site est hébergé par Hostinger."),
+          block("Adresse de l’hébergeur : 61 Lordou Vironos Street, 6023 Larnaca, Chypre"),
+          block("4. Propriété intellectuelle", "h2"),
+          block("L’ensemble de ce site relève de la législation française et internationale sur le droit d’auteur et la propriété intellectuelle. Tous les droits de reproduction sont réservés, y compris pour les documents téléchargeables et les représentations iconographiques et photographiques."),
+          block("La reproduction de tout ou partie de ce site sur quel que support que ce soit est formellement interdite sauf autorisation expresse du directeur de la publication."),
+          block("5. Responsabilité", "h2"),
+          block("Face Nord Graphisme s'efforce d'assurer l'exactitude des informations diffusées sur ce site, dont elle se réserve le droit de corriger, à tout moment et sans préavis, le contenu. Toute imprécision, inexactitude ou omission décline la responsabilité de l'éditeur du site.")
         ]
       },
       "politique-de-confidentialite": {
         title: "Politique de Confidentialité",
         content: [
-          block("Collecte des données", "h2"),
-          block("Nous collectons des informations lorsque vous utilisez notre formulaire de contact, conformément à la réglementation en vigueur.", "normal")
+          block("1. Collecte des données personnelles", "h2"),
+          block("Dans le cadre de l’utilisation de ce site (par exemple lors de l'utilisation de la page 'Contact'), Face Nord Graphisme est amenée à collecter des données personnelles (Nom, Prénom, Email).", "normal"),
+          block("Ces données sont collectées lorsque l’utilisateur remplit un formulaire de contact ou interagit directement avec nous."),
+          block("2. Finalité du traitement des données", "h2"),
+          block("Les données collectées sont utilisées uniquement pour répondre aux demandes de renseignements, de devis ou de contact, et pour assurer le suivi des projets clients."),
+          block("3. Conservation des données", "h2"),
+          block("Les données personnelles sont conservées pendant une durée qui n’excède pas la durée nécessaire aux finalités pour lesquelles elles sont collectées et traitées. En règle générale, les informations liées à une prise de contact sont conservées pendant un maximum de 3 ans après notre dernier échange."),
+          block("4. Partage des données", "h2"),
+          block("Face Nord Graphisme s’engage à ne pas vendre, louer, ou céder vos données personnelles à des tiers. Les données peuvent seulement être traitées par nos partenaires techniques (hébergement, emails) dans le strict respect du RGPD."),
+          block("5. Cookies", "h2"),
+          block("Ce site utilise des cookies strictement nécessaires à son bon fonctionnement et, le cas échéant, des outils d'analyse d'audience respectueux de la vie privée. Vous pouvez configurer vos préférences via le bandeau dédié."),
+          block("6. Vos droits", "h2"),
+          block("Conformément à la réglementation applicable (loi Informatique et Libertés et RGPD), vous disposez d'un droit d'accès, de rectification, de portabilité, d'effacement de vos données ou de limitation de leur traitement. Pour exercer ces droits, contactez : contact@facenordgraphisme.fr.")
         ]
       }
     };
-    
+
     if (contentMap[slug]) {
       return { ...contentMap[slug], slug: { current: slug } };
     }

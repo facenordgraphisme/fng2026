@@ -5,6 +5,7 @@ import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import HeroScene from "./HeroScene";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { globalState } from "@/lib/store";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -31,9 +32,16 @@ export default function Preloader() {
   }, [complete]);
 
   useGSAP(() => {
+    if (globalState.isPreloaderDone) {
+      setComplete(true);
+      gsap.set(container.current, { visibility: "hidden" });
+      return;
+    }
+
     const tl = gsap.timeline({
       onComplete: () => {
         setComplete(true);
+        globalState.isPreloaderDone = true;
       }
     });
 

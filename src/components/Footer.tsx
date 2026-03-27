@@ -16,7 +16,6 @@ export default function Footer() {
         <div className="flex gap-6 pt-2">
           <a href="#" className="hover:text-[#239ea0] dark:hover:text-white transition-colors font-medium">Facebook</a>
           <a href="#" className="hover:text-[#239ea0] dark:hover:text-white transition-colors font-medium">Instagram</a>
-          <a href="#" className="hover:text-[#239ea0] dark:hover:text-white transition-colors font-medium">LinkedIn</a>
         </div>
       </div>
       <div className="max-w-6xl mx-auto mt-12 pt-8 border-t border-gray-100 dark:border-white/5 text-center md:text-left text-xs text-gray-400 dark:text-[#666666] flex flex-col md:flex-row justify-between items-center gap-4">

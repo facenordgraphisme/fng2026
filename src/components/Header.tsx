@@ -77,8 +77,8 @@ export function Sidebar({ isCollapsed = false, onToggleCollapse }: SidebarProps)
            <Link href="/" data-magnetic="true">
             {isCollapsed ? (
               <Magnetic>
-                <div className="hidden md:flex w-12 h-12 items-center justify-center bg-[#239ea0] text-white rounded-xl shadow-md mx-auto hover:bg-[#1c8486] transition-colors">
-                  <Mountain size={28} />
+                <div className="hidden md:flex relative w-16 h-12 items-center justify-center mx-auto">
+                   <Image src="/assets/logo.png" fill className="object-contain dark:invert transition-all" alt="Logo" priority />
                 </div>
               </Magnetic>
             ) : (

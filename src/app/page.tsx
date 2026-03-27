@@ -3,6 +3,7 @@ import AnimatedText from "@/components/AnimatedText";
 import Link from "next/link";
 import Image from "next/image";
 import { getServices, getProjects } from "@/sanity/lib/queries";
+import * as LucideIcons from "lucide-react";
 
 export default async function Home() {
   const services = await getServices();
@@ -61,11 +62,14 @@ export default async function Home() {
             <div className="grid md:grid-cols-2 gap-6">
               {services.map((service: any, i: number) => {
                 const href = service.slug?.current ? `/prestations/${service.slug.current}` : "/prestations";
+                const iconName = service.icon || "Briefcase";
+                const IconComponent = (LucideIcons as any)[iconName] || LucideIcons.Briefcase;
+
                 return (
                   <Link href={href} key={i} className="block group h-full">
                     <AnimatedText effect="fade-up" delay={i * 0.15} className="bg-[#f4f7f9] dark:bg-[#111111] h-full rounded-2xl p-8 shadow-sm hover:shadow-[0_20px_40px_rgba(0,0,0,0.05)] dark:shadow-none transition-all duration-300 border border-transparent group-hover:border-[#239ea0]/30 flex flex-col items-start group-hover:-translate-y-2">
-                      <div className="text-4xl mb-6 text-[#239ea0] bg-white dark:bg-[#1a1a1a] p-3 rounded-full shadow-sm group-hover:scale-110 transition-transform duration-300">
-                        {service.icon || "✨"}
+                      <div className="text-[#239ea0] bg-white dark:bg-[#1a1a1a] p-3 rounded-full shadow-sm group-hover:scale-110 transition-transform duration-300 mb-6">
+                        <IconComponent size={36} strokeWidth={1.5} />
                       </div>
                       <h3 className="text-xl font-bold mb-3 text-[#1a1a1a] dark:text-white group-hover:text-[#239ea0] transition-colors">{service.title}</h3>
                       <p className="text-[#666666] dark:text-[#a1a1aa] text-sm leading-relaxed">{service.description || service.desc}</p>

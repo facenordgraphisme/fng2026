@@ -1,5 +1,6 @@
 import AnimatedText from "@/components/AnimatedText";
 import ContactForm from "@/components/ContactForm";
+import { Phone, Mail, MapPin } from "lucide-react";
 
 export default function ContactPage() {
   return (
@@ -22,19 +23,19 @@ export default function ContactPage() {
         <AnimatedText className="flex flex-col justify-center space-y-10">
           <div>
             <h3 className="text-xl font-bold text-[#1a1a1a] dark:text-white mb-2 flex items-center gap-3">
-              <span className="text-2xl">📞</span> Par téléphone
+              <Phone className="text-[#239ea0]" size={24} /> Par téléphone
             </h3>
             <a href="tel:0651113928" className="text-[#666666] dark:text-[#a1a1aa] hover:text-[#239ea0] dark:hover:text-[#239ea0] text-lg transition-colors inline-block ml-9">06 51 11 39 28</a>
           </div>
           <div>
             <h3 className="text-xl font-bold text-[#1a1a1a] dark:text-white mb-2 flex items-center gap-3">
-              <span className="text-2xl">✉️</span> Par e-mail
+              <Mail className="text-[#239ea0]" size={24} /> Par e-mail
             </h3>
             <a href="mailto:contact@facenordgraphisme.fr" className="text-[#666666] dark:text-[#a1a1aa] hover:text-[#239ea0] dark:hover:text-[#239ea0] text-lg transition-colors inline-block ml-9">contact@facenordgraphisme.fr</a>
           </div>
           <div>
             <h3 className="text-xl font-bold text-[#1a1a1a] dark:text-white mb-2 flex items-center gap-3">
-              <span className="text-2xl">📍</span> Mon adresse
+              <MapPin className="text-[#239ea0]" size={24} /> Mon adresse
             </h3>
             <div className="text-[#666666] dark:text-[#a1a1aa] text-lg ml-9 leading-relaxed">
               Basé à Puy-Sanières,<br/>

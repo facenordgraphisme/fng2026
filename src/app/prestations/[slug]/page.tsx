@@ -3,6 +3,7 @@ import AnimatedText from "@/components/AnimatedText";
 import Link from "next/link";
 import Image from "next/image";
 import { ArrowLeft } from "lucide-react";
+import * as LucideIcons from "lucide-react";
 import { notFound } from "next/navigation";
 
 // Simple portable text renderer matching the current aesthetic
@@ -39,6 +40,9 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
     notFound();
   }
 
+  const iconName = service.icon || "Briefcase";
+  const IconComponent = (LucideIcons as any)[iconName] || LucideIcons.Briefcase;
+
   return (
     <div className="relative w-full min-h-screen text-[#1a1a1a] dark:text-white transition-colors duration-300 pb-24">
       {/* Hero Section */}
@@ -54,8 +58,8 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
           </AnimatedText>
 
           <AnimatedText effect="fade-up" delay={0.2} className="flex flex-col md:flex-row items-start md:items-center gap-6 mb-8">
-            <div className="text-5xl md:text-7xl text-[#239ea0] bg-white dark:bg-[#1a1a1a] p-6 rounded-3xl shadow-md border border-gray-50 dark:border-white/5 flex-shrink-0">
-              {service.icon || "✨"}
+            <div className="text-[#239ea0] bg-white dark:bg-[#1a1a1a] p-6 rounded-3xl shadow-md border border-gray-50 dark:border-white/5 flex-shrink-0">
+              <IconComponent size={64} strokeWidth={1.5} />
             </div>
             <h1 className="text-4xl md:text-6xl font-extrabold text-[#1a1a1a] dark:text-white leading-tight">
               {service.title}
