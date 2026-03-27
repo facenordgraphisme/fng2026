@@ -51,7 +51,7 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
             </Link>
           </AnimatedText>
 
-          <AnimatedText effect="slide-up" delay={0.2} className="mb-6">
+          <AnimatedText effect="fade-up" delay={0.2} className="mb-6">
             <h1 className="text-5xl md:text-7xl font-extrabold text-[#1a1a1a] dark:text-white leading-tight">
               {project.title}
             </h1>

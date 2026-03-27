@@ -58,7 +58,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
           </Link>
         </AnimatedText>
 
-        <AnimatedText effect="slide-up" delay={0.2} className="mb-8">
+        <AnimatedText effect="fade-up" delay={0.2} className="mb-8">
           <div className="flex items-center gap-2 text-[#239ea0] font-bold mb-6">
             <Clock size={16} />
             <span>Publié le {formattedDate}</span>
