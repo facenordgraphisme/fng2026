@@ -52,6 +52,38 @@ const renderBlock = (block: any, index: number) => {
     );
   }
 
+  if (block._type === 'faq') {
+    const { title, items } = block;
+    if (!items || items.length === 0) return null;
+    
+    return (
+      <div key={index} className="mb-12">
+        {title && <h3 className="text-2xl font-bold mb-6 text-[#1a1a1a]">{title}</h3>}
+        <div className="space-y-4">
+          {items.map((item: any, i: number) => (
+            <details key={item._key || i} className="group bg-white rounded-2xl border border-gray-100 shadow-sm [&_summary::-webkit-details-marker]:hidden open:shadow-md transition-all duration-300">
+              <summary className="flex cursor-pointer items-center justify-between gap-1.5 p-5 md:p-6 font-bold text-[#1a1a1a] text-lg outline-none group-open:text-[#239ea0] transition-colors">
+                {item.question}
+                <svg
+                  className="size-5 shrink-0 transition duration-300 group-open:-rotate-180 text-[#239ea0]"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
+                </svg>
+              </summary>
+              <div className="px-5 pb-5 md:px-6 md:pb-6">
+                <p className="text-[#666666] leading-relaxed text-base md:text-lg">{item.answer}</p>
+              </div>
+            </details>
+          ))}
+        </div>
+      </div>
+    );
+  }
+
   if (block._type !== 'block') return null;
   const text = block.children?.map((c: any) => c.text).join('') || '';
   
