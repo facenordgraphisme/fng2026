@@ -34,6 +34,39 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="fr" className={`scroll-smooth ${nunito.variable} ${jakarta.variable}`} suppressHydrationWarning>
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@graph": [
+                {
+                  "@type": "Organization",
+                  "@id": "https://www.facenordgraphisme.fr/#organization",
+                  "name": "Face Nord Graphisme",
+                  "url": "https://www.facenordgraphisme.fr",
+                  "logo": "https://www.facenordgraphisme.fr/assets/logo.png",
+                  "contactPoint": {
+                    "@type": "ContactPoint",
+                    "email": "contact@facenordgraphisme.fr",
+                    "contactType": "customer service"
+                  }
+                },
+                {
+                  "@type": "WebSite",
+                  "@id": "https://www.facenordgraphisme.fr/#website",
+                  "url": "https://www.facenordgraphisme.fr",
+                  "name": "Face Nord Graphisme",
+                  "publisher": {
+                    "@id": "https://www.facenordgraphisme.fr/#organization"
+                  }
+                }
+              ]
+            })
+          }}
+        />
+      </head>
       <body className={`antialiased min-h-screen flex flex-col md:flex-row transition-colors duration-300 font-sans`}>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           <SmoothScroll>

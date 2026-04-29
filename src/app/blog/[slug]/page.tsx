@@ -124,8 +124,51 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
       })
     : 'Récemment';
 
+  const blogSchema = {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": post.seoTitle || post.title,
+    "image": post.mainImage?.url ? [post.mainImage.url] : [],
+    "datePublished": post.publishedAt || new Date().toISOString(),
+    "dateModified": post.publishedAt || new Date().toISOString(),
+    "author": [{
+        "@type": "Person",
+        "name": "François-Xavier Pin",
+        "url": "https://www.facenordgraphisme.fr/a-propos"
+      }]
+  };
+
+  const faqBlocks = post.body?.filter((block: any) => block._type === 'faq') || [];
+  const faqItems = faqBlocks.flatMap((block: any) => block.items || []);
+  
+  let faqSchema = null;
+  if (faqItems.length > 0) {
+    faqSchema = {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": faqItems.map((item: any) => ({
+        "@type": "Question",
+        "name": item.question,
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": item.answer
+        }
+      }))
+    };
+  }
+
   return (
     <div className="relative w-full min-h-screen bg-white">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(blogSchema) }}
+      />
+      {faqSchema && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+        />
+      )}
       {/* Article Header */}
       <div className="pt-32 pb-16 px-6 max-w-4xl mx-auto">
         <AnimatedText effect="fade-up" delay={0.1}>

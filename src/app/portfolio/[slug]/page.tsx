@@ -55,8 +55,26 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
     notFound();
   }
 
+  const creativeWorkSchema = {
+    "@context": "https://schema.org",
+    "@type": "CreativeWork",
+    "name": project.seoTitle || project.title,
+    "description": project.seoDescription || project.description,
+    "image": project.mainImage?.url ? [project.mainImage.url] : [],
+    "url": project.link && project.link !== '#' ? project.link : `https://www.facenordgraphisme.fr/portfolio/${slug}`,
+    "author": {
+      "@type": "LocalBusiness",
+      "@id": "https://www.facenordgraphisme.fr/#localbusiness",
+      "name": "Face Nord Graphisme"
+    }
+  };
+
   return (
     <div className="relative w-full min-h-screen text-[#1a1a1a] dark:text-white transition-colors duration-300 pb-24">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(creativeWorkSchema) }}
+      />
       {/* Hero Section */}
       <div className="bg-[#f4f7f9] dark:bg-[#111111] pt-32 pb-32 px-6 relative overflow-hidden transition-colors duration-300">
         <div className="max-w-5xl mx-auto relative z-10 flex flex-col items-center text-center">

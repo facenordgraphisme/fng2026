@@ -59,8 +59,28 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
   const iconName = service.icon || "Briefcase";
   const IconComponent = (LucideIcons as any)[iconName] || LucideIcons.Briefcase;
 
+  const serviceSchema = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": service.seoTitle || service.title,
+    "description": service.seoDescription || service.description,
+    "provider": {
+      "@type": "LocalBusiness",
+      "@id": "https://www.facenordgraphisme.fr/#localbusiness",
+      "name": "Face Nord Graphisme"
+    },
+    "areaServed": {
+      "@type": "State",
+      "name": "Hautes-Alpes"
+    }
+  };
+
   return (
     <div className="relative w-full min-h-screen text-[#1a1a1a] dark:text-white transition-colors duration-300 pb-24">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
+      />
       {/* Hero Section */}
       <div className="bg-[#f4f7f9] dark:bg-[#111111] pt-32 pb-24 px-6 relative overflow-hidden transition-colors duration-300">
         <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-[#239ea0]/30 to-transparent" />

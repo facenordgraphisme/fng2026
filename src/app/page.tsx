@@ -17,6 +17,43 @@ export default async function Home() {
 
   return (
     <div className="relative w-full overflow-hidden text-[#1a1a1a] dark:text-white transition-colors duration-300">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "ProfessionalService",
+            "@id": "https://www.facenordgraphisme.fr/#localbusiness",
+            "name": "Face Nord Graphisme",
+            "image": "https://www.facenordgraphisme.fr/assets/logo.png",
+            "description": "Création de site internet sur-mesure, E-commerce, UX-UI design et référencement SEO dans les Hautes-Alpes (Embrun, Gap, Guillestre, Briançon).",
+            "url": "https://www.facenordgraphisme.fr",
+            "email": "contact@facenordgraphisme.fr",
+            "address": {
+              "@type": "PostalAddress",
+              "streetAddress": "45 impasse du Serre",
+              "addressLocality": "Puy Sanières",
+              "postalCode": "05200",
+              "addressCountry": "FR"
+            },
+            "geo": {
+              "@type": "GeoCoordinates",
+              "latitude": 44.5385,
+              "longitude": 6.4328
+            },
+            "areaServed": ["Embrun", "Gap", "Briançon", "Guillestre", "Hautes-Alpes"],
+            "priceRange": "€€",
+            "openingHoursSpecification": [
+              {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+                "opens": "09:00",
+                "closes": "18:00"
+              }
+            ]
+          })
+        }}
+      />
       {/* Hero Section using new Client Component for GSAP scroll-pin wow factor */}
       <HomeHero />
 

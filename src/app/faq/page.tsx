@@ -36,8 +36,25 @@ const faqs = [
 ];
 
 export default function FaqPage() {
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": faqs.map(faq => ({
+      "@type": "Question",
+      "name": faq.q,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": faq.a
+      }
+    }))
+  };
+
   return (
     <div className="pt-32 pb-24 px-6 max-w-4xl mx-auto min-h-screen transition-colors duration-300">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
       <AnimatedText effect="fade-up" delay={0.1}>
         <div className="text-center mb-16">
           <span className="text-[#239ea0] font-bold tracking-widest uppercase text-sm mb-4 block">FAQ</span>
