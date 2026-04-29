@@ -24,6 +24,15 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
 
 // Simple portable text renderer matching the current aesthetic
 const renderBlock = (block: any, index: number) => {
+  if (block._type === 'image') {
+    if (!block.url) return null;
+    return (
+      <div key={index} className="my-10 relative w-full h-[350px] md:h-[500px] rounded-2xl overflow-hidden shadow-sm bg-gray-100 dark:bg-gray-800">
+        <Image src={block.url} alt={block.alt || 'Illustration de la prestation'} fill className="object-cover" />
+      </div>
+    );
+  }
+
   if (block._type !== 'block') return null;
   const text = block.children?.map((c: any) => c.text).join('') || '';
   

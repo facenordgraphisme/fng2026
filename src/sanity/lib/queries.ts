@@ -7,7 +7,15 @@ export const serviceQuery = groq`*[_type == "service"] | order(_createdAt asc) {
 }`;
 
 export const serviceBySlugQuery = groq`*[_type == "service" && slug.current == $slug][0] {
-  _id, title, slug, description, icon, mainImage { "url": asset->url }, secondaryImage { "url": asset->url }, content, seoTitle, seoDescription
+  _id, title, slug, description, icon, mainImage { "url": asset->url }, secondaryImage { "url": asset->url }, 
+  content[] {
+    ...,
+    _type == "image" => {
+      ...,
+      "url": asset->url
+    }
+  }, 
+  seoTitle, seoDescription
 }`;
 
 export const projectQuery = groq`*[_type == "project"] | order(_createdAt desc) {
@@ -15,7 +23,15 @@ export const projectQuery = groq`*[_type == "project"] | order(_createdAt desc) 
 }`;
 
 export const projectBySlugQuery = groq`*[_type == "project" && slug.current == $slug][0] {
-  _id, title, slug, mainImage { "url": asset->url }, description, link, content, gallery[] { "url": asset->url }, seoTitle, seoDescription
+  _id, title, slug, mainImage { "url": asset->url }, description, link, 
+  content[] {
+    ...,
+    _type == "image" => {
+      ...,
+      "url": asset->url
+    }
+  }, 
+  gallery[] { "url": asset->url }, seoTitle, seoDescription
 }`;
 
 export const postQuery = groq`*[_type == "post"] | order(publishedAt desc) {
@@ -23,7 +39,15 @@ export const postQuery = groq`*[_type == "post"] | order(publishedAt desc) {
 }`;
 
 export const postBySlugQuery = groq`*[_type == "post" && slug.current == $slug][0] {
-  _id, title, slug, mainImage { "url": asset->url }, publishedAt, body, seoTitle, seoDescription
+  _id, title, slug, mainImage { "url": asset->url }, publishedAt, 
+  body[] {
+    ...,
+    _type == "image" => {
+      ...,
+      "url": asset->url
+    }
+  }, 
+  seoTitle, seoDescription
 }`;
 
 // Fetching wrappers that provide robust fallback text matching the original site exactly

@@ -84,6 +84,15 @@ const renderBlock = (block: any, index: number) => {
     );
   }
 
+  if (block._type === 'image') {
+    if (!block.url) return null;
+    return (
+      <div key={index} className="my-12 relative w-full h-[350px] md:h-[500px] rounded-3xl overflow-hidden shadow-[0_10px_30px_rgba(0,0,0,0.06)] bg-gray-100">
+        <Image src={block.url} alt={block.alt || 'Illustration de l\'article'} fill className="object-cover" />
+      </div>
+    );
+  }
+
   if (block._type !== 'block') return null;
   const text = block.children?.map((c: any) => c.text).join('') || '';
   
