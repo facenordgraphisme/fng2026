@@ -3,7 +3,11 @@
 import { useRef, useState, useEffect } from "react";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
-import HeroScene from "./HeroScene";
+import dynamic from 'next/dynamic';
+
+const HeroScene = dynamic(() => import('./HeroScene'), {
+  ssr: false,
+});
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { globalState } from "@/lib/store";
 

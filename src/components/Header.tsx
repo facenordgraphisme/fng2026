@@ -49,7 +49,7 @@ export function Sidebar({ isCollapsed = false, onToggleCollapse }: SidebarProps)
       <div className="md:hidden fixed top-0 left-0 w-full h-20 bg-white dark:bg-[#111111] z-50 flex items-center justify-between px-6 shadow-sm border-b border-gray-100 dark:border-white/10 transition-colors duration-300">
         <Link href="/">
           <div className="relative h-10 w-32">
-             <Image src="/assets/logo.png" fill className="object-contain dark:invert" alt="Logo Face Nord Graphisme - Création de site web Embrun" priority />
+             <Image src="/assets/logo.png" fill sizes="150px" className="object-contain dark:invert" alt="Logo Face Nord Graphisme - Création de site web Embrun" priority />
           </div>
         </Link>
         <button onClick={() => setIsOpen(!isOpen)} className="text-[#1a1a1a] dark:text-white p-2 bg-gray-50 dark:bg-white/5 rounded-lg transition-colors" data-magnetic="true">
@@ -79,16 +79,16 @@ export function Sidebar({ isCollapsed = false, onToggleCollapse }: SidebarProps)
             {isCollapsed ? (
               <Magnetic>
                 <div className="hidden md:flex relative w-16 h-12 items-center justify-center mx-auto">
-                   <Image src="/assets/logo.png" fill className="object-contain dark:invert transition-all" alt="Logo Face Nord Graphisme - Agence web Hautes-Alpes" priority />
+                   <Image src="/assets/logo.png" fill sizes="150px" className="object-contain dark:invert transition-all" alt="Logo Face Nord Graphisme - Agence web Hautes-Alpes" priority />
                 </div>
               </Magnetic>
             ) : (
               <div className="relative w-40 h-16">
-                 <Image src="/assets/logo.png" fill className="object-contain object-left dark:invert transition-all" alt="Logo Face Nord Graphisme" priority />
+                 <Image src="/assets/logo.png" fill sizes="150px" className="object-contain object-left dark:invert transition-all" alt="Logo Face Nord Graphisme" priority />
               </div>
             )}
             <div className={`md:hidden relative w-40 h-16 ${isCollapsed ? 'hidden' : 'block'}`}>
-               <Image src="/assets/logo.png" fill className="object-contain object-left dark:invert transition-all" alt="Logo Face Nord Graphisme" priority />
+               <Image src="/assets/logo.png" fill sizes="150px" className="object-contain object-left dark:invert transition-all" alt="Logo Face Nord Graphisme" priority />
             </div>
           </Link>
         </div>
