@@ -5,6 +5,8 @@ import { schema } from './src/sanity/schemaTypes'
 const projectId = process.env.NEXT_PUBLIC_SANITY_PROJECT_ID || 'your-project-id'
 const dataset = process.env.NEXT_PUBLIC_SANITY_DATASET || 'production'
 
+import { table } from '@sanity/table'
+
 export default defineConfig({
   basePath: '/studio',
   projectId,
@@ -12,5 +14,6 @@ export default defineConfig({
   schema,
   plugins: [
     structureTool(),
+    table(),
   ],
 })

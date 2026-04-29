@@ -23,6 +23,35 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
 
 // Portable text renderer tailored for blog posts
 const renderBlock = (block: any, index: number) => {
+  if (block._type === 'table') {
+    const { rows } = block;
+    if (!rows || rows.length === 0) return null;
+    
+    return (
+      <div key={index} className="overflow-x-auto mb-10 w-full rounded-2xl shadow-sm border border-gray-100">
+        <table className="min-w-full divide-y divide-gray-200">
+          <tbody className="divide-y divide-gray-200 bg-white">
+            {rows.map((row: any, rowIndex: number) => (
+              <tr key={row._key || rowIndex} className={rowIndex === 0 ? "bg-[#f4f7f9] font-bold text-[#1a1a1a]" : "hover:bg-gray-50 transition-colors"}>
+                {row.cells.map((cell: string, cellIndex: number) => {
+                  const CellTag = rowIndex === 0 ? 'th' : 'td';
+                  return (
+                    <CellTag 
+                      key={cellIndex} 
+                      className={`px-6 py-4 whitespace-normal text-sm md:text-base ${rowIndex === 0 ? 'text-left tracking-wider' : 'text-[#444]'}`}
+                    >
+                      {cell}
+                    </CellTag>
+                  );
+                })}
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    );
+  }
+
   if (block._type !== 'block') return null;
   const text = block.children?.map((c: any) => c.text).join('') || '';
   

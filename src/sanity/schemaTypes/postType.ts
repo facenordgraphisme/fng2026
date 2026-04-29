@@ -42,7 +42,7 @@ export const postType = defineType({
       name: 'body',
       title: 'Body',
       type: 'array',
-      of: [{ type: 'block' }, { type: 'image' }],
+      of: [{ type: 'block' }, { type: 'image' }, { type: 'table' }],
     }),
     defineField({
       name: 'seoTitle',
