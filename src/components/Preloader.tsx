@@ -21,6 +21,26 @@ export default function Preloader() {
   const text1 = useRef<HTMLDivElement>(null);
   const text2 = useRef<HTMLDivElement>(null);
   const [complete, setComplete] = useState(false);
+  const [shouldLoad3D, setShouldLoad3D] = useState(false);
+
+  useEffect(() => {
+    // Determine if we should load the 3D scene based on device capability/screen size
+    const checkAndLoad3D = () => {
+      // Disable 3D on small mobile devices to save massive CPU/TBT overhead
+      if (window.innerWidth > 768) {
+        setShouldLoad3D(true);
+      }
+    };
+
+    if (globalState.isPreloaderDone) {
+      const timer = setTimeout(checkAndLoad3D, 500);
+      return () => clearTimeout(timer);
+    } else {
+      // Wait for the heavy preloader animation to finish before compiling WebGL shaders
+      const timer = setTimeout(checkAndLoad3D, 2800);
+      return () => clearTimeout(timer);
+    }
+  }, []);
 
   useEffect(() => {
     if (!complete) {
@@ -123,7 +143,7 @@ export default function Preloader() {
       {/* The persistently integrated mountain Canvas */}
       <div ref={mountainContainerRef} className={`absolute w-full h-full opacity-100 ${complete ? 'z-0' : 'z-10'}`}>
          <div ref={mountainInnerRef} className="w-full h-full opacity-100">
-           <HeroScene />
+           {shouldLoad3D && <HeroScene />}
          </div>
       </div>
 
