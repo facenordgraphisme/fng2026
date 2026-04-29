@@ -5,6 +5,22 @@ import Image from "next/image";
 import { ArrowLeft } from "lucide-react";
 import * as LucideIcons from "lucide-react";
 import { notFound } from "next/navigation";
+import { Metadata } from "next";
+
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
+  const resolvedParams = await params;
+  let service: any = null;
+  try {
+    service = await getServiceBySlug(resolvedParams.slug);
+  } catch (err) {}
+  
+  if (!service) return { title: "Prestation non trouvée" };
+  
+  return {
+    title: service.seoTitle || `${service.title} | Hautes-Alpes (Embrun, Gap)`,
+    description: service.seoDescription || service.description || `Découvrez notre prestation ${service.title} dans les Hautes-Alpes (Embrun, Gap, Briançon).`
+  };
+}
 
 // Simple portable text renderer matching the current aesthetic
 const renderBlock = (block: any, index: number) => {
@@ -79,7 +95,7 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
         <div className="max-w-5xl mx-auto px-6 mt-16">
           <AnimatedText effect="zoom-in" delay={0.35} className="relative w-full h-[350px] md:h-[500px] rounded-[40px] overflow-hidden shadow-2xl border border-gray-100 dark:border-white/5 bg-gray-100 dark:bg-gray-800">
             <div className="absolute inset-0 bg-blue-500/5 mix-blend-overlay z-10 pointer-events-none" />
-            <Image src={service.mainImage.url} alt={service.title} fill className="object-cover hover:scale-105 transition-transform duration-1000" />
+            <Image src={service.mainImage.url} alt={`Prestation ${service.title} par Face Nord Graphisme Embrun`} fill className="object-cover hover:scale-105 transition-transform duration-1000" />
           </AnimatedText>
         </div>
       )}
@@ -98,7 +114,7 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
         {/* Secondary Image */}
         {service.secondaryImage?.url && (
           <AnimatedText effect="fade-up" delay={0.45} className="mt-16 relative w-full h-[300px] md:h-[400px] rounded-[32px] overflow-hidden shadow-xl border border-gray-100 dark:border-white/5 bg-gray-100 dark:bg-gray-800">
-            <Image src={service.secondaryImage.url} alt={service.title} fill className="object-cover hover:scale-105 transition-transform duration-1000" />
+            <Image src={service.secondaryImage.url} alt={`Détail de la prestation ${service.title} Hautes-Alpes`} fill className="object-cover hover:scale-105 transition-transform duration-1000" />
           </AnimatedText>
         )}
         

@@ -4,6 +4,12 @@ export const postType = defineType({
   name: 'post',
   title: 'Post',
   type: 'document',
+  groups: [
+    {
+      name: 'seo',
+      title: 'SEO',
+    },
+  ],
   fields: [
     defineField({
       name: 'title',
@@ -37,6 +43,20 @@ export const postType = defineType({
       title: 'Body',
       type: 'array',
       of: [{ type: 'block' }, { type: 'image' }],
+    }),
+    defineField({
+      name: 'seoTitle',
+      title: 'SEO Title',
+      type: 'string',
+      group: 'seo',
+      description: 'Titre de la page pour les moteurs de recherche (laisse vide pour utiliser le titre de l\'article). Idéalement entre 50 et 60 caractères.',
+    }),
+    defineField({
+      name: 'seoDescription',
+      title: 'SEO Description',
+      type: 'text',
+      group: 'seo',
+      description: 'Description pour les moteurs de recherche (laisse vide pour utiliser l\'extrait de l\'article). Idéalement entre 150 et 160 caractères.',
     }),
   ],
   preview: {

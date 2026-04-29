@@ -1,6 +1,12 @@
 import AnimatedText from "@/components/AnimatedText";
 import { getProjects } from "@/sanity/lib/queries";
 import Link from "next/link";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Portfolio | Réalisations Web Hautes-Alpes",
+  description: "Découvrez nos dernières créations de sites internet pour des entreprises locales autour d'Embrun, Gap, Guillestre et Briançon."
+};
 
 export default async function PortfolioPage() {
   const projects = await getProjects();

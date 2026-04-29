@@ -1,6 +1,12 @@
 import AnimatedText from "@/components/AnimatedText";
 import { getPosts } from "@/sanity/lib/queries";
 import Link from "next/link";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Blog Web & SEO | Astuces digitales Hautes-Alpes",
+  description: "Actualités, conseils en création de site internet et référencement SEO pour développer votre visibilité locale dans les Hautes-Alpes (05)."
+};
 
 export default async function BlogPage() {
   const posts = await getPosts();

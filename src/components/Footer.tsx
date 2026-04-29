@@ -1,6 +1,12 @@
+'use client'
+
 import Link from 'next/link'
 
 export default function Footer() {
+  const openCookieSettings = (e: React.MouseEvent) => {
+    e.preventDefault();
+    window.dispatchEvent(new Event('show-cookie-banner'));
+  }
   return (
     <footer className="bg-white dark:bg-[#111111] border-t border-gray-200 dark:border-white/10 py-12 px-6 mt-32 transition-colors duration-300">
       <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 text-sm text-gray-500 dark:text-[#a1a1aa]">
@@ -20,9 +26,10 @@ export default function Footer() {
       </div>
       <div className="max-w-6xl mx-auto mt-12 pt-8 border-t border-gray-100 dark:border-white/5 text-center md:text-left text-xs text-gray-400 dark:text-[#666666] flex flex-col md:flex-row justify-between items-center gap-4">
         <div>&copy; {new Date().getFullYear()} Face Nord Graphisme. Tous droits réservés.</div>
-        <div className="flex gap-6">
+        <div className="flex flex-wrap gap-4 md:gap-6 justify-center md:justify-end mt-4 md:mt-0">
           <Link href="/mentions-legales" className="hover:text-[#239ea0] dark:hover:text-white transition-colors">Mentions Légales</Link>
           <Link href="/politique-de-confidentialite" className="hover:text-[#239ea0] dark:hover:text-white transition-colors">Politique de Confidentialité</Link>
+          <button onClick={openCookieSettings} className="hover:text-[#239ea0] dark:hover:text-white transition-colors cursor-pointer text-left focus:outline-none">Gestion des cookies</button>
         </div>
       </div>
     </footer>

@@ -4,6 +4,22 @@ import Link from "next/link";
 import Image from "next/image";
 import { ArrowLeft, Clock } from "lucide-react";
 import { notFound } from "next/navigation";
+import { Metadata } from "next";
+
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
+  const resolvedParams = await params;
+  let post: any = null;
+  try {
+    post = await getPostBySlug(resolvedParams.slug);
+  } catch (err) {}
+  
+  if (!post) return { title: "Article non trouvé" };
+  
+  return {
+    title: post.seoTitle || `${post.title} | Blog SEO & Web (05)`,
+    description: post.seoDescription || post.excerpt || `Lisez notre article "${post.title}" sur le blog de Face Nord Graphisme, agence web dans les Hautes-Alpes.`
+  };
+}
 
 // Portable text renderer tailored for blog posts
 const renderBlock = (block: any, index: number) => {
@@ -73,7 +89,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
       {post.mainImage?.url && (
         <div className="max-w-6xl mx-auto px-6 mb-20 relative z-20">
           <AnimatedText effect="zoom-in" delay={0.35} className="relative w-full h-[400px] md:h-[600px] rounded-[40px] overflow-hidden shadow-[0_20px_60px_rgba(0,0,0,0.08)] bg-gray-100">
-            <Image src={post.mainImage.url} alt={post.title} fill className="object-cover" />
+            <Image src={post.mainImage.url} alt={`Illustration de l'article : ${post.title}`} fill className="object-cover" />
           </AnimatedText>
         </div>
       )}

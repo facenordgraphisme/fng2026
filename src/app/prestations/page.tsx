@@ -2,6 +2,12 @@ import AnimatedText from "@/components/AnimatedText";
 import { getServices } from "@/sanity/lib/queries";
 import Link from "next/link";
 import * as LucideIcons from "lucide-react";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Prestations Web & SEO | Hautes-Alpes, Embrun, Gap",
+  description: "Développement de sites vitrines, e-commerce, design UX/UI et optimisation SEO. Services digitaux sur-mesure pour votre entreprise dans les Hautes-Alpes."
+};
 
 export default async function ServicesPage() {
   const services = await getServices();

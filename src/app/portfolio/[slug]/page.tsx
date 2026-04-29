@@ -4,6 +4,22 @@ import Link from "next/link";
 import Image from "next/image";
 import { ArrowLeft, ExternalLink } from "lucide-react";
 import { notFound } from "next/navigation";
+import { Metadata } from "next";
+
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
+  const resolvedParams = await params;
+  let project: any = null;
+  try {
+    project = await getProjectBySlug(resolvedParams.slug);
+  } catch (err) {}
+  
+  if (!project) return { title: "Projet non trouvé" };
+  
+  return {
+    title: project.seoTitle || `${project.title} | Réalisation Web Hautes-Alpes`,
+    description: project.seoDescription || project.description || `Découvrez la réalisation du projet ${project.title} par Face Nord Graphisme (Embrun, Hautes-Alpes).`
+  };
+}
 
 // Portable text renderer (similar to the one in prestations)
 const renderBlock = (block: any, index: number) => {
@@ -78,7 +94,7 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
         <div className="max-w-6xl mx-auto px-6 mt-0 md:-mt-20 relative z-20">
           <AnimatedText effect="zoom-in" delay={0.35} className="relative w-full h-[400px] md:h-[600px] rounded-[40px] overflow-hidden shadow-2xl border border-gray-100 dark:border-white/5 bg-gray-100 dark:bg-gray-800">
             <div className="absolute inset-0 bg-black/5 mix-blend-overlay z-10 pointer-events-none" />
-            <Image src={project.mainImage.url} alt={project.title} fill className="object-cover hover:scale-105 transition-transform duration-1000" />
+            <Image src={project.mainImage.url} alt={`Création du site internet ${project.title} dans les Hautes-Alpes`} fill className="object-cover hover:scale-105 transition-transform duration-1000" />
           </AnimatedText>
         </div>
       )}
@@ -109,7 +125,7 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
                   if (!img.url) return null;
                   return (
                     <AnimatedText key={i} effect="fade-up" delay={i * 0.15} className={`relative w-full rounded-[32px] overflow-hidden shadow-xl border border-gray-100 dark:border-white/5 bg-gray-100 dark:bg-gray-800 ${i === 0 && project.gallery.length % 2 !== 0 ? 'md:col-span-2 h-[400px] md:h-[600px]' : 'h-[300px] md:h-[450px]'}`}>
-                      <Image src={img.url} alt={`${project.title} vue ${i+1}`} fill className="object-cover hover:scale-105 transition-transform duration-1000" />
+                      <Image src={img.url} alt={`Aperçu du projet web ${project.title} Hautes-Alpes - Vue ${i+1}`} fill className="object-cover hover:scale-105 transition-transform duration-1000" />
                     </AnimatedText>
                   )
                })}

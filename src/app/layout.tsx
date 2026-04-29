@@ -20,8 +20,11 @@ const jakarta = Plus_Jakarta_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "Face Nord Graphisme | Création de site internet Hautes-Alpes",
-  description: "Création de site internet et boutique E-commerce, UX-UI design, référencement/SEO et maintenance. Embrun - Hautes Alpes",
+  title: {
+    template: "%s | Face Nord Graphisme",
+    default: "Face Nord Graphisme | Création de site internet Hautes-Alpes"
+  },
+  description: "Création de site internet sur-mesure, E-commerce, UX-UI design et référencement SEO dans les Hautes-Alpes (Embrun, Gap, Guillestre, Briançon).",
 };
 
 export default function RootLayout({

@@ -4,6 +4,12 @@ export const serviceType = defineType({
   name: 'service',
   title: 'Service',
   type: 'document',
+  groups: [
+    {
+      name: 'seo',
+      title: 'SEO',
+    },
+  ],
   fields: [
     defineField({
       name: 'title',
@@ -43,6 +49,20 @@ export const serviceType = defineType({
       title: 'Content',
       type: 'array',
       of: [{ type: 'block' }],
+    }),
+    defineField({
+      name: 'seoTitle',
+      title: 'SEO Title',
+      type: 'string',
+      group: 'seo',
+      description: 'Titre de la page pour les moteurs de recherche (laisse vide pour utiliser le titre de la prestation). Idéalement entre 50 et 60 caractères.',
+    }),
+    defineField({
+      name: 'seoDescription',
+      title: 'SEO Description',
+      type: 'text',
+      group: 'seo',
+      description: 'Description pour les moteurs de recherche (laisse vide pour utiliser la description courte). Idéalement entre 150 et 160 caractères.',
     }),
   ],
 })
