@@ -4,6 +4,7 @@ export const faqType = defineType({
   name: 'faq',
   title: 'FAQ Accordion',
   type: 'object',
+  icon: () => '💬',
   fields: [
     defineField({
       name: 'title',
