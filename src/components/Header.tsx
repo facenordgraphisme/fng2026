@@ -30,11 +30,11 @@ export function Sidebar({ isCollapsed = false, onToggleCollapse }: SidebarProps)
       path: '/prestations', 
       icon: <Briefcase size={22} className="min-w-[22px]" />,
       sublinks: [
-        { name: 'Site internet', path: '/prestations/creation-site-internet-hautes-alpes' },
-        { name: 'E-Commerce', path: '/prestations/boutique-e-commerce-hautes-alpes' },
-        { name: 'Refonte AI Friendly', path: '/prestations/refonte-ai-friendly' },
-        { name: 'SEO', path: '/prestations/referencement-seo-hautes-alpes' },
-        { name: 'Maintenance', path: '/prestations/maintenance-site-internet-hautes-alpes' },
+        { name: 'Site internet', path: '/creation-site-internet-hautes-alpes' },
+        { name: 'E-Commerce', path: '/boutique-e-commerce-hautes-alpes' },
+        { name: 'Refonte AI Friendly', path: '/refonte-ai-friendly' },
+        { name: 'SEO', path: '/referencement-seo-hautes-alpes' },
+        { name: 'Maintenance', path: '/maintenance-site-internet-hautes-alpes' },
       ]
     },
     { name: 'Portfolio', path: '/portfolio', icon: <ImageIcon size={22} className="min-w-[22px]" /> },

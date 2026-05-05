@@ -80,7 +80,7 @@ export default async function Home() {
             <div className="w-full md:w-7/12 z-0">
               <AnimatedText effect="zoom-in" className="relative h-[400px] md:h-[650px] w-full rounded-3xl overflow-hidden shadow-xl">
                 <div className="absolute inset-0 bg-gray-200 dark:bg-gray-800 animate-pulse" />
-                <Image src="/assets/home_intro.png" fill className="object-cover transition-transform duration-1000 origin-center hover:scale-110" alt="Paysage des Hautes-Alpes, Embrun et lac de Serre-Ponçon" />
+                <Image src="/assets/home_intro.png" fill sizes="(max-width: 768px) 100vw, 50vw" className="object-cover transition-transform duration-1000 origin-center hover:scale-110" alt="Paysage des Hautes-Alpes, Embrun et lac de Serre-Ponçon" />
               </AnimatedText>
             </div>
           </div>
@@ -104,7 +104,7 @@ export default async function Home() {
           <div className="lg:w-8/12">
             <div className="grid md:grid-cols-2 gap-6">
               {services.map((service: any, i: number) => {
-                const href = service.slug?.current ? `/prestations/${service.slug.current}` : "/prestations";
+                const href = service.slug?.current ? `/${service.slug.current}` : "/prestations";
                 const iconName = service.icon || "Briefcase";
                 const IconComponent = (LucideIcons as any)[iconName] || LucideIcons.Briefcase;
 
@@ -139,7 +139,7 @@ export default async function Home() {
                   <Link href={href} key={i} className="block group">
                     <AnimatedText effect="3d-flip" delay={i * 0.15} className="relative h-[400px] w-full rounded-3xl overflow-hidden group cursor-pointer shadow-lg bg-gray-200 dark:bg-gray-800">
                       <div className="absolute inset-0 group-hover:scale-105 transition-transform duration-700">
-                        <Image src={bgImage} fill className="object-cover" alt={`Projet web ${project.title} réalisé dans les Hautes-Alpes`} />
+                        <Image src={bgImage} fill sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" className="object-cover" alt={`Projet web ${project.title} réalisé dans les Hautes-Alpes`} />
                       </div>
                       <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-80 group-hover:opacity-100 transition-opacity duration-500" />
                       <div className="absolute bottom-0 left-0 p-8 w-full transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
@@ -176,7 +176,7 @@ export default async function Home() {
             </div>
             <div className="w-full md:w-7/12 z-0">
               <AnimatedText effect="zoom-in" className="relative h-[400px] md:h-[600px] w-full rounded-3xl overflow-hidden shadow-xl bg-gray-200 dark:bg-gray-800">
-                <Image src="/assets/home_cta.png" fill className="object-cover hover:scale-105 transition-transform duration-1000" alt="Espace de travail webdesign et création de site internet à Embrun" />
+                <Image src="/assets/home_cta.png" fill sizes="(max-width: 768px) 100vw, 50vw" className="object-cover hover:scale-105 transition-transform duration-1000" alt="Espace de travail webdesign et création de site internet à Embrun" />
               </AnimatedText>
             </div>
           </div>

@@ -48,7 +48,7 @@ export default function AboutPage() {
         <div className="flex flex-col md:flex-row items-center relative gap-8 md:gap-0">
           <div className="w-full md:w-7/12 z-0">
             <AnimatedText className="relative h-[400px] md:h-[600px] w-full rounded-3xl overflow-hidden shadow-xl dark:shadow-none border border-transparent dark:border-white/10 dark:opacity-80 transition-all duration-300">
-              <Image src="/assets/about-img1.png" fill className="object-cover" alt="Espace de travail développeur web à Embrun (Hautes-Alpes)" />
+              <Image src="/assets/about-img1.png" fill sizes="(max-width: 768px) 100vw, 50vw" className="object-cover" alt="Espace de travail développeur web à Embrun (Hautes-Alpes)" />
             </AnimatedText>
           </div>
           <div className="w-full md:w-6/12 md:-ml-24 z-10">
@@ -67,7 +67,7 @@ export default function AboutPage() {
         <div className="flex flex-col md:flex-row-reverse items-center relative gap-8 md:gap-0">
           <div className="w-full md:w-7/12 z-0">
             <AnimatedText className="relative h-[400px] md:h-[600px] w-full rounded-3xl overflow-hidden shadow-xl dark:shadow-none border border-transparent dark:border-white/10 dark:opacity-80 transition-all duration-300">
-              <Image src="/assets/about-img2.png" fill className="object-cover" alt="Conception et webdesign pour projets digitaux locaux" />
+              <Image src="/assets/about-img2.png" fill sizes="(max-width: 768px) 100vw, 50vw" className="object-cover" alt="Conception et webdesign pour projets digitaux locaux" />
             </AnimatedText>
           </div>
           <div className="w-full md:w-6/12 md:-mr-24 z-10">
@@ -89,7 +89,7 @@ export default function AboutPage() {
         <div className="flex flex-col md:flex-row items-center relative gap-8 md:gap-0">
           <div className="w-full md:w-7/12 z-0">
             <AnimatedText className="relative h-[400px] md:h-[600px] w-full rounded-3xl overflow-hidden shadow-xl dark:shadow-none border border-transparent dark:border-white/10 dark:opacity-80 transition-all duration-300">
-              <Image src="/assets/about-img3.png" fill className="object-cover" alt="Développement de site internet sur-mesure et e-commerce" />
+              <Image src="/assets/about-img3.png" fill sizes="(max-width: 768px) 100vw, 50vw" className="object-cover" alt="Développement de site internet sur-mesure et e-commerce" />
             </AnimatedText>
           </div>
           <div className="w-full md:w-6/12 md:-ml-24 z-10">
@@ -108,7 +108,7 @@ export default function AboutPage() {
         <div className="flex flex-col md:flex-row-reverse items-center relative gap-8 md:gap-0">
           <div className="w-full md:w-7/12 z-0">
             <AnimatedText className="relative h-[400px] md:h-[600px] w-full rounded-3xl overflow-hidden shadow-xl dark:shadow-none border border-transparent dark:border-white/10 dark:opacity-80 transition-all duration-300">
-              <Image src="/assets/about-img4.png" fill className="object-cover" alt="Maquette de site internet sur tablette - UX/UI Design" />
+              <Image src="/assets/about-img4.png" fill sizes="(max-width: 768px) 100vw, 50vw" className="object-cover" alt="Maquette de site internet sur tablette - UX/UI Design" />
             </AnimatedText>
           </div>
           <div className="w-full md:w-6/12 md:-mr-24 z-10">

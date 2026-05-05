@@ -21,7 +21,7 @@ export default async function ServicesPage() {
       </AnimatedText>
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
         {services.map((service: any, index: number) => {
-          const href = service.slug?.current ? `/prestations/${service.slug.current}` : "/prestations";
+          const href = service.slug?.current ? `/${service.slug.current}` : "/prestations";
           
           // Get the requested icon from Lucide, fallback to Briefcase
           const iconName = service.icon || "Briefcase";

@@ -88,7 +88,7 @@ const renderBlock = (block: any, index: number) => {
     if (!block.url) return null;
     return (
       <div key={index} className="my-12 relative w-full h-[350px] md:h-[500px] rounded-3xl overflow-hidden shadow-[0_10px_30px_rgba(0,0,0,0.06)] bg-gray-100">
-        <Image src={block.url} alt={block.alt || 'Illustration de l\'article'} fill className="object-cover" />
+        <Image src={block.url} alt={block.alt || 'Illustration de l\'article'} fill sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 1200px" className="object-cover" />
       </div>
     );
   }
@@ -202,7 +202,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
       {post.mainImage?.url && (
         <div className="max-w-6xl mx-auto px-6 mb-20 relative z-20">
           <AnimatedText effect="zoom-in" delay={0.35} className="relative w-full h-[400px] md:h-[600px] rounded-[40px] overflow-hidden shadow-[0_20px_60px_rgba(0,0,0,0.08)] bg-gray-100">
-            <Image src={post.mainImage.url} alt={`Illustration de l'article : ${post.title}`} fill className="object-cover" />
+            <Image src={post.mainImage.url} alt={`Illustration de l'article : ${post.title}`} fill sizes="(max-width: 1280px) 100vw, 1280px" className="object-cover" />
           </AnimatedText>
         </div>
       )}
