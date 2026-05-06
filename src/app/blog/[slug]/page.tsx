@@ -15,9 +15,38 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   
   if (!post) return { title: "Article non trouvé" };
   
+  const title = post.seoTitle || `${post.title} | Blog SEO & Web (05)`;
+  const description = post.seoDescription || post.excerpt || `Lisez notre article "${post.title}" sur le blog de Face Nord Graphisme, agence web dans les Hautes-Alpes.`;
+  const url = `https://www.facenordgraphisme.fr/blog/${resolvedParams.slug}`;
+  const mainImage = post.mainImage?.url || "/assets/home_intro.png";
+
   return {
-    title: post.seoTitle || `${post.title} | Blog SEO & Web (05)`,
-    description: post.seoDescription || post.excerpt || `Lisez notre article "${post.title}" sur le blog de Face Nord Graphisme, agence web dans les Hautes-Alpes.`
+    title,
+    description,
+    alternates: {
+      canonical: url,
+    },
+    openGraph: {
+      title,
+      description,
+      url,
+      type: 'article',
+      publishedTime: post.publishedAt,
+      images: [
+        {
+          url: mainImage,
+          width: 1200,
+          height: 630,
+          alt: post.title,
+        },
+      ],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title,
+      description,
+      images: [mainImage],
+    },
   };
 }
 

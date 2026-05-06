@@ -15,9 +15,37 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   
   if (!project) return { title: "Projet non trouvé" };
   
+  const title = project.seoTitle || `${project.title} | Réalisation Web Hautes-Alpes`;
+  const description = project.seoDescription || project.description || `Découvrez la réalisation du projet ${project.title} par Face Nord Graphisme (Embrun, Hautes-Alpes).`;
+  const url = `https://www.facenordgraphisme.fr/portfolio/${resolvedParams.slug}`;
+  const mainImage = project.mainImage?.url || "/assets/home_intro.png";
+
   return {
-    title: project.seoTitle || `${project.title} | Réalisation Web Hautes-Alpes`,
-    description: project.seoDescription || project.description || `Découvrez la réalisation du projet ${project.title} par Face Nord Graphisme (Embrun, Hautes-Alpes).`
+    title,
+    description,
+    alternates: {
+      canonical: url,
+    },
+    openGraph: {
+      title,
+      description,
+      url,
+      type: 'website',
+      images: [
+        {
+          url: mainImage,
+          width: 1200,
+          height: 630,
+          alt: project.title,
+        },
+      ],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title,
+      description,
+      images: [mainImage],
+    },
   };
 }
 

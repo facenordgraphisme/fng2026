@@ -16,9 +16,37 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   
   if (!service) return { title: "Prestation non trouvée" };
   
+  const title = service.seoTitle || `${service.title} | Hautes-Alpes (Embrun, Gap)`;
+  const description = service.seoDescription || service.description || `Découvrez notre prestation ${service.title} dans les Hautes-Alpes (Embrun, Gap, Briançon).`;
+  const url = `https://www.facenordgraphisme.fr/${resolvedParams.slug}`;
+  const mainImage = service.mainImage?.url || "/assets/home_intro.png";
+
   return {
-    title: service.seoTitle || `${service.title} | Hautes-Alpes (Embrun, Gap)`,
-    description: service.seoDescription || service.description || `Découvrez notre prestation ${service.title} dans les Hautes-Alpes (Embrun, Gap, Briançon).`
+    title,
+    description,
+    alternates: {
+      canonical: url,
+    },
+    openGraph: {
+      title,
+      description,
+      url,
+      type: 'website',
+      images: [
+        {
+          url: mainImage,
+          width: 1200,
+          height: 630,
+          alt: service.title,
+        },
+      ],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title,
+      description,
+      images: [mainImage],
+    },
   };
 }
 

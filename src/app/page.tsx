@@ -8,7 +8,16 @@ import { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Création de Site Internet Hautes-Alpes (Embrun, Gap)",
-  description: "Expert en création de site web, e-commerce et SEO basé à Embrun dans les Hautes-Alpes. Accompagnement local sur Gap, Guillestre, Briançon et alentours."
+  description: "Expert en création de site web, e-commerce et SEO basé à Embrun dans les Hautes-Alpes. Accompagnement local sur Gap, Guillestre, Briançon et alentours.",
+  alternates: {
+    canonical: "https://www.facenordgraphisme.fr",
+  },
+  openGraph: {
+    title: "Face Nord Graphisme | Création de site internet Hautes-Alpes",
+    description: "Expert en création de site web et SEO basé à Embrun. Accompagnement local sur Gap, Briançon et Guillestre.",
+    url: "https://www.facenordgraphisme.fr",
+    type: "website",
+  }
 };
 
 export default async function Home() {
