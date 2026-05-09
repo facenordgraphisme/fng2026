@@ -5,6 +5,7 @@ import Image from "next/image";
 import { ArrowLeft, Clock } from "lucide-react";
 import { notFound } from "next/navigation";
 import { Metadata } from "next";
+import { Fragment } from "react";
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
   const resolvedParams = await params;
@@ -15,8 +16,8 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   
   if (!post) return { title: "Article non trouvé" };
   
-  const title = post.seoTitle || `${post.title} | Blog SEO & Web (05)`;
-  const description = post.seoDescription || post.excerpt || `Lisez notre article "${post.title}" sur le blog de Face Nord Graphisme, agence web dans les Hautes-Alpes.`;
+  const title = post.seoTitle || post.title;
+  const description = post.seoDescription || `Lisez notre article sur le blog de Face Nord Graphisme, agence web dans les Hautes-Alpes (05).`;
   const url = `https://www.facenordgraphisme.fr/blog/${resolvedParams.slug}`;
   const mainImage = post.mainImage?.url || "/assets/home_intro.png";
 
@@ -49,6 +50,30 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     },
   };
 }
+
+const renderInline = (block: any) => {
+  if (!block.children?.length) return null;
+  return block.children.map((child: any, i: number) => {
+    const marks: string[] = child.marks || [];
+    if (!marks.length) return <Fragment key={i}>{child.text}</Fragment>;
+
+    const linkDef = block.markDefs?.find((d: any) => marks.includes(d._key) && d._type === 'link');
+    if (linkDef) {
+      const isExternal = /^https?:\/\//.test(linkDef.href || '');
+      return isExternal ? (
+        <a key={i} href={linkDef.href} target="_blank" rel="noopener noreferrer"
+           className="text-[#239ea0] hover:underline font-medium">{child.text}</a>
+      ) : (
+        <Link key={i} href={linkDef.href} className="text-[#239ea0] hover:underline font-medium">{child.text}</Link>
+      );
+    }
+
+    let el: React.ReactNode = child.text;
+    if (marks.includes('strong')) el = <strong key={i}>{el}</strong>;
+    if (marks.includes('em')) el = <em key={i}>{el}</em>;
+    return <Fragment key={i}>{el}</Fragment>;
+  });
+};
 
 // Portable text renderer tailored for blog posts
 const renderBlock = (block: any, index: number) => {
@@ -123,19 +148,19 @@ const renderBlock = (block: any, index: number) => {
   }
 
   if (block._type !== 'block') return null;
-  const text = block.children?.map((c: any) => c.text).join('') || '';
-  
+  const plainText = block.children?.map((c: any) => c.text).join('') || '';
+
   switch (block.style) {
     case 'h2':
-      return <h2 key={index} className="text-3xl font-bold mt-16 mb-8 text-[#1a1a1a] leading-tight">{text}</h2>;
+      return <h2 key={index} className="text-3xl font-bold mt-16 mb-8 text-[#1a1a1a] leading-tight">{renderInline(block)}</h2>;
     case 'h3':
-      return <h3 key={index} className="text-2xl font-bold mt-12 mb-6 text-[#1a1a1a]">{text}</h3>;
+      return <h3 key={index} className="text-2xl font-bold mt-12 mb-6 text-[#1a1a1a]">{renderInline(block)}</h3>;
     case 'blockquote':
-      return <blockquote key={index} className="border-l-4 border-[#239ea0] pl-6 my-10 italic text-2xl font-medium text-[#1a1a1a]/80 bg-[#f4f7f9] py-8 rounded-r-2xl shadow-sm">{text}</blockquote>;
+      return <blockquote key={index} className="border-l-4 border-[#239ea0] pl-6 my-10 italic text-2xl font-medium text-[#1a1a1a]/80 bg-[#f4f7f9] py-8 rounded-r-2xl shadow-sm">{renderInline(block)}</blockquote>;
     case 'normal':
     default:
-      if (!text.trim()) return <br key={index} />;
-      return <p key={index} className="text-[#444] text-lg leading-[1.8] mb-8 tracking-wide font-normal">{text}</p>;
+      if (!plainText.trim()) return <br key={index} />;
+      return <p key={index} className="text-[#444] text-lg leading-[1.8] mb-8 tracking-wide font-normal">{renderInline(block)}</p>;
   }
 };
 
