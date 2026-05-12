@@ -24,7 +24,7 @@ const client = createClient({
 async function uploadAsset(source: string | Buffer, filename: string) {
   console.log(`Uploading asset: ${filename}...`);
   try {
-    const asset = await client.assets.upload('image', source, {
+    const asset = await (client.assets as any).upload('image', source, {
       filename,
       contentType: filename.endsWith('.svg') ? 'image/svg+xml' : undefined,
     });
