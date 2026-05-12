@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Nunito, Plus_Jakarta_Sans } from "next/font/google";
+import { Nunito, Plus_Jakarta_Sans, Playfair_Display } from "next/font/google";
 import "./globals.css";
 import LayoutWrapper from "@/components/LayoutWrapper";
 import { ThemeProvider } from "@/components/ThemeProvider";
@@ -17,6 +17,12 @@ const jakarta = Plus_Jakarta_Sans({
   subsets: ["latin"], 
   weight: ["400", "500", "600", "700", "800"],
   variable: '--font-jakarta'
+});
+
+const playfair = Playfair_Display({
+  subsets: ["latin"],
+  style: ["normal", "italic"],
+  variable: '--font-playfair'
 });
 
 export const metadata: Metadata = {
@@ -163,7 +169,7 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body className={`antialiased min-h-screen flex flex-col md:flex-row transition-colors duration-300 font-sans`}>
+      <body className={`antialiased min-h-screen flex flex-col md:flex-row transition-colors duration-300 font-sans ${playfair.variable}`}>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           <SmoothScroll>
             <CustomCursor />

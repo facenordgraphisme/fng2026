@@ -32,6 +32,11 @@ export const postType = defineType({
       options: {
         hotspot: true,
       },
+      fields: [
+        defineField({ name: 'alt', type: 'string', title: 'Texte alternatif' }),
+        defineField({ name: 'caption', type: 'string', title: 'Légende' }),
+        defineField({ name: 'externalUrl', type: 'url', title: 'URL externe (si non uploadée dans Sanity)' }),
+      ],
     }),
     defineField({
       name: 'publishedAt',
@@ -42,7 +47,19 @@ export const postType = defineType({
       name: 'body',
       title: 'Body',
       type: 'array',
-      of: [{ type: 'block' }, { type: 'image' }, { type: 'table' }, { type: 'faq' }],
+      of: [
+        { type: 'block' },
+        {
+          type: 'image',
+          fields: [
+            defineField({ name: 'alt', type: 'string', title: 'Texte alternatif' }),
+            defineField({ name: 'caption', type: 'string', title: 'Légende' }),
+            defineField({ name: 'externalUrl', type: 'url', title: 'URL externe (si non uploadée dans Sanity)' }),
+          ],
+        },
+        { type: 'table' },
+        { type: 'faq' },
+      ],
     }),
     defineField({
       name: 'seoTitle',

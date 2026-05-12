@@ -1,5 +1,29 @@
 import { groq } from "next-sanity";
 
+export const authorQuery = groq`*[_type == "author"][0] {
+  _id, name, slug, role, bio, linkedin, website,
+  photo { "url": asset->url }
+}`;
+
+export async function getAuthor() {
+  try {
+    const { client } = await import("./client");
+    if (client.config().projectId === 'votre-project-id') throw new Error('Not linked');
+    const data = await client.fetch(authorQuery, {}, { cache: 'no-store' });
+    if (data) return data;
+    throw new Error('No author document');
+  } catch {
+    return {
+      name: "François-Xavier Pin",
+      role: "Développeur web & graphiste — Hautes-Alpes (05)",
+      bio: "Basé à Puy-Sanières, près d'Embrun, je crée des sites internet et des identités visuelles pour les entreprises des Hautes-Alpes depuis plus de 10 ans. Passionné de montagne, j'accompagne artisans, commerçants et prestataires touristiques du département 05 pour développer leur présence en ligne.",
+      photo: { url: "/assets/about-img1.png" },
+      linkedin: null,
+      website: "https://www.facenordgraphisme.fr",
+    };
+  }
+}
+
 // We keep these queries for when the user successfully links their Sanity Studio
 
 export const serviceQuery = groq`*[_type == "service"] | order(_createdAt asc) {
@@ -39,14 +63,18 @@ export const postQuery = groq`*[_type == "post"] | order(publishedAt desc) {
 }`;
 
 export const postBySlugQuery = groq`*[_type == "post" && slug.current == $slug][0] {
-  _id, title, slug, mainImage { "url": asset->url }, publishedAt, 
+  _id, title, slug,
+  mainImage { "url": select(defined(asset) => asset->url, externalUrl), alt, caption },
+  publishedAt,
   body[] {
     ...,
     _type == "image" => {
       ...,
-      "url": asset->url
+      "url": select(defined(asset) => asset->url, externalUrl),
+      alt,
+      caption
     }
-  }, 
+  },
   seoTitle, seoDescription
 }`;
 

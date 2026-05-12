@@ -1,4 +1,4 @@
-import { getPostBySlug } from "@/sanity/lib/queries";
+import { getPostBySlug, getAuthor } from "@/sanity/lib/queries";
 import AnimatedText from "@/components/AnimatedText";
 import Link from "next/link";
 import Image from "next/image";
@@ -140,10 +140,23 @@ const renderBlock = (block: any, index: number) => {
 
   if (block._type === 'image') {
     if (!block.url) return null;
+    const isSvg = block.url.toLowerCase().includes('.svg');
+    if (isSvg) {
+      return (
+        <figure key={index} className="my-12">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img src={block.url} alt={block.alt || ''} className="w-full rounded-2xl" style={{ height: 'auto' }} />
+          {block.caption && <figcaption className="text-sm text-[#888] text-center mt-2 italic">{block.caption}</figcaption>}
+        </figure>
+      );
+    }
     return (
-      <div key={index} className="my-12 relative w-full h-[350px] md:h-[500px] rounded-3xl overflow-hidden shadow-[0_10px_30px_rgba(0,0,0,0.06)] bg-gray-100">
-        <Image src={block.url} alt={block.alt || 'Illustration de l\'article'} fill sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 1200px" className="object-cover" />
-      </div>
+      <figure key={index} className="my-12">
+        <div className="relative w-full h-[350px] md:h-[500px] rounded-3xl overflow-hidden shadow-[0_10px_30px_rgba(0,0,0,0.06)] bg-gray-100">
+          <Image src={block.url} alt={block.alt || 'Illustration de l\'article'} fill sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 1200px" className="object-cover" />
+        </div>
+        {block.caption && <figcaption className="text-sm text-[#888] text-center mt-2 italic">{block.caption}</figcaption>}
+      </figure>
     );
   }
 
@@ -167,13 +180,11 @@ const renderBlock = (block: any, index: number) => {
 export default async function BlogPostPage({ params }: { params: Promise<{ slug: string }> }) {
   const resolvedParams = await params;
   const slug = resolvedParams.slug;
-  let post: any = null;
-  
-  try {
-    post = await getPostBySlug(slug);
-  } catch (err) {
-    console.error(err);
-  }
+
+  const [post, author] = await Promise.all([
+    getPostBySlug(slug).catch((err) => { console.error(err); return null; }),
+    getAuthor().catch(() => null),
+  ]);
 
   if (!post) {
     notFound();
@@ -191,14 +202,28 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
     "@context": "https://schema.org",
     "@type": "BlogPosting",
     "headline": post.seoTitle || post.title,
+    "description": post.seoDescription,
     "image": post.mainImage?.url ? [post.mainImage.url] : [],
     "datePublished": post.publishedAt || new Date().toISOString(),
     "dateModified": post.publishedAt || new Date().toISOString(),
     "author": [{
-        "@type": "Person",
-        "name": "François-Xavier Pin",
-        "url": "https://www.facenordgraphisme.fr/a-propos"
-      }]
+      "@type": "Person",
+      "@id": "https://www.facenordgraphisme.fr/a-propos#fxpin",
+      "name": author?.name || "François-Xavier Pin",
+      "url": author?.website || "https://www.facenordgraphisme.fr/a-propos",
+      "jobTitle": author?.role,
+      "image": author?.photo?.url,
+      "sameAs": author?.linkedin ? [author.linkedin] : [],
+    }],
+    "publisher": {
+      "@type": "Organization",
+      "name": "Face Nord Graphisme",
+      "url": "https://www.facenordgraphisme.fr",
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": `https://www.facenordgraphisme.fr/blog/${slug}`,
+    },
   };
 
   const faqBlocks = post.body?.filter((block: any) => block._type === 'faq') || [];
@@ -273,6 +298,55 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
             </div>
           </AnimatedText>
         </article>
+      )}
+
+      {/* Author Card */}
+      {author && (
+        <div className="max-w-3xl mx-auto px-6 mb-16">
+          <AnimatedText effect="fade-up" delay={0.45}>
+            <div className="flex items-start gap-6 bg-[#f4f7f9] rounded-3xl p-8 border border-gray-100">
+              {author.photo?.url && (
+                <div className="relative w-20 h-20 rounded-2xl overflow-hidden shrink-0 shadow-sm">
+                  <Image
+                    src={author.photo.url}
+                    alt={`Photo de ${author.name}`}
+                    fill
+                    sizes="80px"
+                    className="object-cover"
+                  />
+                </div>
+              )}
+              <div className="min-w-0">
+                <p className="text-xs font-bold uppercase tracking-widest text-[#239ea0] mb-1">Rédigé par</p>
+                <h3 className="text-xl font-black text-[#1a1a1a] mb-0.5">{author.name}</h3>
+                {author.role && (
+                  <p className="text-sm text-[#888] mb-3">{author.role}</p>
+                )}
+                {author.bio && (
+                  <p className="text-[#555] leading-relaxed text-base">{author.bio}</p>
+                )}
+                <div className="flex items-center gap-4 mt-4">
+                  <Link
+                    href="/a-propos"
+                    className="text-sm font-bold text-[#239ea0] hover:underline"
+                  >
+                    En savoir plus →
+                  </Link>
+                  {author.linkedin && (
+                    <a
+                      href={author.linkedin}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-sm font-bold text-[#666] hover:text-[#239ea0] transition-colors"
+                    >
+                      LinkedIn →
+                    </a>
+                  )}
+                </div>
+              </div>
+            </div>
+          </AnimatedText>
+        </div>
       )}
 
       {/* Newsletter / CTA Section */}

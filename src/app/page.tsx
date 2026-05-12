@@ -1,5 +1,6 @@
 import HomeHero from "@/components/HomeHero";
 import AnimatedText from "@/components/AnimatedText";
+import RecentPosts from "@/components/RecentPosts";
 import Link from "next/link";
 import Image from "next/image";
 import { getServices, getProjects } from "@/sanity/lib/queries";
@@ -191,6 +192,7 @@ export default async function Home() {
           </div>
         </div>
       </section>
+      <RecentPosts />
     </div>
   )
 }

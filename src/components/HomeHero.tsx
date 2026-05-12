@@ -21,14 +21,14 @@ export default function HomeHero() {
         </AnimatedText>
 
         <AnimatedText effect="3d-flip" delay={baseDelay + 0.15}>
-          <h1 className="text-5xl md:text-7xl lg:text-8xl font-black tracking-tight mb-6 text-[#1a1a1a] dark:text-white leading-[1.1]">
-            Propulsez votre <span className="text-[#239ea0] italic pr-2">entreprise</span>vers de nouveaux <span className="text-[#239ea0] italic pr-2">sommets</span>
+          <h1 className="text-5xl md:text-7xl lg:text-7xl xl:text-8xl font-bold tracking-tight mb-8 text-[#1a1a1a] dark:text-white leading-[1.1] text-balance">
+            Propulsez votre <span className="font-serif italic font-medium text-transparent bg-clip-text bg-gradient-to-br from-[#239ea0] via-[#239ea0] to-[#64b5f6] dark:to-[#818cf8] px-2">entreprise</span> <br className="hidden md:block" /> vers de nouveaux <span className="font-serif italic font-medium text-transparent bg-clip-text bg-gradient-to-br from-[#239ea0] via-[#239ea0] to-[#64b5f6] dark:to-[#818cf8] px-2">sommets</span>
           </h1>
         </AnimatedText>
 
         <AnimatedText delay={baseDelay + 0.3}>
-          <p className="text-xl md:text-2xl text-[#666666] dark:text-[#a1a1aa] font-medium mb-10 max-w-2xl mx-auto leading-relaxed">
-            Face Nord Graphisme propulse votre activité locale grâce à un site web performant, moderne et taillé pour vos clients.
+          <p className="text-xl md:text-2xl text-[#666666] dark:text-[#a1a1aa] font-medium mb-12 max-w-3xl mx-auto leading-relaxed text-balance">
+            Face Nord Graphisme propulse votre activité locale grâce à un <span className="text-[#1a1a1a] dark:text-white font-bold">site web performant</span>, moderne et taillé sur-mesure pour vos clients.
           </p>
         </AnimatedText>
 

@@ -34,3 +34,11 @@ h1, h2, h3, h4, h5, h6 {
 .text-balance {
   text-wrap: balance;
 }
+
+.font-serif {
+  font-family: var(--font-playfair), serif !important;
+}
+
+.dark .bg-clip-text {
+  filter: drop-shadow(0 0 10px rgba(35, 158, 160, 0.2));
+}
