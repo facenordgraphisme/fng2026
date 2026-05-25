@@ -65,7 +65,8 @@ export function Sidebar({ isCollapsed = false, onToggleCollapse }: SidebarProps)
         { name: 'Site internet', path: '/creation-site-internet-hautes-alpes' },
         { name: 'E-Commerce', path: '/boutique-e-commerce-hautes-alpes' },
         { name: 'Refonte AI Friendly', path: '/refonte-ai-friendly' },
-        { name: 'SEO', path: '/referencement-seo-hautes-alpes' },
+        { name: 'SEO local', path: '/referencement-seo-hautes-alpes' },
+        { name: 'Référencement IA', path: '/referencement-ia' },
         { name: 'Maintenance', path: '/maintenance-site-internet-hautes-alpes' },
       ]
     },
