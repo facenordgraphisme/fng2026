@@ -149,13 +149,13 @@ export async function getServiceBySlug(slug: string) {
         secondaryImage: { url: "/assets/about-img2.png" },
         content: [
           block("Un site web qui vous ressemble", "h2"),
-          block("Votre site internet est bien plus qu’une simple vitrine en ligne. C’est un outil stratégique pour développer votre visibilité, inspirer confiance et convertir vos visiteurs en clients. Je crée des sites personnalisés qui allient design élégant, expérience utilisateur fluide et technologies performantes."),
+          block("Votre site internet est bien plus qu'une simple vitrine en ligne. C'est un outil stratégique pour développer votre visibilité, inspirer confiance et convertir vos visiteurs en clients. Je crée des sites personnalisés qui allient design élégant, expérience utilisateur fluide et technologies performantes."),
           block("Site vitrine personnalisé", "h3"),
-          block("Vous souhaitez présenter votre entreprise, vos services ou votre savoir-faire ? Je développe pour vous un site vitrine professionnel et unique, parfaitement adapté à votre secteur d’activité. L’objectif : valoriser votre image de marque et susciter l’intérêt de vos futurs clients."),
+          block("Vous souhaitez présenter votre entreprise, vos services ou votre savoir-faire ? Je développe pour vous un site vitrine professionnel et unique, parfaitement adapté à votre secteur d'activité. L'objectif : valoriser votre image de marque et susciter l'intérêt de vos futurs clients."),
           block("Responsive design", "h3"),
-          block("Chaque site est conçu pour être 100 % responsive : il s’adapte automatiquement à tous les écrans (ordinateur, tablette, smartphone). C’est aujourd’hui indispensable pour garantir une expérience fluide à vos visiteurs, quel que soit leur appareil."),
+          block("Chaque site est conçu pour être 100 % responsive : il s'adapte automatiquement à tous les écrans (ordinateur, tablette, smartphone). C'est aujourd'hui indispensable pour garantir une expérience fluide à vos visiteurs, quel que soit leur appareil."),
           block("Optimisation SEO intégrée", "h3"),
-          block("Un site beau, c’est bien. Un site visible, c’est mieux. J’intègre dès la création toutes les bonnes pratiques SEO : balises structurées, temps de chargement rapide, architecture claire, contenus optimisés… pour un référencement naturel efficace sur Google, notamment sur les recherches locales à Embrun, Gap et Briançon."),
+          block("Un site beau, c'est bien. Un site visible, c'est mieux. J'intègre dès la création toutes les bonnes pratiques SEO : balises structurées, temps de chargement rapide, architecture claire, contenus optimisés… pour un référencement naturel efficace sur Google, notamment sur les recherches locales à Embrun, Gap et Briançon."),
           block("Sécurité et performance", "h3"),
           block("Un site sécurisé et rapide inspire confiance et améliore le taux de conversion. Je mets en place des solutions fiables (certificat SSL, cache, protection anti-spam…) pour garantir la sécurité de vos données et offrir des performances optimales à vos visiteurs.")
         ]
@@ -168,13 +168,13 @@ export async function getServiceBySlug(slug: string) {
         secondaryImage: { url: "/assets/about-img3.png" },
         content: [
           block("Un site e-commerce pensé pour la conversion", "h2"),
-          block("Un site e-commerce performant ne se résume pas à une simple vitrine en ligne. Il doit rassurer, séduire et convertir. Je conçois des boutiques en ligne modernes, personnalisées, et faciles à gérer, en mettant l’accent sur l’ergonomie, la sécurité et l’optimisation mobile."),
+          block("Un site e-commerce performant ne se résume pas à une simple vitrine en ligne. Il doit rassurer, séduire et convertir. Je conçois des boutiques en ligne modernes, personnalisées, et faciles à gérer, en mettant l'accent sur l'ergonomie, la sécurité et l'optimisation mobile."),
           block("Boutique e-commerce sur mesure", "h3"),
-          block("Je développe des sites e-commerce uniques, adaptés à vos produits, votre image de marque et vos objectifs. Chaque boutique est pensée pour vous différencier de la concurrence et offrir une expérience d’achat fluide et agréable."),
+          block("Je développe des sites e-commerce uniques, adaptés à vos produits, votre image de marque et vos objectifs. Chaque boutique est pensée pour vous différencier de la concurrence et offrir une expérience d'achat fluide et agréable."),
           block("Gestion des produits simplifiée", "h3"),
           block("Grâce à une interface claire et intuitive, vous pourrez gérer facilement vos produits, vos stocks et vos promotions — même sans connaissances techniques. Mise à jour rapide des fiches, gestion des variations, ajout de photos… tout devient simple."),
           block("Paiements sécurisés", "h3"),
-          block("J’intègre des solutions de paiement fiables et sécurisées : carte bancaire, PayPal, Stripe… Conformité avec les normes en vigueur (SSL, 3D Secure) pour garantir la tranquillité d’esprit de vos clients et la vôtre.")
+          block("J'intègre des solutions de paiement fiables et sécurisées : carte bancaire, PayPal, Stripe… Conformité avec les normes en vigueur (SSL, 3D Secure) pour garantir la tranquillité d'esprit de vos clients et la vôtre.")
         ]
       },
       "refonte-ai-friendly": {
@@ -184,14 +184,14 @@ export async function getServiceBySlug(slug: string) {
         mainImage: { url: "/assets/about-img1.png" },
         secondaryImage: { url: "/assets/home_cta.png" },
         content: [
-          block("Un site adapté aux usages d’aujourd’hui… et de demain", "h2"),
+          block("Un site adapté aux usages d'aujourd'hui… et de demain", "h2"),
           block("Les moteurs de recherche ne fonctionnent plus comme avant. Les internautes utilisent désormais des assistants IA (ChatGPT, Google Gemini, Alexa…) qui sélectionnent des contenus structurés, accessibles et fiables."),
           block("Refonte technique & éditoriale", "h3"),
-          block("Je procède à un audit complet de votre site existant pour identifier les axes d’amélioration : ergonomie, vitesse, structure, sécurité, compatibilité mobile, pertinence des contenus… Ensemble, nous redéfinissons l’arborescence, les textes, les visuels, le message, et nous mettons à jour tout ce qui peut freiner votre visibilité ou votre expérience utilisateur."),
+          block("Je procède à un audit complet de votre site existant pour identifier les axes d'amélioration : ergonomie, vitesse, structure, sécurité, compatibilité mobile, pertinence des contenus… Ensemble, nous redéfinissons l'arborescence, les textes, les visuels, le message, et nous mettons à jour tout ce qui peut freiner votre visibilité ou votre expérience utilisateur."),
           block("Responsive, rapide, sécurisé", "h3"),
-          block("Chaque site refondu est repensé pour être 100 % responsive, optimisé pour le SEO, et sécurisé. J’applique les meilleures pratiques techniques (certificat SSL, compression, cache, balisage sémantique…) pour booster vos performances."),
+          block("Chaque site refondu est repensé pour être 100 % responsive, optimisé pour le SEO, et sécurisé. J'applique les meilleures pratiques techniques (certificat SSL, compression, cache, balisage sémantique…) pour booster vos performances."),
           block("Pourquoi rendre votre site AI‑friendly ?", "h3"),
-          block("Parce que les IA ne se contentent plus d’extraire des liens : elles lisent, comprennent, synthétisent. Un site bien structuré peut devenir une référence pour ces outils et augmenter sa visibilité bien au-delà du référencement classique.")
+          block("Parce que les IA ne se contentent plus d'extraire des liens : elles lisent, comprennent, synthétisent. Un site bien structuré peut devenir une référence pour ces outils et augmenter sa visibilité bien au-delà du référencement classique.")
         ]
       },
       "referencement-seo-hautes-alpes": {
@@ -202,13 +202,13 @@ export async function getServiceBySlug(slug: string) {
         secondaryImage: { url: "/assets/home_intro.png" },
         content: [
           block("Attirez des visiteurs qualifiés grâce au SEO", "h2"),
-          block("Un beau site ne suffit pas : il faut qu’il soit trouvé par les bonnes personnes. Grâce à une stratégie SEO sur mesure, je vous aide à attirer plus de visiteurs qualifiés, à augmenter votre trafic et à générer plus de contacts ou de ventes."),
+          block("Un beau site ne suffit pas : il faut qu'il soit trouvé par les bonnes personnes. Grâce à une stratégie SEO sur mesure, je vous aide à attirer plus de visiteurs qualifiés, à augmenter votre trafic et à générer plus de contacts ou de ventes."),
           block("Audit SEO complet", "h3"),
-          block("Je réalise une analyse approfondie de votre site pour identifier les freins à la visibilité (balises, vitesse, contenu, liens internes, etc.). L’objectif : établir une base claire et exploitable pour toutes les optimisations à venir."),
+          block("Je réalise une analyse approfondie de votre site pour identifier les freins à la visibilité (balises, vitesse, contenu, liens internes, etc.). L'objectif : établir une base claire et exploitable pour toutes les optimisations à venir."),
           block("Optimisation technique", "h3"),
-          block("Structure HTML, hiérarchie des titres, balises méta, temps de chargement, mobile-first… Je corrige tous les éléments techniques qui peuvent pénaliser votre référencement naturel, afin d’améliorer vos performances sur Google."),
+          block("Structure HTML, hiérarchie des titres, balises méta, temps de chargement, mobile-first… Je corrige tous les éléments techniques qui peuvent pénaliser votre référencement naturel, afin d'améliorer vos performances sur Google."),
           block("Stratégie de contenu SEO", "h3"),
-          block("Le contenu est au cœur d’un bon référencement. Je vous aide à rédiger ou optimiser des textes adaptés à vos cibles, riches en mots-clés locaux pertinents (Embrun, Gap, Briançon…), tout en restant fluides et agréables à lire.")
+          block("Le contenu est au cœur d'un bon référencement. Je vous aide à rédiger ou optimiser des textes adaptés à vos cibles, riches en mots-clés locaux pertinents (Embrun, Gap, Briançon…), tout en restant fluides et agréables à lire.")
         ]
       },
       "maintenance-site-internet-hautes-alpes": {
@@ -219,13 +219,13 @@ export async function getServiceBySlug(slug: string) {
         secondaryImage: { url: "/assets/about-img1.png" },
         content: [
           block("Concentrez-vous sur votre activité, je veille sur votre site", "h2"),
-          block("Grâce à mes services de maintenance, votre site reste à jour, protégé et performant. Vous évitez ainsi les pannes, les piratages ou les lenteurs qui nuisent à votre image et à votre référencement. Je m’occupe de tout, de manière proactive, pour que vous restiez serein au quotidien."),
+          block("Grâce à mes services de maintenance, votre site reste à jour, protégé et performant. Vous évitez ainsi les pannes, les piratages ou les lenteurs qui nuisent à votre image et à votre référencement. Je m'occupe de tout, de manière proactive, pour que vous restiez serein au quotidien."),
           block("Mises à jour régulières", "h3"),
           block("Je mets à jour votre CMS (WordPress, etc.), vos extensions et vos thèmes afin de garantir une compatibilité optimale et de limiter les risques de failles de sécurité. Chaque mise à jour est vérifiée pour assurer la stabilité de votre site."),
           block("Sauvegardes automatiques", "h3"),
           block("Je configure un système de sauvegardes régulières, sur serveur distant, afin de pouvoir restaurer rapidement votre site en cas de problème technique ou de piratage. Vos données sont protégées et récupérables."),
           block("Surveillance de sécurité", "h3"),
-          block("Je mets en place des outils de protection anti-intrusion (pare-feu, antivirus, anti-spam…) et surveille en temps réel les tentatives suspectes. En cas de menace, j’interviens immédiatement pour sécuriser votre site et vos données.")
+          block("Je mets en place des outils de protection anti-intrusion (pare-feu, antivirus, anti-spam…) et surveille en temps réel les tentatives suspectes. En cas de menace, j'interviens immédiatement pour sécuriser votre site et vos données.")
         ]
       }
     };
@@ -248,21 +248,33 @@ export async function getProjects() {
     return [
       {
         title: "Gaudineto",
-        slug: { current: "project017" },
-        description: "Refonte et création de boutique en ligne.",
+        slug: { current: "gaudineto" },
+        description: "Identité visuelle complète et site bilingue pour un restaurant gastronomique aux portes des Gorges du Verdon.",
         mainImage: { url: "/assets/about-img1.png" }
       },
       {
-        title: "Shiatsu et Magnétisme",
-        slug: { current: "project002" },
-        description: "Site vitrine complet pour un praticien.",
+        title: "GAEC des Valentins",
+        slug: { current: "gaec-des-valentins" },
+        description: "Boutique e-commerce WooCommerce et site vitrine pour un élevage d'agneau en vente directe dans les Hautes-Alpes.",
         mainImage: { url: "/assets/about-img2.png" }
       },
       {
-        title: "GAEC des Valentins",
-        slug: { current: "project003" },
-        description: "Présentation de l'exploitation locale.",
+        title: "ACT Event Pro",
+        slug: { current: "act-event-pro" },
+        description: "Site vitrine premium dark mode pour un DJ et prestataire événementiel basé dans les Hautes-Alpes.",
         mainImage: { url: "/assets/about-img3.png" }
+      },
+      {
+        title: "Rêves d'Aventures",
+        slug: { current: "reves-daventures" },
+        description: "Site vitrine et réservation en ligne pour un prestataire de sports outdoor dans les Hautes-Alpes.",
+        mainImage: { url: "/assets/about-img1.png" }
+      },
+      {
+        title: "Verdon E-Bike",
+        slug: { current: "verdon-ebike" },
+        description: "Site vitrine et location en ligne pour un prestataire de vélos électriques dans les Gorges du Verdon.",
+        mainImage: { url: "/assets/about-img2.png" }
       }
     ];
   }
@@ -278,53 +290,79 @@ export async function getProjectBySlug(slug: string) {
   } catch (error) {
     const block = (text: string, style = 'normal') => ({ _type: 'block', style, children: [{ _type: 'span', text }] });
     const contentMap: Record<string, any> = {
-      "project017": {
+      "gaudineto": {
         title: "Gaudineto",
-        description: "Refonte et création de boutique en ligne.",
+        description: "Identité visuelle complète et site bilingue pour un restaurant gastronomique aux portes des Gorges du Verdon.",
         link: "https://gaudineto.fr/",
         mainImage: { url: "/assets/about-img1.png" },
-        gallery: [
-          { url: "/assets/home_intro.png" },
-          { url: "/assets/home_cta.png" },
-          { url: "/assets/about-img2.png" }
-        ],
         content: [
-          block("A propos de ce projet.", "h3"),
-          block("Gaudineto est un restaurant basé dans la commune de Moustiers-Sainte-Marie dans les Alpes de Haute Provence à proximité du sublime lac de Sainte-Croix. Avec aucun visuel et une présence en ligne nulle, j’ai conçu l’identité visuelle, les menus et le site internet de cette entreprise."),
-          block("Le processus de création", "h3"),
-          block("Nous avons commencé par définir ensemble un logo, une police et des couleurs pour ce restaurant à la cuisine créative et aux inspirations Provençales. Il a fallu ensuite créer une devanture à ce restaurant, des menus et une carte de visite reflétant l’image de cuisine traditionnelle."),
-          block("Le site web www.gaudineto.fr", "h3"),
-          block("Présentation et adresse de l'entreprise. Menus complets de la carte. Formulaire de contact pour les réservations. Galerie photo interactive mettant en valeur les plats.", "blockquote")
+          block("À propos du projet", "h2"),
+          block("Gaudineto est un restaurant gastronomique installé dans les murs d'une ancienne boulangerie du XIVe siècle à Moustiers-Sainte-Marie. L'établissement propose une cuisine créative et raffinée, ancrée dans les produits locaux et la saisonnalité."),
+          block("Identité visuelle & print", "h3"),
+          block("Création du logotype, de la palette de couleurs (crème, or, noir profond) et des typographies. Déclinaison sur les menus imprimés et les cartes de visite."),
+          block("Site vitrine bilingue", "h3"),
+          block("Développement d'un site bilingue (FR/EN) avec galerie photo, présentation des menus, formulaire de réservation en ligne, intégration Google Maps et WhatsApp."),
+          block("Un site élégant, épuré et rapide — à l'image de la cuisine créative du chef.", "blockquote")
         ]
       },
-      "project002": {
-        title: "Shiatsu et Magnétisme",
-        description: "Site vitrine complet pour un praticien.",
-        link: "#",
-        mainImage: { url: "/assets/about-img2.png" },
-        gallery: [
-          { url: "/assets/home_intro.png" }
-        ],
-        content: [
-          block("A propos de ce projet.", "h3"),
-          block("Création d'un site vitrine spécialisé dans les médecines douces (Shiatsu et Magnétisme). Conception d'un espace zen et rassurant pour les futurs patients du cabinet."),
-          block("Le processus", "h3"),
-          block("Mise en forme des contenus liés aux pratiques holistiques. Intégration d'un module de prise de rendez-vous en ligne, avec simplification des interfaces. Le logo utilise une palette de couleurs naturelles et apaisantes coordonnée avec les photos du cabinet.")
-        ]
-      },
-      "project003": {
+      "gaec-des-valentins": {
         title: "GAEC des Valentins",
-        description: "Présentation de l'exploitation locale.",
-        link: "#",
-        mainImage: { url: "/assets/about-img3.png" },
-        gallery: [
-          { url: "/assets/home_cta.png" }
-        ],
+        description: "Boutique e-commerce WooCommerce et site vitrine pour un élevage d'agneau en vente directe dans les Hautes-Alpes.",
+        link: "https://gaecdesvalentins.fr/",
+        mainImage: { url: "/assets/about-img2.png" },
         content: [
-          block("A propos de ce projet.", "h3"),
-          block("Un site e-commerce et de présentation pour une exploitation agricole locale (le GAEC des Valentins). Objectif : mettre en valeur les produits du terroir, la vente en circuit court et proposer la pré-commande en ligne."),
-          block("Spécificités techniques", "h3"),
-          block("Gestion asynchrone des commandes de paniers fermiers. Présentation interactive des zones de livraison. Responsive design soigné avec de grandes images immersives des champs et des animaux.")
+          block("À propos du projet", "h2"),
+          block("Le GAEC des Valentins est un élevage ovin à Châteauroux-les-Alpes spécialisé dans la vente directe d'agneau de qualité, labellisé Hautes-Alpes Naturellement."),
+          block("Boutique e-commerce WooCommerce", "h3"),
+          block("Boutique WooCommerce pour commander des colis d'agneau en ligne, avec paiement sécurisé, gestion des stocks et emails automatiques de confirmation."),
+          block("Site vitrine & SEO local", "h3"),
+          block("Présentation de l'élevage, blog, section agritourisme, intégration avis Google (4,9/5). SEO optimisé pour les requêtes 'agneau Hautes-Alpes' et 'vente directe agneau 05'."),
+          block("Un site qui fait le lien entre une exploitation agricole authentique et les consommateurs qui cherchent à acheter local.", "blockquote")
+        ]
+      },
+      "act-event-pro": {
+        title: "ACT Event Pro",
+        description: "Site vitrine premium dark mode pour un DJ et prestataire événementiel basé dans les Hautes-Alpes.",
+        link: "https://www.act-event-pro.fr/",
+        mainImage: { url: "/assets/about-img3.png" },
+        content: [
+          block("À propos du projet", "h2"),
+          block("ACT Event Pro est une entreprise de DJ, sonorisation et éclairage professionnel basée dans les Hautes-Alpes, couvrant le Sud-Est de la France pour mariages, festivals et événements d'entreprise."),
+          block("Design dark mode premium", "h3"),
+          block("Site vitrine dark mode avec typographies soignées et accents or. Galerie interactive, témoignages clients, carousel de logos. Le design reflète le positionnement haut de gamme de l'entreprise."),
+          block("Formulaire devis & SEO", "h3"),
+          block("Formulaire de devis avec sélection du type d'événement, de la date et de la zone. SEO optimisé : 'DJ mariage Hautes-Alpes', 'sonorisation événement 05'."),
+          block("L'alliance unique de la sensibilité artistique et de la rigueur technique — visible dès la première page.", "blockquote")
+        ]
+      },
+      "reves-daventures": {
+        title: "Rêves d'Aventures",
+        description: "Site vitrine et réservation en ligne pour un prestataire de sports outdoor dans les Hautes-Alpes.",
+        link: "https://www.revesdaventures.fr/",
+        mainImage: { url: "/assets/about-img1.png" },
+        content: [
+          block("À propos du projet", "h2"),
+          block("Rêves d'Aventures propose des expériences guidées sur-mesure dans les Hautes-Alpes : escalade, canyoning, VTT, via ferrata, windsurf et kayak."),
+          block("Architecture UX & réservation", "h3"),
+          block("Architecture pour 3 formats d'activités × 3 niveaux (Découverte, Aventure, Warrior). Calendrier de disponibilités avec réservation en ligne. Section planning interactif."),
+          block("SEO tourisme", "h3"),
+          block("Optimisation pour 'canyoning Hautes-Alpes', 'escalade Serre-Ponçon', 'guide outdoor 05'. Intégration Instagram pour les photos des sorties."),
+          block("Vivre les sports de pleine nature à travers des expériences sur mesure.", "blockquote")
+        ]
+      },
+      "verdon-ebike": {
+        title: "Verdon E-Bike",
+        description: "Site vitrine et location en ligne pour un prestataire de vélos à assistance électrique dans les Gorges du Verdon.",
+        link: "https://verdonebike.com/",
+        mainImage: { url: "/assets/about-img2.png" },
+        content: [
+          block("À propos du projet", "h2"),
+          block("Verdon E-Bike loue des vélos à assistance électrique (VTTAE, VTC) dans les Gorges du Verdon, avec des sorties guidées par des accompagnateurs certifiés."),
+          block("Flotte & itinéraires", "h3"),
+          block("Pages dédiées à chaque vélo, fiches itinéraires avec dénivelé et niveau, galerie immersive des Gorges du Verdon. Formulaire de réservation avec sélection de la date, du vélo et de la durée."),
+          block("SEO tourisme", "h3"),
+          block("Optimisation pour 'location vélo électrique Verdon', 'sortie VAE Gorges du Verdon', 'VTTAE Castellane'. PageSpeed Mobile > 86/100."),
+          block("Les Gorges du Verdon en vélo électrique — l'accès au grand spectacle pour tous les niveaux.", "blockquote")
         ]
       }
     };
@@ -468,9 +506,9 @@ export async function getLegalBySlug(slug: string) {
           block("François-Xavier Pin"),
           block("3. Hébergement du site", "h2"),
           block("Ce site est hébergé par Hostinger."),
-          block("Adresse de l’hébergeur : 61 Lordou Vironos Street, 6023 Larnaca, Chypre"),
+          block("Adresse de l'hébergeur : 61 Lordou Vironos Street, 6023 Larnaca, Chypre"),
           block("4. Propriété intellectuelle", "h2"),
-          block("L’ensemble de ce site relève de la législation française et internationale sur le droit d’auteur et la propriété intellectuelle. Tous les droits de reproduction sont réservés, y compris pour les documents téléchargeables et les représentations iconographiques et photographiques."),
+          block("L'ensemble de ce site relève de la législation française et internationale sur le droit d'auteur et la propriété intellectuelle. Tous les droits de reproduction sont réservés, y compris pour les documents téléchargeables et les représentations iconographiques et photographiques."),
           block("La reproduction de tout ou partie de ce site sur quel que support que ce soit est formellement interdite sauf autorisation expresse du directeur de la publication."),
           block("5. Responsabilité", "h2"),
           block("Face Nord Graphisme s'efforce d'assurer l'exactitude des informations diffusées sur ce site, dont elle se réserve le droit de corriger, à tout moment et sans préavis, le contenu. Toute imprécision, inexactitude ou omission décline la responsabilité de l'éditeur du site.")
@@ -480,14 +518,14 @@ export async function getLegalBySlug(slug: string) {
         title: "Politique de Confidentialité",
         content: [
           block("1. Collecte des données personnelles", "h2"),
-          block("Dans le cadre de l’utilisation de ce site (par exemple lors de l'utilisation de la page 'Contact'), Face Nord Graphisme est amenée à collecter des données personnelles (Nom, Prénom, Email).", "normal"),
-          block("Ces données sont collectées lorsque l’utilisateur remplit un formulaire de contact ou interagit directement avec nous."),
+          block("Dans le cadre de l'utilisation de ce site (par exemple lors de l'utilisation de la page 'Contact'), Face Nord Graphisme est amenée à collecter des données personnelles (Nom, Prénom, Email).", "normal"),
+          block("Ces données sont collectées lorsque l'utilisateur remplit un formulaire de contact ou interagit directement avec nous."),
           block("2. Finalité du traitement des données", "h2"),
           block("Les données collectées sont utilisées uniquement pour répondre aux demandes de renseignements, de devis ou de contact, et pour assurer le suivi des projets clients."),
           block("3. Conservation des données", "h2"),
-          block("Les données personnelles sont conservées pendant une durée qui n’excède pas la durée nécessaire aux finalités pour lesquelles elles sont collectées et traitées. En règle générale, les informations liées à une prise de contact sont conservées pendant un maximum de 3 ans après notre dernier échange."),
+          block("Les données personnelles sont conservées pendant une durée qui n'excède pas la durée nécessaire aux finalités pour lesquelles elles sont collectées et traitées. En règle générale, les informations liées à une prise de contact sont conservées pendant un maximum de 3 ans après notre dernier échange."),
           block("4. Partage des données", "h2"),
-          block("Face Nord Graphisme s’engage à ne pas vendre, louer, ou céder vos données personnelles à des tiers. Les données peuvent seulement être traitées par nos partenaires techniques (hébergement, emails) dans le strict respect du RGPD."),
+          block("Face Nord Graphisme s'engage à ne pas vendre, louer, ou céder vos données personnelles à des tiers. Les données peuvent seulement être traitées par nos partenaires techniques (hébergement, emails) dans le strict respect du RGPD."),
           block("5. Cookies", "h2"),
           block("Ce site utilise des cookies strictement nécessaires à son bon fonctionnement et, le cas échéant, des outils d'analyse d'audience respectueux de la vie privée. Vous pouvez configurer vos préférences via le bandeau dédié."),
           block("6. Vos droits", "h2"),
