@@ -74,7 +74,7 @@ const renderBlock = (block: any, index: number) => {
     return (
       <div
         key={index}
-        className="border-2 border-[#e8f5f5] rounded-2xl p-6 md:p-8 my-8 bg-white shadow-sm hover:shadow-md transition-shadow"
+        className="border-2 border-[#e8f5f5] dark:border-white/10 rounded-2xl p-6 md:p-8 my-8 bg-white dark:bg-[#1a1a1a] shadow-sm dark:shadow-none hover:shadow-md dark:hover:shadow-none transition-shadow"
       >
         {block.badge && (
           <div className="text-[10px] font-bold uppercase tracking-[0.1em] text-[#239ea0] mb-2">
@@ -82,10 +82,10 @@ const renderBlock = (block: any, index: number) => {
           </div>
         )}
         {block.title && (
-          <h3 className="text-xl font-bold text-[#1a1a1a] mb-3">{block.title}</h3>
+          <h3 className="text-xl font-bold text-[#1a1a1a] dark:text-white mb-3">{block.title}</h3>
         )}
         {block.description && (
-          <p className="text-[#666] text-sm mb-5 leading-relaxed">{block.description}</p>
+          <p className="text-[#666] dark:text-[#a1a1aa] text-sm mb-5 leading-relaxed">{block.description}</p>
         )}
         {block.linkUrl && (
           <Link
@@ -111,9 +111,9 @@ const renderBlock = (block: any, index: number) => {
           {items.map((item: any, i: number) => (
             <details
               key={item._key || i}
-              className="group bg-white rounded-2xl border border-gray-100 shadow-sm [&_summary::-webkit-details-marker]:hidden open:shadow-md transition-all"
+              className="group bg-white dark:bg-[#1a1a1a] rounded-2xl border border-gray-100 dark:border-white/10 shadow-sm dark:shadow-none [&_summary::-webkit-details-marker]:hidden open:shadow-md dark:open:shadow-none transition-all"
             >
-              <summary className="flex cursor-pointer items-center justify-between gap-2 p-5 font-bold text-[#1a1a1a] text-base outline-none group-open:text-[#239ea0] transition-colors">
+              <summary className="flex cursor-pointer items-center justify-between gap-2 p-5 font-bold text-[#1a1a1a] dark:text-white text-base outline-none group-open:text-[#239ea0] transition-colors">
                 {item.question}
                 <svg
                   className="size-5 shrink-0 transition duration-300 group-open:-rotate-180 text-[#239ea0]"
@@ -131,7 +131,7 @@ const renderBlock = (block: any, index: number) => {
                 </svg>
               </summary>
               <div className="px-5 pb-5">
-                <p className="text-[#666] leading-relaxed text-base">{item.answer}</p>
+                <p className="text-[#666] dark:text-[#a1a1aa] leading-relaxed text-base">{item.answer}</p>
               </div>
             </details>
           ))}
@@ -145,7 +145,7 @@ const renderBlock = (block: any, index: number) => {
 
   if (block.listItem === "bullet") {
     return (
-      <li key={index} className="flex items-start gap-3 text-[#444] text-base leading-relaxed">
+      <li key={index} className="flex items-start gap-3 text-[#444] dark:text-[#a1a1aa] text-base leading-relaxed">
         <CheckCircle2 className="size-5 text-[#239ea0] shrink-0 mt-0.5" />
         <span>{renderInline(block)}</span>
       </li>
@@ -153,7 +153,7 @@ const renderBlock = (block: any, index: number) => {
   }
   if (block.listItem === "number") {
     return (
-      <li key={index} className="text-[#444] text-base leading-relaxed pl-2">
+      <li key={index} className="text-[#444] dark:text-[#a1a1aa] text-base leading-relaxed pl-2">
         {renderInline(block)}
       </li>
     );
@@ -164,14 +164,14 @@ const renderBlock = (block: any, index: number) => {
       return (
         <h2
           key={index}
-          className="text-2xl md:text-3xl font-bold mt-14 mb-6 text-[#1a1a1a] leading-tight"
+          className="text-2xl md:text-3xl font-bold mt-14 mb-6 text-[#1a1a1a] dark:text-white leading-tight"
         >
           {renderInline(block)}
         </h2>
       );
     case "h3":
       return (
-        <h3 key={index} className="text-xl font-bold mt-10 mb-4 text-[#1a1a1a]">
+        <h3 key={index} className="text-xl font-bold mt-10 mb-4 text-[#1a1a1a] dark:text-white">
           {renderInline(block)}
         </h3>
       );
@@ -179,7 +179,7 @@ const renderBlock = (block: any, index: number) => {
       return (
         <blockquote
           key={index}
-          className="border-l-4 border-[#239ea0] pl-6 my-8 bg-[#f4f7f9] py-6 rounded-r-2xl italic text-[#333] text-lg leading-relaxed"
+          className="border-l-4 border-[#239ea0] pl-6 my-8 bg-[#f4f7f9] dark:bg-[#1a1a1a] py-6 rounded-r-2xl italic text-[#333] dark:text-[#a1a1aa] text-lg leading-relaxed"
         >
           {renderInline(block)}
         </blockquote>
@@ -188,7 +188,7 @@ const renderBlock = (block: any, index: number) => {
       return (
         <div
           key={index}
-          className="bg-[#f9fafb] border border-[#e5e7eb] rounded-2xl p-6 my-8 italic text-[#555] text-base leading-relaxed"
+          className="bg-[#f9fafb] dark:bg-[#1a1a1a] border border-[#e5e7eb] dark:border-white/10 rounded-2xl p-6 my-8 italic text-[#555] dark:text-[#a1a1aa] text-base leading-relaxed"
         >
           {renderInline(block)}
         </div>
@@ -197,7 +197,7 @@ const renderBlock = (block: any, index: number) => {
     default:
       if (!plainText.trim()) return <br key={index} />;
       return (
-        <p key={index} className="text-[#444] text-lg leading-[1.8] mb-6">
+        <p key={index} className="text-[#444] dark:text-[#a1a1aa] text-lg leading-[1.8] mb-6">
           {renderInline(block)}
         </p>
       );
@@ -300,7 +300,7 @@ export default async function CityPage({
         />
       )}
 
-      <div className="min-h-screen bg-white text-[#1a1a1a]">
+      <div className="min-h-screen bg-white dark:bg-[#111111] text-[#1a1a1a] dark:text-white transition-colors">
 
         {/* ── Hero ── */}
         <section className="bg-[#1a1a1a] text-white pt-28 pb-20 px-6">
@@ -337,40 +337,40 @@ export default async function CityPage({
         </section>
 
         {/* ── Stats strip ── */}
-        <section className="bg-[#f4f7f9] border-b border-gray-100">
+        <section className="bg-[#f4f7f9] dark:bg-[#111111] border-b border-gray-100 dark:border-white/10 transition-colors">
           <div className="max-w-4xl mx-auto px-6 py-8 grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
             <div>
               <div className="text-3xl font-bold text-[#239ea0]">10+</div>
-              <div className="text-sm text-gray-500 mt-1">Années d'expérience</div>
+              <div className="text-sm text-gray-500 dark:text-[#a1a1aa] mt-1">Années d'expérience</div>
             </div>
             <div>
               <div className="text-3xl font-bold text-[#239ea0]">48 h</div>
-              <div className="text-sm text-gray-500 mt-1">Délai de réponse</div>
+              <div className="text-sm text-gray-500 dark:text-[#a1a1aa] mt-1">Délai de réponse</div>
             </div>
             <div>
               <div className="text-3xl font-bold text-[#239ea0]">dès 800€</div>
-              <div className="text-sm text-gray-500 mt-1">Tarif site vitrine</div>
+              <div className="text-sm text-gray-500 dark:text-[#a1a1aa] mt-1">Tarif site vitrine</div>
             </div>
             <div>
               <div className="text-3xl font-bold text-[#239ea0]">100%</div>
-              <div className="text-sm text-gray-500 mt-1">Propriété du code</div>
+              <div className="text-sm text-gray-500 dark:text-[#a1a1aa] mt-1">Propriété du code</div>
             </div>
           </div>
         </section>
 
         {/* ── Services strip ── */}
         <section className="max-w-4xl mx-auto px-6 py-14">
-          <h2 className="text-2xl font-bold text-[#1a1a1a] mb-8 text-center">
+          <h2 className="text-2xl font-bold text-[#1a1a1a] dark:text-white mb-8 text-center">
             Nos prestations à {page.city}
           </h2>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             {SERVICES.map((s) => (
               <div
                 key={s.label}
-                className="bg-[#f9fafb] border border-gray-100 rounded-2xl p-5 text-center hover:border-[#239ea0] hover:shadow-sm transition-all"
+                className="bg-[#f9fafb] dark:bg-[#1a1a1a] border border-gray-100 dark:border-white/10 rounded-2xl p-5 text-center hover:border-[#239ea0] hover:shadow-sm dark:hover:shadow-none transition-all"
               >
                 <div className="text-3xl mb-3">{s.icon}</div>
-                <div className="font-bold text-[#1a1a1a] text-sm mb-1">{s.label}</div>
+                <div className="font-bold text-[#1a1a1a] dark:text-white text-sm mb-1">{s.label}</div>
                 <div className="text-[#239ea0] text-xs font-semibold">{s.desc}</div>
               </div>
             ))}

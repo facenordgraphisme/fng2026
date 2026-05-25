@@ -100,7 +100,7 @@ export default function PrestationsPage() {
       </section>
 
       {/* Services grid */}
-      <section className="py-20 px-6 bg-[#f4f7f9]">
+      <section className="py-20 px-6 bg-[#f4f7f9] dark:bg-[#111111] transition-colors">
         <div className="max-w-6xl mx-auto">
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {services.map((s) => {
@@ -108,25 +108,25 @@ export default function PrestationsPage() {
               return (
                 <div
                   key={s.href}
-                  className="bg-white rounded-3xl border border-gray-100 shadow-sm hover:shadow-lg hover:border-[#239ea0]/30 transition-all group flex flex-col overflow-hidden"
+                  className="bg-white dark:bg-[#1a1a1a] rounded-3xl border border-gray-100 dark:border-white/10 shadow-sm dark:shadow-none hover:shadow-lg dark:hover:shadow-none hover:border-[#239ea0]/30 transition-all group flex flex-col overflow-hidden"
                 >
                   {/* Card header */}
                   <div className="p-7 flex-1">
                     <div className="flex items-start justify-between gap-3 mb-5">
-                      <div className="bg-[#f0fafa] border border-[#239ea0]/20 rounded-xl p-3">
+                      <div className="bg-[#f0fafa] dark:bg-[#239ea0]/10 border border-[#239ea0]/20 rounded-xl p-3">
                         <Icon className="size-6 text-[#239ea0]" strokeWidth={1.5} />
                       </div>
-                      <span className="text-[10px] font-bold uppercase tracking-widest text-[#239ea0] bg-[#e8f5f5] px-3 py-1 rounded-full mt-1">
+                      <span className="text-[10px] font-bold uppercase tracking-widest text-[#239ea0] bg-[#e8f5f5] dark:bg-[#239ea0]/10 px-3 py-1 rounded-full mt-1">
                         {s.badge}
                       </span>
                     </div>
-                    <h2 className="text-xl font-bold text-[#1a1a1a] mb-2 group-hover:text-[#239ea0] transition-colors leading-snug">
+                    <h2 className="text-xl font-bold text-[#1a1a1a] dark:text-white mb-2 group-hover:text-[#239ea0] transition-colors leading-snug">
                       {s.title}
                     </h2>
-                    <p className="text-[#666] text-sm leading-relaxed mb-5">{s.desc}</p>
+                    <p className="text-[#666] dark:text-[#a1a1aa] text-sm leading-relaxed mb-5">{s.desc}</p>
                     <ul className="space-y-2 mb-6">
                       {s.bullets.map((b) => (
-                        <li key={b} className="flex items-start gap-2 text-[#444] text-sm">
+                        <li key={b} className="flex items-start gap-2 text-[#444] dark:text-[#a1a1aa] text-sm">
                           <CheckCircle2 className="size-4 text-[#239ea0] shrink-0 mt-0.5" />
                           {b}
                         </li>
@@ -134,12 +134,12 @@ export default function PrestationsPage() {
                     </ul>
                   </div>
                   {/* Card footer */}
-                  <div className="px-7 pb-7 pt-4 border-t border-gray-50">
+                  <div className="px-7 pb-7 pt-4 border-t border-gray-50 dark:border-white/10">
                     <div className="flex items-center justify-between gap-4">
                       <div className="text-[#239ea0] font-black text-lg">{s.pricingFrom}</div>
                       <Link
                         href={s.href}
-                        className="inline-flex items-center gap-1.5 text-sm font-bold text-[#1a1a1a] hover:text-[#239ea0] transition-colors group/link"
+                        className="inline-flex items-center gap-1.5 text-sm font-bold text-[#1a1a1a] dark:text-white hover:text-[#239ea0] dark:hover:text-[#239ea0] transition-colors group/link"
                       >
                         En savoir plus
                         <ArrowRight className="size-4 group-hover/link:translate-x-0.5 transition-transform" />
@@ -154,13 +154,13 @@ export default function PrestationsPage() {
       </section>
 
       {/* City pages */}
-      <section className="py-20 px-6 bg-white">
+      <section className="py-20 px-6 bg-white dark:bg-[#1a1a1a] transition-colors">
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-12">
-            <h2 className="text-2xl md:text-3xl font-bold text-[#1a1a1a] mb-3">
+            <h2 className="text-2xl md:text-3xl font-bold text-[#1a1a1a] dark:text-white mb-3">
               Nous intervenons dans tout le département 05
             </h2>
-            <p className="text-[#666] text-lg max-w-xl mx-auto">
+            <p className="text-[#666] dark:text-[#a1a1aa] text-lg max-w-xl mx-auto">
               Basés à Embrun, nous accompagnons les entreprises de Gap à Briançon, de Serre-Ponçon à la Vallée de l'Ubaye.
             </p>
           </div>
@@ -169,15 +169,15 @@ export default function PrestationsPage() {
               <Link
                 key={c.href}
                 href={c.href}
-                className="block border-2 border-[#e8f5f5] rounded-2xl p-7 hover:border-[#239ea0] hover:shadow-md transition-all group"
+                className="block border-2 border-[#e8f5f5] dark:border-white/10 rounded-2xl p-7 hover:border-[#239ea0] hover:shadow-md dark:hover:shadow-none transition-all group"
               >
                 <div className="flex items-center gap-2 mb-3">
                   <MapPin className="size-4 text-[#239ea0]" />
-                  <span className="font-bold text-[#1a1a1a] group-hover:text-[#239ea0] transition-colors">
+                  <span className="font-bold text-[#1a1a1a] dark:text-white group-hover:text-[#239ea0] transition-colors">
                     {c.name}
                   </span>
                 </div>
-                <p className="text-[#888] text-sm leading-relaxed">{c.desc}</p>
+                <p className="text-[#888] dark:text-[#666] text-sm leading-relaxed">{c.desc}</p>
                 <div className="mt-4 text-[#239ea0] text-xs font-bold flex items-center gap-1">
                   Voir la page locale <ArrowRight className="size-3" />
                 </div>
