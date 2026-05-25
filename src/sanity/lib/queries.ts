@@ -119,6 +119,12 @@ export async function getServices() {
         slug: { current: "maintenance-site-internet-hautes-alpes" },
         description: "Maintenance de site web. Gardez votre site à jour, protégé et performant avec une maintenance régulière et proactive.",
         icon: "🛡️"
+      },
+      {
+        title: "Référencement IA",
+        slug: { current: "referencement-ia" },
+        description: "Soyez cité par ChatGPT, Perplexity et les AI Overviews. Stratégie GEO (Generative Engine Optimization) pour les PME des Hautes-Alpes.",
+        icon: "Brain"
       }
     ];
   }

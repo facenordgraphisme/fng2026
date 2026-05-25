@@ -5,6 +5,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { getServices, getProjects } from "@/sanity/lib/queries";
 import * as LucideIcons from "lucide-react";
+import { MapPin, ArrowRight } from "lucide-react";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -130,6 +131,45 @@ export default async function Home() {
                   </Link>
                 );
               })}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* City pages strip */}
+      <section className="py-16 px-6 bg-[#f4f7f9] dark:bg-[#111111] border-b border-gray-100 dark:border-white/5 transition-colors duration-300">
+        <div className="max-w-5xl mx-auto">
+          <div className="flex flex-col md:flex-row md:items-center gap-6 md:gap-12">
+            <div className="md:w-4/12 shrink-0">
+              <div className="flex items-center gap-2 text-[#239ea0] text-xs font-bold uppercase tracking-widest mb-2">
+                <MapPin className="size-3.5" />
+                Interventions locales
+              </div>
+              <h2 className="text-2xl font-bold text-[#1a1a1a] dark:text-white leading-tight">
+                Basé à Embrun, actif dans tout le 05
+              </h2>
+            </div>
+            <div className="flex flex-col sm:flex-row gap-4 flex-1">
+              {[
+                { name: "Gap", href: "/villes/gap-hautes-alpes", desc: "Commerces & professions libérales" },
+                { name: "Briançon", href: "/villes/briancon-hautes-alpes", desc: "Tourisme & double saisonnalité" },
+                { name: "Embrun & Serre-Ponçon", href: "/villes/embrun-serre-poncon", desc: "Producteurs & prestataires outdoor" },
+              ].map((city) => (
+                <Link
+                  key={city.href}
+                  href={city.href}
+                  className="flex-1 border-2 border-[#e8f5f5] dark:border-[#239ea0]/20 bg-white dark:bg-[#1a1a1a] rounded-2xl px-5 py-4 hover:border-[#239ea0] hover:shadow-md transition-all group"
+                >
+                  <div className="font-bold text-[#1a1a1a] dark:text-white group-hover:text-[#239ea0] transition-colors text-sm mb-1 flex items-center gap-1.5">
+                    <MapPin className="size-3 text-[#239ea0]" />
+                    {city.name}
+                  </div>
+                  <div className="text-[#888] text-xs">{city.desc}</div>
+                  <div className="mt-2 text-[#239ea0] text-xs font-bold flex items-center gap-1 opacity-0 group-hover:opacity-100 transition-opacity">
+                    Voir la page <ArrowRight className="size-3" />
+                  </div>
+                </Link>
+              ))}
             </div>
           </div>
         </div>
