@@ -396,6 +396,46 @@ export async function getPostBySlug(slug: string) {
   }
 }
 
+export const cityPageBySlugQuery = groq`*[_type == "cityPage" && slug.current == $slug][0] {
+  _id, city, slug, headline, intro,
+  body[] {
+    ...,
+    _type == "image" => {
+      ...,
+      "url": select(defined(asset) => asset->url, externalUrl),
+      alt, caption
+    }
+  },
+  seoTitle, seoDescription
+}`;
+
+export async function getCityPageBySlug(slug: string) {
+  try {
+    const { client } = await import("./client");
+    if (client.config().projectId === 'votre-project-id') throw new Error('Not linked');
+    const data = await client.fetch(cityPageBySlugQuery, { slug }, { cache: 'no-store' });
+    if (data) return data;
+    throw new Error('Not Found');
+  } catch {
+    return null;
+  }
+}
+
+export async function getAllCityPageSlugs(): Promise<string[]> {
+  try {
+    const { client } = await import("./client");
+    if (client.config().projectId === 'votre-project-id') return [];
+    const data = await client.fetch(
+      `*[_type == "cityPage"]{ "slug": slug.current }`,
+      {},
+      { cache: 'no-store' }
+    );
+    return (data || []).map((d: any) => d.slug).filter(Boolean);
+  } catch {
+    return [];
+  }
+}
+
 export const legalBySlugQuery = groq`*[_type == "legal" && slug.current == $slug][0] {
   _id, title, slug, content
 }`;

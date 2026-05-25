@@ -7,7 +7,8 @@ import { faqType } from './faqType'
 import { authorType } from './authorType'
 import { tocType } from './tocType'
 import { spokeCardType } from './spokeCardType'
+import { cityPageType } from './cityPageType'
 
 export const schema: { types: SchemaTypeDefinition[] } = {
-  types: [postType, serviceType, projectType, legalType, faqType, authorType, tocType, spokeCardType],
+  types: [postType, serviceType, projectType, legalType, faqType, authorType, tocType, spokeCardType, cityPageType],
 }
