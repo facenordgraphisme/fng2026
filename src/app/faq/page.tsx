@@ -92,7 +92,7 @@ export default function FaqPage() {
           <p className="text-[#666666] dark:text-[#a1a1aa] mb-8 text-lg max-w-xl mx-auto">
             N'hésitez pas à me contacter directement. Je me ferai un plaisir de discuter de votre projet et de répondre à toutes vos interrogations.
           </p>
-          <Link href="/contact" className="inline-block px-10 py-4 bg-[#239ea0] text-white font-bold rounded-xl hover:bg-[#1c8486] transition-colors shadow-[0_10px_20px_rgba(35,158,160,0.3)] hover:-translate-y-1">
+          <Link href="/contact" className="inline-block px-10 py-4 bg-[#239ea0] text-white font-bold rounded-xl hover:bg-[#1c8486] transition-[background-color,transform] shadow-[0_10px_20px_rgba(35,158,160,0.3)] hover:-translate-y-1 active:translate-y-0">
             Posez-moi votre question
           </Link>
         </div>

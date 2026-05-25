@@ -48,7 +48,19 @@ export const postType = defineType({
       title: 'Body',
       type: 'array',
       of: [
-        { type: 'block' },
+        {
+          type: 'block',
+          styles: [
+            { title: 'Normal', value: 'normal' },
+            { title: 'H1', value: 'h1' },
+            { title: 'H2', value: 'h2' },
+            { title: 'H3', value: 'h3' },
+            { title: 'H4', value: 'h4' },
+            { title: 'Quote', value: 'blockquote' },
+            { title: 'Capsule', value: 'capsule' },
+            { title: 'Citation', value: 'citation' },
+          ],
+        },
         {
           type: 'image',
           fields: [
@@ -59,6 +71,8 @@ export const postType = defineType({
         },
         { type: 'table' },
         { type: 'faq' },
+        { type: 'toc' },
+        { type: 'spokeCard' },
       ],
     }),
     defineField({

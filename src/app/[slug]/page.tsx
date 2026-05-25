@@ -152,7 +152,7 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
         <div className="max-w-5xl mx-auto px-6 mt-16">
           <AnimatedText effect="zoom-in" delay={0.35} className="relative w-full h-[350px] md:h-[500px] rounded-[40px] overflow-hidden shadow-2xl border border-gray-100 dark:border-white/5 bg-gray-100 dark:bg-gray-800">
             <div className="absolute inset-0 bg-blue-500/5 mix-blend-overlay z-10 pointer-events-none" />
-            <Image src={service.mainImage.url} alt={`Prestation ${service.title} par Face Nord Graphisme Embrun`} fill sizes="(max-width: 1280px) 100vw, 1280px" className="object-cover hover:scale-105 transition-transform duration-1000" />
+            <Image src={service.mainImage.url} alt={`Prestation ${service.title} par Face Nord Graphisme Embrun`} fill sizes="(max-width: 1280px) 100vw, 1280px" className="object-cover hover:scale-105 transition-transform duration-300" />
           </AnimatedText>
         </div>
       )}
@@ -171,7 +171,7 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
         {/* Secondary Image */}
         {service.secondaryImage?.url && (
           <AnimatedText effect="fade-up" delay={0.45} className="mt-16 relative w-full h-[300px] md:h-[400px] rounded-[32px] overflow-hidden shadow-xl border border-gray-100 dark:border-white/5 bg-gray-100 dark:bg-gray-800">
-            <Image src={service.secondaryImage.url} alt={`Détail de la prestation ${service.title} Hautes-Alpes`} fill sizes="(max-width: 1024px) 100vw, 1024px" className="object-cover hover:scale-105 transition-transform duration-1000" />
+            <Image src={service.secondaryImage.url} alt={`Détail de la prestation ${service.title} Hautes-Alpes`} fill sizes="(max-width: 1024px) 100vw, 1024px" className="object-cover hover:scale-105 transition-transform duration-300" />
           </AnimatedText>
         )}
         
@@ -182,7 +182,7 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
            <p className="text-lg text-[#666666] dark:text-[#a1a1aa] mb-10 max-w-2xl mx-auto relative z-10 leading-relaxed">
              Contactez-moi pour discuter de vos besoins et obtenir un devis personnalisé pour ce service spécifique.
            </p>
-           <Link href="/contact" className="relative z-10 inline-block px-10 py-5 bg-[#239ea0] text-white font-bold text-lg rounded-xl hover:bg-[#1c8486] transition-all shadow-[0_10px_30px_rgba(35,158,160,0.3)] hover:-translate-y-1">
+           <Link href="/contact" className="relative z-10 inline-block px-10 py-5 bg-[#239ea0] text-white font-bold text-lg rounded-xl hover:bg-[#1c8486] transition-[background-color,transform] shadow-[0_10px_30px_rgba(35,158,160,0.3)] hover:-translate-y-1 active:translate-y-0">
              Demander un devis gratuit
            </Link>
         </AnimatedText>

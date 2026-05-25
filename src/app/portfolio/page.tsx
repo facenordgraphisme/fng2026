@@ -26,14 +26,14 @@ export default async function PortfolioPage() {
             <Link href={href} key={index} className="block group">
               <AnimatedText className="relative h-96 rounded-3xl overflow-hidden bg-white dark:bg-[#1a1a1a] shadow-lg dark:shadow-none border border-gray-100 dark:border-white/5 flex items-center justify-center transition-colors duration-300">
                 {bgImage ? (
-                  <div className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105" style={{ backgroundImage: `url(${bgImage})` }} />
+                  <div className="absolute inset-0 bg-cover bg-center transition-transform duration-300 group-hover:scale-105" style={{ backgroundImage: `url(${bgImage})` }} />
                 ) : (
-                  <div className="absolute inset-0 bg-gradient-to-tr from-[#f4f7f9] dark:from-[#333333] to-white dark:to-[#1a1a1a] transition-transform duration-700 group-hover:scale-105" />
+                  <div className="absolute inset-0 bg-gradient-to-tr from-[#f4f7f9] dark:from-[#333333] to-white dark:to-[#1a1a1a] transition-transform duration-300 group-hover:scale-105" />
                 )}
                 {/* Always visible overlay for text clarity */}
                 <div className="absolute inset-0 bg-gradient-to-t from-[#1a1a1a]/90 via-[#1a1a1a]/40 to-transparent z-10" />
                 
-                <div className="absolute bottom-8 left-8 right-8 z-20 transform translate-y-4 group-hover:translate-y-0 transition-transform">
+                <div className="absolute bottom-8 left-8 right-8 z-20 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
                   <h2 className="text-3xl font-bold text-white mb-2 group-hover:text-[#239ea0] transition-colors">{project.title}</h2>
                   {project.description && <p className="text-gray-200 opacity-80 group-hover:opacity-100 transition-opacity line-clamp-2">{project.description}</p>}
                 </div>

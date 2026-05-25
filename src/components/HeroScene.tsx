@@ -74,7 +74,7 @@ export default function HeroScene({ className }: { className?: string }) {
   const sparkle2 = isDark ? "#888888" : "#1a1a1a";
 
   return (
-    <div className={`absolute inset-0 z-0 pointer-events-none transition-colors duration-1000 ${className || ''}`}>
+    <div className={`absolute inset-0 z-0 pointer-events-none transition-colors duration-300 ${className || ''}`}>
       <Canvas camera={{ position: [0, 2, 10], fov: 45 }}>
         <ambientLight intensity={1} />
         <ProceduralMountain color={mountainColor} opacity={mountainOpacity} />

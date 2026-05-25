@@ -29,7 +29,7 @@ export default async function ServicesPage() {
 
           return (
             <Link href={href} key={index} className="block group h-full">
-              <AnimatedText className="h-full p-10 bg-white dark:bg-[#1a1a1a] border border-gray-100 dark:border-white/5 rounded-3xl shadow-[0_10px_30px_rgba(0,0,0,0.03)] dark:shadow-none transition-all duration-300 group-hover:border-[#239ea0]/30 group-hover:shadow-[0_20px_50px_rgba(35,158,160,0.1)] dark:group-hover:shadow-[0_20px_50px_rgba(35,158,160,0.15)] group-hover:-translate-y-2 flex flex-col items-start">
+              <AnimatedText className="h-full p-10 bg-white dark:bg-[#1a1a1a] border border-gray-100 dark:border-white/5 rounded-3xl shadow-[0_10px_30px_rgba(0,0,0,0.03)] dark:shadow-none transition-[transform,box-shadow,border-color] duration-300 group-hover:border-[#239ea0]/30 group-hover:shadow-[0_20px_50px_rgba(35,158,160,0.1)] dark:group-hover:shadow-[0_20px_50px_rgba(35,158,160,0.15)] group-hover:-translate-y-2 flex flex-col items-start">
                 <div className="text-[#239ea0] opacity-80 group-hover:opacity-100 group-hover:scale-110 transition-transform origin-left mb-6">
                   <IconComponent size={48} strokeWidth={1.5} />
                 </div>

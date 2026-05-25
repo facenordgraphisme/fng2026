@@ -21,7 +21,7 @@ export default async function RecentPosts() {
             </AnimatedText>
           </div>
           <AnimatedText effect="fade-up" delay={0.2}>
-            <Link href="/blog" className="hidden md:inline-flex items-center gap-2 px-8 py-3 bg-[#f4f7f9] dark:bg-[#111111] text-[#1a1a1a] dark:text-white font-bold rounded-full hover:bg-[#239ea0] hover:text-white dark:hover:bg-[#239ea0] transition-all group shadow-sm">
+            <Link href="/blog" className="hidden md:inline-flex items-center gap-2 px-8 py-3 bg-[#f4f7f9] dark:bg-[#111111] text-[#1a1a1a] dark:text-white font-bold rounded-full hover:bg-[#239ea0] hover:text-white dark:hover:bg-[#239ea0] transition-[background-color,color] group shadow-sm">
               Voir tous les articles
               <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5 transition-transform group-hover:translate-x-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14" /><path d="m12 5 7 7-7 7" /></svg>
             </Link>
@@ -38,13 +38,13 @@ export default async function RecentPosts() {
 
             return (
               <Link href={`/blog/${post.slug.current}`} key={post._id} className="group">
-                <AnimatedText effect="fade-up" delay={i * 0.1} className="h-full bg-white dark:bg-[#1a1a1a] p-5 rounded-[2rem] shadow-sm hover:shadow-[0_20px_50px_rgba(35,158,160,0.1)] transition-all duration-500 border border-transparent hover:border-[#239ea0]/10 flex flex-col">
+                <AnimatedText effect="fade-up" delay={i * 0.1} className="h-full bg-white dark:bg-[#1a1a1a] p-5 rounded-[2rem] shadow-sm hover:shadow-[0_20px_50px_rgba(35,158,160,0.1)] transition-[box-shadow,border-color] duration-300 border border-transparent hover:border-[#239ea0]/10 flex flex-col">
                   <div className="relative h-64 w-full rounded-[1.5rem] overflow-hidden mb-6 shadow-sm bg-gray-100 dark:bg-gray-800">
                     <Image 
                       src={post.mainImage?.url || "/assets/about-img1.png"} 
                       fill 
                       sizes="(max-width: 768px) 100vw, 33vw" 
-                      className="object-cover transition-transform duration-700 group-hover:scale-110" 
+                      className="object-cover transition-transform duration-300 group-hover:scale-110"
                       alt={post.title} 
                     />
                     <div className="absolute top-4 left-4">
@@ -65,7 +65,7 @@ export default async function RecentPosts() {
                   <div className="pt-6 px-2 mt-auto">
                     <div className="flex items-center text-[#1a1a1a] dark:text-white font-bold text-sm group-hover:text-[#239ea0] transition-colors">
                       Lire l'article
-                      <div className="ml-2 w-8 h-8 rounded-full bg-[#f4f7f9] dark:bg-[#111111] flex items-center justify-center group-hover:bg-[#239ea0] group-hover:text-white transition-all duration-300">
+                      <div className="ml-2 w-8 h-8 rounded-full bg-[#f4f7f9] dark:bg-[#111111] flex items-center justify-center group-hover:bg-[#239ea0] group-hover:text-white transition-[background-color,color] duration-200">
                         <svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4 transition-transform group-hover:translate-x-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14" /><path d="m12 5 7 7-7 7" /></svg>
                       </div>
                     </div>
@@ -77,7 +77,7 @@ export default async function RecentPosts() {
         </div>
 
         <div className="mt-12 text-center md:hidden">
-          <Link href="/blog" className="inline-flex items-center gap-2 px-10 py-4 bg-[#239ea0] text-white font-bold rounded-full hover:bg-[#1c8486] transition-all shadow-lg">
+          <Link href="/blog" className="inline-flex items-center gap-2 px-10 py-4 bg-[#239ea0] text-white font-bold rounded-full hover:bg-[#1c8486] transition-[background-color] shadow-lg">
             Voir tous les articles
             <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14" /><path d="m12 5 7 7-7 7" /></svg>
           </Link>

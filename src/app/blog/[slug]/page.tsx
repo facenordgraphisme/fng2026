@@ -106,6 +106,57 @@ const renderBlock = (block: any, index: number) => {
     );
   }
 
+  if (block._type === 'list') {
+    const Tag = block.listItem === 'bullet' ? 'ul' : 'ol';
+    return (
+      <Tag key={index} className={`mb-10 space-y-4 ${block.listItem === 'bullet' ? 'list-disc ml-8' : 'list-decimal ml-8'}`}>
+        {block.items.map((item: any, i: number) => (
+          <li key={item._key || i} className="text-[#444] text-lg leading-[1.8] pl-2">
+            {renderInline(item)}
+          </li>
+        ))}
+      </Tag>
+    );
+  }
+
+  if (block._type === 'toc') {
+    return (
+      <div key={index} className="bg-[#f9fafb] border border-[#e5e7eb] rounded-xl p-6 md:p-8 my-10">
+        <strong className="block text-[#1a1a1a] text-sm md:text-base font-bold uppercase tracking-wider mb-4">
+          {block.title || 'Sommaire'}
+        </strong>
+        <ol className="list-decimal ml-6 space-y-2">
+          {block.items?.map((item: any, i: number) => (
+            <li key={i} className="text-[#444] text-sm md:text-base">
+              <a href={`#${item.anchor}`} className="text-[#239ea0] hover:underline transition-colors">
+                {item.text}
+              </a>
+            </li>
+          ))}
+        </ol>
+      </div>
+    );
+  }
+
+  if (block._type === 'spokeCard') {
+    return (
+      <div key={index} className="border-2 border-[#e8f5f5] rounded-2xl p-6 md:p-8 my-10 bg-white shadow-sm hover:shadow-md transition-shadow">
+        {block.badge && (
+          <div className="text-[10px] md:text-xs font-bold uppercase tracking-[0.1em] text-[#239ea0] mb-2">
+            {block.badge}
+          </div>
+        )}
+        {block.title && <h3 className="text-xl md:text-2xl font-bold text-[#1a1a1a] mb-3">{block.title}</h3>}
+        {block.description && <p className="text-[#666] text-sm md:text-base mb-6 leading-relaxed">{block.description}</p>}
+        {block.linkUrl && (
+          <Link href={block.linkUrl} className="text-[#239ea0] font-bold text-sm md:text-base hover:underline inline-flex items-center gap-1">
+            {block.linkText || 'En savoir plus'} →
+          </Link>
+        )}
+      </div>
+    );
+  }
+
   if (block._type === 'faq') {
     const { title, items } = block;
     if (!items || items.length === 0) return null;
@@ -169,7 +220,28 @@ const renderBlock = (block: any, index: number) => {
     case 'h3':
       return <h3 key={index} className="text-2xl font-bold mt-12 mb-6 text-[#1a1a1a]">{renderInline(block)}</h3>;
     case 'blockquote':
-      return <blockquote key={index} className="border-l-4 border-[#239ea0] pl-6 my-10 italic text-2xl font-medium text-[#1a1a1a]/80 bg-[#f4f7f9] py-8 rounded-r-2xl shadow-sm">{renderInline(block)}</blockquote>;
+      return (
+        <blockquote key={index} className="border-l-4 border-[#239ea0] pl-6 md:pl-8 my-10 bg-[#f4f7f9] py-8 rounded-r-2xl shadow-sm italic text-[#333] text-lg md:text-xl leading-relaxed">
+          {renderInline(block)}
+        </blockquote>
+      );
+    case 'capsule':
+      return (
+        <div key={index} className="bg-[#f9fafb] border border-[#e5e7eb] rounded-2xl p-6 md:p-8 my-10 italic text-[#555] text-base md:text-lg leading-relaxed shadow-sm">
+          {renderInline(block)}
+        </div>
+      );
+    case 'citation':
+      return (
+        <div key={index} className="bg-[#1a1a1a] text-white p-8 md:p-12 rounded-[32px] my-12 relative overflow-hidden group shadow-xl">
+          <div className="absolute top-0 right-0 p-8 opacity-10 group-hover:opacity-20 transition-opacity">
+            <svg width="60" height="60" viewBox="0 0 24 24" fill="currentColor"><path d="M14.017 21L14.017 18C14.017 16.8954 14.9124 16 16.017 16H19.017C19.5693 16 20.017 15.5523 20.017 15V9C20.017 8.44772 19.5693 8 19.017 8H15.017C14.4647 8 14.017 8.44772 14.017 9V12C14.017 12.5523 13.5693 13 13.017 13H11.017C10.4647 13 10.017 12.5523 10.017 12V9C10.017 7.89543 10.9124 7 12.017 7H19.017C20.1216 7 21.017 7.89543 21.017 9V15C21.017 17.7614 18.7784 20 16.017 20H14.017V21ZM3.017 21L3.017 18C3.017 16.8954 3.91243 16 5.017 16H8.017C8.56928 16 9.017 15.5523 9.017 15V9C9.017 8.44772 8.56928 8 8.017 8H4.017C3.46472 8 3.017 8.44772 3.017 9V12C3.017 12.5523 2.56928 13 2.017 13H0.017C-0.535279 13 -1.017 12.5523 -1.017 12V9C-1.017 7.89543 -0.121571 7 0.983 7H8.017C9.12157 7 10.017 7.89543 10.017 9V15C10.017 17.7614 7.77843 20 5.017 20H3.017V21Z" /></svg>
+          </div>
+          <p className="text-white text-xl md:text-2xl font-medium leading-relaxed relative z-10 m-0">
+            {renderInline(block)}
+          </p>
+        </div>
+      );
     case 'normal':
     default:
       if (!plainText.trim()) return <br key={index} />;
@@ -292,7 +364,20 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
           <AnimatedText effect="fade-up" delay={0.4}>
             <div className="prose prose-lg max-w-none prose-headings:text-[#1a1a1a] prose-a:text-[#239ea0] hover:prose-a:text-[#1c8486] prose-img:rounded-3xl">
               {post.body && Array.isArray(post.body) 
-                ? post.body.map((block: any, i: number) => renderBlock(block, i))
+                ? (() => {
+                    const groupedBody = post.body.reduce((acc: any[], block: any) => {
+                      const lastBlock = acc[acc.length - 1];
+                      if (block.listItem && lastBlock && lastBlock._type === 'list' && lastBlock.listItem === block.listItem) {
+                        lastBlock.items.push(block);
+                      } else if (block.listItem) {
+                        acc.push({ _type: 'list', listItem: block.listItem, items: [block] });
+                      } else {
+                        acc.push(block);
+                      }
+                      return acc;
+                    }, []);
+                    return groupedBody.map((block: any, i: number) => renderBlock(block, i));
+                  })()
                 : <p className="text-[#444] text-xl leading-relaxed">{post.excerpt}</p>
               }
             </div>

@@ -149,7 +149,7 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
         <div className="max-w-6xl mx-auto px-6 mt-0 md:-mt-20 relative z-20">
           <AnimatedText effect="zoom-in" delay={0.35} className="relative w-full h-[400px] md:h-[600px] rounded-[40px] overflow-hidden shadow-2xl border border-gray-100 dark:border-white/5 bg-gray-100 dark:bg-gray-800">
             <div className="absolute inset-0 bg-black/5 mix-blend-overlay z-10 pointer-events-none" />
-            <Image src={project.mainImage.url} alt={`Création du site internet ${project.title} dans les Hautes-Alpes`} fill sizes="(max-width: 1280px) 100vw, 1280px" className="object-cover hover:scale-105 transition-transform duration-1000" />
+            <Image src={project.mainImage.url} alt={`Création du site internet ${project.title} dans les Hautes-Alpes`} fill sizes="(max-width: 1280px) 100vw, 1280px" className="object-cover hover:scale-105 transition-transform duration-300" />
           </AnimatedText>
         </div>
       )}
@@ -180,7 +180,7 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
                   if (!img.url) return null;
                   return (
                     <AnimatedText key={i} effect="fade-up" delay={i * 0.15} className={`relative w-full rounded-[32px] overflow-hidden shadow-xl border border-gray-100 dark:border-white/5 bg-gray-100 dark:bg-gray-800 ${i === 0 && project.gallery.length % 2 !== 0 ? 'md:col-span-2 h-[400px] md:h-[600px]' : 'h-[300px] md:h-[450px]'}`}>
-                      <Image src={img.url} alt={`Aperçu du projet web ${project.title} Hautes-Alpes - Vue ${i+1}`} fill sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 600px" className="object-cover hover:scale-105 transition-transform duration-1000" />
+                      <Image src={img.url} alt={`Aperçu du projet web ${project.title} Hautes-Alpes - Vue ${i+1}`} fill sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 600px" className="object-cover hover:scale-105 transition-transform duration-300" />
                     </AnimatedText>
                   )
                })}
@@ -196,7 +196,7 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
            <p className="text-lg text-[#666666] dark:text-[#a1a1aa] mb-10 max-w-2xl mx-auto relative z-10 leading-relaxed">
              Contactez-moi pour discuter de vos besoins. Nous construirons ensemble la solution idéale pour votre entreprise.
            </p>
-           <Link href="/contact" className="relative z-10 inline-block px-10 py-5 bg-[#239ea0] text-white font-bold text-lg rounded-xl hover:bg-[#1c8486] transition-all shadow-[0_10px_30px_rgba(35,158,160,0.3)] hover:-translate-y-1">
+           <Link href="/contact" className="relative z-10 inline-block px-10 py-5 bg-[#239ea0] text-white font-bold text-lg rounded-xl hover:bg-[#1c8486] transition-[background-color,transform] shadow-[0_10px_30px_rgba(35,158,160,0.3)] hover:-translate-y-1 active:translate-y-0">
              Démarrer un projet
            </Link>
         </AnimatedText>

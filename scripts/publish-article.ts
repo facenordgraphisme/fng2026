@@ -47,24 +47,62 @@ async function fetchImage(url: string) {
   }
 }
 
+function parseInline(html: string, nextKey: () => string) {
+    const children: any[] = [];
+    const markDefs: any[] = [];
+    
+    // Split by tags to preserve text order and formatting
+    const parts = html.split(/(<a[^>]*>[\s\S]*?<\/a>|<strong[^>]*>[\s\S]*?<\/strong>|<b[^>]*>[\s\S]*?<\/b>|<em[^>]*>[\s\S]*?<\/em>|<i[^>]*>[\s\S]*?<\/i>)/g);
+    
+    for (const part of parts) {
+      if (!part) continue;
+      
+      if (part.startsWith('<a')) {
+        const hrefMatch = part.match(/href="([^"]+)"/);
+        const href = hrefMatch ? hrefMatch[1] : '';
+        const inner = part.replace(/<[^>]+>/g, '').replace(/&nbsp;/g, ' ');
+        const key = nextKey();
+        markDefs.push({ _type: 'link', _key: key, href });
+        children.push({ _type: 'span', _key: nextKey(), text: inner, marks: [key] });
+      } else if (part.startsWith('<strong') || part.startsWith('<b')) {
+        const inner = part.replace(/<[^>]+>/g, '').replace(/&nbsp;/g, ' ');
+        children.push({ _type: 'span', _key: nextKey(), text: inner, marks: ['strong'] });
+      } else if (part.startsWith('<em') || part.startsWith('<i')) {
+        const inner = part.replace(/<[^>]+>/g, '').replace(/&nbsp;/g, ' ');
+        children.push({ _type: 'span', _key: nextKey(), text: inner, marks: ['em'] });
+      } else {
+        children.push({ _type: 'span', _key: nextKey(), text: part.replace(/<[^>]+>/g, '').replace(/&nbsp;/g, ' '), marks: [] });
+      }
+    }
+    
+    if (children.length === 0 && html) {
+        children.push({ _type: 'span', _key: nextKey(), text: html.replace(/<[^>]+>/g, '').replace(/&nbsp;/g, ' '), marks: [] });
+    }
+
+    return { children, markDefs };
+}
+
 async function publish() {
-  const filePath = path.join(process.cwd(), 'briefs', 'balises-title-meta-pme.html');
+  const fileName = 'seo-local-hautes-alpes-guide-complet.html';
+  const filePath = path.join(process.cwd(), 'briefs', fileName);
   const html = fs.readFileSync(filePath, 'utf-8');
 
-  // Basic extraction
-  const titleMatch = html.match(/<title>(.*?)<\/title>/);
-  const seoTitle = titleMatch ? titleMatch[1].split(' | ')[0] : 'Balises title et méta description : guide PME Hautes-Alpes';
+  // Metadata extraction from comments
+  const metaComment = html.match(/<!--([\s\S]*?)-->/);
+  const metaText = metaComment ? metaComment[1] : '';
   
-  const descMatch = html.match(/<meta name="description"\s+content="(.*?)"/);
-  const seoDescription = descMatch ? descMatch[1] : '';
+  const getMeta = (key: string) => {
+    const match = metaText.match(new RegExp(`${key}\\s*:\\s*(.*)`));
+    return match ? match[1].trim() : '';
+  };
 
-  const h1Match = html.match(/<h1>(.*?)<\/h1>/);
-  const title = h1Match ? h1Match[1] : seoTitle;
-
-  const slug = 'balises-title-meta-description-pme-hautes-alpes';
-
-  const ogImageMatch = html.match(/<meta property="og:image" content="(.*?)"/);
-  const mainImageUrl = ogImageMatch ? ogImageMatch[1] : 'https://images.unsplash.com/photo-1432888498266-38ffec3eaf0a?fm=jpg&q=80&w=1200&h=630&fit=crop';
+  const title = getMeta('title') || 'SEO local dans les Hautes-Alpes : le guide complet pour artisans et PME du 05';
+  const slug = getMeta('slug') || 'seo-local-hautes-alpes-artisans-pme';
+  const publishedAt = getMeta('publishedAt') ? new Date(getMeta('publishedAt')).toISOString() : new Date().toISOString();
+  const seoTitle = getMeta('seoTitle').split('(')[0].trim() || title;
+  const seoDescription = getMeta('seoDescription').split('(')[0].trim();
+  const mainImageUrl = getMeta('mainImage');
+  const mainImageAlt = getMeta('mainImageAlt');
 
   // Upload main image
   let mainImageAssetId = null;
@@ -80,56 +118,116 @@ async function publish() {
   let keyCount = 0;
   const nextKey = () => `k${++keyCount}`;
 
-  const block = (text: string, style = 'normal', listItem?: string, level?: number) => ({
-    _type: 'block',
-    _key: nextKey(),
-    style,
-    markDefs: [],
-    children: [{ _type: 'span', _key: nextKey(), text, marks: [] }],
-    ...(listItem ? { listItem, level: level || 1 } : {}),
-  });
+  const block = (innerHtml: string, style = 'normal', listItem?: string, level?: number) => {
+    const { children, markDefs } = parseInline(innerHtml, nextKey);
+    return {
+        _type: 'block',
+        _key: nextKey(),
+        style,
+        markDefs,
+        children,
+        ...(listItem ? { listItem, level: level || 1 } : {}),
+    };
+  };
 
-  const articleMatch = html.match(/<article[^>]*>([\s\S]*?)<\/article>/);
-  if (!articleMatch) return;
+  const articleMatch = html.match(/<article[^>]*>([\s\S]*?)<\/article>/) || [null, html];
   const content = articleMatch[1];
 
-  const tags = content.match(/<(p|h2|h3|ul|ol|div|figure|section)[^>]*>[\s\S]*?<\/\1>/g) || [];
+  // Improved block extraction to handle nested divs in spoke-card
+  const tags: string[] = [];
+  let remaining = content;
+  while (remaining) {
+      const match = remaining.match(/<(p|h2|h3|ul|ol|figure|section|blockquote|div)[^>]*>/);
+      if (!match) break;
+      
+      const tag = match[1];
+      const startIndex = match.index!;
+      remaining = remaining.substring(startIndex);
+      
+      let endIndex = -1;
+      if (tag === 'div') {
+          const openingTag = match[0];
+          if (openingTag.includes('class="spoke-card"')) {
+              // Spoke card has one nested div (.badge), so we need the second </div>
+              const firstDivEnd = remaining.indexOf('</div>');
+              endIndex = remaining.indexOf('</div>', firstDivEnd + 6) + 6;
+          } else {
+              // Simple div (capsule, toc, tldr, etc.)
+              endIndex = remaining.indexOf('</div>') + 6;
+          }
+      } else {
+          const closingTag = `</${tag}>`;
+          endIndex = remaining.indexOf(closingTag) + closingTag.length;
+      }
+      
+      if (endIndex > 0) {
+          tags.push(remaining.substring(0, endIndex));
+          remaining = remaining.substring(endIndex);
+      } else {
+          remaining = remaining.substring(match[0].length);
+      }
+  }
 
   for (const tag of tags) {
     if (tag.startsWith('<h2')) {
-      const text = tag.replace(/<[^>]+>/g, '').trim();
-      if (text === 'Questions fréquentes sur les balises title et méta descriptions') continue;
-      body.push(block(text, 'h2'));
+      const inner = tag.match(/<h2[^>]*>([\s\S]*?)<\/h2>/)?.[1] || '';
+      body.push(block(inner, 'h2'));
     } else if (tag.startsWith('<h3')) {
-      const text = tag.replace(/<[^>]+>/g, '').trim();
-      body.push(block(text, 'h3'));
+      const inner = tag.match(/<h3[^>]*>([\s\S]*?)<\/h3>/)?.[1] || '';
+      body.push(block(inner, 'h3'));
     } else if (tag.startsWith('<p')) {
       if (tag.includes('article-meta')) continue;
-      if (tag.includes('Article rédigé par')) continue;
-      const text = tag.replace(/<[^>]+>/g, '').trim();
-      if (text) body.push(block(text, 'normal'));
+      if (tag.includes('Par <strong>')) continue;
+      const inner = tag.match(/<p[^>]*>([\s\S]*?)<\/p>/)?.[1] || '';
+      if (inner.trim()) body.push(block(inner, 'normal'));
     } else if (tag.startsWith('<ul') || tag.startsWith('<ol')) {
       const isBullet = tag.startsWith('<ul');
       const items = tag.match(/<li>([\s\S]*?)<\/li>/g) || [];
       for (const item of items) {
-        const text = item.replace(/<[^>]+>/g, '').trim();
-        body.push(block(text, 'normal', isBullet ? 'bullet' : 'number'));
+        const inner = item.match(/<li>([\s\S]*?)<\/li>/)?.[1] || '';
+        body.push(block(inner, 'normal', isBullet ? 'bullet' : 'number'));
       }
-    } else if (tag.startsWith('<div class="box-tldr"')) {
+    } else if (tag.includes('class="tldr"') || tag.includes('class="box-tldr"')) {
       body.push(block('Ce qu\'il faut retenir', 'h3'));
       const items = tag.match(/<li>([\s\S]*?)<\/li>/g) || [];
       for (const item of items) {
-        const text = item.replace(/<[^>]+>/g, '').trim();
-        body.push(block(text, 'normal', 'bullet'));
+        const inner = item.match(/<li>([\s\S]*?)<\/li>/)?.[1] || '';
+        body.push(block(inner, 'normal', 'bullet'));
       }
-    } else if (tag.startsWith('<div class="citation-capsule"') || 
-               tag.startsWith('<div class="box-experience"') || 
-               tag.startsWith('<div class="box-insight"') || 
-               tag.startsWith('<div class="box-tip"')) {
-      const text = tag.replace(/<[^>]+>/g, '').trim();
-      body.push(block(text, 'blockquote'));
-    } else if (tag.startsWith('<figure') || tag.startsWith('<div class="chart-wrap"')) {
-      // Check for SVG first
+    } else if (tag.includes('class="toc"')) {
+        const items: any[] = [];
+        const liMatches = tag.match(/<li><a href="#([^"]+)">([\s\S]*?)<\/a><\/li>/g) || [];
+        for (const li of liMatches) {
+            const m = li.match(/href="#([^"]+)">([\s\S]*?)<\/a>/);
+            if (m) {
+                items.push({ text: m[2].replace(/<[^>]+>/g, '').trim(), anchor: m[1] });
+            }
+        }
+        body.push({ _type: 'toc', _key: nextKey(), title: 'Sommaire', items });
+    } else if (tag.includes('class="spoke-card"')) {
+        const badge = tag.match(/<div class="badge">([\s\S]*?)<\/div>/)?.[1] || '';
+        const spokeTitle = tag.match(/<h3>([\s\S]*?)<\/h3>/)?.[1] || '';
+        const spokeP = tag.match(/<p>([\s\S]*?)<\/p>/)?.[1] || '';
+        const linkMatch = tag.match(/<a href="([^"]+)"[^>]*>([\s\S]*?)<\/a>/);
+        body.push({
+            _type: 'spokeCard',
+            _key: nextKey(),
+            badge: badge.replace(/<[^>]+>/g, '').trim(),
+            title: spokeTitle.replace(/<[^>]+>/g, '').trim(),
+            description: spokeP.replace(/<[^>]+>/g, '').trim(),
+            linkUrl: linkMatch ? linkMatch[1] : '',
+            linkText: linkMatch ? linkMatch[2].replace(/<[^>]+>/g, '').replace('→', '').trim() : 'En savoir plus',
+        });
+    } else if (tag.includes('class="capsule"')) {
+        const inner = tag.substring(tag.indexOf('>') + 1, tag.lastIndexOf('</div>')).trim();
+        body.push(block(inner, 'capsule'));
+    } else if (tag.includes('class="citation-capsule"')) {
+        const inner = tag.substring(tag.indexOf('>') + 1, tag.lastIndexOf('</div>')).trim();
+        body.push(block(inner, 'citation'));
+    } else if (tag.startsWith('<blockquote')) {
+      const inner = tag.replace(/<blockquote[^>]*>|<\/blockquote>/g, '').trim();
+      body.push(block(inner, 'blockquote'));
+    } else if (tag.startsWith('<figure') || tag.includes('class="chart-wrap"')) {
       const svgMatch = tag.match(/<svg[\s\S]*?<\/svg>/);
       const imgMatch = tag.match(/<img[^>]+src="(.*?)"[^>]*alt="(.*?)"/);
       const capMatch = tag.match(/<figcaption>(.*?)<\/figcaption>/);
@@ -144,7 +242,7 @@ async function publish() {
             _key: nextKey(),
             asset: { _type: 'reference', _ref: assetId },
             alt: ariaLabel || 'Graphique SVG',
-            caption: capMatch ? capMatch[1] : '',
+            caption: capMatch ? capMatch[1].replace(/<[^>]+>/g, '') : '',
           });
         }
       } else if (imgMatch) {
@@ -160,24 +258,25 @@ async function publish() {
           _key: nextKey(),
           ...(assetId ? { asset: { _type: 'reference', _ref: assetId } } : { externalUrl: imgUrl }),
           alt: imgMatch[2],
-          caption: capMatch ? capMatch[1] : '',
+          caption: capMatch ? capMatch[1].replace(/<[^>]+>/g, '') : '',
         });
       }
     } else if (tag.startsWith('<section class="faq-section"')) {
-      const faqItems = tag.match(/<div class="faq-item">([\s\S]*?)<\/div>/g) || [];
+      const faqItems = tag.match(/<div class="faq-item">([\s\S]*?)<\/div>/g) || 
+                       tag.match(/<details class="faq">([\s\S]*?)<\/details>/g) || [];
       const items = faqItems.map(f => {
-        const qMatch = f.match(/<p class="faq-question">(.*?)<\/p>/);
-        const aMatch = f.match(/<p>([\s\S]*?)<\/p>/);
+        const qMatch = f.match(/<(?:p class="faq-question"|summary)[^>]*>([\s\S]*?)<\/(?:p|summary)>/);
+        const aMatch = f.match(/<(?:p|div class="ans")[^>]*>([\s\S]*?)<\/(?:p|div)>/);
         return {
           _key: nextKey(),
-          question: qMatch ? qMatch[1].trim() : '',
+          question: qMatch ? qMatch[1].replace(/<[^>]+>/g, '').trim() : '',
           answer: aMatch ? aMatch[1].replace(/<[^>]+>/g, '').trim() : '',
         };
       });
       body.push({
         _type: 'faq',
         _key: nextKey(),
-        title: 'Questions fréquentes sur les balises title et méta descriptions',
+        title: 'Questions fréquentes',
         items,
       });
     }
@@ -185,21 +284,21 @@ async function publish() {
 
   const doc = {
     _type: 'post',
-    _id: 'post-balises-title-meta-pme',
+    _id: `post-${slug}`,
     title,
     slug: { _type: 'slug', current: slug },
-    publishedAt: new Date().toISOString(),
+    publishedAt,
     seoTitle,
     seoDescription,
     mainImage: {
       _type: 'image',
       ...(mainImageAssetId ? { asset: { _type: 'reference', _ref: mainImageAssetId } } : { externalUrl: mainImageUrl }),
-      alt: title,
+      alt: mainImageAlt || title,
     },
     body,
   };
 
-  console.log('Publishing document with assets...');
+  console.log('Publishing document:', doc.title);
   try {
     const result = await client.createOrReplace(doc);
     console.log('Document published successfully!', result._id);
