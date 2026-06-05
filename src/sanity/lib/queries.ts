@@ -59,13 +59,13 @@ export const projectBySlugQuery = groq`*[_type == "project" && slug.current == $
 }`;
 
 export const postQuery = groq`*[_type == "post"] | order(publishedAt desc) {
-  _id, title, slug, mainImage { "url": asset->url }, publishedAt, excerpt
+  _id, title, slug, mainImage { "url": select(defined(asset) => asset->url, externalUrl), alt }, publishedAt, excerpt
 }`;
 
 export const postBySlugQuery = groq`*[_type == "post" && slug.current == $slug][0] {
   _id, title, slug,
   mainImage { "url": select(defined(asset) => asset->url, externalUrl), alt, caption },
-  publishedAt,
+  publishedAt, lastUpdated,
   body[] {
     ...,
     _type == "image" => {

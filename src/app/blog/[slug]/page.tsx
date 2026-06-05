@@ -14,9 +14,10 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     post = await getPostBySlug(resolvedParams.slug);
   } catch (err) {}
   
-  if (!post) return { title: "Article non trouvé" };
-  
-  const title = post.seoTitle || post.title;
+  if (!post) return { title: { absolute: "Article non trouvé | Face Nord Graphisme" } };
+
+  const rawTitle = post.seoTitle || post.title;
+  const title = { absolute: `${rawTitle} | Face Nord Graphisme` };
   const description = post.seoDescription || `Lisez notre article sur le blog de Face Nord Graphisme, agence web dans les Hautes-Alpes (05).`;
   const url = `https://www.facenordgraphisme.fr/blog/${resolvedParams.slug}`;
   const mainImage = post.mainImage?.url || "/assets/home_intro.png";
@@ -277,7 +278,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
     "description": post.seoDescription,
     "image": post.mainImage?.url ? [post.mainImage.url] : [],
     "datePublished": post.publishedAt || new Date().toISOString(),
-    "dateModified": post.publishedAt || new Date().toISOString(),
+    "dateModified": post.lastUpdated || post.publishedAt || new Date().toISOString(),
     "author": [{
       "@type": "Person",
       "@id": "https://www.facenordgraphisme.fr/a-propos#fxpin",

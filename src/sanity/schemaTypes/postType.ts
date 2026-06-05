@@ -44,6 +44,19 @@ export const postType = defineType({
       type: 'datetime',
     }),
     defineField({
+      name: 'lastUpdated',
+      title: 'Dernière mise à jour',
+      type: 'datetime',
+      description: 'À remplir lors d\'une mise à jour du contenu (pour dateModified en schema.org).',
+    }),
+    defineField({
+      name: 'excerpt',
+      title: 'Extrait',
+      type: 'text',
+      rows: 3,
+      description: 'Résumé court affiché dans la liste des articles (max 160 caractères).',
+    }),
+    defineField({
       name: 'body',
       title: 'Body',
       type: 'array',
