@@ -3,7 +3,7 @@ import ServicePageLayout, { type ServicePageData } from "@/components/ServicePag
 import { Brain, MessageSquare, FileText, Search, Globe, TrendingUp } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Référencement IA — GEO & AI Overviews | Face Nord Graphisme Hautes-Alpes",
+  title: "Référencement IA — GEO & AI Overviews | Hautes-Alpes",
   description: "Optimisez votre visibilité dans ChatGPT, Perplexity et les AI Overviews de Google. Stratégie GEO (Generative Engine Optimization) pour artisans et PME des Hautes-Alpes. Devis gratuit.",
   alternates: { canonical: "https://www.facenordgraphisme.fr/referencement-ia" },
   openGraph: { title: "Référencement IA & GEO Hautes-Alpes | Face Nord Graphisme", description: "Soyez cité par ChatGPT, Perplexity et Google AI Overviews. Stratégie GEO + contenu structuré pour les PME du 05." },
@@ -13,6 +13,8 @@ const data: ServicePageData = {
   badge: "Référencement IA",
   headline: "Référencement IA & GEO pour les Hautes-Alpes",
   intro: "En 2026, 30 à 40 % des recherches d'information passent par un moteur IA avant Google. Être cité par ChatGPT, Perplexity ou les AI Overviews de Google, c'est le nouveau Local Pack. Stratégie GEO (Generative Engine Optimization) sur-mesure pour les entreprises du 05.",
+  path: "/referencement-ia",
+  breadcrumbLabel: "Référencement IA",
   heroPhotoId: "photo-1677442135703-1787eea5ce01",
   heroPhotoAlt: "Interface de chat avec une IA affichant une réponse sur les meilleurs prestataires locaux",
   pricingFrom: "sur devis",

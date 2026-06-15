@@ -126,20 +126,22 @@ export default function Preloader() {
       {/* Typography layer */}
       {!complete && (
         <div className="relative z-20 flex flex-col items-center justify-center gap-1 sm:gap-3 px-4 text-center">
-          <h1 
+          <div
             ref={text1}
+            aria-hidden="true"
             className="text-4xl sm:text-6xl md:text-8xl lg:text-9xl font-black text-white tracking-tighter uppercase"
             style={{ willChange: "transform, opacity, filter" }}
           >
             Face Nord
-          </h1>
-          <h2 
+          </div>
+          <div
             ref={text2}
+            aria-hidden="true"
             className="text-lg sm:text-xl md:text-3xl lg:text-4xl font-light text-[#239ea0] tracking-[0.3em] sm:tracking-[0.5em] uppercase sm:ml-2"
             style={{ willChange: "transform, opacity, filter" }}
           >
             Graphisme
-          </h2>
+          </div>
         </div>
       )}
     </div>

@@ -3,6 +3,16 @@ import AnimatedText from "@/components/AnimatedText";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
+import type { Metadata } from "next";
+
+export async function generateMetadata(): Promise<Metadata> {
+  const post = await getLegalBySlug('politique-de-confidentialite');
+  return {
+    title: post?.title || "Politique de Confidentialité",
+    description: "Politique de confidentialité de Face Nord Graphisme : traitement des données personnelles, cookies et droits RGPD des visiteurs de facenordgraphisme.fr.",
+    alternates: { canonical: "https://www.facenordgraphisme.fr/politique-de-confidentialite" },
+  };
+}
 
 // Portable text renderer tailored for legal pages
 const renderBlock = (block: any, index: number) => {

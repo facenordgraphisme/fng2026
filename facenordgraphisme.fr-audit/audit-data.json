@@ -1,0 +1,670 @@
+{
+  "summary": {
+    "health_score": 48,
+    "business_type": "Local Service Business (B2B professional services) — solo web design, e-commerce & SEO/GEO agency (Face Nord Graphisme, founder François-Xavier Pin) based in Puy-Sanières near Embrun, Hautes-Alpes (05), France. Monolingual French (fr-FR), Next.js 16 + Sanity CMS on Vercel.",
+    "scoring_methodology": "11 specialist categories, each weighted (see 'weight' field per category, sums to 100%). health_score = sum(score * weight). The skill's default 7-category table (Technical 22%, Content 23%, On-Page 20%, Schema 10%, Performance 10%, AI Search 10%, Images 5%) was adapted to the 11 categories actually produced for this site: Sitemap/Indexation was split out of Technical, On-Page issues are folded into Technical findings (#3/#4), Images was not separately audited (no dedicated image-SEO pass run), and Visual/UX, Local SEO, SXO, Topic Clusters and Backlinks were added per the orchestrator's business-type detection (Local Service business with an active blog/content strategy).",
+    "top_findings": [
+      {
+        "category": "Technical SEO",
+        "severity": "Critical",
+        "title": "/sitemap.xml returns HTTP 404 in production",
+        "impact": "Google Search Console cannot read the sitemap at all — robots.txt points to a dead URL. Blocks discovery of new blog posts/city pages outside the main nav."
+      },
+      {
+        "category": "Technical SEO",
+        "severity": "Critical",
+        "title": "7 pages have <link rel=\"canonical\"> pointing to the homepage instead of themselves",
+        "impact": "/portfolio, /blog, /a-propos, /contact, /faq, /mentions-legales, /politique-de-confidentialite all tell Google they are duplicates of the homepage — risk of non-indexing for 5 genuinely valuable pages."
+      },
+      {
+        "category": "Content Quality",
+        "severity": "Critical",
+        "title": "8 of 13 blog posts (62%) contain UTF-8 replacement-character (U+FFFD) corruption; 3 are fully unreadable",
+        "impact": "Three long-form posts (324/268/136 corrupted characters each) are unusable by human readers and AI citation engines — directly undermines the GEO content strategy."
+      },
+      {
+        "category": "Visual / Mobile UX",
+        "severity": "Critical",
+        "title": "Large black WebGL rendering artifacts cover the top of the mobile homepage, above the fold",
+        "impact": "The agency's own homepage looks visibly broken on mobile — the majority device for local-search traffic. Likely caused by a three.js canvas resize/devicePixelRatio bug (canvas reports 780x1688 vs CSS 390x844)."
+      },
+      {
+        "category": "Schema & Structured Data",
+        "severity": "Critical",
+        "title": "Duplicate, conflicting ProfessionalService schema on the homepage with a placeholder phone number (+33600000000) shipped sitewide",
+        "impact": "Two JSON-LD blocks share the same @id with conflicting data, and the fake phone number is the only telephone Google sees for the LocalBusiness entity on 38 pages."
+      }
+    ],
+    "quick_wins": [
+      {
+        "category": "Technical SEO",
+        "effort": "Low",
+        "title": "Strip the redundant \"| Face Nord Graphisme\" suffix from 6 page titles",
+        "benefit": "Fixes 82-102 char titles that get truncated in SERPs (creation-site-internet, refonte-ai-friendly, referencement-ia, and all 3 city pages)."
+      },
+      {
+        "category": "Technical SEO / Visual",
+        "effort": "Low",
+        "title": "Demote the sitewide duplicate \"Face Nord\" <h1> to a non-heading element",
+        "benefit": "One shared-component edit fixes a duplicate-H1 issue present on all 38 pages and recovers above-the-fold mobile space."
+      },
+      {
+        "category": "Technical SEO",
+        "effort": "Low",
+        "title": "Add missing security headers (X-Content-Type-Options, X-Frame-Options, Referrer-Policy, Permissions-Policy) via next.config/vercel.json",
+        "benefit": "5 of 6 recommended headers are currently absent — a single headers() config block fixes all of them."
+      },
+      {
+        "category": "Technical SEO / GEO",
+        "effort": "Low",
+        "title": "Move llms.txt into public/ so it stops 404ing",
+        "benefit": "Same routing root cause as the sitemap 404; fixing the precedence issue likely resolves both files at once."
+      },
+      {
+        "category": "Schema",
+        "effort": "Medium",
+        "title": "Deploy the already-written BlogPosting.inLanguage:\"fr-FR\" fix from locale-audit-report.md",
+        "benefit": "Code change exists locally (uncommitted) but is not live — a deploy alone closes this gap."
+      }
+    ]
+  },
+  "categories": [
+    {
+      "name": "Technical SEO",
+      "weight": 0.20,
+      "score": 34,
+      "what_works": [
+        "robots.txt is valid: Allow:/, Disallow:/studio/, declares the (broken) sitemap",
+        "HTTPS enforced sitewide with a strong 2-year HSTS policy",
+        "All 38 crawled URLs return clean 200s — no broken links or redirect chains",
+        "Clean, descriptive, hyphenated URL structure with no query params",
+        "Fully server-rendered HTML — all content present without JS execution",
+        "/studio/ (Sanity Studio) correctly excluded from crawling and the sitemap",
+        "Per-page robots meta consistently 'index, follow' on all indexable pages"
+      ],
+      "findings": [
+        {
+          "title": "/sitemap.xml returns HTTP 404 in production",
+          "severity": "Critical",
+          "description": "curl -sI returns 404 with X-Matched-Path: /[slug] — the catch-all dynamic route is intercepting the request instead of the sitemap.ts special-file route, which exists in the repo (uncommitted) but isn't being served.",
+          "recommendation": "Verify sitemap.ts builds and serves locally (next build / next start), resolve the routing-precedence conflict with the [slug] catch-all per this Next.js version's docs, deploy, and resubmit the sitemap in GSC."
+        },
+        {
+          "title": "7 pages have canonical pointing to the homepage instead of themselves",
+          "severity": "Critical",
+          "description": "/portfolio, /blog, /a-propos, /contact, /faq, /mentions-legales and /politique-de-confidentialite all emit <link rel=\"canonical\" href=\"https://www.facenordgraphisme.fr\">.",
+          "recommendation": "Fix the shared metadata helper so each route computes its own absolute canonical URL via alternates.canonical instead of hardcoding the base URL."
+        },
+        {
+          "title": "Every page renders two <h1> elements; the first is an identical sitewide duplicate",
+          "severity": "High",
+          "description": "All 38 pages emit a literal '<h1>Face Nord</h1>' from a shared hero/branding component, in addition to the page-specific h1.",
+          "recommendation": "Demote the 'Face Nord' branding element to a non-heading tag (div/span) so each page retains exactly one, page-specific h1."
+        },
+        {
+          "title": "Title tag double-suffix bug on 6 pages",
+          "severity": "High",
+          "description": "Root layout's title template '%s | Face Nord Graphisme' appends a second brand suffix to 6 page-level titles that already end in '| Face Nord Graphisme', producing 82-102 char titles (e.g. /referencement-ia is 102 chars).",
+          "recommendation": "Remove the redundant trailing '| Face Nord Graphisme' from the 6 affected page-level titles (creation-site-internet, refonte-ai-friendly, referencement-ia, and the 3 villes pages) so the template appends it only once."
+        },
+        {
+          "title": "Five of six recommended security headers are missing",
+          "severity": "High",
+          "description": "curl -sI shows only Strict-Transport-Security present. Content-Security-Policy, X-Frame-Options, X-Content-Type-Options, Referrer-Policy and Permissions-Policy are all absent.",
+          "recommendation": "Add a headers() block (next.config or vercel.json) for X-Content-Type-Options: nosniff, X-Frame-Options: SAMEORIGIN, Referrer-Policy: strict-origin-when-cross-origin, Permissions-Policy. Treat CSP as a separate, carefully-tested follow-up."
+        },
+        {
+          "title": "/llms.txt also returns 404 (same routing root cause)",
+          "severity": "Medium",
+          "description": "Served by the same [slug] catch-all (X-Matched-Path: /[slug]) — a static file under public/ is being shadowed by dynamic routing.",
+          "recommendation": "Place llms.txt under public/llms.txt and verify it serves with Content-Type: text/plain; if still shadowed, this confirms a sitewide static-file routing-precedence bug affecting both this and the sitemap."
+        },
+        {
+          "title": "Orphan duplicate page /refonte-ia-friendly is live, indexable, and absent from sitemap.ts",
+          "severity": "Medium",
+          "description": "Returns 200, index/follow, self-canonical, linked from homepage nav, but not in sitemap.ts's static routes — its near-duplicate /refonte-ai-friendly is.",
+          "recommendation": "Resolve per the Content Quality duplicate-content recommendation (merge + 301), then update sitemap.ts's static routes to match the surviving URL."
+        }
+      ]
+    },
+    {
+      "name": "Content Quality",
+      "weight": 0.20,
+      "score": 48,
+      "what_works": [
+        "/a-propos carries a genuine first-person founder bio with specific local-expertise narrative — strong E-E-A-T signal",
+        "All 7 service pages are 950-1,400 words — no thin-content risk on core commercial pages",
+        "All 3 city pages are 1,200-1,400 words with city-specific FAQ blocks",
+        "11 of 13 blog posts are 2,500-3,900 words — strong topical depth for the niche",
+        "FAQPage schema present on every sampled post and all city pages",
+        "Content reads as locally-specific, no generic AI-boilerplate filler detected"
+      ],
+      "findings": [
+        {
+          "title": "8 of 13 blog posts (62%) contain U+FFFD encoding corruption; 3 are fully unreadable",
+          "severity": "Critical",
+          "description": "Byte-level scan found U+FFFD counts of 324/268/136 (full-article, unreadable), 24/20 (partial-section), and 12/8/8 (title/meta only) across 8 posts. Likely caused by double-encoded content entered into Sanity.",
+          "recommendation": "Inspect the raw stored Sanity field for one corrupted post to determine if the data itself is corrupted (requires retyping/restoring from revision history) vs. a rendering bug. Fix the 3 fully-corrupted posts first, then verify with the same byte-level check returning 0 sitewide."
+        },
+        {
+          "title": "/refonte-ai-friendly and /refonte-ia-friendly are near-duplicate, cannibalizing pages",
+          "severity": "High",
+          "description": "Same search intent, 1,216 vs 421 words, different titles/schema; only one is in sitemap.ts.",
+          "recommendation": "Merge the best elements of both into one URL, 301-redirect the other, and update sitemap.ts."
+        },
+        {
+          "title": "Duplicate portfolio case-study content: reves-d-aventures vs reves-daventures",
+          "severity": "High",
+          "description": "Two separate Sanity project documents (288 vs 386 words) describe the same client project under different slugs.",
+          "recommendation": "Consolidate into one document (keep the 386-word version, trim its 109-char title), delete the other, and 301-redirect to the hyphen-consistent slug (reves-d-aventures, matching the other 5 portfolio slugs' pattern)."
+        },
+        {
+          "title": "No content freshness signal: all 13 blog posts have lastUpdated: null",
+          "severity": "Medium",
+          "description": "sitemap.ts falls back to publishedAt || new Date() for lastModified, so the sitemap never reflects genuine content updates.",
+          "recommendation": "Populate lastUpdated in Sanity on every future content edit, starting with the mojibake fixes; establish a periodic freshness-review cadence per blog-strategy.md."
+        },
+        {
+          "title": "Portfolio case studies are thin relative to the rest of the site",
+          "severity": "Low",
+          "description": "6 portfolio pages are 264-386 words vs. 950+ words for every other content type.",
+          "recommendation": "Add 2-3 paragraphs per portfolio entry covering the client's problem, solution delivered, and outcome — mirroring the blog's case-study structure."
+        }
+      ]
+    },
+    {
+      "name": "Sitemap & Indexation",
+      "weight": 0.08,
+      "score": 22,
+      "what_works": [
+        "sitemap.ts logic correctly covers 37 of 38 crawled URLs (static, city, project and post routes via Sanity)",
+        "No stale/hardcoded slugs found — city, project and post routes are all CMS-driven",
+        "Location-page quality gates (30+/50+ page thresholds) not yet triggered at 3 city pages"
+      ],
+      "findings": [
+        {
+          "title": "/sitemap.xml returns HTTP 404 — sitemap is completely unreachable",
+          "severity": "Critical",
+          "description": "Same root cause as Technical Finding #1 — covered in depth there.",
+          "recommendation": "See Technical SEO category — fix the routing/build issue and deploy."
+        },
+        {
+          "title": "robots.txt points to the broken sitemap URL",
+          "severity": "High",
+          "description": "The Sitemap: directive in robots.txt references the 404ing /sitemap.xml.",
+          "recommendation": "No separate action needed once the sitemap itself is fixed and deployed — robots.txt's reference is otherwise correct."
+        },
+        {
+          "title": "Duplicate Sanity project documents will produce duplicate/erroneous <url> entries",
+          "severity": "High",
+          "description": "9 project docs exist for 5 unique projects (act-event-pro, gaec-des-valentins and gaudineto each have 2 identical-slug duplicates; Rêves d'Aventures has 2 different-slug docs).",
+          "recommendation": "Delete the 4 redundant duplicate documents and consolidate the Rêves d'Aventures pair (see Content Quality finding) so the sitemap lists ~37 distinct URLs, not ~41."
+        },
+        {
+          "title": "/refonte-ia-friendly is a live, indexable orphan page absent from sitemap.ts",
+          "severity": "High",
+          "description": "Covered in depth under Technical SEO and Content Quality.",
+          "recommendation": "Resolve the duplicate-page decision once, then update sitemap.ts's static routes."
+        },
+        {
+          "title": "Static/city/project routes all use lastModified: new Date() — no real dates",
+          "severity": "Low",
+          "description": "Every non-post route reports the build/audit date as its lastModified value, which is meaningless to crawlers.",
+          "recommendation": "Use real _updatedAt timestamps from Sanity for city/project routes where available; for purely static routes, omit lastModified or set it to the last actual code-deploy date."
+        }
+      ]
+    },
+    {
+      "name": "Schema & Structured Data",
+      "weight": 0.10,
+      "score": 68,
+      "what_works": [
+        "Sitewide @graph (Organization + WebSite + ProfessionalService) present on all 38 pages with correct @id anchors",
+        "inLanguage: \"fr-FR\" confirmed live on the WebSite node sitewide",
+        "Real ProfessionalService/LocalBusiness schema with address, geo and openingHoursSpecification",
+        "All 7 service pages carry page-specific Service schema; 3 include Offer/priceSpecification with real EUR pricing",
+        "All 3 city pages carry LocalBusiness + city-specific FAQPage blocks",
+        "All 6 portfolio pages carry CreativeWork schema cross-referencing the agency entity",
+        "All 5 sampled blog posts carry well-formed BlogPosting schema with correct ISO 8601 dates",
+        "No deprecated schema types found; all @context values are https://schema.org"
+      ],
+      "findings": [
+        {
+          "title": "Duplicate, conflicting ProfessionalService/#localbusiness schema on the homepage with a placeholder phone number",
+          "severity": "Critical",
+          "description": "Homepage emits two JSON-LD blocks sharing @id '#localbusiness' with different/conflicting properties; the sitewide layout.tsx block ships telephone: \"+33600000000\" (placeholder) to all 38 pages.",
+          "recommendation": "Merge into one ProfessionalService definition in layout.tsx's @graph combining both blocks' best fields, replace the placeholder telephone with the real business number (or omit if none exists), and delete the duplicate block in page.tsx. Audit the city-pages' +33612345678 too."
+        },
+        {
+          "title": "BlogPosting.inLanguage: \"fr-FR\" fix from locale-audit-report.md is not live",
+          "severity": "High",
+          "description": "The fix is coded in blog/[slug]/page.tsx (uncommitted) but absent from live JSON-LD on all 5 sampled posts.",
+          "recommendation": "Deploy the pending locale-audit-report.md changes (blog/[slug]/page.tsx, sitemap.ts, queries.ts)."
+        },
+        {
+          "title": "Mojibake corruption inside FAQPage JSON-LD on /blog/seo-local-hautes-alpes-artisans-pme",
+          "severity": "High",
+          "description": "The U+FFFD corruption from Content Finding #1 extends into structured-data fields, not just visible text/title tags, on this post.",
+          "recommendation": "Fix as part of the Content Quality mojibake remediation; re-validate this post's JSON-LD with a schema validator after the fix."
+        },
+        {
+          "title": "FAQPage retained on /faq despite Google's May-2026 FAQ rich-result retirement",
+          "severity": "Medium",
+          "description": "No SERP rich-result benefit remains, but the markup still has GEO/AI-citation value.",
+          "recommendation": "No action required — informational only, keep the markup for AI/LLM citation purposes."
+        },
+        {
+          "title": "No BreadcrumbList schema anywhere on the site",
+          "severity": "Medium",
+          "description": "Despite breadcrumb navigation being a commonly marketed deliverable, no BreadcrumbList JSON-LD was found on any sampled page.",
+          "recommendation": "Add BreadcrumbList schema to all non-homepage pages, reflecting the actual nav hierarchy (e.g. Home > Prestations > [Service])."
+        },
+        {
+          "title": "Service schema 'provider' is a bare LocalBusiness stub, inconsistent across 6 of 7 service pages",
+          "severity": "Medium",
+          "description": "The provider field doesn't consistently link to the canonical #localbusiness @id.",
+          "recommendation": "Standardize provider to reference {\"@id\": \"https://www.facenordgraphisme.fr/#localbusiness\"} on all 7 service pages."
+        },
+        {
+          "title": "City pages' LocalBusiness block duplicates and slightly conflicts with the sitewide entity",
+          "severity": "Medium",
+          "description": "Each city page defines its own untethered LocalBusiness block instead of referencing the sitewide #localbusiness @id.",
+          "recommendation": "Replace each city page's standalone LocalBusiness block with a reference to the sitewide entity plus an areaServed override, or formally model each city as a service-area Place linked to the main entity."
+        },
+        {
+          "title": "Portfolio CreativeWork could be more specific",
+          "severity": "Low",
+          "description": "Generic CreativeWork typing under-represents what these pages actually showcase.",
+          "recommendation": "Consider a more specific type (e.g. CreativeWork with 'about' pointing to the client's WebSite/Product) — low priority."
+        },
+        {
+          "title": "/prestations has no Service/ItemList schema linking to the 7 individual Service entities",
+          "severity": "Low",
+          "description": "The services hub page lacks an aggregating ItemList tying the 7 page-specific Service schemas together.",
+          "recommendation": "Add an ItemList or hasOfferCatalog on /prestations referencing the 7 Service @ids."
+        },
+        {
+          "title": "No AggregateRating/Review schema anywhere",
+          "severity": "Low",
+          "description": "Despite blog content extensively discussing Google reviews for clients, the agency's own site has no review/rating schema.",
+          "recommendation": "Once real client testimonials/reviews exist (see Local SEO finding), add Review/AggregateRating schema to the relevant entity."
+        }
+      ]
+    },
+    {
+      "name": "Performance (Core Web Vitals)",
+      "weight": 0.10,
+      "score": 68,
+      "what_works": [
+        "Desktop performance is near-perfect across home/service/blog (0.99-1.00)",
+        "CLS is excellent everywhere (0.000-0.013, all well under the 0.1 'good' threshold)",
+        "FCP is good-to-excellent even on mobile (0.9-1.2s across all 3 mobile runs)",
+        "Service page mobile (0.90) shows the 3D-hero impact is not uniformly catastrophic across page types"
+      ],
+      "findings": [
+        {
+          "title": "Mobile homepage LCP (4.3s) falls into Google's 'Poor' band",
+          "severity": "High",
+          "description": "Home-mobile scores 0.74 overall, with LCP 4.3s (>4.0s = poor), TBT 420ms, TTI 4.8s — almost certainly driven by the 3D WebGL hero blocking the main thread on mobile.",
+          "recommendation": "Defer/lazy-mount the three.js hero via next/dynamic with ssr:false, mounting only after the LCP element paints (requestIdleCallback or IntersectionObserver). Confirm the actual LCP element via the lighthouse-home-mobile.json largest-contentful-paint-element audit detail."
+        },
+        {
+          "title": "98-121 KiB of unused JavaScript shipped on every page",
+          "severity": "Medium",
+          "description": "Consistent across all 6 Lighthouse runs (98-121 KiB), suggesting a shared bundle (three.js/@react-three/fiber/drei + GSAP + Lenis + styled-components) loaded on pages that may not need it.",
+          "recommendation": "Use @next/bundle-analyzer to confirm which chunks contain the 3D/animation libs and whether they're in the shared layout bundle; code-split via next/dynamic so only pages with the 3D hero pay its cost."
+        },
+        {
+          "title": "Blog and service pages show the same mobile LCP/TTI pattern as home, at lower severity",
+          "severity": "Medium",
+          "description": "Blog-mobile LCP 4.1s/score 0.81, service-mobile LCP 3.0s/score 0.90 — same shape as home, confirming a sitewide shared-bundle root cause.",
+          "recommendation": "No separate fix — re-run Lighthouse on all 3 page types after the hero-deferral and bundle-splitting fixes to confirm a uniform improvement."
+        }
+      ]
+    },
+    {
+      "name": "AI Search Readiness (GEO)",
+      "weight": 0.10,
+      "score": 64,
+      "what_works": [
+        "FAQPage schema sitewide on /faq, all 3 city pages, and all sampled blog posts supports AI Overviews/Perplexity citation patterns",
+        "ProfessionalService/LocalBusiness schema with GeoCoordinates/PostalAddress grounds the entity for local AI queries",
+        "Best-performing posts (4-signaux-citation-ia-artisans, geo-referencement-ia-artisans-pme-hautes-alpes) are close to fully compliant with the blog-strategy.md GEO template, demonstrating the template works when followed",
+        "PerplexityBot and GPTBot are unblocked in robots.txt"
+      ],
+      "findings": [
+        {
+          "title": "/llms.txt does not exist (404 via catch-all route)",
+          "severity": "High",
+          "description": "Shares the same routing root cause as the sitemap 404 (Technical Finding #1/#6).",
+          "recommendation": "Add public/llms.txt with a structured summary of site content/sections once the routing fix lands."
+        },
+        {
+          "title": "No RSL 1.0 licensing signal present",
+          "severity": "Medium",
+          "description": "No machine-readable content-licensing signal for AI training/crawling consent.",
+          "recommendation": "Consider adding an RSL declaration if the agency wants explicit control over AI training use of its content — optional, lower priority for a local-service site."
+        },
+        {
+          "title": "Explicit per-bot AI crawler rules in robots.txt would add clarity",
+          "severity": "Low",
+          "description": "Current robots.txt uses a single User-Agent: * rule; nothing is currently blocked, but explicit GPTBot/PerplexityBot/ClaudeBot entries would document intent.",
+          "recommendation": "Optional — add explicit Allow rules per major AI crawler for documentation/clarity, no functional change expected."
+        },
+        {
+          "title": "Named statistical sources are not hyperlinked as external citations",
+          "severity": "High",
+          "description": "Blog posts cite statistics by name/source but don't link out to the original source — a documented best practice for AI-citation credibility.",
+          "recommendation": "Add outbound links to original sources for cited statistics across the blog corpus, prioritizing the highest-traffic pillar posts first."
+        },
+        {
+          "title": "prix-site-internet-artisan-pme-hautes-alpes falls short of the GEO standard on every axis",
+          "severity": "Medium",
+          "description": "This post (also affected by mojibake, Content Finding #1) underperforms the blog-strategy.md GEO checklist across formatting, citation, and question-format criteria.",
+          "recommendation": "After fixing its encoding corruption, rewrite this post against the full blog-strategy.md GEO checklist as a priority — it's currently the weakest post on two dimensions simultaneously."
+        },
+        {
+          "title": "H2 question-format ratio is below the 60-70% target on 4 of 5 sampled articles",
+          "severity": "Medium",
+          "description": "Most sampled posts don't hit the documented question-style-heading ratio that correlates with AI Overview extraction.",
+          "recommendation": "When revising posts, convert more H2s to natural-language question format (e.g. \"Combien coûte un site internet pour artisan ?\") per the blog-strategy.md template."
+        },
+        {
+          "title": "Off-site brand-mention signals are largely unbuilt",
+          "severity": "Medium",
+          "description": "The channels correlating most strongly with AI citation (third-party brand mentions, directory listings, press) are minimal — consistent with the Backlinks category finding that the domain isn't yet in Common Crawl.",
+          "recommendation": "Cross-ref Backlink Profile findings — building local citations and directory presence serves this GEO goal too."
+        }
+      ]
+    },
+    {
+      "name": "Visual & Mobile UX",
+      "weight": 0.08,
+      "score": 45,
+      "what_works": [
+        "No horizontal overflow on any of the 8 desktop/mobile captures",
+        "Cookie-consent banner renders correctly and accessibly on mobile with clear Refuser/Accepter buttons",
+        "Desktop layouts are clean across all 4 sampled page types with no rendering artifacts",
+        "Typography hierarchy is legible and consistent across page types and devices",
+        "No JavaScript runtime errors (page_errors: []) on any capture"
+      ],
+      "findings": [
+        {
+          "title": "Large black rendering artifacts cover the top-right of the mobile homepage, above the fold",
+          "severity": "Critical",
+          "description": "home-mobile-fold-top-crop.png shows solid-black rectangles overlapping the hero headline. capture-results.json shows the canvas backing buffer is 780x1688 vs the 390x844 CSS viewport (exactly 2x DPR), consistent with a three.js resize/devicePixelRatio handling bug that leaves part of the backing buffer uncleared/unrendered.",
+          "recommendation": "Reproduce in Chrome DevTools mobile emulation at DPR 2 vs DPR 1 to confirm the hypothesis. In the @react-three/fiber setup, ensure renderer.setPixelRatio() is called before renderer.setSize(width, height, false), and camera.updateProjectionMatrix() runs after any resize. Treat as a P0 bug independent of SEO — likely affects real visitor conversion."
+        },
+        {
+          "title": "Duplicate 'Face Nord' H1 is visually confirmed on every sampled page/device",
+          "severity": "High",
+          "description": "Confirms Technical Finding #3 visually; on mobile this element sits between the page H1 and the fold, competing for limited above-the-fold space.",
+          "recommendation": "Same fix as Technical Finding #3 — demoting it also recovers above-the-fold mobile space."
+        },
+        {
+          "title": "Console warnings on every page: deprecated THREE.Clock and GPU stalls on desktop home",
+          "severity": "Medium",
+          "description": "'THREE.THREE.Clock: deprecated' on all 8 captures; home-desktop additionally logs 4x 'GPU stall due to ReadPixels' warnings indicating a synchronous gl.readPixels call blocking the render pipeline.",
+          "recommendation": "Migrate to THREE.Timer per the deprecation notice; locate and remove/gate the gl.readPixels call (likely a leftover debug/screenshot utility) to reduce main-thread blocking."
+        }
+      ]
+    },
+    {
+      "name": "Local SEO",
+      "weight": 0.08,
+      "score": 42,
+      "what_works": [
+        "A real ProfessionalService/LocalBusiness schema exists with PostalAddress and GeoCoordinates",
+        "All 3 city pages have city-specific FAQ content tailored to local audiences (tourism, seasonal businesses)",
+        "/a-propos provides a strong, locally-grounded founder narrative reinforcing the local-expertise positioning",
+        "Service area explicitly named (Embrun, Gap, Briançon, Guillestre) in page content and schema"
+      ],
+      "findings": [
+        {
+          "title": "Schema telephone is a fake placeholder number, conflicting with the real visible number, and differs between schema blocks",
+          "severity": "Critical",
+          "description": "Sitewide schema ships +33600000000 (placeholder pattern) while city pages ship a different +33612345678 — neither may be the real business line. Cross-ref Schema Finding #1.",
+          "recommendation": "Determine the real business phone number (if any) and use it consistently across all schema blocks and visible contact info; if no public phone line exists, omit telephone entirely rather than shipping a placeholder."
+        },
+        {
+          "title": "Three conflicting/duplicated LocalBusiness-type schema blocks across the site",
+          "severity": "High",
+          "description": "Homepage duplicate (Schema Finding #1) plus untethered per-city LocalBusiness blocks (Schema Finding #7) create multiple, inconsistent representations of the same entity.",
+          "recommendation": "Consolidate to one canonical #localbusiness entity referenced everywhere via @id, per the Schema category recommendations."
+        },
+        {
+          "title": "No AggregateRating/Review schema and zero visible review/testimonial content for the agency itself",
+          "severity": "High",
+          "description": "Despite the blog extensively covering how clients should manage Google reviews, the agency's own site shows no client testimonials or review signals.",
+          "recommendation": "Collect and display 3-5 real client testimonials (the 5 confirmed portfolio clients are a natural source — cross-ref Backlinks) with Review/AggregateRating schema once available."
+        },
+        {
+          "title": "No Google Business Profile link, Maps embed, or GBP-derived content anywhere on the site",
+          "severity": "High",
+          "description": "For a local-service business, a GBP link/embed is a standard trust and local-pack signal that's currently absent.",
+          "recommendation": "Add a GBP profile link (and/or embedded Map) to the footer or /contact page, and ensure NAP details match the GBP listing exactly."
+        },
+        {
+          "title": "Footer social icons are dead placeholder links (href=\"#\")",
+          "severity": "Medium",
+          "description": "Social icons in the footer don't point anywhere — a minor trust/completeness signal and a missed off-site profile-linking opportunity.",
+          "recommendation": "Link to real, active social profiles (or remove the icons if none exist) — also helps the off-site brand-mention gap noted in GEO findings."
+        },
+        {
+          "title": "addressLocality spelling inconsistency: 'Puy Sanières' vs 'Puy-Sanières'",
+          "severity": "Medium",
+          "description": "Different schema blocks/pages spell the town name with and without the hyphen — a NAP-consistency issue.",
+          "recommendation": "Standardize on the official spelling 'Puy-Sanières' everywhere (schema, visible address, GBP)."
+        },
+        {
+          "title": "Homepage hero/meta framing says 'Basé à Embrun' while the legal address is Puy-Sanières",
+          "severity": "Medium",
+          "description": "Marketing copy and the legal/schema address name different towns (Puy-Sanières is a small village near Embrun) — potentially confusing for NAP matching.",
+          "recommendation": "Either consistently use 'Puy-Sanières (près d'Embrun)' or clarify the relationship in both the visible copy and schema so automated NAP-matching tools and readers see a consistent location story."
+        },
+        {
+          "title": "City-page LocalBusiness schema lacks geo and openingHoursSpecification",
+          "severity": "Medium",
+          "description": "Unlike the sitewide entity, the 3 city pages' LocalBusiness blocks omit geo coordinates and hours.",
+          "recommendation": "Resolved naturally if city pages reference the sitewide #localbusiness entity instead of duplicating it (Schema Finding #7)."
+        },
+        {
+          "title": "No structured citation footprint beyond LinkedIn detectable",
+          "severity": "Medium",
+          "description": "No Pages Jaunes, CCI, or tourism-directory listings found — consistent with the Backlinks category's 'not yet in Common Crawl' finding.",
+          "recommendation": "Cross-ref Backlinks Finding #1 — build a baseline local citation profile."
+        },
+        {
+          "title": "No 'service area' Service/OfferCatalog markup tying services to specific cities",
+          "severity": "Low",
+          "description": "The 7 Service schemas and 3 city pages aren't cross-linked via structured data (e.g. a Service offered in a given areaServed).",
+          "recommendation": "Lower priority — consider an OfferCatalog or areaServed cross-reference once the higher-severity schema consolidation (Finding #2) is done."
+        }
+      ]
+    },
+    {
+      "name": "Search Experience (SXO)",
+      "weight": 0.03,
+      "score": 58,
+      "what_works": [
+        "Most landing pages match their target query's dominant intent (commercial/informational split is broadly correct)",
+        "City pages correctly target local-modifier queries with dedicated FAQ content"
+      ],
+      "findings": [
+        {
+          "title": "/refonte-ai-friendly vs /refonte-ia-friendly — duplicate-intent pages competing with each other",
+          "severity": "Critical",
+          "description": "Same underlying issue as Content Finding #2 and Technical Finding #7, viewed from a search-experience lens: a searcher (and Google) cannot tell which page is the 'real' answer to this query.",
+          "recommendation": "Resolve once (merge + redirect) — fixes this issue across Technical, Content, and SXO simultaneously."
+        },
+        {
+          "title": "/referencement-ia (service page) is now out-ranked in depth by the site's own blog pillar for the same query cluster",
+          "severity": "High",
+          "description": "The blog post geo-referencement-ia-artisans-pme-hautes-alpes is more comprehensive than the commercial service page targeting overlapping GEO/AI-SEO queries — internal cannibalization between content types.",
+          "recommendation": "Differentiate intent clearly: keep /referencement-ia focused on the commercial offer (pricing, process, CTA) and use the blog pillar for the comprehensive educational treatment, with strong internal links from the pillar to the service page."
+        },
+        {
+          "title": "City pages duplicate service-page sections rather than purely localizing intent",
+          "severity": "Medium",
+          "description": "Some city-page content repeats service-page copy with the city name swapped in, rather than addressing genuinely city-specific search intent (local landmarks, local client examples, local search behavior).",
+          "recommendation": "As city pages are revised, replace templated service-copy repetition with city-specific proof points (named local clients/projects already in the portfolio, local events, local search trends)."
+        },
+        {
+          "title": "Persona-page fit scoring across 4 personas x top landing pages",
+          "severity": "Info",
+          "description": "Detailed persona-fit matrix available in findings/sxo.md for the 4 personas defined in blog-strategy.md.",
+          "recommendation": "Use the persona-fit matrix in findings/sxo.md when planning Phase 3 content work to ensure each persona has at least one strongly-matched landing page."
+        }
+      ]
+    },
+    {
+      "name": "Topic Clusters & Content Architecture",
+      "weight": 0.02,
+      "score": 47,
+      "what_works": [
+        "blog-strategy.md's 5-cluster plan is partially implemented with 9-13 posts published",
+        "Several posts demonstrate the intended hub-and-spoke linking pattern when followed correctly"
+      ],
+      "findings": [
+        {
+          "title": "Two internal links are broken (404)",
+          "severity": "Medium",
+          "description": "Quick-win fix that resolves inbound-link orphaning for at least one post.",
+          "recommendation": "Identify and fix the 2 broken internal links (see findings/cluster.md for the specific source/target pairs)."
+        },
+        {
+          "title": "reservation-directe-eviter-commissions-booking-hautes-alpes is a complete orphan (zero inbound internal links)",
+          "severity": "Medium",
+          "description": "No other page on the site links to this post, reducing its discoverability and topical authority contribution.",
+          "recommendation": "Add contextual internal links from related posts (e.g. the tourism/reservation cluster) and from the relevant service page."
+        },
+        {
+          "title": "Cluster 4 (E-commerce) has zero posts",
+          "severity": "Medium",
+          "description": "Confirmed empty as flagged in blog-strategy.md's original gap analysis.",
+          "recommendation": "Per blog-strategy.md's roadmap, prioritize 1-2 e-commerce-cluster posts to support /boutique-e-commerce-hautes-alpes."
+        },
+        {
+          "title": "Cluster 2 (Création de Site) and Cluster 5 (Tourisme) have no internal hub-spoke structure",
+          "severity": "Medium",
+          "description": "Posts in these clusters are loosely cross-linked but not organized around a pillar page.",
+          "recommendation": "Designate a pillar post per cluster and add 'related articles' style internal links from spoke posts back to the pillar."
+        },
+        {
+          "title": "Cross-cluster and cross-cluster-to-service-page linking is almost entirely nav-menu boilerplate",
+          "severity": "Medium",
+          "description": "Contextual, in-content editorial links between related blog posts and the service pages they support are largely absent.",
+          "recommendation": "When revising posts (e.g. during the mojibake fix pass), add 2-3 contextual in-body links to related posts and the relevant service/city pages."
+        },
+        {
+          "title": "Cannibalization risk: /referencement-ia vs /blog/geo-referencement-ia-artisans-pme-hautes-alpes",
+          "severity": "High",
+          "description": "Same issue as SXO Finding #2, viewed from a content-architecture lens.",
+          "recommendation": "See SXO Finding #2."
+        },
+        {
+          "title": "Blog index has no cluster/category navigation",
+          "severity": "Low",
+          "description": "Clusters defined in blog-strategy.md are invisible to users and crawlers on /blog — no category filter or grouping.",
+          "recommendation": "Add category/cluster taxonomy to the Sanity post schema and surface it as filterable groups on /blog, reinforcing topical clustering signals."
+        }
+      ]
+    },
+    {
+      "name": "Backlink Profile",
+      "weight": 0.01,
+      "score": 30,
+      "what_works": [
+        "5 confirmed, live, dofollow backlinks from real client websites with brand-consistent anchor text",
+        "All 5 referring domains are topically and geographically relevant (Hautes-Alpes local businesses)",
+        "None of the confirmed links carry nofollow/sponsored — all pass link equity"
+      ],
+      "findings": [
+        {
+          "title": "Domain not yet indexed in Common Crawl; no broader off-site link profile detected",
+          "severity": "High",
+          "description": "Common Crawl (cc-main-2026-jan-feb-mar) returns in_crawl: false with no referring domains beyond the 5 confirmed via direct verification — consistent with a genuinely new/small domain.",
+          "recommendation": "Build a baseline local citation profile (Pages Jaunes, GBP, CCI Hautes-Alpes, tourism-office directories) — re-check Common Crawl in 2-3 months as new releases publish."
+        },
+        {
+          "title": "One of five client credit-links originates from a non-HTTPS site (gaudineto.fr)",
+          "severity": "Medium",
+          "description": "The agency's own portfolio showcases a client deliverable still running without TLS.",
+          "recommendation": "Migrate gaudineto.fr to HTTPS (free via Let's Encrypt on most hosts) — improves both the client site and this referring link's value."
+        },
+        {
+          "title": "Anchor-text diversity is minimal (4 of 5 links use near-identical brand anchor text)",
+          "severity": "Medium",
+          "description": "Not a penalty risk, but means zero current anchor-text signal for target service/location keywords.",
+          "recommendation": "As new client sites launch, naturally vary credit-link anchor text toward service/location phrases alongside the brand name."
+        }
+      ]
+    }
+  ],
+  "action_plan": {
+    "phases": [
+      {
+        "name": "Phase 1: Critical Fixes",
+        "timeframe": "Week 1",
+        "items": [
+          "Fix /sitemap.xml 404 — resolve routing precedence vs. the [slug] catch-all, deploy, resubmit in GSC (Technical #1 / Sitemap #1)",
+          "Fix the 7 self-canonical violations pointing to the homepage (Technical #2)",
+          "Resolve the duplicate/conflicting LocalBusiness schema and remove the placeholder telephone +33600000000 sitewide (Schema #1 / Local #1 / Local #2)",
+          "Diagnose and fix U+FFFD mojibake corruption in 8 blog posts, prioritizing the 3 fully-corrupted ones (Content #1)",
+          "Fix the black WebGL canvas artifact on mobile homepage above the fold (Visual #1)",
+          "Decide and merge /refonte-ai-friendly vs /refonte-ia-friendly into one URL with a 301 redirect (Content #2 / SXO #1 / Technical #7)"
+        ]
+      },
+      {
+        "name": "Phase 2: High-Impact Improvements",
+        "timeframe": "Weeks 2-3",
+        "items": [
+          "Demote the sitewide duplicate 'Face Nord' <h1> to a non-heading element (Technical #3 / Visual #2)",
+          "Strip the redundant '| Face Nord Graphisme' suffix from the 6 affected page titles (Technical #4)",
+          "Add missing security headers via next.config/vercel.json (Technical #5)",
+          "Move llms.txt to public/ and verify it serves correctly (Technical #6 / GEO #1)",
+          "Deploy the pending BlogPosting.inLanguage:\"fr-FR\" fix from locale-audit-report.md (Schema #2)",
+          "Delete the 4 redundant duplicate Sanity project documents and consolidate reves-d-aventures / reves-daventures with a 301 (Content #3 / Sitemap #3)",
+          "Fix the 2 broken internal links identified in the cluster analysis (Cluster #1)",
+          "Add BreadcrumbList schema to all non-homepage pages (Schema #5)",
+          "Defer/lazy-mount the 3D hero so it loads after LCP on mobile (Performance #1)"
+        ]
+      },
+      {
+        "name": "Phase 3: Content & Authority",
+        "timeframe": "Month 2",
+        "items": [
+          "Standardize 'Puy-Sanières' spelling and reconcile the 'Basé à Embrun' framing with the legal address everywhere (Local #6 / Local #7)",
+          "Add a Google Business Profile link/Maps embed and ensure NAP consistency (Local #4)",
+          "Replace dead footer social links with real profiles (Local #5)",
+          "Collect 3-5 real client testimonials and add Review/AggregateRating schema (Local #3 / Schema #10)",
+          "Build hub-spoke internal linking for Cluster 2 (Création de Site) and Cluster 5 (Tourisme) (Cluster #4)",
+          "Differentiate /referencement-ia (commercial) from its blog pillar (educational) and cross-link them (Cluster #6 / SXO #2)",
+          "Hyperlink named statistics to their original sources across the blog corpus, starting with pillar posts (GEO #4)",
+          "Increase the H2 question-format ratio toward the 60-70% target on revised posts (GEO #6)",
+          "Begin populating lastUpdated in Sanity on every content edit (Content #4)",
+          "Build a baseline local citation profile: Pages Jaunes, CCI Hautes-Alpes, tourism-office directories (Backlinks #1)",
+          "Code-split three.js/GSAP/Lenis out of the shared bundle (Performance #2)"
+        ]
+      },
+      {
+        "name": "Phase 4: Monitoring & Iteration",
+        "timeframe": "Ongoing",
+        "items": [
+          "Re-run Lighthouse on home/blog/service mobile after the hero-deferral and bundle-splitting fixes to confirm uniform improvement (Performance #3)",
+          "Migrate gaudineto.fr to HTTPS (Backlinks #2)",
+          "Vary credit-link anchor text on new portfolio projects (Backlinks #3)",
+          "Add cluster/category navigation to the blog index (Cluster #7)",
+          "Add Service/OfferCatalog area-served markup once schema consolidation is complete (Local #10)",
+          "Expand portfolio case studies with process/outcome detail (Content #5)",
+          "Re-run the Common Crawl backlink check in 2-3 months (Backlinks #1 follow-up)",
+          "Establish a quarterly content-freshness review per blog-strategy.md's roadmap, prioritizing prix-site-internet-artisan-pme-hautes-alpes (GEO #5)"
+        ]
+      }
+    ]
+  },
+  "artifacts": {
+    "findings_dir": "findings/",
+    "screenshots_dir": "screenshots/"
+  }
+}

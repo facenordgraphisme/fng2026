@@ -1,0 +1,466 @@
+{
+  "home-desktop": {
+    "url": "https://www.facenordgraphisme.fr/",
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    },
+    "overflow": {
+      "scrollWidth": 1440,
+      "clientWidth": 1440,
+      "bodyScrollWidth": 1440
+    },
+    "h1s": [
+      {
+        "text": "Face Nord",
+        "visible": true,
+        "rect": {
+          "x": 360.0636901855469,
+          "y": 326.79998779296875,
+          "w": 719.85693359375,
+          "h": 134.4000244140625
+        }
+      },
+      {
+        "text": "Propulsez votre entreprise  vers de nouveaux sommets",
+        "visible": true,
+        "rect": {
+          "x": 376,
+          "y": 211.9405975341797,
+          "w": 976,
+          "h": 396.825439453125
+        }
+      }
+    ],
+    "canvas": [
+      {
+        "w": 1440,
+        "h": 900,
+        "rect": {
+          "x": 0,
+          "y": 0,
+          "w": 1440,
+          "h": 900
+        }
+      }
+    ],
+    "console_errors": [
+      {
+        "type": "warning",
+        "text": "THREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead."
+      },
+      {
+        "type": "warning",
+        "text": "[.WebGL-0x467c001b5000]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels"
+      },
+      {
+        "type": "warning",
+        "text": "[.WebGL-0x467c001b5000]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels"
+      },
+      {
+        "type": "warning",
+        "text": "[.WebGL-0x467c001b5000]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels"
+      },
+      {
+        "type": "warning",
+        "text": "[.WebGL-0x467c001b5000]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels (this message will no longer repeat)"
+      }
+    ],
+    "console_all_count": 5,
+    "page_errors": [],
+    "fold_screenshot": "C:\\Users\\FX\\Desktop\\Codes antigravity\\fng-antigra\\facenordgraphisme.fr-audit\\screenshots\\home-desktop-fold.png",
+    "full_screenshot": "C:\\Users\\FX\\Desktop\\Codes antigravity\\fng-antigra\\facenordgraphisme.fr-audit\\screenshots\\home-desktop.png"
+  },
+  "home-mobile": {
+    "url": "https://www.facenordgraphisme.fr/",
+    "viewport": {
+      "width": 390,
+      "height": 844
+    },
+    "overflow": {
+      "scrollWidth": 390,
+      "clientWidth": 390,
+      "bodyScrollWidth": 390
+    },
+    "h1s": [
+      {
+        "text": "Face Nord",
+        "visible": true,
+        "rect": {
+          "x": 93.7574234008789,
+          "y": 355,
+          "w": 202.46954345703125,
+          "h": 42
+        }
+      },
+      {
+        "text": "Propulsez votre entreprise  vers de nouveaux sommets",
+        "visible": true,
+        "rect": {
+          "x": 24,
+          "y": 266.142578125,
+          "w": 342,
+          "h": 219.31875610351562
+        }
+      }
+    ],
+    "canvas": [
+      {
+        "w": 780,
+        "h": 1688,
+        "rect": {
+          "x": 0,
+          "y": 0,
+          "w": 390,
+          "h": 844
+        }
+      }
+    ],
+    "console_errors": [
+      {
+        "type": "warning",
+        "text": "THREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead."
+      }
+    ],
+    "console_all_count": 1,
+    "page_errors": [],
+    "fold_screenshot": "C:\\Users\\FX\\Desktop\\Codes antigravity\\fng-antigra\\facenordgraphisme.fr-audit\\screenshots\\home-mobile-fold.png",
+    "full_screenshot": "C:\\Users\\FX\\Desktop\\Codes antigravity\\fng-antigra\\facenordgraphisme.fr-audit\\screenshots\\home-mobile.png"
+  },
+  "prestations-desktop": {
+    "url": "https://www.facenordgraphisme.fr/prestations",
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    },
+    "overflow": {
+      "scrollWidth": 1440,
+      "clientWidth": 1440,
+      "bodyScrollWidth": 1440
+    },
+    "h1s": [
+      {
+        "text": "Face Nord",
+        "visible": true,
+        "rect": {
+          "x": 360.0636901855469,
+          "y": 326.79998779296875,
+          "w": 719.85693359375,
+          "h": 134.4000244140625
+        }
+      },
+      {
+        "text": "Prestations web & SEOpour les Hautes-Alpes",
+        "visible": true,
+        "rect": {
+          "x": 416,
+          "y": 168,
+          "w": 896,
+          "h": 120
+        }
+      }
+    ],
+    "canvas": [
+      {
+        "w": 1440,
+        "h": 900,
+        "rect": {
+          "x": 0,
+          "y": 0,
+          "w": 1440,
+          "h": 900
+        }
+      }
+    ],
+    "console_errors": [
+      {
+        "type": "warning",
+        "text": "THREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead."
+      }
+    ],
+    "console_all_count": 1,
+    "page_errors": [],
+    "fold_screenshot": "C:\\Users\\FX\\Desktop\\Codes antigravity\\fng-antigra\\facenordgraphisme.fr-audit\\screenshots\\prestations-desktop-fold.png",
+    "full_screenshot": "C:\\Users\\FX\\Desktop\\Codes antigravity\\fng-antigra\\facenordgraphisme.fr-audit\\screenshots\\prestations-desktop.png"
+  },
+  "prestations-mobile": {
+    "url": "https://www.facenordgraphisme.fr/prestations",
+    "viewport": {
+      "width": 390,
+      "height": 844
+    },
+    "overflow": {
+      "scrollWidth": 390,
+      "clientWidth": 390,
+      "bodyScrollWidth": 390
+    },
+    "h1s": [
+      {
+        "text": "Face Nord",
+        "visible": true,
+        "rect": {
+          "x": 93.7574234008789,
+          "y": 355,
+          "w": 202.46954345703125,
+          "h": 42
+        }
+      },
+      {
+        "text": "Prestations web & SEOpour les Hautes-Alpes",
+        "visible": true,
+        "rect": {
+          "x": 24,
+          "y": 232,
+          "w": 342,
+          "h": 180
+        }
+      }
+    ],
+    "canvas": [
+      {
+        "w": 780,
+        "h": 1688,
+        "rect": {
+          "x": 0,
+          "y": 0,
+          "w": 390,
+          "h": 844
+        }
+      }
+    ],
+    "console_errors": [
+      {
+        "type": "warning",
+        "text": "THREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead."
+      }
+    ],
+    "console_all_count": 1,
+    "page_errors": [],
+    "fold_screenshot": "C:\\Users\\FX\\Desktop\\Codes antigravity\\fng-antigra\\facenordgraphisme.fr-audit\\screenshots\\prestations-mobile-fold.png",
+    "full_screenshot": "C:\\Users\\FX\\Desktop\\Codes antigravity\\fng-antigra\\facenordgraphisme.fr-audit\\screenshots\\prestations-mobile.png"
+  },
+  "blog-post-desktop": {
+    "url": "https://www.facenordgraphisme.fr/blog/guide-creation-site-internet-artisan-hautes-alpes",
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    },
+    "overflow": {
+      "scrollWidth": 1440,
+      "clientWidth": 1440,
+      "bodyScrollWidth": 1440
+    },
+    "h1s": [
+      {
+        "text": "Face Nord",
+        "visible": true,
+        "rect": {
+          "x": 360.0636901855469,
+          "y": 326.79998779296875,
+          "w": 719.85693359375,
+          "h": 134.4000244140625
+        }
+      },
+      {
+        "text": "Création de site internet pour artisan dans les Hautes-Alpes : le guide complet 2026",
+        "visible": true,
+        "rect": {
+          "x": 440,
+          "y": 264,
+          "w": 848,
+          "h": 198
+        }
+      }
+    ],
+    "canvas": [
+      {
+        "w": 1440,
+        "h": 900,
+        "rect": {
+          "x": 0,
+          "y": 0,
+          "w": 1440,
+          "h": 900
+        }
+      }
+    ],
+    "console_errors": [
+      {
+        "type": "warning",
+        "text": "THREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead."
+      }
+    ],
+    "console_all_count": 1,
+    "page_errors": [],
+    "fold_screenshot": "C:\\Users\\FX\\Desktop\\Codes antigravity\\fng-antigra\\facenordgraphisme.fr-audit\\screenshots\\blog-post-desktop-fold.png",
+    "full_screenshot": "C:\\Users\\FX\\Desktop\\Codes antigravity\\fng-antigra\\facenordgraphisme.fr-audit\\screenshots\\blog-post-desktop.png"
+  },
+  "blog-post-mobile": {
+    "url": "https://www.facenordgraphisme.fr/blog/guide-creation-site-internet-artisan-hautes-alpes",
+    "viewport": {
+      "width": 390,
+      "height": 844
+    },
+    "overflow": {
+      "scrollWidth": 390,
+      "clientWidth": 390,
+      "bodyScrollWidth": 390
+    },
+    "h1s": [
+      {
+        "text": "Face Nord",
+        "visible": true,
+        "rect": {
+          "x": 93.7574234008789,
+          "y": 355,
+          "w": 202.46954345703125,
+          "h": 42
+        }
+      },
+      {
+        "text": "Création de site internet pour artisan dans les Hautes-Alpes : le guide complet 2026",
+        "visible": true,
+        "rect": {
+          "x": 24,
+          "y": 328,
+          "w": 342,
+          "h": 197.96875
+        }
+      }
+    ],
+    "canvas": [
+      {
+        "w": 780,
+        "h": 1688,
+        "rect": {
+          "x": 0,
+          "y": 0,
+          "w": 390,
+          "h": 844
+        }
+      }
+    ],
+    "console_errors": [
+      {
+        "type": "warning",
+        "text": "THREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead."
+      }
+    ],
+    "console_all_count": 1,
+    "page_errors": [],
+    "fold_screenshot": "C:\\Users\\FX\\Desktop\\Codes antigravity\\fng-antigra\\facenordgraphisme.fr-audit\\screenshots\\blog-post-mobile-fold.png",
+    "full_screenshot": "C:\\Users\\FX\\Desktop\\Codes antigravity\\fng-antigra\\facenordgraphisme.fr-audit\\screenshots\\blog-post-mobile.png"
+  },
+  "ville-gap-desktop": {
+    "url": "https://www.facenordgraphisme.fr/villes/gap-hautes-alpes",
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    },
+    "overflow": {
+      "scrollWidth": 1440,
+      "clientWidth": 1440,
+      "bodyScrollWidth": 1440
+    },
+    "h1s": [
+      {
+        "text": "Face Nord",
+        "visible": true,
+        "rect": {
+          "x": 360.0636901855469,
+          "y": 326.79998779296875,
+          "w": 719.85693359375,
+          "h": 134.4000244140625
+        }
+      },
+      {
+        "text": "Agence web à Gap — Création de site internet dans les Hautes-Alpes",
+        "visible": true,
+        "rect": {
+          "x": 416,
+          "y": 168,
+          "w": 896,
+          "h": 225
+        }
+      }
+    ],
+    "canvas": [
+      {
+        "w": 1440,
+        "h": 900,
+        "rect": {
+          "x": 0,
+          "y": 0,
+          "w": 1440,
+          "h": 900
+        }
+      }
+    ],
+    "console_errors": [
+      {
+        "type": "warning",
+        "text": "THREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead."
+      }
+    ],
+    "console_all_count": 1,
+    "page_errors": [],
+    "fold_screenshot": "C:\\Users\\FX\\Desktop\\Codes antigravity\\fng-antigra\\facenordgraphisme.fr-audit\\screenshots\\ville-gap-desktop-fold.png",
+    "full_screenshot": "C:\\Users\\FX\\Desktop\\Codes antigravity\\fng-antigra\\facenordgraphisme.fr-audit\\screenshots\\ville-gap-desktop.png"
+  },
+  "ville-gap-mobile": {
+    "url": "https://www.facenordgraphisme.fr/villes/gap-hautes-alpes",
+    "viewport": {
+      "width": 390,
+      "height": 844
+    },
+    "overflow": {
+      "scrollWidth": 390,
+      "clientWidth": 390,
+      "bodyScrollWidth": 390
+    },
+    "h1s": [
+      {
+        "text": "Face Nord",
+        "visible": true,
+        "rect": {
+          "x": 93.7574234008789,
+          "y": 355,
+          "w": 202.46954345703125,
+          "h": 42
+        }
+      },
+      {
+        "text": "Agence web à Gap — Création de site internet dans les Hautes-Alpes",
+        "visible": true,
+        "rect": {
+          "x": 24,
+          "y": 232,
+          "w": 342,
+          "h": 180
+        }
+      }
+    ],
+    "canvas": [
+      {
+        "w": 780,
+        "h": 1688,
+        "rect": {
+          "x": 0,
+          "y": 0,
+          "w": 390,
+          "h": 844
+        }
+      }
+    ],
+    "console_errors": [
+      {
+        "type": "warning",
+        "text": "THREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead."
+      }
+    ],
+    "console_all_count": 1,
+    "page_errors": [],
+    "fold_screenshot": "C:\\Users\\FX\\Desktop\\Codes antigravity\\fng-antigra\\facenordgraphisme.fr-audit\\screenshots\\ville-gap-mobile-fold.png",
+    "full_screenshot": "C:\\Users\\FX\\Desktop\\Codes antigravity\\fng-antigra\\facenordgraphisme.fr-audit\\screenshots\\ville-gap-mobile.png"
+  }
+}

@@ -13,6 +13,8 @@ const data: ServicePageData = {
   badge: "Référencement SEO",
   headline: "Expert référencement Google dans les Hautes-Alpes",
   intro: "Apparaissez en tête des résultats Google pour les recherches locales à Gap, Briançon et Embrun. Audit SEO, optimisation technique, Google Business Profile et stratégie de contenu pour les PME du 05.",
+  path: "/referencement-seo-hautes-alpes",
+  breadcrumbLabel: "Référencement SEO",
   heroPhotoId: "photo-1460925895917-afdab827c52f",
   heroPhotoAlt: "Tableau de bord Google Analytics sur un ordinateur portable montrant les courbes de trafic et les positions SEO",
   pricingFrom: "sur devis",

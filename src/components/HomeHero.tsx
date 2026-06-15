@@ -3,11 +3,12 @@
 import React from 'react'
 import AnimatedText from './AnimatedText'
 import Link from 'next/link'
-import { globalState } from '@/lib/store'
 
 export default function HomeHero() {
-  const isPreloaderDone = typeof window !== 'undefined' ? globalState.isPreloaderDone : false;
-  const baseDelay = isPreloaderDone ? 0 : 3.5;
+  // Hero content animates in immediately (and renders behind the opaque
+  // preloader overlay) so it counts toward FCP/LCP without waiting for the
+  // multi-second preloader sequence to finish.
+  const baseDelay = 0;
 
   return (
     <section className="relative h-screen min-h-[700px] w-full flex items-center justify-center overflow-hidden bg-transparent text-[#1a1a1a] dark:text-white">

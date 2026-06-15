@@ -1,5 +1,6 @@
 import { getProjectBySlug } from "@/sanity/lib/queries";
 import AnimatedText from "@/components/AnimatedText";
+import BreadcrumbSchema from "@/components/BreadcrumbSchema";
 import Link from "next/link";
 import Image from "next/image";
 import { ArrowLeft, ExternalLink } from "lucide-react";
@@ -111,6 +112,13 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(creativeWorkSchema) }}
+      />
+      <BreadcrumbSchema
+        items={[
+          { name: "Accueil", url: "https://www.facenordgraphisme.fr" },
+          { name: "Portfolio", url: "https://www.facenordgraphisme.fr/portfolio" },
+          { name: project.title, url: `https://www.facenordgraphisme.fr/portfolio/${slug}` },
+        ]}
       />
       {/* Hero Section */}
       <div className="bg-[#f4f7f9] dark:bg-[#111111] pt-32 pb-32 px-6 relative overflow-hidden transition-colors duration-300">

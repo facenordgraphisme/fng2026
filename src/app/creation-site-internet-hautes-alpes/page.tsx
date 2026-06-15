@@ -3,7 +3,7 @@ import ServicePageLayout, { type ServicePageData } from "@/components/ServicePag
 import { Smartphone, Zap, Search, Lock, PenTool, BarChart3 } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Création Site Internet Hautes-Alpes — Face Nord Graphisme",
+  title: "Création Site Internet Hautes-Alpes",
   description: "Création de site internet professionnel dans les Hautes-Alpes (Gap, Briançon, Embrun). Site vitrine sur-mesure, mobile-first, optimisé SEO. Devis gratuit dès 800 € HT.",
   alternates: { canonical: "https://www.facenordgraphisme.fr/creation-site-internet-hautes-alpes" },
   openGraph: { title: "Création de site internet Hautes-Alpes | Face Nord Graphisme", description: "Sites vitrines professionnels pour artisans et PME du 05. Design sur-mesure, SEO local, mobile-first. À partir de 800 € HT." },
@@ -13,6 +13,8 @@ const data: ServicePageData = {
   badge: "Création de site internet",
   headline: "Création de site internet dans les Hautes-Alpes",
   intro: "Un site web professionnel, rapide et visible sur Google pour les artisans, commerçants et PME de Gap, Briançon, Embrun et de tout le département 05. À partir de 800 € HT.",
+  path: "/creation-site-internet-hautes-alpes",
+  breadcrumbLabel: "Création de site internet",
   heroPhotoId: "photo-1467232004584-a241de8bcf5d",
   heroPhotoAlt: "Conception d'un site internet — maquettage sur tableau blanc avec wireframes et notes de design",
   pricingFrom: "dès 800 € HT",

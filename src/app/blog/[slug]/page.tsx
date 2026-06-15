@@ -1,5 +1,6 @@
 import { getPostBySlug, getAuthor } from "@/sanity/lib/queries";
 import AnimatedText from "@/components/AnimatedText";
+import BreadcrumbSchema from "@/components/BreadcrumbSchema";
 import Link from "next/link";
 import Image from "next/image";
 import { ArrowLeft, Clock } from "lucide-react";
@@ -32,6 +33,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
       title,
       description,
       url,
+      locale: 'fr_FR',
       type: 'article',
       publishedTime: post.publishedAt,
       images: [
@@ -293,6 +295,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
       "name": "Face Nord Graphisme",
       "url": "https://www.facenordgraphisme.fr",
     },
+    "inLanguage": "fr-FR",
     "mainEntityOfPage": {
       "@type": "WebPage",
       "@id": `https://www.facenordgraphisme.fr/blog/${slug}`,
@@ -323,6 +326,13 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(blogSchema) }}
+      />
+      <BreadcrumbSchema
+        items={[
+          { name: "Accueil", url: "https://www.facenordgraphisme.fr" },
+          { name: "Blog", url: "https://www.facenordgraphisme.fr/blog" },
+          { name: post.title, url: `https://www.facenordgraphisme.fr/blog/${slug}` },
+        ]}
       />
       {faqSchema && (
         <script

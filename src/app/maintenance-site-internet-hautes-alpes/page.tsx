@@ -13,6 +13,8 @@ const data: ServicePageData = {
   badge: "Maintenance web",
   headline: "Maintenance de site internet dans les Hautes-Alpes",
   intro: "Votre site tourne en arrière-plan — mais sans maintenance, une mise à jour WordPress cassée, un plugin vulnérable ou un formulaire de contact silencieux peut vous coûter des clients. Forfaits maintenance WordPress et Next.js dès 50 € HT/mois pour les entreprises du 05.",
+  path: "/maintenance-site-internet-hautes-alpes",
+  breadcrumbLabel: "Maintenance de site internet",
   heroPhotoId: "photo-1518770660439-4636190af475",
   heroPhotoAlt: "Tableau de bord de monitoring avec métriques de disponibilité et alertes de sécurité serveur",
   pricingFrom: "dès 50 € HT/mois",

@@ -5,7 +5,8 @@ import { ChevronDown } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Foire Aux Questions (FAQ) | Agence Web Embrun",
-  description: "Trouvez les réponses à vos questions sur la création de site internet, le SEO, les tarifs et la maintenance web avec Face Nord Graphisme dans les Hautes-Alpes."
+  description: "Trouvez les réponses à vos questions sur la création de site internet, le SEO, les tarifs et la maintenance web avec Face Nord Graphisme dans les Hautes-Alpes.",
+  alternates: { canonical: "https://www.facenordgraphisme.fr/faq" },
 };
 
 const faqs = [

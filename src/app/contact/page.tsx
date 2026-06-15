@@ -5,7 +5,8 @@ import { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Contactez une agence web dans les Hautes-Alpes | Embrun",
-  description: "Un projet de site web dans le 05 ? Contactez Face Nord Graphisme, basé à Embrun. Devis gratuit pour Gap, Briançon, Guillestre et alentours."
+  description: "Un projet de site web dans le 05 ? Contactez Face Nord Graphisme, basé à Embrun. Devis gratuit pour Gap, Briançon, Guillestre et alentours.",
+  alternates: { canonical: "https://www.facenordgraphisme.fr/contact" },
 };
 
 export default function ContactPage() {

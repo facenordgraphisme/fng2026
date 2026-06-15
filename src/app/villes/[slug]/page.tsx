@@ -1,4 +1,5 @@
 import { getCityPageBySlug, getAllCityPageSlugs } from "@/sanity/lib/queries";
+import BreadcrumbSchema from "@/components/BreadcrumbSchema";
 import Link from "next/link";
 import { Fragment } from "react";
 import { notFound } from "next/navigation";
@@ -18,15 +19,18 @@ export async function generateMetadata({
   const { slug } = await params;
   const page = await getCityPageBySlug(slug);
   if (!page) return { title: "Page non trouvée" };
-  const title = page.seoTitle || page.headline;
+  const rawTitle = page.seoTitle || page.headline;
   const description = page.seoDescription || page.intro || "";
   const url = `https://www.facenordgraphisme.fr/villes/${slug}`;
+  // Avoid double "Face Nord Graphisme" suffix: the root layout title template
+  // appends "| Face Nord Graphisme" to any title that isn't marked absolute.
+  const title = rawTitle.includes("Face Nord Graphisme") ? { absolute: rawTitle } : rawTitle;
   return {
     title,
     description,
     alternates: { canonical: url },
-    openGraph: { title, description, url, type: "website" },
-    twitter: { card: "summary_large_image", title, description },
+    openGraph: { title: rawTitle, description, url, type: "website" },
+    twitter: { card: "summary_large_image", title: rawTitle, description },
   };
 }
 
@@ -261,7 +265,7 @@ export default async function CityPage({
     name: "Face Nord Graphisme",
     description: page.seoDescription || page.intro,
     url: `https://www.facenordgraphisme.fr/villes/${slug}`,
-    telephone: "+33612345678",
+    telephone: "+33651113928",
     address: {
       "@type": "PostalAddress",
       streetAddress: "45 impasse du Serre",
@@ -292,6 +296,12 @@ export default async function CityPage({
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
+      />
+      <BreadcrumbSchema
+        items={[
+          { name: "Accueil", url: "https://www.facenordgraphisme.fr" },
+          { name: page.city, url: `https://www.facenordgraphisme.fr/villes/${slug}` },
+        ]}
       />
       {faqSchema && (
         <script

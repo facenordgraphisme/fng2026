@@ -3,6 +3,16 @@ import AnimatedText from "@/components/AnimatedText";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
+import type { Metadata } from "next";
+
+export async function generateMetadata(): Promise<Metadata> {
+  const post = await getLegalBySlug('mentions-legales');
+  return {
+    title: post?.title || "Mentions Légales",
+    description: "Mentions légales de Face Nord Graphisme : éditeur, hébergeur et propriété intellectuelle du site facenordgraphisme.fr.",
+    alternates: { canonical: "https://www.facenordgraphisme.fr/mentions-legales" },
+  };
+}
 
 // Portable text renderer tailored for legal pages
 const renderBlock = (block: any, index: number) => {

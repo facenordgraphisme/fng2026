@@ -2,6 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { ArrowRight, CheckCircle2, MapPin } from "lucide-react";
 import type { ComponentType } from "react";
+import BreadcrumbSchema from "./BreadcrumbSchema";
 
 // ── Types ─────────────────────────────────────────────────────────────────────
 
@@ -14,6 +15,8 @@ export interface ServicePageData {
   badge: string
   headline: string
   intro: string
+  path: string
+  breadcrumbLabel: string
   heroPhotoId: string
   heroPhotoAlt: string
   stats: ServiceStat[]
@@ -38,6 +41,13 @@ export default function ServicePageLayout({ data }: { data: ServicePageData }) {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(data.schema) }}
+      />
+      <BreadcrumbSchema
+        items={[
+          { name: "Accueil", url: "https://www.facenordgraphisme.fr" },
+          { name: "Prestations", url: "https://www.facenordgraphisme.fr/prestations" },
+          { name: data.breadcrumbLabel, url: `https://www.facenordgraphisme.fr${data.path}` },
+        ]}
       />
 
       {/* ── Hero ──────────────────────────────────────────────────────────── */}

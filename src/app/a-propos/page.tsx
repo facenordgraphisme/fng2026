@@ -6,7 +6,8 @@ import { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "À Propos | Développeur Web Hautes-Alpes (Embrun)",
-  description: "Découvrez Face Nord Graphisme, votre partenaire local pour la création de sites internet dans les Hautes-Alpes. Basé à Embrun, j'accompagne les pros du 05."
+  description: "Découvrez Face Nord Graphisme, votre partenaire local pour la création de sites internet dans les Hautes-Alpes. Basé à Embrun, j'accompagne les pros du 05.",
+  alternates: { canonical: "https://www.facenordgraphisme.fr/a-propos" },
 };
 
 export default function AboutPage() {

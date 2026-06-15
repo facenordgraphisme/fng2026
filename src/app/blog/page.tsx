@@ -5,7 +5,8 @@ import { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Blog Web & SEO | Astuces digitales Hautes-Alpes",
-  description: "Actualités, conseils en création de site internet et référencement SEO pour développer votre visibilité locale dans les Hautes-Alpes (05)."
+  description: "Actualités, conseils en création de site internet et référencement SEO pour développer votre visibilité locale dans les Hautes-Alpes (05).",
+  alternates: { canonical: "https://www.facenordgraphisme.fr/blog" },
 };
 
 export default async function BlogPage() {

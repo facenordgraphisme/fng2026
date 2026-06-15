@@ -3,7 +3,7 @@ import ServicePageLayout, { type ServicePageData } from "@/components/ServicePag
 import { RefreshCcw, Zap, Brain, Search, Smartphone, TrendingUp } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Refonte Site Internet AI-Friendly — Hautes-Alpes | Face Nord Graphisme",
+  title: "Refonte Site Internet AI-Friendly — Hautes-Alpes",
   description: "Refonte de site internet optimisée pour Google et les IA (ChatGPT, Perplexity, AI Overviews). Mobile-first, Core Web Vitals, schema.org. Artisans et PME du 05. À partir de 800 € HT.",
   alternates: { canonical: "https://www.facenordgraphisme.fr/refonte-ai-friendly" },
   openGraph: { title: "Refonte Site Internet AI-Friendly | Face Nord Graphisme", description: "Refontes web optimisées pour Google ET les moteurs IA. Performance, schema.org, mobile-first. Devis gratuit pour les PME des Hautes-Alpes." },
@@ -13,6 +13,8 @@ const data: ServicePageData = {
   badge: "Refonte site web",
   headline: "Refonte de site internet AI-Friendly dans les Hautes-Alpes",
   intro: "Votre site date d'avant 2022 ? Il n'est pas visible sur ChatGPT, Perplexity ou les AI Overviews de Google. Une refonte AI-Friendly optimise simultanément votre référencement classique et votre présence dans les réponses des IA. À partir de 800 € HT.",
+  path: "/refonte-ai-friendly",
+  breadcrumbLabel: "Refonte AI-Friendly",
   heroPhotoId: "photo-1581291518857-4e27b48ff24e",
   heroPhotoAlt: "Développeur web comparant l'ancienne et la nouvelle version d'un site sur deux écrans",
   pricingFrom: "dès 800 € HT",

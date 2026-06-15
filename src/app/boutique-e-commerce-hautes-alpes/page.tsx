@@ -13,6 +13,8 @@ const data: ServicePageData = {
   badge: "E-commerce & réservation",
   headline: "Boutique e-commerce et réservation en ligne dans les Hautes-Alpes",
   intro: "Vendez vos produits, activités ou séjours directement en ligne. Sites e-commerce WooCommerce et modules de réservation sécurisés pour les entreprises du 05 — artisans, producteurs et prestataires touristiques.",
+  path: "/boutique-e-commerce-hautes-alpes",
+  breadcrumbLabel: "Boutique e-commerce",
   heroPhotoId: "photo-1556742049-0cfed4f6a45d",
   heroPhotoAlt: "Commerce local avec caisse enregistreuse et prise en main d'un smartphone pour payer en ligne",
   pricingFrom: "dès 2 500 € HT",

@@ -136,7 +136,9 @@ export default function RootLayout({
                   "name": "Face Nord Graphisme",
                   "image": "https://www.facenordgraphisme.fr/assets/home_intro.png",
                   "url": "https://www.facenordgraphisme.fr",
-                  "telephone": "+33600000000",
+                  "telephone": "+33651113928",
+                  "email": "contact@facenordgraphisme.fr",
+                  "areaServed": ["Embrun", "Gap", "Briançon", "Guillestre", "Hautes-Alpes"],
                   "address": {
                     "@type": "PostalAddress",
                     "streetAddress": "45 impasse du Serre",
