@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   title: "Référencement IA — GEO & AI Overviews | Hautes-Alpes",
   description: "Optimisez votre visibilité dans ChatGPT, Perplexity et les AI Overviews de Google. Stratégie GEO (Generative Engine Optimization) pour artisans et PME des Hautes-Alpes. Devis gratuit.",
   alternates: { canonical: "https://www.facenordgraphisme.fr/referencement-ia" },
-  openGraph: { title: "Référencement IA & GEO Hautes-Alpes | Face Nord Graphisme", description: "Soyez cité par ChatGPT, Perplexity et Google AI Overviews. Stratégie GEO + contenu structuré pour les PME du 05." },
+  openGraph: { title: "Référencement IA & GEO Hautes-Alpes | Face Nord Graphisme", description: "Soyez cité par ChatGPT, Perplexity et Google AI Overviews. Stratégie GEO + contenu structuré pour les PME du 05.", siteName: "Face Nord Graphisme", locale: "fr_FR", images: [{ url: "/assets/home_intro.png", width: 1200, height: 630, alt: "Face Nord Graphisme - Création de site internet dans les Hautes-Alpes" }] },
 };
 
 const data: ServicePageData = {

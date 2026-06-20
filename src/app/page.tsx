@@ -19,6 +19,9 @@ export const metadata: Metadata = {
     description: "Expert en création de site web et SEO basé à Embrun. Accompagnement local sur Gap, Briançon et Guillestre.",
     url: "https://www.facenordgraphisme.fr",
     type: "website",
+    siteName: "Face Nord Graphisme",
+    locale: "fr_FR",
+    images: [{ url: "/assets/home_intro.png", width: 1200, height: 630, alt: "Face Nord Graphisme - Création de site internet dans les Hautes-Alpes" }],
   }
 };
 

@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   title: "Référencement SEO Hautes-Alpes — Expert SEO local Gap, Briançon, Embrun",
   description: "Expert référencement Google dans les Hautes-Alpes. SEO local, optimisation GBP, audit technique, stratégie de contenu. Devis gratuit pour artisans et PME du 05.",
   alternates: { canonical: "https://www.facenordgraphisme.fr/referencement-seo-hautes-alpes" },
-  openGraph: { title: "Expert SEO Hautes-Alpes | Référencement Google local", description: "Référencement SEO local pour artisans et PME du 05. Audit, optimisation GBP, création de contenu. Apparaissez en premier sur Google." },
+  openGraph: { title: "Expert SEO Hautes-Alpes | Référencement Google local", description: "Référencement SEO local pour artisans et PME du 05. Audit, optimisation GBP, création de contenu. Apparaissez en premier sur Google.", siteName: "Face Nord Graphisme", locale: "fr_FR", images: [{ url: "/assets/home_intro.png", width: 1200, height: 630, alt: "Face Nord Graphisme - Création de site internet dans les Hautes-Alpes" }] },
 };
 
 const data: ServicePageData = {

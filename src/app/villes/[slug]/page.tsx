@@ -29,7 +29,7 @@ export async function generateMetadata({
     title,
     description,
     alternates: { canonical: url },
-    openGraph: { title: rawTitle, description, url, type: "website" },
+    openGraph: { title: rawTitle, description, url, type: "website", siteName: "Face Nord Graphisme", locale: "fr_FR", images: [{ url: "/assets/home_intro.png", width: 1200, height: 630, alt: "Face Nord Graphisme - Création de site internet dans les Hautes-Alpes" }] },
     twitter: { card: "summary_large_image", title: rawTitle, description },
   };
 }

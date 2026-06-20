@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   title: "Maintenance Site Internet Hautes-Alpes — WordPress & Next.js",
   description: "Maintenance de site internet dans les Hautes-Alpes. Mises à jour WordPress, sauvegardes, sécurité, corrections de bugs. Forfaits maintenance dès 50 € HT/mois pour artisans et PME du 05.",
   alternates: { canonical: "https://www.facenordgraphisme.fr/maintenance-site-internet-hautes-alpes" },
-  openGraph: { title: "Maintenance Site Internet Hautes-Alpes | Face Nord Graphisme", description: "Forfaits maintenance WordPress et Next.js pour PME du 05. Sauvegardes, mises à jour, sécurité, corrections bugs. Dès 50 € HT/mois." },
+  openGraph: { title: "Maintenance Site Internet Hautes-Alpes | Face Nord Graphisme", description: "Forfaits maintenance WordPress et Next.js pour PME du 05. Sauvegardes, mises à jour, sécurité, corrections bugs. Dès 50 € HT/mois.", siteName: "Face Nord Graphisme", locale: "fr_FR", images: [{ url: "/assets/home_intro.png", width: 1200, height: 630, alt: "Face Nord Graphisme - Création de site internet dans les Hautes-Alpes" }] },
 };
 
 const data: ServicePageData = {

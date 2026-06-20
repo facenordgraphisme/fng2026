@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   title: "Boutique E-commerce Hautes-Alpes — WooCommerce & Next.js",
   description: "Création de boutique e-commerce dans les Hautes-Alpes. WooCommerce, réservation en ligne, paiement sécurisé. Pour artisans, producteurs locaux et prestataires touristiques du 05.",
   alternates: { canonical: "https://www.facenordgraphisme.fr/boutique-e-commerce-hautes-alpes" },
-  openGraph: { title: "Boutique E-commerce Hautes-Alpes | Face Nord Graphisme", description: "Sites e-commerce et réservation en ligne pour les PME du 05. WooCommerce, Stripe, paiement sécurisé. Devis gratuit." },
+  openGraph: { title: "Boutique E-commerce Hautes-Alpes | Face Nord Graphisme", description: "Sites e-commerce et réservation en ligne pour les PME du 05. WooCommerce, Stripe, paiement sécurisé. Devis gratuit.", siteName: "Face Nord Graphisme", locale: "fr_FR", images: [{ url: "/assets/home_intro.png", width: 1200, height: 630, alt: "Face Nord Graphisme - Création de site internet dans les Hautes-Alpes" }] },
 };
 
 const data: ServicePageData = {

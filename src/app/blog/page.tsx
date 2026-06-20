@@ -1,6 +1,7 @@
 import AnimatedText from "@/components/AnimatedText";
 import { getPosts } from "@/sanity/lib/queries";
 import Link from "next/link";
+import Image from "next/image";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -34,8 +35,8 @@ export default async function BlogPage() {
               <Link href={href} key={index} className="block group">
                 <AnimatedText className="flex flex-col bg-white border border-gray-100 shadow-[0_10px_20px_rgba(0,0,0,0.03)] rounded-3xl hover:shadow-[0_15px_30px_rgba(35,158,160,0.1)] hover:-translate-y-2 transition-all overflow-hidden h-full">
                   {imageUrl ? (
-                    <div className="h-48 w-full overflow-hidden">
-                      <div className="w-full h-full bg-cover bg-center group-hover:scale-105 transition-transform" style={{ backgroundImage: `url(${imageUrl})` }} />
+                    <div className="h-48 w-full overflow-hidden relative">
+                      <Image src={imageUrl} alt={post.title} fill priority={index === 0} sizes="(max-width: 768px) 100vw, 33vw" className="object-cover group-hover:scale-105 transition-transform" />
                     </div>
                   ) : (
                     <div className="h-48 w-full bg-[#f4f7f9] flex items-center justify-center">

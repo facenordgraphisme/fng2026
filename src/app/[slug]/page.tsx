@@ -32,6 +32,8 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
       title,
       description,
       url,
+      siteName: 'Face Nord Graphisme',
+      locale: 'fr_FR',
       type: 'website',
       images: [
         {

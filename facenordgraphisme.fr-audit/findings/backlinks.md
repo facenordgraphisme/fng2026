@@ -1,6 +1,6 @@
 # Backlink Profile — facenordgraphisme.fr
 
-**Score: 30 / 100**
+**Score: 35 / 100** (updated 2026-06-15, see Verification Update below)
 
 **Data sources:** Common Crawl Web Graph (`commoncrawl_graph.py`, release `cc-main-2026-jan-feb-mar`, tier 0 — no Moz/Bing credentials configured), live verification crawl of the 5 portfolio client domains listed in `facenordgraphisme.fr-audit/raw/client-backlink-candidates.json`, LinkedIn company-page check (2026-06-15).
 
@@ -50,15 +50,14 @@ This means that beyond the 5 portfolio-credit links confirmed by direct verifica
 
 ---
 
-### 2. MEDIUM — One of five client credit-links originates from a non-HTTPS site
+### 2. ~~MEDIUM — One of five client credit-links originates from a non-HTTPS site~~ — RESOLVED
 
-**Severity:** Medium
+**Severity:** Medium (resolved)
 
 **Description:**
-`gaudineto.fr` (note: live as `http://www.gaudineto.fr`, no HTTPS) is one of the 5 portfolio sites built by this agency and carries a dofollow credit link back to `facenordgraphisme.fr`. A non-HTTPS referring site is a minor trust/quality signal issue for the link itself, but more importantly — **this is the agency's own client deliverable still running without TLS**, which is a quality/reputation issue independent of backlinks (a web design agency's portfolio should not showcase a client site lacking basic HTTPS).
+`gaudineto.fr` (previously live as `http://www.gaudineto.fr`, no HTTPS) is one of the 5 portfolio sites built by this agency and carries a dofollow credit link back to `facenordgraphisme.fr`.
 
-**Recommendation:**
-Migrate `gaudineto.fr` to HTTPS (trivial on most modern hosts — Vercel/Netlify/most shared hosts provide free TLS via Let's Encrypt) — this benefits both the client's own site and the credit-link's value, and removes a "this agency's work isn't even secured" objection a prospect might raise after clicking through from the portfolio page.
+**Update (verification re-check, same day):** `http://www.gaudineto.fr` and `http://gaudineto.fr` now return `301 Moved Permanently` → `https://gaudineto.fr/` (200 OK, valid TLS). The site has migrated to HTTPS since the initial crawl. No action needed — this finding is resolved.
 
 ---
 

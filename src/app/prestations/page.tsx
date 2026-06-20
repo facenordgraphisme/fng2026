@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   title: "Prestations Web & SEO — Création, Refonte, Maintenance | Hautes-Alpes",
   description: "Création de site internet, e-commerce, référencement SEO, refonte AI-Friendly, maintenance et optimisation IA. Services web pour artisans et PME des Hautes-Alpes. Devis gratuit.",
   alternates: { canonical: "https://www.facenordgraphisme.fr/prestations" },
-  openGraph: { title: "Prestations Web & SEO Hautes-Alpes | Face Nord Graphisme", description: "6 prestations web pour développer votre présence en ligne dans les Hautes-Alpes. Devis gratuit sous 48 h." },
+  openGraph: { title: "Prestations Web & SEO Hautes-Alpes | Face Nord Graphisme", description: "6 prestations web pour développer votre présence en ligne dans les Hautes-Alpes. Devis gratuit sous 48 h.", siteName: "Face Nord Graphisme", locale: "fr_FR", images: [{ url: "/assets/home_intro.png", width: 1200, height: 630, alt: "Face Nord Graphisme - Création de site internet dans les Hautes-Alpes" }] },
 };
 
 const services = [

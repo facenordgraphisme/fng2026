@@ -1,0 +1,266 @@
+[
+  {
+    "path": "/",
+    "score": 0.89,
+    "performance": 0.7,
+    "accessibility": 0.87,
+    "best-practices": 1,
+    "seo": 1
+  },
+  {
+    "path": "/a-propos",
+    "score": 0.95,
+    "performance": 0.91,
+    "accessibility": 0.89,
+    "best-practices": 1,
+    "seo": 1
+  },
+  {
+    "path": "/blog",
+    "score": 0.95,
+    "performance": 0.88,
+    "accessibility": 0.91,
+    "best-practices": 1,
+    "seo": 1
+  },
+  {
+    "path": "/blog/4-signaux-citation-ia-artisans",
+    "score": 0.9,
+    "performance": 0.71,
+    "accessibility": 0.87,
+    "best-practices": 1,
+    "seo": 1
+  },
+  {
+    "path": "/blog/balises-title-meta-description-pme-hautes-alpes",
+    "score": 0.89,
+    "performance": 0.71,
+    "accessibility": 0.85,
+    "best-practices": 1,
+    "seo": 1
+  },
+  {
+    "path": "/blog/digitaliser-reservations-tourisme-hautes-alpes",
+    "score": 0.89,
+    "performance": 0.69,
+    "accessibility": 0.86,
+    "best-practices": 1,
+    "seo": 1
+  },
+  {
+    "path": "/blog/geo-referencement-ia-artisans-pme-hautes-alpes",
+    "score": 0.89,
+    "performance": 0.7,
+    "accessibility": 0.87,
+    "best-practices": 1,
+    "seo": 1
+  },
+  {
+    "path": "/blog/gerer-avis-google-artisans-pme-hautes-alpes",
+    "score": 0.95,
+    "performance": 0.9,
+    "accessibility": 0.89,
+    "best-practices": 1,
+    "seo": 1
+  },
+  {
+    "path": "/blog/google-business-profile-artisans-hautes-alpes",
+    "score": 0.95,
+    "performance": 0.93,
+    "accessibility": 0.87,
+    "best-practices": 1,
+    "seo": 1
+  },
+  {
+    "path": "/blog/guide-creation-site-internet-artisan-hautes-alpes",
+    "score": 0.89,
+    "performance": 0.67,
+    "accessibility": 0.87,
+    "best-practices": 1,
+    "seo": 1
+  },
+  {
+    "path": "/blog/reservation-directe-eviter-commissions-booking-hautes-alpes",
+    "score": 0.94,
+    "performance": 0.9,
+    "accessibility": 0.87,
+    "best-practices": 1,
+    "seo": 1
+  },
+  {
+    "path": "/boutique-e-commerce-hautes-alpes",
+    "score": 0.93,
+    "performance": 0.8,
+    "accessibility": 0.91,
+    "best-practices": 1,
+    "seo": 1
+  },
+  {
+    "path": "/contact",
+    "score": 0.95,
+    "performance": 0.92,
+    "accessibility": 0.86,
+    "best-practices": 1,
+    "seo": 1
+  },
+  {
+    "path": "/creation-site-internet-hautes-alpes",
+    "score": 0.97,
+    "performance": 0.95,
+    "accessibility": 0.91,
+    "best-practices": 1,
+    "seo": 1
+  },
+  {
+    "path": "/faq",
+    "score": 0.9,
+    "performance": 0.69,
+    "accessibility": 0.91,
+    "best-practices": 1,
+    "seo": 1
+  },
+  {
+    "path": "/maintenance-site-internet-hautes-alpes",
+    "score": 0.97,
+    "performance": 0.96,
+    "accessibility": 0.91,
+    "best-practices": 1,
+    "seo": 1
+  },
+  {
+    "path": "/mentions-legales",
+    "score": 0.96,
+    "performance": 0.93,
+    "accessibility": 0.91,
+    "best-practices": 1,
+    "seo": 1
+  },
+  {
+    "path": "/politique-de-confidentialite",
+    "score": 0.95,
+    "performance": 0.93,
+    "accessibility": 0.87,
+    "best-practices": 1,
+    "seo": 1
+  },
+  {
+    "path": "/portfolio",
+    "score": 0.92,
+    "performance": 0.76,
+    "accessibility": 0.91,
+    "best-practices": 1,
+    "seo": 1
+  },
+  {
+    "path": "/portfolio/act-event-pro",
+    "score": 0.89,
+    "performance": 0.67,
+    "accessibility": 0.87,
+    "best-practices": 1,
+    "seo": 1
+  },
+  {
+    "path": "/portfolio/gaec-des-valentins",
+    "score": 0.89,
+    "performance": 0.7,
+    "accessibility": 0.87,
+    "best-practices": 1,
+    "seo": 1
+  },
+  {
+    "path": "/portfolio/gaudineto",
+    "score": 0.91,
+    "performance": 0.74,
+    "accessibility": 0.91,
+    "best-practices": 1,
+    "seo": 1
+  },
+  {
+    "path": "/portfolio/reves-d-aventures",
+    "score": 0.91,
+    "performance": 0.74,
+    "accessibility": 0.91,
+    "best-practices": 1,
+    "seo": 1
+  },
+  {
+    "path": "/portfolio/reves-daventures",
+    "score": 0.95,
+    "performance": 0.93,
+    "accessibility": 0.87,
+    "best-practices": 1,
+    "seo": 1
+  },
+  {
+    "path": "/portfolio/verdon-ebike",
+    "score": 0.95,
+    "performance": 0.89,
+    "accessibility": 0.91,
+    "best-practices": 1,
+    "seo": 1
+  },
+  {
+    "path": "/prestations",
+    "score": 0.97,
+    "performance": 0.96,
+    "accessibility": 0.91,
+    "best-practices": 1,
+    "seo": 1
+  },
+  {
+    "path": "/referencement-ia",
+    "score": 0.97,
+    "performance": 0.96,
+    "accessibility": 0.91,
+    "best-practices": 1,
+    "seo": 1
+  },
+  {
+    "path": "/referencement-seo-hautes-alpes",
+    "score": 0.96,
+    "performance": 0.94,
+    "accessibility": 0.91,
+    "best-practices": 1,
+    "seo": 1
+  },
+  {
+    "path": "/refonte-ai-friendly",
+    "score": 0.94,
+    "performance": 0.85,
+    "accessibility": 0.91,
+    "best-practices": 1,
+    "seo": 1
+  },
+  {
+    "path": "/refonte-ia-friendly",
+    "score": 0.96,
+    "performance": 0.92,
+    "accessibility": 0.91,
+    "best-practices": 1,
+    "seo": 1
+  },
+  {
+    "path": "/villes/briancon-hautes-alpes",
+    "score": 0.97,
+    "performance": 0.95,
+    "accessibility": 0.91,
+    "best-practices": 1,
+    "seo": 1
+  },
+  {
+    "path": "/villes/embrun-serre-poncon",
+    "score": 0.97,
+    "performance": 0.97,
+    "accessibility": 0.91,
+    "best-practices": 1,
+    "seo": 1
+  },
+  {
+    "path": "/villes/gap-hautes-alpes",
+    "score": 0.93,
+    "performance": 0.8,
+    "accessibility": 0.91,
+    "best-practices": 1,
+    "seo": 1
+  }
+]

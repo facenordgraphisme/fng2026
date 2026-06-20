@@ -1,4 +1,5 @@
 import { groq } from "next-sanity";
+import { normalizeProject } from "@/lib/portfolioImages";
 
 export const authorQuery = groq`*[_type == "author"][0] {
   _id, name, slug, role, bio, linkedin, website,
@@ -43,19 +44,29 @@ export const serviceBySlugQuery = groq`*[_type == "service" && slug.current == $
 }`;
 
 export const projectQuery = groq`*[_type == "project"] | order(_createdAt desc) {
-  _id, title, slug, mainImage { "url": asset->url }, description
+  _id, title, slug,
+  "mainImageSanity": mainImage.asset->url,
+  imageUrl,
+  tags, sector, year,
+  description
 }`;
 
 export const projectBySlugQuery = groq`*[_type == "project" && slug.current == $slug][0] {
-  _id, title, slug, mainImage { "url": asset->url }, description, link, 
+  _id, title, slug,
+  "mainImageSanity": mainImage.asset->url,
+  imageUrl,
+  tags, sector, year, relatedSlugs,
+  description, link,
   content[] {
     ...,
     _type == "image" => {
       ...,
       "url": asset->url
     }
-  }, 
-  gallery[] { "url": asset->url }, seoTitle, seoDescription
+  },
+  "gallerySanity": gallery[]{ "url": asset->url },
+  galleryUrls,
+  seoTitle, seoDescription
 }`;
 
 export const postQuery = groq`*[_type == "post"] | order(publishedAt desc) {
@@ -242,40 +253,52 @@ export async function getProjects() {
     const { client } = await import("./client");
     if (client.config().projectId === 'votre-project-id') throw new Error('Not linked or empty');
     const data = await client.fetch(projectQuery, {}, { cache: 'no-store' });
-    if (data && data.length > 0) return data;
+    if (data && data.length > 0) return data.map(normalizeProject);
     throw new Error('Empty Array');
   } catch (error) {
     return [
       {
         title: "Gaudineto",
         slug: { current: "gaudineto" },
-        description: "Identité visuelle complète et site bilingue pour un restaurant gastronomique aux portes des Gorges du Verdon.",
-        mainImage: { url: "/assets/about-img1.png" }
+        tags: ["Restaurant", "Site bilingue", "Identité visuelle"],
+        description: "Site bilingue FR/EN et identité visuelle complète pour un restaurant gastronomique à Moustiers-Sainte-Marie, aux portes des Gorges du Verdon.",
+        mainImage: { url: "/assets/portfolio/gaudineto-home.png" }
       },
       {
         title: "GAEC des Valentins",
         slug: { current: "gaec-des-valentins" },
-        description: "Boutique e-commerce WooCommerce et site vitrine pour un élevage d'agneau en vente directe dans les Hautes-Alpes.",
-        mainImage: { url: "/assets/about-img2.png" }
+        tags: ["E-Commerce", "Agritourisme", "SEO local"],
+        description: "Boutique e-commerce et site vitrine pour un élevage d'agneau en circuit court dans les Hautes-Alpes, labellisé Hautes-Alpes Naturellement.",
+        mainImage: { url: "/assets/portfolio/gaecdesvalentins-home.png" }
       },
       {
-        title: "ACT Event Pro",
-        slug: { current: "act-event-pro" },
-        description: "Site vitrine premium dark mode pour un DJ et prestataire événementiel basé dans les Hautes-Alpes.",
-        mainImage: { url: "/assets/about-img3.png" }
+        title: "L'Instant Verdon",
+        slug: { current: "linstant-verdon" },
+        tags: ["Tourisme outdoor", "Site bilingue", "Réservation"],
+        description: "Site vitrine bilingue et réservation pour un syndicat de prestataires outdoor au cœur des Gorges du Verdon — canyoning, escalade, parcours aventure.",
+        mainImage: { url: "/assets/portfolio/linstantverdon-home.png" }
       },
       {
         title: "Rêves d'Aventures",
         slug: { current: "reves-daventures" },
-        description: "Site vitrine et réservation en ligne pour un prestataire de sports outdoor dans les Hautes-Alpes.",
-        mainImage: { url: "/assets/about-img1.png" }
+        tags: ["Tourisme outdoor", "Réservation en ligne", "SEO"],
+        description: "Site avec réservation en ligne pour un prestataire de sports outdoor dans les Hautes-Alpes — escalade, canyoning, VTT, via ferrata autour de Serre-Ponçon.",
+        mainImage: { url: "/assets/portfolio/revesdaventures-home.png" }
       },
       {
         title: "Verdon E-Bike",
         slug: { current: "verdon-ebike" },
-        description: "Site vitrine et location en ligne pour un prestataire de vélos électriques dans les Gorges du Verdon.",
-        mainImage: { url: "/assets/about-img2.png" }
-      }
+        tags: ["Tourisme vélo", "Location en ligne", "Multilingue"],
+        description: "Site de location de VAE multilingue pour explorer les Gorges du Verdon à vélo électrique — Route des Crêtes, itinéraires guidés, La Palud-sur-Verdon.",
+        mainImage: { url: "/assets/portfolio/verdonebike-home.png" }
+      },
+      {
+        title: "ACT Event Pro",
+        slug: { current: "act-event-pro" },
+        tags: ["Événementiel", "Dark mode premium", "Formulaire devis"],
+        description: "Site vitrine dark mode premium pour un DJ et prestataire événementiel des Hautes-Alpes — mariages, festivals, concerts en Région Sud.",
+        mainImage: { url: "/assets/portfolio/acteventpro-home.png" }
+      },
     ];
   }
 }
@@ -285,84 +308,182 @@ export async function getProjectBySlug(slug: string) {
     const { client } = await import("./client");
     if (client.config().projectId === 'votre-project-id') throw new Error('Not linked or empty');
     const data = await client.fetch(projectBySlugQuery, { slug }, { cache: 'no-store' });
-    if (data) return data;
+    if (data) return normalizeProject(data);
     throw new Error('Not Found');
   } catch (error) {
     const block = (text: string, style = 'normal') => ({ _type: 'block', style, children: [{ _type: 'span', text }] });
     const contentMap: Record<string, any> = {
       "gaudineto": {
         title: "Gaudineto",
-        description: "Identité visuelle complète et site bilingue pour un restaurant gastronomique aux portes des Gorges du Verdon.",
+        tags: ["Restaurant", "Site bilingue", "Identité visuelle"],
+        sector: "Restauration gastronomique",
+        year: "2024",
+        description: "Site bilingue FR/EN et identité visuelle complète pour un restaurant gastronomique à Moustiers-Sainte-Marie, aux portes des Gorges du Verdon.",
+        seoTitle: "Gaudineto — Site bilingue restaurant gastronomique Moustiers-Sainte-Marie | Face Nord Graphisme",
+        seoDescription: "Création du site bilingue FR/EN et de l'identité visuelle du restaurant Gaudineto à Moustiers-Sainte-Marie (Verdon). Design dark élégant, réservation en ligne, galerie photo.",
         link: "https://gaudineto.fr/",
-        mainImage: { url: "/assets/about-img1.png" },
+        mainImage: { url: "/assets/portfolio/gaudineto-home.png" },
+        gallery: [
+          { url: "/assets/portfolio/gaudineto-apropos-menu.png" },
+          { url: "/assets/portfolio/gaudineto-interieur.png" },
+          { url: "/assets/portfolio/gaudineto-reservation.png" },
+        ],
+        relatedSlugs: ["linstant-verdon", "verdon-ebike", "act-event-pro"],
         content: [
-          block("À propos du projet", "h2"),
-          block("Gaudineto est un restaurant gastronomique installé dans les murs d'une ancienne boulangerie du XIVe siècle à Moustiers-Sainte-Marie. L'établissement propose une cuisine créative et raffinée, ancrée dans les produits locaux et la saisonnalité."),
-          block("Identité visuelle & print", "h3"),
-          block("Création du logotype, de la palette de couleurs (crème, or, noir profond) et des typographies. Déclinaison sur les menus imprimés et les cartes de visite."),
-          block("Site vitrine bilingue", "h3"),
-          block("Développement d'un site bilingue (FR/EN) avec galerie photo, présentation des menus, formulaire de réservation en ligne, intégration Google Maps et WhatsApp."),
-          block("Un site élégant, épuré et rapide — à l'image de la cuisine créative du chef.", "blockquote")
+          block("Le projet", "h2"),
+          block("Gaudineto est un restaurant gastronomique installé dans les murs d'une ancienne boulangerie du XIVe siècle à Moustiers-Sainte-Marie, village classé parmi les Plus Beaux Villages de France. L'établissement propose une cuisine créative et raffinée, ancrée dans les produits locaux et la saisonnalité de Provence-Alpes-Côte d'Azur."),
+          block("La mission était double : créer une identité visuelle forte qui reflète l'élégance du lieu, et développer un site web bilingue (français/anglais) capable d'attirer aussi bien la clientèle locale que les touristes internationaux qui visitent les Gorges du Verdon chaque été."),
+          block("Identité visuelle & direction artistique", "h2"),
+          block("Création from scratch du logotype avec le monogramme 'G' stylisé, décliné dans une palette crème, or et noir profond. Sélection typographique haut de gamme pour refléter le positionnement gastronomique. La charte graphique a été déclinée sur les menus imprimés, les cartes de visite et les supports digitaux — une cohérence totale entre le print et le web."),
+          block("Site vitrine bilingue FR/EN", "h2"),
+          block("Le site est entièrement bilingue (français/anglais) pour capter la clientèle internationale de passage dans le Verdon. Il intègre une galerie photo immersive des plats et de la salle, la présentation du chef et de sa cuisine, un système de réservation en ligne avec confirmation automatique, et des boutons d'appel rapide (téléphone, WhatsApp) pour faciliter la prise de contact."),
+          block("Le design dark élégant, avec ses tons crème et or sur fond sombre, traduit visuellement l'expérience gastronomique : raffinée, lumineuse et mémorable.", "blockquote"),
+          block("SEO local & performances", "h2"),
+          block("Optimisation SEO pour les requêtes 'restaurant Moustiers-Sainte-Marie', 'gastronomique Gorges du Verdon', 'restaurant Provence Verdon'. Balisage LocalBusiness Schema.org avec coordonnées, horaires et avis. Score PageSpeed > 90/100. Le site s'affiche en première page sur les recherches locales pour le restaurant."),
         ]
       },
       "gaec-des-valentins": {
         title: "GAEC des Valentins",
-        description: "Boutique e-commerce WooCommerce et site vitrine pour un élevage d'agneau en vente directe dans les Hautes-Alpes.",
+        tags: ["E-Commerce", "Agritourisme", "SEO local"],
+        sector: "Agriculture & circuit court",
+        year: "2023",
+        description: "Boutique e-commerce et site vitrine pour un élevage d'agneau en circuit court dans les Hautes-Alpes, labellisé Hautes-Alpes Naturellement.",
+        seoTitle: "GAEC des Valentins — E-commerce agneau Hautes-Alpes | Face Nord Graphisme",
+        seoDescription: "Création de la boutique e-commerce et du site vitrine du GAEC des Valentins (Châteauroux-les-Alpes). Vente directe d'agneau en ligne, label Hautes-Alpes Naturellement, SEO local.",
         link: "https://gaecdesvalentins.fr/",
-        mainImage: { url: "/assets/about-img2.png" },
+        mainImage: { url: "/assets/portfolio/gaecdesvalentins-home.png" },
+        gallery: [
+          { url: "/assets/portfolio/gaecdesvalentins-home-2.png" },
+          { url: "/assets/portfolio/gaecdesvalentins-colis.png" },
+          { url: "/assets/portfolio/gaecdesvalentins-activites.png" },
+        ],
+        relatedSlugs: ["reves-daventures", "linstant-verdon", "verdon-ebike"],
         content: [
-          block("À propos du projet", "h2"),
-          block("Le GAEC des Valentins est un élevage ovin à Châteauroux-les-Alpes spécialisé dans la vente directe d'agneau de qualité, labellisé Hautes-Alpes Naturellement."),
-          block("Boutique e-commerce WooCommerce", "h3"),
-          block("Boutique WooCommerce pour commander des colis d'agneau en ligne, avec paiement sécurisé, gestion des stocks et emails automatiques de confirmation."),
-          block("Site vitrine & SEO local", "h3"),
-          block("Présentation de l'élevage, blog, section agritourisme, intégration avis Google (4,9/5). SEO optimisé pour les requêtes 'agneau Hautes-Alpes' et 'vente directe agneau 05'."),
-          block("Un site qui fait le lien entre une exploitation agricole authentique et les consommateurs qui cherchent à acheter local.", "blockquote")
+          block("Le projet", "h2"),
+          block("Le GAEC des Valentins est un élevage ovin familial situé à Châteauroux-les-Alpes, dans les Hautes-Alpes, spécialisé dans l'élevage d'agneaux de qualité en plein air. Titulaire du label Hautes-Alpes Naturellement, l'exploitation mise sur la transparence, la proximité et la vente en circuit court — à la ferme, sur les marchés, et désormais en ligne."),
+          block("L'enjeu principal était de créer un outil numérique qui permette aux éleveurs de vendre leurs colis d'agneau directement en ligne, tout en racontant l'histoire de la ferme et en développant l'agritourisme autour des visites et activités pour les familles."),
+          block("Boutique e-commerce WooCommerce", "h2"),
+          block("Développement d'une boutique WooCommerce sur-mesure permettant de commander des colis d'agneau en ligne (colis familiaux, professionnels, formats multiples). Paiement sécurisé via Stripe, gestion des stocks, emails de confirmation automatiques et suivi de commande. La boutique est pensée pour être autonome : les éleveurs la mettent à jour eux-mêmes depuis l'interface d'administration WordPress."),
+          block("Site vitrine & agritourisme", "h2"),
+          block("Au-delà de la boutique, le site valorise la vie de la ferme : présentation de l'élevage, des valeurs (bien-être animal, environnement), des activités à la ferme pour les familles et les scolaires (visite des agneaux, contact avec les animaux chaque samedi). Une section blog permet de partager les actualités de la saison et d'améliorer le référencement naturel."),
+          block("'Goûtez l'agneau du GAEC des Valentins, vous en tomberez amoureux' — une promesse de qualité directement de la ferme à votre table.", "blockquote"),
+          block("SEO local & résultats", "h2"),
+          block("Référencement ciblé sur les requêtes 'agneau Hautes-Alpes', 'vente directe agneau 05', 'colis agneau Embrun', 'Hautes-Alpes Naturellement'. Intégration des avis Google (4,9/5) en page d'accueil pour renforcer la confiance. Le site génère régulièrement des commandes en ligne, notamment depuis Gap, Briançon et la région PACA."),
+        ]
+      },
+      "linstant-verdon": {
+        title: "L'Instant Verdon",
+        tags: ["Tourisme outdoor", "Site bilingue", "Réservation"],
+        sector: "Sports outdoor & nature",
+        year: "2024",
+        description: "Site vitrine bilingue et système de réservation pour un syndicat de prestataires outdoor au cœur des Gorges du Verdon — canyoning, escalade, parcours aventure.",
+        seoTitle: "L'Instant Verdon — Site outdoor bilingue Gorges du Verdon | Face Nord Graphisme",
+        seoDescription: "Création du site bilingue FR/EN de L'Instant Verdon, syndicat de prestataires outdoor dans les Gorges du Verdon. Canyoning, escalade, parcours aventure. Design immersif, réservation en ligne.",
+        link: "https://linstantverdon.com/",
+        mainImage: { url: "/assets/portfolio/linstantverdon-home.png" },
+        gallery: [
+          { url: "/assets/portfolio/linstantverdon-activites.png" },
+          { url: "/assets/portfolio/linstantverdon-equipe.png" },
+          { url: "/assets/portfolio/linstantverdon-apropos.png" },
+        ],
+        relatedSlugs: ["reves-daventures", "verdon-ebike", "gaec-des-valentins"],
+        content: [
+          block("Le projet", "h2"),
+          block("L'Instant Verdon est un syndicat local de travailleurs indépendants créé en 2016 et restructuré en 2025, basé à La Palud-sur-Verdon au cœur des Gorges du Verdon. Angèle Kanapa et Emma Aglié représentent aujourd'hui le collectif, qui rassemble des guides et moniteurs certifiés pour offrir des expériences outdoor authentiques dans l'un des plus beaux sites naturels d'Europe."),
+          block("L'enjeu était de créer un site à la hauteur du cadre exceptionnel des Gorges du Verdon : immersif, moderne, bilingue (français/anglais pour capter les touristes étrangers), et capable de convertir les visiteurs en réservations directes."),
+          block("Design immersif & identité visuelle", "h2"),
+          block("Conception d'un design dark & immersif avec des photos aériennes et plongeantes des Gorges du Verdon en hero plein écran. Le logo au caducée stylisé et les accents turquoise rappellent la couleur unique des eaux du Verdon. Chaque section est pensée pour faire ressentir l'aventure avant même de partir."),
+          block("'Là où l'aventure rencontre la nature' — une promesse visuelle tenue de la première image à la dernière ligne.", "blockquote"),
+          block("Activités & réservation en ligne", "h2"),
+          block("Présentation des activités phares : canyoning dans les gorges, escalade sur les falaises calcaires, parcours aventure multi-activités. Chaque activité dispose de sa propre page avec niveau, durée, équipement fourni et tarifs. Système de réservation en ligne intégré avec calendrier de disponibilités, sélection du groupe et paiement sécurisé."),
+          block("Site bilingue FR/EN & SEO tourisme", "h2"),
+          block("Le site est entièrement bilingue (français/anglais) pour capter la clientèle internationale qui visite les Gorges du Verdon chaque été. SEO optimisé pour les requêtes 'canyoning Verdon', 'escalade Gorges du Verdon', 'guide outdoor Verdon', 'activités Verdon'. Intégration des avis clients et des réseaux sociaux pour renforcer la confiance."),
         ]
       },
       "act-event-pro": {
         title: "ACT Event Pro",
-        description: "Site vitrine premium dark mode pour un DJ et prestataire événementiel basé dans les Hautes-Alpes.",
+        tags: ["Événementiel", "Dark mode premium", "Formulaire devis"],
+        sector: "DJ & prestation événementielle",
+        year: "2024",
+        description: "Site vitrine dark mode premium pour un DJ et prestataire événementiel des Hautes-Alpes — mariages, festivals, concerts, événements d'entreprise en Région Sud.",
+        seoTitle: "ACT Event Pro — Site DJ événementiel Hautes-Alpes | Face Nord Graphisme",
+        seoDescription: "Création du site vitrine dark mode d'ACT Event Pro, DJ et prestataire événementiel basé dans les Hautes-Alpes. Mariages, festivals, concerts. Formulaire devis, galerie, SEO.",
         link: "https://www.act-event-pro.fr/",
-        mainImage: { url: "/assets/about-img3.png" },
+        mainImage: { url: "/assets/portfolio/acteventpro-home.png" },
+        gallery: [
+          { url: "/assets/portfolio/acteventpro-prestations.png" },
+          { url: "/assets/portfolio/acteventpro-apropos.png" },
+          { url: "/assets/portfolio/acteventpro-passion.png" },
+        ],
+        relatedSlugs: ["gaudineto", "reves-daventures", "linstant-verdon"],
         content: [
-          block("À propos du projet", "h2"),
-          block("ACT Event Pro est une entreprise de DJ, sonorisation et éclairage professionnel basée dans les Hautes-Alpes, couvrant le Sud-Est de la France pour mariages, festivals et événements d'entreprise."),
-          block("Design dark mode premium", "h3"),
-          block("Site vitrine dark mode avec typographies soignées et accents or. Galerie interactive, témoignages clients, carousel de logos. Le design reflète le positionnement haut de gamme de l'entreprise."),
-          block("Formulaire devis & SEO", "h3"),
-          block("Formulaire de devis avec sélection du type d'événement, de la date et de la zone. SEO optimisé : 'DJ mariage Hautes-Alpes', 'sonorisation événement 05'."),
-          block("L'alliance unique de la sensibilité artistique et de la rigueur technique — visible dès la première page.", "blockquote")
+          block("Le projet", "h2"),
+          block("ACT Event Pro est né d'une passion pour la musique et d'une double compétence rare dans le milieu : la direction technique et la sensibilité artistique. Né à Marseille, ancré dans les Hautes-Alpes, le prestataire couvre mariages, festivals, concerts et événements d'entreprise dans toute la Région Sud — et au-delà."),
+          block("Le défi était de créer un site qui impose immédiatement le positionnement haut de gamme, donne envie de contacter pour un devis, et soit efficacement référencé sur les requêtes événementielles locales."),
+          block("Design dark mode premium", "h2"),
+          block("Conception d'un site vitrine entièrement en dark mode, avec une identité visuelle forte basée sur le logo triangle 'A' doré sur fond sombre. Typographies premium, effets de parallaxe subtils, galerie photo et vidéo des prestations. Le résultat : un site qui ressemble à la scène — professionnel, impactant, mémorable."),
+          block("'L'alliance unique d'une sensibilité artistique et d'une rigueur technique' — visible dès la première seconde sur le site.", "blockquote"),
+          block("Prestations & formulaire devis", "h2"),
+          block("Pages dédiées à chaque prestation : DJ mariage, soirée 100% personnalisée, location de matériel son et lumière. Formulaire de demande de devis avec sélection du type d'événement, de la date, de la jauge et de la zone géographique. Chaque leads est qualifié avant même le premier contact téléphonique."),
+          block("SEO & visibilité régionale", "h2"),
+          block("SEO optimisé pour les requêtes 'DJ mariage Hautes-Alpes', 'sonorisation événement 05', 'DJ Alpes du Sud', 'prestataire événementiel Briançon Gap Embrun'. Page 'À propos' avec storytelling détaillé pour renforcer les signaux E-E-A-T et la confiance des moteurs de recherche."),
         ]
       },
       "reves-daventures": {
         title: "Rêves d'Aventures",
-        description: "Site vitrine et réservation en ligne pour un prestataire de sports outdoor dans les Hautes-Alpes.",
+        tags: ["Tourisme outdoor", "Réservation en ligne", "SEO"],
+        sector: "Sports outdoor & activités de plein air",
+        year: "2023",
+        description: "Site avec réservation en ligne pour un prestataire de sports outdoor dans les Hautes-Alpes — escalade, canyoning, VTT, via ferrata autour de Serre-Ponçon.",
+        seoTitle: "Rêves d'Aventures — Site réservation outdoor Hautes-Alpes | Face Nord Graphisme",
+        seoDescription: "Création du site de Rêves d'Aventures, prestataire outdoor dans les Hautes-Alpes. Escalade, canyoning, via ferrata, VTT autour de Serre-Ponçon. Calendrier de réservation en ligne.",
         link: "https://www.revesdaventures.fr/",
-        mainImage: { url: "/assets/about-img1.png" },
+        mainImage: { url: "/assets/portfolio/revesdaventures-home.png" },
+        gallery: [
+          { url: "/assets/portfolio/revesdaventures-calendrier.png" },
+          { url: "/assets/portfolio/revesdaventures-activites.png" },
+        ],
+        relatedSlugs: ["linstant-verdon", "verdon-ebike", "gaec-des-valentins"],
         content: [
-          block("À propos du projet", "h2"),
-          block("Rêves d'Aventures propose des expériences guidées sur-mesure dans les Hautes-Alpes : escalade, canyoning, VTT, via ferrata, windsurf et kayak."),
-          block("Architecture UX & réservation", "h3"),
-          block("Architecture pour 3 formats d'activités × 3 niveaux (Découverte, Aventure, Warrior). Calendrier de disponibilités avec réservation en ligne. Section planning interactif."),
-          block("SEO tourisme", "h3"),
-          block("Optimisation pour 'canyoning Hautes-Alpes', 'escalade Serre-Ponçon', 'guide outdoor 05'. Intégration Instagram pour les photos des sorties."),
-          block("Vivre les sports de pleine nature à travers des expériences sur mesure.", "blockquote")
+          block("Le projet", "h2"),
+          block("Rêves d'Aventures propose des expériences de pleine nature sur mesure autour de Serre-Ponçon, Embrun et Manosque dans les Hautes-Alpes. Escalade, canyoning, VTT, via ferrata, windsurf, kayak — toutes les activités sont guidées par des professionnels diplômés d'État, pour des sorties accessibles à tous les niveaux."),
+          block("Le besoin était clair : un site moderne capable de gérer des réservations en ligne pour un catalogue d'activités varié, avec un calendrier de disponibilités en temps réel et une expérience utilisateur fluide sur mobile."),
+          block("Architecture UX & catalogue d'activités", "h2"),
+          block("Conception d'une architecture centrée sur la conversion : catalogue d'activités filtrable par type (eau, montagne, multi-activités) et par niveau. Chaque fiche activité présente la durée, le niveau requis, l'équipement fourni, le tarif et les prochaines disponibilités. Le parcours de réservation est optimisé pour minimiser les abandons."),
+          block("'Vivre les sports de pleine nature à travers des expériences sur mesure' — du kayak sur le lac de Serre-Ponçon à la via ferrata de Roche-Rousse.", "blockquote"),
+          block("Calendrier de réservation en ligne", "h2"),
+          block("Intégration d'un calendrier de réservation interactif avec les prochains départs disponibles, filtrage par type d'activité, sélection de la taille du groupe et paiement sécurisé. Le planning est mis à jour en temps réel par le prestataire depuis l'interface d'administration. Section 'Prochains départs' pour booster les ventes à court terme."),
+          block("SEO tourisme & résultats", "h2"),
+          block("Optimisation SEO pour les requêtes 'canyoning Hautes-Alpes', 'escalade Serre-Ponçon', 'guide outdoor 05', 'via ferrata Embrun', 'activités famille Hautes-Alpes'. Intégration des réseaux sociaux et des photos des sorties pour nourrir le contenu. Le site génère régulièrement des réservations directes, sans intermédiaire."),
         ]
       },
       "verdon-ebike": {
         title: "Verdon E-Bike",
-        description: "Site vitrine et location en ligne pour un prestataire de vélos à assistance électrique dans les Gorges du Verdon.",
+        tags: ["Tourisme vélo", "Location en ligne", "Multilingue"],
+        sector: "Location de vélos électriques",
+        year: "2024",
+        description: "Site multilingue de location de VAE pour explorer les Gorges du Verdon à vélo électrique — Route des Crêtes, itinéraires guidés, La Palud-sur-Verdon.",
+        seoTitle: "Verdon E-Bike — Site location VAE Gorges du Verdon | Face Nord Graphisme",
+        seoDescription: "Création du site multilingue de Verdon E-Bike, location de vélos à assistance électrique à La Palud-sur-Verdon. Route des Crêtes, VTTAE, VTC, itinéraires Gorges du Verdon.",
         link: "https://verdonebike.com/",
-        mainImage: { url: "/assets/about-img2.png" },
+        mainImage: { url: "/assets/portfolio/verdonebike-home.png" },
+        gallery: [
+          { url: "/assets/portfolio/verdonebike-locations.png" },
+          { url: "/assets/portfolio/verdonebike-velos.png" },
+          { url: "/assets/portfolio/verdonebike-equipe.png" },
+        ],
+        relatedSlugs: ["linstant-verdon", "reves-daventures", "gaudineto"],
         content: [
-          block("À propos du projet", "h2"),
-          block("Verdon E-Bike loue des vélos à assistance électrique (VTTAE, VTC) dans les Gorges du Verdon, avec des sorties guidées par des accompagnateurs certifiés."),
-          block("Flotte & itinéraires", "h3"),
-          block("Pages dédiées à chaque vélo, fiches itinéraires avec dénivelé et niveau, galerie immersive des Gorges du Verdon. Formulaire de réservation avec sélection de la date, du vélo et de la durée."),
-          block("SEO tourisme", "h3"),
-          block("Optimisation pour 'location vélo électrique Verdon', 'sortie VAE Gorges du Verdon', 'VTTAE Castellane'. PageSpeed Mobile > 86/100."),
-          block("Les Gorges du Verdon en vélo électrique — l'accès au grand spectacle pour tous les niveaux.", "blockquote")
+          block("Le projet", "h2"),
+          block("Verdon E-Bike est un magasin de location de vélos électriques situé à La Palud-sur-Verdon, point de départ idéal pour parcourir la Route des Crêtes des Gorges du Verdon en VTT à assistance électrique (VTTAE) ou VTC électrique. Bernard, Guillaume et Pascal Cauvin accompagnent leurs clients pour une aventure accessible à tous, même sans entraînement spécifique."),
+          block("L'objectif était de créer un site multilingue (FR/EN/DE) capable d'attirer les touristes internationaux, de présenter la flotte de vélos, les itinéraires et de permettre la réservation en ligne."),
+          block("Design dark & identité visuelle sport", "h2"),
+          block("Conception d'un design dark avec des accents vert néon — dynamique, moderne, rappelant l'énergie du vélo électrique et le paysage vertigineux des Gorges du Verdon. Logo animé, navigation claire, galerie immersive des falaises et du canyon en arrière-plan. Le site donne immédiatement envie d'enfourcher un vélo."),
+          block("'Les Gorges du Verdon en vélo électrique — l'accès au grand spectacle pour tous les niveaux.'", "blockquote"),
+          block("Flotte, itinéraires & réservation", "h2"),
+          block("Pages dédiées à chaque modèle de vélo (Cube Nuride Hybrid Performance 625, Cube Nuride Hybrid Pro 600) avec photos, caractéristiques et tarifs de location. Fiches itinéraires détaillées avec dénivelé, distance, durée et niveau. Formulaire de réservation avec sélection de la date, du modèle de vélo, de la durée et du nombre de cyclistes."),
+          block("Site multilingue & SEO tourisme", "h2"),
+          block("Le site est disponible en français, anglais et allemand pour capter les touristes européens. SEO optimisé pour 'location vélo électrique Verdon', 'VTTAE Gorges du Verdon', 'Route des Crêtes VAE', 'location ebike La Palud-sur-Verdon'. Score PageSpeed Mobile > 86/100. Présence forte sur les requêtes locales et les recherches touristiques liées au Verdon."),
         ]
       }
     };

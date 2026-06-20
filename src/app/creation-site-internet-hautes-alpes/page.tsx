@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   title: "Création Site Internet Hautes-Alpes",
   description: "Création de site internet professionnel dans les Hautes-Alpes (Gap, Briançon, Embrun). Site vitrine sur-mesure, mobile-first, optimisé SEO. Devis gratuit dès 800 € HT.",
   alternates: { canonical: "https://www.facenordgraphisme.fr/creation-site-internet-hautes-alpes" },
-  openGraph: { title: "Création de site internet Hautes-Alpes | Face Nord Graphisme", description: "Sites vitrines professionnels pour artisans et PME du 05. Design sur-mesure, SEO local, mobile-first. À partir de 800 € HT." },
+  openGraph: { title: "Création de site internet Hautes-Alpes | Face Nord Graphisme", description: "Sites vitrines professionnels pour artisans et PME du 05. Design sur-mesure, SEO local, mobile-first. À partir de 800 € HT.", siteName: "Face Nord Graphisme", locale: "fr_FR", images: [{ url: "/assets/home_intro.png", width: 1200, height: 630, alt: "Face Nord Graphisme - Création de site internet dans les Hautes-Alpes" }] },
 };
 
 const data: ServicePageData = {

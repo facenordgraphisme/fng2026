@@ -5,12 +5,25 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const baseUrl = 'https://www.facenordgraphisme.fr'
 
   // Fetch dynamic data from Sanity
-  const [services, projects, posts, citySlugs] = await Promise.all([
-    getServices(),
-    getProjects(),
-    getPosts(),
-    getAllCityPageSlugs(),
-  ])
+  let services: any[] = []
+  let projects: any[] = []
+  let posts: any[] = []
+  let citySlugs: string[] = []
+
+  try {
+    const [fetchedServices, fetchedProjects, fetchedPosts, fetchedCitySlugs] = await Promise.all([
+      getServices(),
+      getProjects(),
+      getPosts(),
+      getAllCityPageSlugs(),
+    ])
+    services = fetchedServices || []
+    projects = fetchedProjects || []
+    posts = fetchedPosts || []
+    citySlugs = fetchedCitySlugs || []
+  } catch (error) {
+    console.error("Error fetching sitemap data:", error)
+  }
 
   // Static routes
   const staticRoutes = [
@@ -38,32 +51,39 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   }))
 
   // City landing pages
-  const cityRoutes = citySlugs.map((slug: string) => ({
-    url: `${baseUrl}/villes/${slug}`,
-    lastModified: new Date(),
-    changeFrequency: 'monthly' as const,
-    priority: 0.8,
-  }))
+  const cityRoutes = citySlugs
+    .filter(Boolean)
+    .map((slug: string) => ({
+      url: `${baseUrl}/villes/${slug}`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly' as const,
+      priority: 0.8,
+    }))
 
   // Dynamic projects
-  const projectRoutes = projects.map((project: any) => ({
-    url: `${baseUrl}/portfolio/${project.slug.current}`,
-    lastModified: new Date(),
-    changeFrequency: 'monthly' as const,
-    priority: 0.6,
-  }))
+  const projectRoutes = projects
+    .filter((project: any) => project?.slug?.current)
+    .map((project: any) => ({
+      url: `${baseUrl}/portfolio/${project.slug.current}`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly' as const,
+      priority: 0.6,
+    }))
 
   // Dynamic blog posts
-  const postRoutes = posts.map((post: any) => ({
-    url: `${baseUrl}/blog/${post.slug.current}`,
-    lastModified: post.lastUpdated
-      ? new Date(post.lastUpdated)
-      : post.publishedAt
-        ? new Date(post.publishedAt)
-        : new Date(),
-    changeFrequency: 'weekly' as const,
-    priority: 0.65,
-  }))
+  const postRoutes = posts
+    .filter((post: any) => post?.slug?.current)
+    .map((post: any) => ({
+      url: `${baseUrl}/blog/${post.slug.current}`,
+      lastModified: post.lastModified || post.lastUpdated
+        ? new Date(post.lastModified || post.lastUpdated)
+        : post.publishedAt
+          ? new Date(post.publishedAt)
+          : new Date(),
+      changeFrequency: 'weekly' as const,
+      priority: 0.65,
+    }))
 
   return [...staticRoutes, ...cityRoutes, ...projectRoutes, ...postRoutes]
 }
+

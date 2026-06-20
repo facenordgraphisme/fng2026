@@ -33,6 +33,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
       title,
       description,
       url,
+      siteName: 'Face Nord Graphisme',
       locale: 'fr_FR',
       type: 'article',
       publishedTime: post.publishedAt,
@@ -363,9 +364,9 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
       {/* Main Image Banner */}
       {post.mainImage?.url && (
         <div className="max-w-6xl mx-auto px-6 mb-20 relative z-20">
-          <AnimatedText effect="zoom-in" delay={0.35} className="relative w-full h-[400px] md:h-[600px] rounded-[40px] overflow-hidden shadow-[0_20px_60px_rgba(0,0,0,0.08)] bg-gray-100">
-            <Image src={post.mainImage.url} alt={`Illustration de l'article : ${post.title}`} fill sizes="(max-width: 1280px) 100vw, 1280px" className="object-cover" />
-          </AnimatedText>
+          <div className="relative w-full h-[400px] md:h-[600px] rounded-[40px] overflow-hidden shadow-[0_20px_60px_rgba(0,0,0,0.08)] bg-gray-100">
+            <Image src={post.mainImage.url} alt={`Illustration de l'article : ${post.title}`} fill priority sizes="(max-width: 1280px) 100vw, 1280px" className="object-cover" />
+          </div>
         </div>
       )}
 
