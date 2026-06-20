@@ -17,6 +17,16 @@ const nextConfig: NextConfig = {
       },
     ],
   },
+  async rewrites() {
+    return [
+      // /sitemap.xml serait intercepté par app/[slug]/page.tsx (slug="sitemap.xml")
+      // On rewrite vers /api/sitemap (2 segments = hors de portée de [slug])
+      {
+        source: '/sitemap.xml',
+        destination: '/api/sitemap',
+      },
+    ]
+  },
   async redirects() {
     return [
       {
