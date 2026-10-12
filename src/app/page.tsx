@@ -3,36 +3,52 @@ import AnimatedText from "@/components/AnimatedText";
 import RecentPosts from "@/components/RecentPosts";
 import Link from "next/link";
 import Image from "next/image";
-import { getServices, getProjects } from "@/sanity/lib/queries";
+import { getServices, getProjects, getHomepage } from "@/sanity/lib/queries";
 import * as LucideIcons from "lucide-react";
 import { MapPin, ArrowRight } from "lucide-react";
 import { Metadata } from "next";
 
-export const metadata: Metadata = {
-  title: "Création de Site Internet Hautes-Alpes (Embrun, Gap)",
-  description: "Expert en création de site web, e-commerce et SEO basé à Embrun dans les Hautes-Alpes. Accompagnement local sur Gap, Guillestre, Briançon et alentours.",
-  alternates: {
-    canonical: "https://www.facenordgraphisme.fr",
-  },
-  openGraph: {
-    title: "Face Nord Graphisme | Création de site internet Hautes-Alpes",
-    description: "Expert en création de site web et SEO basé à Embrun. Accompagnement local sur Gap, Briançon et Guillestre.",
-    url: "https://www.facenordgraphisme.fr",
-    type: "website",
-    siteName: "Face Nord Graphisme",
-    locale: "fr_FR",
-    images: [{ url: "/assets/home_intro.png", width: 1200, height: 630, alt: "Face Nord Graphisme - Création de site internet dans les Hautes-Alpes" }],
-  }
-};
+export async function generateMetadata(): Promise<Metadata> {
+  const homepage = await getHomepage();
+  const rawTitle = homepage.seoTitle || "Création de Site Internet Hautes-Alpes (Embrun, Gap)";
+  // Avoid double "Face Nord Graphisme" suffix: the root layout title template
+  // appends "| Face Nord Graphisme" to any title that isn't marked absolute.
+  const title = rawTitle.includes("Face Nord Graphisme") ? { absolute: rawTitle } : rawTitle;
+  const description = homepage.seoDescription || "Expert en création de site web, e-commerce et SEO basé à Embrun dans les Hautes-Alpes. Accompagnement local sur Gap, Guillestre, Briançon et alentours.";
+
+  return {
+    title,
+    description,
+    alternates: {
+      canonical: "https://www.facenordgraphisme.fr",
+    },
+    openGraph: {
+      title: "Face Nord Graphisme | Création de site internet Hautes-Alpes",
+      description: "Expert en création de site web et SEO basé à Embrun. Accompagnement local sur Gap, Briançon et Guillestre.",
+      url: "https://www.facenordgraphisme.fr",
+      type: "website",
+      siteName: "Face Nord Graphisme",
+      locale: "fr_FR",
+      images: [{ url: "/assets/home_intro.png", width: 1200, height: 630, alt: "Face Nord Graphisme - Création de site internet dans les Hautes-Alpes" }],
+    }
+  };
+}
 
 export default async function Home() {
   const services = await getServices();
   const projects = await getProjects();
+  const homepage = await getHomepage();
 
   return (
     <div className="relative w-full overflow-hidden text-[#1a1a1a] dark:text-white transition-colors duration-300">
       {/* Hero Section using new Client Component for GSAP scroll-pin wow factor */}
-      <HomeHero />
+      <HomeHero heroData={{
+        heroEyebrow: homepage.heroEyebrow,
+        heroHeadline: homepage.heroHeadline,
+        heroSubtext: homepage.heroSubtext,
+        heroPrimaryCtaLabel: homepage.heroPrimaryCtaLabel,
+        heroSecondaryCtaLabel: homepage.heroSecondaryCtaLabel,
+      }} />
 
       {/* About Section Snippet (Overlapping Layout) */}
       <section className="py-24 bg-[#f4f7f9] dark:bg-[#111111] relative transition-colors duration-300">
@@ -40,17 +56,13 @@ export default async function Home() {
           <div className="flex flex-col md:flex-row items-center relative gap-8 md:gap-0">
             <div className="w-full md:w-6/12 md:-mr-[10%] z-10 mt-12 md:mt-0">
               <AnimatedText effect="slide-side" className="bg-white dark:bg-[#1a1a1a] p-10 md:p-14 rounded-3xl shadow-[0_20px_60px_rgba(0,0,0,0.06)] dark:shadow-none border border-gray-50 dark:border-white/5 relative transition-colors duration-300">
-                <h2 className="text-3xl lg:text-4xl font-bold mb-6 leading-tight text-[#1a1a1a] dark:text-white">Passionné par le web, ancré à Embrun</h2>
+                <h2 className="text-3xl lg:text-4xl font-bold mb-6 leading-tight text-[#1a1a1a] dark:text-white">{homepage.aboutHeading}</h2>
                 <div className="text-[#666666] dark:text-[#a1a1aa] text-lg space-y-6 leading-relaxed mb-8">
-                  <p>
-                    Au-delà de ma passion pour l’informatique et les nouvelles technologies, je suis un amoureux de la montagne et des sports outdoor. Je comprends et partage les valeurs de notre magnifique région des Hautes-Alpes.
-                  </p>
-                  <p>
-                    <b>Professionnel du tourisme, commerce local ou association sportive</b>, je saurai mettre en valeur votre activité en harmonie avec l’esprit et le cadre exceptionnel de notre territoire.
-                  </p>
+                  <p>{homepage.aboutParagraph1}</p>
+                  <p>{homepage.aboutParagraph2}</p>
                 </div>
                 <Link href="/a-propos" className="inline-block px-8 py-3 bg-[#1a1a1a] dark:bg-white text-white dark:text-[#1a1a1a] font-bold rounded-md hover:bg-[#239ea0] dark:hover:bg-[#239ea0] dark:hover:text-white shadow-md hover:-translate-y-1 active:translate-y-0 transition-[background-color,transform]">
-                  En savoir plus
+                  {homepage.aboutCtaLabel}
                 </Link>
               </AnimatedText>
             </div>
@@ -69,12 +81,12 @@ export default async function Home() {
         <div className="max-w-7xl mx-auto px-6 flex flex-col lg:flex-row gap-16">
           <div className="lg:w-4/12 flex-shrink-0">
             <AnimatedText effect="3d-flip" className="sticky top-12">
-              <h2 className="text-4xl md:text-5xl font-bold mb-6 text-[#1a1a1a] dark:text-white leading-tight">Ce que je peux faire pour vous</h2>
+              <h2 className="text-4xl md:text-5xl font-bold mb-6 text-[#1a1a1a] dark:text-white leading-tight">{homepage.servicesHeading}</h2>
               <p className="text-[#666666] dark:text-[#a1a1aa] text-lg mb-8 leading-relaxed">
-                Un site web professionnel pour attirer, convaincre et développer votre activité localement ou à distance.
+                {homepage.servicesParagraph}
               </p>
               <Link href="/prestations" className="inline-block px-8 py-3 bg-[#239ea0] text-white font-bold rounded-md hover:bg-[#1c8486] transition-[background-color,transform] shadow-[0_10px_20px_rgba(35,158,160,0.3)] hover:-translate-y-1 active:translate-y-0">
-                Toutes les prestations
+                {homepage.servicesCtaLabel}
               </Link>
             </AnimatedText>
           </div>
@@ -109,18 +121,14 @@ export default async function Home() {
             <div className="md:w-4/12 shrink-0">
               <div className="flex items-center gap-2 text-[#239ea0] text-xs font-bold uppercase tracking-widest mb-2">
                 <MapPin className="size-3.5" />
-                Interventions locales
+                {homepage.cityStripEyebrow}
               </div>
               <h2 className="text-2xl font-bold text-[#1a1a1a] dark:text-white leading-tight">
-                Basé à Embrun, actif dans tout le 05
+                {homepage.cityStripHeading}
               </h2>
             </div>
             <div className="flex flex-col sm:flex-row gap-4 flex-1">
-              {[
-                { name: "Gap", href: "/villes/gap-hautes-alpes", desc: "Commerces & professions libérales" },
-                { name: "Briançon", href: "/villes/briancon-hautes-alpes", desc: "Tourisme & double saisonnalité" },
-                { name: "Embrun & Serre-Ponçon", href: "/villes/embrun-serre-poncon", desc: "Producteurs & prestataires outdoor" },
-              ].map((city) => (
+              {(homepage.cities || []).map((city: any) => (
                 <Link
                   key={city.href}
                   href={city.href}
@@ -145,7 +153,7 @@ export default async function Home() {
       <section className="py-24 bg-[#f4f7f9] dark:bg-[#111111] transition-colors duration-300">
         <div className="max-w-7xl mx-auto px-6">
           <AnimatedText effect="zoom-in" className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-[#1a1a1a] dark:text-white">Dernières réalisations</h2>
+            <h2 className="text-4xl md:text-5xl font-bold text-[#1a1a1a] dark:text-white">{homepage.portfolioHeading}</h2>
           </AnimatedText>
           <div className="grid md:grid-cols-3 gap-8">
              {projects.slice(0, 3).map((project: any, i: number) => {
@@ -169,7 +177,7 @@ export default async function Home() {
           </div>
           <div className="mt-16 text-center">
             <Link href="/portfolio" className="inline-block px-10 py-4 bg-white dark:bg-[#1a1a1a] border-2 border-[#1a1a1a] dark:border-white/20 text-[#1a1a1a] dark:text-white font-bold rounded-md hover:bg-[#1a1a1a] dark:hover:bg-white hover:text-white dark:hover:text-[#1a1a1a] transition-colors shadow-sm cursor-pointer">
-              Voir tous les projets
+              {homepage.portfolioCtaLabel}
             </Link>
           </div>
         </div>
@@ -181,12 +189,12 @@ export default async function Home() {
           <div className="flex flex-col md:flex-row-reverse items-center relative gap-8 md:gap-0">
             <div className="w-full md:w-6/12 md:-ml-[10%] z-10 mt-12 md:mt-0">
               <AnimatedText effect="slide-side" delay={0.2} className="bg-white dark:bg-[#111111] p-10 md:p-14 rounded-3xl shadow-[0_20px_60px_rgba(0,0,0,0.08)] dark:shadow-none border border-gray-50 dark:border-white/5 relative transition-colors duration-300">
-                <h2 className="text-4xl font-bold mb-6 text-[#1a1a1a] dark:text-white leading-tight">Gagnez en visibilité, crédibilité, clients</h2>
+                <h2 className="text-4xl font-bold mb-6 text-[#1a1a1a] dark:text-white leading-tight">{homepage.finalCtaHeading}</h2>
                 <p className="text-lg text-[#666666] dark:text-[#a1a1aa] leading-relaxed mb-10">
-                  Je suis à votre écoute pour échanger autour de vos besoins, idées ou questions. Contactez-moi pour un devis gratuit et donnons vie à votre projet.
+                  {homepage.finalCtaParagraph}
                 </p>
                 <Link href="/contact" className="inline-block px-10 py-4 bg-[#239ea0] text-white font-bold rounded-md hover:bg-[#1c8486] transition-[background-color,transform] shadow-[0_10px_20px_rgba(35,158,160,0.3)] hover:-translate-y-1 active:translate-y-0">
-                  Discutons de votre projet
+                  {homepage.finalCtaLabel}
                 </Link>
               </AnimatedText>
             </div>

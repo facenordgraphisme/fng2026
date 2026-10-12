@@ -2,23 +2,33 @@ import AnimatedText from "@/components/AnimatedText";
 import ContactForm from "@/components/ContactForm";
 import { Phone, Mail, MapPin } from "lucide-react";
 import { Metadata } from "next";
+import { getContactPage } from "@/sanity/lib/queries";
 
-export const metadata: Metadata = {
-  title: "Contactez une agence web dans les Hautes-Alpes | Embrun",
-  description: "Un projet de site web dans le 05 ? Contactez Face Nord Graphisme, basé à Embrun. Devis gratuit pour Gap, Briançon, Guillestre et alentours.",
-  alternates: { canonical: "https://www.facenordgraphisme.fr/contact" },
-};
+export async function generateMetadata(): Promise<Metadata> {
+  const contact = await getContactPage();
+  const rawTitle = contact.seoTitle || "Contactez une agence web dans les Hautes-Alpes | Embrun";
+  const title = rawTitle.includes("Face Nord Graphisme") ? { absolute: rawTitle } : rawTitle;
+  const description = contact.seoDescription || "Un projet de site web dans le 05 ? Contactez Face Nord Graphisme, basé à Embrun. Devis gratuit pour Gap, Briançon, Guillestre et alentours.";
 
-export default function ContactPage() {
+  return {
+    title,
+    description,
+    alternates: { canonical: "https://www.facenordgraphisme.fr/contact" },
+  };
+}
+
+export default async function ContactPage() {
+  const contact = await getContactPage();
+
   return (
     <div className="pt-24 pb-20 px-6 max-w-5xl mx-auto min-h-screen transition-colors duration-300">
       <AnimatedText>
-        <span className="text-[#239ea0] font-bold tracking-widest uppercase text-sm mb-4 block text-center">Me Contacter</span>
+        <span className="text-[#239ea0] font-bold tracking-widest uppercase text-sm mb-4 block text-center">{contact.eyebrow}</span>
         <h1 className="text-5xl md:text-6xl font-black mb-8 text-center tracking-tight text-[#1a1a1a] dark:text-white">
-          Prêt à atteindre de nouveaux sommets ?
+          {contact.heading}
         </h1>
         <p className="text-center text-[#666666] dark:text-[#a1a1aa] text-lg mb-16 max-w-2xl mx-auto leading-relaxed">
-          Vous êtes basé à Embrun, à Gap, à Briançon ou ailleurs dans les Hautes-Alpes ? Vous cherchez à créer un site internet professionnel ou une boutique en ligne pour développer votre activité ? Je vous accompagne dans la réalisation de votre projet digital.
+          {contact.introParagraph}
         </p>
       </AnimatedText>
 
@@ -30,28 +40,28 @@ export default function ContactPage() {
         <AnimatedText className="flex flex-col justify-center space-y-10">
           <div>
             <h3 className="text-xl font-bold text-[#1a1a1a] dark:text-white mb-2 flex items-center gap-3">
-              <Phone className="text-[#239ea0]" size={24} /> Par téléphone
+              <Phone className="text-[#239ea0]" size={24} /> {contact.phoneLabel}
             </h3>
-            <a href="tel:0651113928" className="text-[#666666] dark:text-[#a1a1aa] hover:text-[#239ea0] dark:hover:text-[#239ea0] text-lg transition-colors inline-block ml-9">06 51 11 39 28</a>
+            <a href={contact.phoneHref} className="text-[#666666] dark:text-[#a1a1aa] hover:text-[#239ea0] dark:hover:text-[#239ea0] text-lg transition-colors inline-block ml-9">{contact.phoneNumber}</a>
           </div>
           <div>
             <h3 className="text-xl font-bold text-[#1a1a1a] dark:text-white mb-2 flex items-center gap-3">
-              <Mail className="text-[#239ea0]" size={24} /> Par e-mail
+              <Mail className="text-[#239ea0]" size={24} /> {contact.emailLabel}
             </h3>
-            <a href="mailto:contact@facenordgraphisme.fr" className="text-[#666666] dark:text-[#a1a1aa] hover:text-[#239ea0] dark:hover:text-[#239ea0] text-lg transition-colors inline-block ml-9">contact@facenordgraphisme.fr</a>
+            <a href={`mailto:${contact.emailAddress}`} className="text-[#666666] dark:text-[#a1a1aa] hover:text-[#239ea0] dark:hover:text-[#239ea0] text-lg transition-colors inline-block ml-9">{contact.emailAddress}</a>
           </div>
           <div>
             <h3 className="text-xl font-bold text-[#1a1a1a] dark:text-white mb-2 flex items-center gap-3">
-              <MapPin className="text-[#239ea0]" size={24} /> Mon adresse
+              <MapPin className="text-[#239ea0]" size={24} /> {contact.addressLabel}
             </h3>
             <div className="text-[#666666] dark:text-[#a1a1aa] text-lg ml-9 leading-relaxed">
-              Basé à Puy-Sanières,<br/>
-              45 Impasse du Serre<br/>
-              05200 Puy-Sanières
+              {(contact.addressLines || []).map((line: string, i: number) => (
+                <span key={i}>{line}<br/></span>
+              ))}
             </div>
             <div className="ml-9 mt-4">
-              <a href="https://www.google.com/maps/place/Le+Serre,+05200+Puy-Sani%C3%A8res" target="_blank" rel="noopener noreferrer" className="text-[#239ea0] font-bold text-sm hover:underline">
-                &rarr; Me trouver sur Google Maps
+              <a href={contact.mapsUrl} target="_blank" rel="noopener noreferrer" className="text-[#239ea0] font-bold text-sm hover:underline">
+                &rarr; {contact.mapsLinkLabel}
               </a>
             </div>
           </div>

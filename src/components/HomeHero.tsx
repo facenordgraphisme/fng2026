@@ -4,7 +4,15 @@ import React from 'react'
 import AnimatedText from './AnimatedText'
 import Link from 'next/link'
 
-export default function HomeHero() {
+export interface HomeHeroData {
+  heroEyebrow: string;
+  heroHeadline: string;
+  heroSubtext: string;
+  heroPrimaryCtaLabel: string;
+  heroSecondaryCtaLabel: string;
+}
+
+export default function HomeHero({ heroData }: { heroData: HomeHeroData }) {
   // Hero content animates in immediately (and renders behind the opaque
   // preloader overlay) so it counts toward FCP/LCP without waiting for the
   // multi-second preloader sequence to finish.
@@ -17,29 +25,29 @@ export default function HomeHero() {
       <div className="z-10 text-center px-6 max-w-5xl pt-20">
         <AnimatedText effect="zoom-in" delay={baseDelay}>
           <div className="inline-block px-4 py-1.5 mb-6 text-sm md:text-base font-bold tracking-widest text-[#239ea0] bg-white dark:bg-[#1a1a1a] border border-[#239ea0]/20 rounded-full uppercase shadow-sm">
-            Création de sites internet
+            {heroData.heroEyebrow}
           </div>
         </AnimatedText>
 
         <AnimatedText effect="3d-flip" delay={baseDelay + 0.15}>
           <h1 className="text-5xl md:text-7xl lg:text-7xl xl:text-8xl font-bold tracking-tight mb-8 text-[#1a1a1a] dark:text-white leading-[1.1] text-balance">
-            Propulsez votre <span className="font-serif italic font-medium text-transparent bg-clip-text bg-gradient-to-br from-[#239ea0] via-[#239ea0] to-[#64b5f6] dark:to-[#818cf8] px-2">entreprise</span> <br className="hidden md:block" /> vers de nouveaux <span className="font-serif italic font-medium text-transparent bg-clip-text bg-gradient-to-br from-[#239ea0] via-[#239ea0] to-[#64b5f6] dark:to-[#818cf8] px-2">sommets</span>
+            {heroData.heroHeadline}
           </h1>
         </AnimatedText>
 
         <AnimatedText delay={baseDelay + 0.3}>
           <p className="text-xl md:text-2xl text-[#666666] dark:text-[#a1a1aa] font-medium mb-12 max-w-3xl mx-auto leading-relaxed text-balance">
-            Face Nord Graphisme propulse votre activité locale grâce à un <span className="text-[#1a1a1a] dark:text-white font-bold">site web performant</span>, moderne et taillé sur-mesure pour vos clients.
+            {heroData.heroSubtext}
           </p>
         </AnimatedText>
 
         <AnimatedText effect="fade-up" delay={baseDelay + 0.45}>
           <div className="flex flex-col sm:flex-row justify-center items-center gap-6 mt-4">
             <Link href="/contact" className="px-10 py-4 bg-[#239ea0] text-white font-bold rounded-full hover:bg-[#1c8486] transition-all shadow-[0_10px_20px_rgba(35,158,160,0.3)] hover:shadow-[0_15px_30px_rgba(35,158,160,0.4)] hover:-translate-y-1 active:translate-y-0">
-              Démarrer un projet
+              {heroData.heroPrimaryCtaLabel}
             </Link>
             <Link href="/portfolio" className="group flex items-center gap-2 px-10 py-4 bg-white dark:bg-[#111111] border-2 border-[#1a1a1a] dark:border-white/20 text-[#1a1a1a] dark:text-white font-bold rounded-full hover:bg-[#1a1a1a] hover:text-white dark:hover:bg-white dark:hover:text-[#1a1a1a] transition-all shadow-md hover:-translate-y-1 active:translate-y-0">
-              Voir les projets
+              {heroData.heroSecondaryCtaLabel}
               <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5 transition-transform group-hover:translate-x-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14" /><path d="m12 5 7 7-7 7" /></svg>
             </Link>
           </div>
