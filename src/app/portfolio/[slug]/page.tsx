@@ -16,17 +16,21 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
 
   if (!project) return { title: "Projet non trouvé" };
 
-  const title = project.seoTitle || `${project.title} | Réalisation web — Face Nord Graphisme`;
+  const rawTitle = project.seoTitle || `${project.title} | Réalisation web — Face Nord Graphisme`;
   const description = project.seoDescription || project.description || `Découvrez la réalisation du projet ${project.title} par Face Nord Graphisme (Embrun, Hautes-Alpes).`;
   const url = `https://www.facenordgraphisme.fr/portfolio/${resolvedParams.slug}`;
   const mainImage = project.mainImage?.url || "/assets/home_intro.png";
+
+  // Avoid double "Face Nord Graphisme" suffix: the root layout title template
+  // appends "| Face Nord Graphisme" to any title that isn't marked absolute.
+  const title = rawTitle.includes("Face Nord Graphisme") ? { absolute: rawTitle } : rawTitle;
 
   return {
     title,
     description,
     alternates: { canonical: url },
     openGraph: {
-      title,
+      title: rawTitle,
       description,
       url,
       siteName: "Face Nord Graphisme",
@@ -36,7 +40,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     },
     twitter: {
       card: "summary_large_image",
-      title,
+      title: rawTitle,
       description,
       images: [mainImage],
     },

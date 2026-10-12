@@ -1,11 +1,15 @@
 'use client';
 
 import { useRef, useState, useEffect } from "react";
+import dynamic from "next/dynamic";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
-import HeroScene from "./HeroScene";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { globalState } from "@/lib/store";
+
+// Code-split the three.js/@react-three/fiber scene out of the initial JS
+// bundle so it doesn't compete with hydration/LCP on every page load.
+const HeroScene = dynamic(() => import("./HeroScene"), { ssr: false });
 
 gsap.registerPlugin(ScrollTrigger);
 
