@@ -1,0 +1,452 @@
+{
+  "summary": {
+    "health_score": 71,
+    "previous_health_score": 48,
+    "audit_date": "2026-08-22",
+    "baseline_audit_date": "2026-06-15",
+    "business_type": "Local Service Business (B2B professional services) — solo web design, e-commerce & SEO/GEO agency (Face Nord Graphisme, founder François-Xavier Pin) based in Puy-Sanières near Embrun, Hautes-Alpes (05), France. Next.js 16 + Sanity CMS on Vercel.",
+    "scoring_methodology": "Same 11 specialist categories and weights as the 2026-06-15 baseline (see FULL-AUDIT-REPORT-2026-08-22.md), re-scored against live production state to measure drift.",
+    "top_findings": [
+      {
+        "category": "Technical SEO / Content Quality",
+        "severity": "High",
+        "title": "Title double-suffix bug regressed onto all 6 portfolio pages",
+        "impact": "Same bug pattern fixed on 6 pages in June has reappeared via src/app/portfolio/[slug]/page.tsx, producing 91-114 char titles truncated in SERPs."
+      },
+      {
+        "category": "Performance",
+        "severity": "High",
+        "title": "Mobile LCP regressed into Google's 'Poor' band on all 3 templates",
+        "impact": "Home 4.23s, /prestations 4.12s (newly crossed from 'Needs Improvement'), blog 4.66s. 3D WebGL hero still not deferred on mobile."
+      },
+      {
+        "category": "Visual / Mobile UX",
+        "severity": "High",
+        "title": "Transient black WebGL rendering artifact still present, now confirmed on desktop too",
+        "impact": "Appears ~2.5s post-load, self-clears by ~4.5s, on mobile AND desktop across all 3 tested templates — broader than June's mobile-home-only finding."
+      },
+      {
+        "category": "GEO / Local SEO / Backlinks",
+        "severity": "High",
+        "title": "Zero off-site authority signals built in 10 weeks",
+        "impact": "No GBP link, no reviews/testimonials, no YouTube channel, sameAs unchanged, no local citations — June's single highest-leverage recommendation is fully unexecuted, capping 3 category scores."
+      },
+      {
+        "category": "Topic Clusters",
+        "severity": "Medium",
+        "title": "Content calendar stalled: no new posts in 10+ weeks",
+        "impact": "All 7 June cluster/linking issues unchanged; E-commerce cluster now behind its own blog-strategy.md schedule."
+      }
+    ],
+    "quick_wins": [
+      {
+        "category": "Technical SEO",
+        "effort": "Low",
+        "title": "Fix portfolio page title double-suffix (6 pages)",
+        "benefit": "Reapply the same fix pattern used in June; prevents SERP title truncation."
+      },
+      {
+        "category": "Technical SEO",
+        "effort": "Low",
+        "title": "301-redirect /portfolio/reves-daventures instead of 404",
+        "benefit": "Preserves link equity from the removed duplicate slug."
+      },
+      {
+        "category": "Schema",
+        "effort": "Low",
+        "title": "Fix relative portfolio CreativeWork.image URLs to absolute",
+        "benefit": "Restores structured-data validity on 6 portfolio pages."
+      },
+      {
+        "category": "GEO",
+        "effort": "Low",
+        "title": "Add blog pillar articles to /llms.txt",
+        "benefit": "~10 minutes; makes the site's best AI-citation content discoverable via the llms.txt convention."
+      },
+      {
+        "category": "GEO",
+        "effort": "Low",
+        "title": "Wire founder LinkedIn into BlogPosting.author.sameAs",
+        "benefit": "5-minute fix flagged in June, still outstanding; strengthens entity/authority signal."
+      }
+    ]
+  },
+  "categories": [
+    {
+      "name": "Technical SEO",
+      "score": 84,
+      "previous_score": 34,
+      "weight": 0.20,
+      "what_works": [
+        "/sitemap.xml returns 200 via next.config.ts rewrite to /api/sitemap",
+        "All 7 pages self-canonicalize correctly",
+        "Sitewide duplicate <h1> removed",
+        "4 of 5 recommended security headers deployed (X-Content-Type-Options, X-Frame-Options, Referrer-Policy, Permissions-Policy) plus existing HSTS",
+        "/llms.txt live as a static file",
+        "/refonte-ia-friendly now 308-redirects to /refonte-ai-friendly"
+      ],
+      "findings": [
+        {
+          "title": "Title double-suffix bug regressed onto 6 portfolio pages",
+          "severity": "High",
+          "description": "Layout title template '%s | Face Nord Graphisme' double-applies on portfolio detail pages whose own titles already end in the suffix, producing 91-114 char titles.",
+          "recommendation": "Strip the trailing suffix in src/app/portfolio/[slug]/page.tsx's generateMetadata(), matching the June fix pattern."
+        },
+        {
+          "title": "/api/sitemap directly reachable, duplicate content",
+          "severity": "Low",
+          "description": "The route handler backing the sitemap rewrite serves identical XML at its own URL, not blocked in robots.txt.",
+          "recommendation": "Add a robots.txt disallow rule for /api/sitemap, or return a redirect/404 for direct access."
+        },
+        {
+          "title": "CSP header still absent",
+          "severity": "Low",
+          "description": "Only Content-Security-Policy remains unaddressed of the original 6 recommended security headers.",
+          "recommendation": "Add a CSP after testing against three.js/GSAP/Lenis/Sanity CDN requirements (flagged in June as separate follow-up work)."
+        }
+      ]
+    },
+    {
+      "name": "Content Quality",
+      "score": 76,
+      "previous_score": 48,
+      "weight": 0.20,
+      "what_works": [
+        "Blog body-text U+FFFD corruption dropped from ~800 to 96 occurrences sitewide (-88%)",
+        "5 of 8 previously-corrupted posts now fully clean (0 occurrences)",
+        "/refonte-ai-friendly vs /refonte-ia-friendly duplicate resolved via redirect",
+        "/portfolio/reves-d-aventures vs /reves-daventures duplicate resolved"
+      ],
+      "findings": [
+        {
+          "title": "Title/meta-description mojibake persists on 5 posts",
+          "severity": "Medium",
+          "description": "Body-text fix didn't reach the page-metadata generation path; e.g. prix-site-internet-artisan-pme-hautes-alpes title reads 'd�s 800 ?' instead of 'dès 800 €'.",
+          "recommendation": "Locate and fix the separate seoTitle/metaDescription Sanity field/generation path."
+        },
+        {
+          "title": "lastUpdated still null on all 13 posts",
+          "severity": "Low",
+          "description": "No freshness signal despite body edits clearly having occurred since June.",
+          "recommendation": "Set lastUpdated in Sanity whenever a post is edited."
+        },
+        {
+          "title": "New: /portfolio/reves-d-aventures inherited a title double-suffix",
+          "severity": "Medium",
+          "description": "Same title-template bug family as the Technical section's portfolio regression.",
+          "recommendation": "Fix alongside 1.1 in the action plan — same root cause."
+        }
+      ]
+    },
+    {
+      "name": "Sitemap & Indexation",
+      "score": 88,
+      "previous_score": 22,
+      "weight": 0.08,
+      "what_works": [
+        "sitemap.xml returns 200, valid XML, 37 URLs, zero duplicates",
+        "9 duplicate Sanity project docs cleaned up to 6 unique-slug docs",
+        "New project (L'instant Verdon) correctly included",
+        "/refonte-ia-friendly correctly excluded (redirects instead of listed)"
+      ],
+      "findings": [
+        {
+          "title": "lastModified still uses build-time date on 24 non-blog URLs",
+          "severity": "Low",
+          "description": "Only the 13 blog posts use real content-edit dates; static/city/project routes use new Date() at build time.",
+          "recommendation": "Use real _updatedAt from Sanity for lastModified where available."
+        }
+      ]
+    },
+    {
+      "name": "Schema & Structured Data",
+      "score": 84,
+      "previous_score": 68,
+      "weight": 0.10,
+      "what_works": [
+        "Single consolidated ProfessionalService block, no @id conflicts",
+        "Real phone number (+33651113928) consistent across all JSON-LD",
+        "BlogPosting.inLanguage: fr-FR live on all posts",
+        "FAQPage mojibake resolved",
+        "BreadcrumbList live on ~30 pages"
+      ],
+      "findings": [
+        {
+          "title": "Portfolio CreativeWork.image URLs are now relative",
+          "severity": "Medium",
+          "description": "All 6 portfolio pages emit relative image URLs instead of absolute Sanity CDN URLs, failing structured-data validation.",
+          "recommendation": "Ensure the schema image-URL builder always emits absolute URLs."
+        },
+        {
+          "title": "BreadcrumbList missing on 7 page types",
+          "severity": "Low",
+          "description": "Homepage, /prestations, /faq, /a-propos, /contact, /mentions-legales, and /blog index still lack BreadcrumbList.",
+          "recommendation": "Extend the breadcrumb component to these remaining routes."
+        },
+        {
+          "title": "No ItemList/AggregateRating/Review schema anywhere",
+          "severity": "Low",
+          "description": "/prestations still lacks an ItemList of its 7 services; no review data exists to populate AggregateRating.",
+          "recommendation": "Add ItemList once content stabilizes; add Review/AggregateRating after testimonial collection (see Local SEO 3.3)."
+        }
+      ]
+    },
+    {
+      "name": "Performance",
+      "score": 60,
+      "previous_score": 68,
+      "weight": 0.10,
+      "what_works": [
+        "Desktop remains near-perfect (0.98-1.00 across all pages)",
+        "CLS excellent everywhere (0-0.007)",
+        "Unused shared JS reduced from 98-121 KiB to 70-106 KiB"
+      ],
+      "findings": [
+        {
+          "title": "Mobile LCP in 'Poor' band on all 3 templates, /prestations newly regressed",
+          "severity": "Critical",
+          "description": "Home 4.23s, /prestations 4.12s (was 3.0s 'Needs Improvement' in June), blog 4.66s. 3D hero still blocks main thread on mobile.",
+          "recommendation": "Defer the 3D hero via next/dynamic({ssr:false}) until after LCP paints; confirm actual LCP element first via Lighthouse detail."
+        },
+        {
+          "title": "Shared bundle still loaded on every page regardless of need",
+          "severity": "Medium",
+          "description": "three.js/GSAP/Lenis cost paid sitewide even on pages without the 3D hero.",
+          "recommendation": "Code-split via next/dynamic after confirming chunk composition with @next/bundle-analyzer."
+        }
+      ]
+    },
+    {
+      "name": "Visual & Mobile UX",
+      "score": 52,
+      "previous_score": 45,
+      "weight": 0.08,
+      "what_works": [
+        "Duplicate 'Face Nord' <h1> no longer eats above-the-fold mobile space",
+        "No horizontal overflow on any capture",
+        "Cookie-consent banner renders correctly on mobile"
+      ],
+      "findings": [
+        {
+          "title": "Transient black WebGL artifact confirmed present, broader scope than June",
+          "severity": "Critical",
+          "description": "Appears ~2.5s post-load, self-clears by ~4.5s. Now confirmed on both mobile and desktop, across home/prestations/blog — previously documented as mobile-home-only.",
+          "recommendation": "Fix alongside the 3D-hero deferral work (Performance finding above) — same canvas resize/DPR mount-sequence root cause."
+        },
+        {
+          "title": "Console warnings unchanged",
+          "severity": "Low",
+          "description": "THREE.THREE.Clock deprecation and GPU-stall-due-to-ReadPixels warnings persist on desktop home.",
+          "recommendation": "Remove the synchronous pixel-readback call; update deprecated three.js API usage."
+        }
+      ]
+    },
+    {
+      "name": "AI Search Readiness (GEO)",
+      "score": 65,
+      "previous_score": 64,
+      "weight": 0.10,
+      "what_works": [
+        "/llms.txt live and well-structured (H1, summary, H2-grouped sections)",
+        "FAQPage schema sitewide",
+        "PerplexityBot/GPTBot remain unblocked, no regression"
+      ],
+      "findings": [
+        {
+          "title": "Named statistics still not hyperlinked to sources",
+          "severity": "High",
+          "description": "4 of 5 sampled posts have zero outbound links to named sources; flagship 'template-compliant' post 4-signaux-citation-ia-artisans has 0.",
+          "recommendation": "Add outbound links per blog-strategy.md's own 8-sources-per-article standard, starting with highest-traffic posts."
+        },
+        {
+          "title": "H2 question-format ratio now below target on all 5 sampled articles",
+          "severity": "Medium",
+          "description": "Previously-closest article regressed from ~57% to ~37.5% after an unrelated content edit added a declarative H2.",
+          "recommendation": "Reframe H2s toward natural-language questions during any future content edit pass."
+        },
+        {
+          "title": "Off-site brand-mention signals completely unchanged",
+          "severity": "High",
+          "description": "sameAs still LinkedIn-only, author.sameAs still empty, no YouTube/citations built.",
+          "recommendation": "See action plan Phase 3.1 — highest-leverage unexecuted item since June."
+        },
+        {
+          "title": "llms.txt doesn't link blog pillar articles",
+          "severity": "Low",
+          "description": "Only service/city/static pages are curated; the GEO and SEO Local pillars aren't included.",
+          "recommendation": "Add a Guides/Blog section, ~10 minutes."
+        }
+      ]
+    },
+    {
+      "name": "Local SEO",
+      "score": 49,
+      "previous_score": 42,
+      "weight": 0.08,
+      "what_works": [
+        "Real phone number consistent sitewide, placeholder fully removed",
+        "Homepage duplicate LocalBusiness-type schema resolved"
+      ],
+      "findings": [
+        {
+          "title": "No testimonials, reviews, GBP link, or Maps embed",
+          "severity": "High",
+          "description": "Zero change since June on every off-site local-authority signal.",
+          "recommendation": "See action plan Phase 3.1/3.3."
+        },
+        {
+          "title": "City-page LocalBusiness blocks remain untethered duplicates",
+          "severity": "Medium",
+          "description": "Still lack geo/openingHoursSpecification, still not linked to the sitewide entity via shared @id.",
+          "recommendation": "Consolidate or properly cross-reference city-page schema to the sitewide ProfessionalService entity."
+        },
+        {
+          "title": "'Puy Sanières' vs 'Puy-Sanières' spelling inconsistency unresolved",
+          "severity": "Low",
+          "description": "layout.tsx still unhyphenated; villes/[slug]/page.tsx hyphenated.",
+          "recommendation": "Standardize on the official hyphenated spelling everywhere."
+        },
+        {
+          "title": "Dead social links relocated, still non-functional",
+          "severity": "Low",
+          "description": "Moved from footer to Header.tsx but href=\"#\" placeholders remain.",
+          "recommendation": "Link to real profiles or remove."
+        }
+      ]
+    },
+    {
+      "name": "Search Experience (SXO)",
+      "score": 68,
+      "previous_score": 58,
+      "weight": 0.03,
+      "what_works": [
+        "refonte-ai-friendly vs refonte-ia-friendly duplicate-intent issue resolved via redirect",
+        "Reciprocal link added between GEO blog pillar and /referencement-ia"
+      ],
+      "findings": [
+        {
+          "title": "/referencement-ia content still near-duplicates its blog pillar",
+          "severity": "Medium",
+          "description": "Only the linking half of the June recommendation shipped; the overlapping H2 explainer content is unchanged.",
+          "recommendation": "Refocus the service page on commercial offer/pricing/CTA; keep the blog as the educational deep-dive."
+        },
+        {
+          "title": "City pages still duplicate service-page sections",
+          "severity": "Low",
+          "description": "Unchanged from June — /villes/gap-hautes-alpes H2s remain near-duplicates of the service page.",
+          "recommendation": "Trim to summary + link out, keep only genuinely localized sections."
+        }
+      ]
+    },
+    {
+      "name": "Topic Clusters & Content Architecture",
+      "score": 40,
+      "previous_score": 47,
+      "weight": 0.02,
+      "what_works": [
+        "13 published posts remain live and indexable"
+      ],
+      "findings": [
+        {
+          "title": "No new content published in 10+ weeks; roadmap slipping",
+          "severity": "Medium",
+          "description": "All 7 June cluster/linking issues unchanged; Cluster 4 (E-commerce) still has zero posts and is now overdue against blog-strategy.md's own schedule.",
+          "recommendation": "Resume the content calendar starting with the overdue E-commerce pillar."
+        },
+        {
+          "title": "2 broken internal links still broken",
+          "severity": "Medium",
+          "description": "/blog/gbp-artisans-hautes-alpes and /blog/visibilite-en-ligne-artisans-commerces-hautes-alpes still 404 from multiple posts.",
+          "recommendation": "Fix hrefs to correct current slugs."
+        },
+        {
+          "title": "Orphan post still has zero inbound links",
+          "severity": "Low",
+          "description": "reservation-directe-eviter-commissions-booking-hautes-alpes unchanged since June.",
+          "recommendation": "Add contextual inbound links from related tourism-cluster posts."
+        }
+      ]
+    },
+    {
+      "name": "Backlink Profile",
+      "score": 30,
+      "previous_score": 30,
+      "weight": 0.01,
+      "what_works": [
+        "All 5 confirmed client backlinks still live, dofollow, and relevant (100% verification rate)",
+        "gaudineto.fr HTTPS fix from June remains in place"
+      ],
+      "findings": [
+        {
+          "title": "No new backlinks or local citations built since June",
+          "severity": "Medium",
+          "description": "Recommended Pages Jaunes/CCI/tourism-directory citation building shows no verifiable progress; PagesJaunes itself is bot-protected so absence isn't fully confirmable either way.",
+          "recommendation": "See action plan Phase 3.4; needs manual follow-through, not automatable."
+        },
+        {
+          "title": "Domain still not in Common Crawl",
+          "severity": "Low",
+          "description": "No newer Common Crawl release has published since baseline (quarterly cadence) — not a regression, just not yet re-checkable.",
+          "recommendation": "Re-run when cc-main-2026-apr-may-jun or later publishes."
+        }
+      ]
+    }
+  ],
+  "action_plan": {
+    "phases": [
+      {
+        "name": "Phase 1: Regressions & Quick Fixes",
+        "timeframe": "This week",
+        "items": [
+          "Fix title double-suffix bug on 6 portfolio pages",
+          "301-redirect /portfolio/reves-daventures instead of 404",
+          "Fix relative portfolio image URLs in schema",
+          "Add blog pillars to /llms.txt",
+          "Wire founder LinkedIn into BlogPosting.author.sameAs",
+          "Fix 2 broken internal blog links + link the orphan post"
+        ]
+      },
+      {
+        "name": "Phase 2: Mobile Performance",
+        "timeframe": "Weeks 2-3",
+        "items": [
+          "Defer the 3D hero on mobile via next/dynamic",
+          "Investigate transient black WebGL artifact alongside the deferral fix",
+          "Code-split the three.js/GSAP/Lenis bundle"
+        ]
+      },
+      {
+        "name": "Phase 3: Authority & Content Layer",
+        "timeframe": "Month 2",
+        "items": [
+          "Build off-site brand-authority signals (YouTube, GBP, sameAs)",
+          "Hyperlink named statistics/sources across the blog",
+          "Collect testimonials + add Review/AggregateRating schema",
+          "Build a baseline local citation profile",
+          "Fix remaining mojibake in page metadata (not body text)",
+          "Resume the content calendar / unblock Cluster 4 (E-commerce)",
+          "Trim /referencement-ia vs GEO-pillar content overlap",
+          "Fix NAP/address consistency (Puy-Sanières spelling)"
+        ]
+      },
+      {
+        "name": "Phase 4: Monitoring & Iteration",
+        "timeframe": "Ongoing",
+        "items": [
+          "Re-run Lighthouse on a quiet machine for a clean TBT reading",
+          "Re-run Common Crawl backlink check on next release",
+          "Watch for a third occurrence of the title-double-suffix bug pattern",
+          "Re-screenshot the WebGL artifact after the 3D-hero deferral fix ships"
+        ]
+      }
+    ]
+  },
+  "artifacts": {
+    "findings_dir": "findings-2026-08-22/",
+    "screenshots_dir": "screenshots-2026-08-22/",
+    "baseline_report": "FULL-AUDIT-REPORT.md",
+    "baseline_action_plan": "ACTION-PLAN.md",
+    "current_report": "FULL-AUDIT-REPORT-2026-08-22.md",
+    "current_action_plan": "ACTION-PLAN-2026-08-22.md"
+  }
+}

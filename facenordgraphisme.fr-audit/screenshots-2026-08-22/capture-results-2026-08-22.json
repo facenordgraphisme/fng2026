@@ -1,0 +1,300 @@
+{
+  "home-desktop": {
+    "url": "https://www.facenordgraphisme.fr/",
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    },
+    "devicePixelRatio": 1,
+    "overflow": {
+      "scrollWidth": 1440,
+      "clientWidth": 1440,
+      "bodyScrollWidth": 1440
+    },
+    "h1s": [
+      {
+        "text": "Propulsez votre entreprise  vers de nouveaux sommets",
+        "visible": true,
+        "rect": {
+          "x": 376,
+          "y": 200.8125,
+          "w": 976,
+          "h": 422.375
+        }
+      }
+    ],
+    "canvas": [
+      {
+        "w": 1440,
+        "h": 900,
+        "rect": {
+          "x": 0,
+          "y": 0,
+          "w": 1440,
+          "h": 900
+        }
+      }
+    ],
+    "console_errors": [
+      {
+        "type": "warning",
+        "text": "THREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead."
+      },
+      {
+        "type": "warning",
+        "text": "[.WebGL-0x6fdc02149c00]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels"
+      },
+      {
+        "type": "warning",
+        "text": "[.WebGL-0x6fdc02149c00]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels"
+      },
+      {
+        "type": "warning",
+        "text": "[.WebGL-0x6fdc02149c00]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels"
+      },
+      {
+        "type": "warning",
+        "text": "[.WebGL-0x6fdc02149c00]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels (this message will no longer repeat)"
+      }
+    ],
+    "console_all_count": 5,
+    "page_errors": [],
+    "fold_screenshot": "C:\\Users\\FX\\Desktop\\Codes antigravity\\fng-antigra\\facenordgraphisme.fr-audit\\screenshots-2026-08-22\\home-desktop-fold.png",
+    "full_screenshot": "C:\\Users\\FX\\Desktop\\Codes antigravity\\fng-antigra\\facenordgraphisme.fr-audit\\screenshots-2026-08-22\\home-desktop.png"
+  },
+  "home-mobile": {
+    "url": "https://www.facenordgraphisme.fr/",
+    "viewport": {
+      "width": 390,
+      "height": 844
+    },
+    "devicePixelRatio": 2,
+    "overflow": {
+      "scrollWidth": 390,
+      "clientWidth": 390,
+      "bodyScrollWidth": 390
+    },
+    "h1s": [
+      {
+        "text": "Propulsez votre entreprise  vers de nouveaux sommets",
+        "visible": true,
+        "rect": {
+          "x": 24,
+          "y": 247,
+          "w": 342,
+          "h": 265.984375
+        }
+      }
+    ],
+    "canvas": [
+      {
+        "w": 780,
+        "h": 1688,
+        "rect": {
+          "x": 0,
+          "y": 0,
+          "w": 390,
+          "h": 844
+        }
+      }
+    ],
+    "console_errors": [
+      {
+        "type": "warning",
+        "text": "THREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead."
+      }
+    ],
+    "console_all_count": 1,
+    "page_errors": [],
+    "fold_screenshot": "C:\\Users\\FX\\Desktop\\Codes antigravity\\fng-antigra\\facenordgraphisme.fr-audit\\screenshots-2026-08-22\\home-mobile-fold.png",
+    "full_screenshot": "C:\\Users\\FX\\Desktop\\Codes antigravity\\fng-antigra\\facenordgraphisme.fr-audit\\screenshots-2026-08-22\\home-mobile.png"
+  },
+  "prestations-desktop": {
+    "url": "https://www.facenordgraphisme.fr/prestations",
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    },
+    "devicePixelRatio": 1,
+    "overflow": {
+      "scrollWidth": 1440,
+      "clientWidth": 1440,
+      "bodyScrollWidth": 1440
+    },
+    "h1s": [
+      {
+        "text": "Prestations web & SEOpour les Hautes-Alpes",
+        "visible": true,
+        "rect": {
+          "x": 416,
+          "y": 168,
+          "w": 896,
+          "h": 120
+        }
+      }
+    ],
+    "canvas": [
+      {
+        "w": 1440,
+        "h": 900,
+        "rect": {
+          "x": 0,
+          "y": 0,
+          "w": 1440,
+          "h": 900
+        }
+      }
+    ],
+    "console_errors": [
+      {
+        "type": "warning",
+        "text": "THREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead."
+      }
+    ],
+    "console_all_count": 1,
+    "page_errors": [],
+    "fold_screenshot": "C:\\Users\\FX\\Desktop\\Codes antigravity\\fng-antigra\\facenordgraphisme.fr-audit\\screenshots-2026-08-22\\prestations-desktop-fold.png",
+    "full_screenshot": "C:\\Users\\FX\\Desktop\\Codes antigravity\\fng-antigra\\facenordgraphisme.fr-audit\\screenshots-2026-08-22\\prestations-desktop.png"
+  },
+  "prestations-mobile": {
+    "url": "https://www.facenordgraphisme.fr/prestations",
+    "viewport": {
+      "width": 390,
+      "height": 844
+    },
+    "devicePixelRatio": 2,
+    "overflow": {
+      "scrollWidth": 390,
+      "clientWidth": 390,
+      "bodyScrollWidth": 390
+    },
+    "h1s": [
+      {
+        "text": "Prestations web & SEOpour les Hautes-Alpes",
+        "visible": true,
+        "rect": {
+          "x": 24,
+          "y": 232,
+          "w": 342,
+          "h": 180
+        }
+      }
+    ],
+    "canvas": [
+      {
+        "w": 780,
+        "h": 1688,
+        "rect": {
+          "x": 0,
+          "y": 0,
+          "w": 390,
+          "h": 844
+        }
+      }
+    ],
+    "console_errors": [
+      {
+        "type": "warning",
+        "text": "THREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead."
+      }
+    ],
+    "console_all_count": 1,
+    "page_errors": [],
+    "fold_screenshot": "C:\\Users\\FX\\Desktop\\Codes antigravity\\fng-antigra\\facenordgraphisme.fr-audit\\screenshots-2026-08-22\\prestations-mobile-fold.png",
+    "full_screenshot": "C:\\Users\\FX\\Desktop\\Codes antigravity\\fng-antigra\\facenordgraphisme.fr-audit\\screenshots-2026-08-22\\prestations-mobile.png"
+  },
+  "blog-post-desktop": {
+    "url": "https://www.facenordgraphisme.fr/blog/guide-creation-site-internet-artisan-hautes-alpes",
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    },
+    "devicePixelRatio": 1,
+    "overflow": {
+      "scrollWidth": 1440,
+      "clientWidth": 1440,
+      "bodyScrollWidth": 1440
+    },
+    "h1s": [
+      {
+        "text": "Création de site internet pour artisan dans les Hautes-Alpes : le guide complet 2026",
+        "visible": true,
+        "rect": {
+          "x": 440,
+          "y": 264,
+          "w": 848,
+          "h": 198
+        }
+      }
+    ],
+    "canvas": [
+      {
+        "w": 1440,
+        "h": 900,
+        "rect": {
+          "x": 0,
+          "y": 0,
+          "w": 1440,
+          "h": 900
+        }
+      }
+    ],
+    "console_errors": [
+      {
+        "type": "warning",
+        "text": "THREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead."
+      }
+    ],
+    "console_all_count": 1,
+    "page_errors": [],
+    "fold_screenshot": "C:\\Users\\FX\\Desktop\\Codes antigravity\\fng-antigra\\facenordgraphisme.fr-audit\\screenshots-2026-08-22\\blog-post-desktop-fold.png",
+    "full_screenshot": "C:\\Users\\FX\\Desktop\\Codes antigravity\\fng-antigra\\facenordgraphisme.fr-audit\\screenshots-2026-08-22\\blog-post-desktop.png"
+  },
+  "blog-post-mobile": {
+    "url": "https://www.facenordgraphisme.fr/blog/guide-creation-site-internet-artisan-hautes-alpes",
+    "viewport": {
+      "width": 390,
+      "height": 844
+    },
+    "devicePixelRatio": 2,
+    "overflow": {
+      "scrollWidth": 390,
+      "clientWidth": 390,
+      "bodyScrollWidth": 390
+    },
+    "h1s": [
+      {
+        "text": "Création de site internet pour artisan dans les Hautes-Alpes : le guide complet 2026",
+        "visible": true,
+        "rect": {
+          "x": 24,
+          "y": 328,
+          "w": 342,
+          "h": 197.96875
+        }
+      }
+    ],
+    "canvas": [
+      {
+        "w": 780,
+        "h": 1688,
+        "rect": {
+          "x": 0,
+          "y": 0,
+          "w": 390,
+          "h": 844
+        }
+      }
+    ],
+    "console_errors": [
+      {
+        "type": "warning",
+        "text": "THREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead."
+      }
+    ],
+    "console_all_count": 1,
+    "page_errors": [],
+    "fold_screenshot": "C:\\Users\\FX\\Desktop\\Codes antigravity\\fng-antigra\\facenordgraphisme.fr-audit\\screenshots-2026-08-22\\blog-post-mobile-fold.png",
+    "full_screenshot": "C:\\Users\\FX\\Desktop\\Codes antigravity\\fng-antigra\\facenordgraphisme.fr-audit\\screenshots-2026-08-22\\blog-post-mobile.png"
+  }
+}
