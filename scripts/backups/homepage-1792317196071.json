@@ -1,0 +1,48 @@
+{
+  "_createdAt": "2026-10-12T22:26:13Z",
+  "_id": "homepage",
+  "_rev": "PVL5pks3vr142x6mf0RgJd",
+  "_type": "homepage",
+  "_updatedAt": "2026-10-12T22:26:13Z",
+  "aboutCtaLabel": "En savoir plus",
+  "aboutHeading": "Passionné par le web, ancré à Embrun",
+  "aboutParagraph1": "Au-delà de ma passion pour l'informatique et les nouvelles technologies, je suis un amoureux de la montagne et des sports outdoor. Je comprends et partage les valeurs de notre magnifique région des Hautes-Alpes.",
+  "aboutParagraph2": "Professionnel du tourisme, commerce local ou association sportive, je saurai mettre en valeur votre activité en harmonie avec l'esprit et le cadre exceptionnel de notre territoire.",
+  "cities": [
+    {
+      "_key": "10e58d4b5cee",
+      "desc": "Commerces & professions libérales",
+      "href": "/villes/gap-hautes-alpes",
+      "name": "Gap"
+    },
+    {
+      "_key": "61b26e63a578",
+      "desc": "Tourisme & double saisonnalité",
+      "href": "/villes/briancon-hautes-alpes",
+      "name": "Briançon"
+    },
+    {
+      "_key": "c80ddb14104d",
+      "desc": "Producteurs & prestataires outdoor",
+      "href": "/villes/embrun-serre-poncon",
+      "name": "Embrun & Serre-Ponçon"
+    }
+  ],
+  "cityStripEyebrow": "Interventions locales",
+  "cityStripHeading": "Basé à Embrun, actif dans tout le 05",
+  "finalCtaHeading": "Gagnez en visibilité, crédibilité, clients",
+  "finalCtaLabel": "Discutons de votre projet",
+  "finalCtaParagraph": "Je suis à votre écoute pour échanger autour de vos besoins, idées ou questions. Contactez-moi pour un devis gratuit et donnons vie à votre projet.",
+  "heroEyebrow": "Création de sites internet",
+  "heroHeadline": "Propulsez votre entreprise vers de nouveaux sommets",
+  "heroPrimaryCtaLabel": "Démarrer un projet",
+  "heroSecondaryCtaLabel": "Voir les projets",
+  "heroSubtext": "Face Nord Graphisme propulse votre activité locale grâce à un site web performant, moderne et taillé sur-mesure pour vos clients.",
+  "portfolioCtaLabel": "Voir tous les projets",
+  "portfolioHeading": "Dernières réalisations",
+  "seoDescription": "Expert en création de site web, e-commerce et SEO basé à Embrun dans les Hautes-Alpes. Accompagnement local sur Gap, Guillestre, Briançon et alentours.",
+  "seoTitle": "Création de Site Internet Hautes-Alpes (Embrun, Gap)",
+  "servicesCtaLabel": "Toutes les prestations",
+  "servicesHeading": "Ce que je peux faire pour vous",
+  "servicesParagraph": "Un site web professionnel pour attirer, convaincre et développer votre activité localement ou à distance."
+}

@@ -38,7 +38,7 @@ export const SERVICES: ServiceCard[] = [
     problem: "Pas encore de site, ou un site qui ne vous apporte aucun client ?",
     promise: "Je crée un site clair et rapide qui présente votre activité et transforme vos visiteurs en appels et demandes de devis.",
     outcomes: ["Design sur-mesure, à votre image", "Vous le modifiez vous-même, sans technicien", "Optimisé pour Google dès la mise en ligne"],
-    pricingFrom: "dès 800 € HT",
+    pricingFrom: "dès 500 € HT",
     example: { title: "La Montagne Guide", href: "/portfolio/la-montagne-guide", image: "/assets/portfolio/lamontagneguide-home.webp" },
   },
   {
@@ -50,7 +50,7 @@ export const SERVICES: ServiceCard[] = [
     promise: "Vos clients commandent, réservent et paient en ligne, 24 h/24. Vous gérez tout depuis une interface simple.",
     outcomes: ["Paiement par carte sécurisé (Stripe)", "Produits, stocks et commandes gérés par vous", "Calendrier de réservation en ligne"],
     tech: "WooCommerce · Sanity · Stripe",
-    pricingFrom: "dès 2 500 € HT",
+    pricingFrom: "dès 800 € HT",
     example: { title: "GAEC des Valentins", href: "/portfolio/gaec-des-valentins", image: "/assets/portfolio/gaecdesvalentins-home.png" },
   },
   {
@@ -61,7 +61,7 @@ export const SERVICES: ServiceCard[] = [
     problem: "Votre site a vieilli : lent, mal affiché sur mobile, plus visible nulle part ?",
     promise: "Je modernise votre site existant et je le structure pour qu'il soit compris et recommandé par Google et par les IA.",
     outcomes: ["Design moderne et rapide sur mobile", "Votre référencement actuel est conservé", "Lisible par ChatGPT, Gemini et Perplexity"],
-    pricingFrom: "dès 800 € HT",
+    pricingFrom: "dès 400 € HT",
     example: { title: "Voyageurs des Alpes", href: "/portfolio/voyageurs-des-alpes", image: "/assets/portfolio/voyageursdesalpes-home.webp" },
   },
   {
@@ -85,7 +85,7 @@ export const SERVICES: ServiceCard[] = [
     promise: "Je veille sur votre site chaque mois pour qu'il reste rapide, sécurisé et à jour. Vous vous concentrez sur votre métier.",
     outcomes: ["Mises à jour et sauvegardes automatiques", "Surveillance 24/7 et intervention rapide", "1 h de modifications incluse chaque mois"],
     tech: "WordPress · Next.js",
-    pricingFrom: "dès 50 € HT/mois",
+    pricingFrom: "dès 20 € HT/mois",
   },
   {
     href: "/developpement-application-web",
