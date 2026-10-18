@@ -3,24 +3,28 @@ import AnimatedText from "@/components/AnimatedText";
 import RecentPosts from "@/components/RecentPosts";
 import Link from "next/link";
 import Image from "next/image";
-import { getServices, getProjects, getHomepage } from "@/sanity/lib/queries";
-import * as LucideIcons from "lucide-react";
-import { MapPin, ArrowRight } from "lucide-react";
+import { getProjects, getHomepage } from "@/sanity/lib/queries";
+import { MapPin, ArrowRight, Check } from "lucide-react";
+import ServiceCard from "@/components/ServiceCard";
+import { SERVICES } from "@/lib/services";
 import { Metadata } from "next";
 
 export async function generateMetadata(): Promise<Metadata> {
   const homepage = await getHomepage();
-  const rawTitle = homepage.seoTitle || "Création de Site Internet Hautes-Alpes (Embrun, Gap)";
-  // Avoid double "Face Nord Graphisme" suffix: the root layout title template
-  // appends "| Face Nord Graphisme" to any title that isn't marked absolute.
-  const title = rawTitle.includes("Face Nord Graphisme") ? { absolute: rawTitle } : rawTitle;
+  const rawTitle = homepage.seoTitle || "Création de site internet Hautes-Alpes";
+  // The layout's title template doesn't apply to the root page (same segment),
+  // so the brand must be added here. Google uses the home page title as one of
+  // its signals for the site name shown above results.
+  const title = {
+    absolute: rawTitle.includes("Face Nord Graphisme") ? rawTitle : `Face Nord Graphisme | ${rawTitle}`,
+  };
   const description = homepage.seoDescription || "Expert en création de site web, e-commerce et SEO basé à Embrun dans les Hautes-Alpes. Accompagnement local sur Gap, Guillestre, Briançon et alentours.";
 
   return {
     title,
     description,
     alternates: {
-      canonical: "https://www.facenordgraphisme.fr",
+      canonical: "https://www.facenordgraphisme.fr/",
     },
     openGraph: {
       title: "Face Nord Graphisme | Création de site internet Hautes-Alpes",
@@ -35,7 +39,6 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 export default async function Home() {
-  const services = await getServices();
   const projects = await getProjects();
   const homepage = await getHomepage();
 
@@ -48,68 +51,68 @@ export default async function Home() {
         heroSubtext: homepage.heroSubtext,
         heroPrimaryCtaLabel: homepage.heroPrimaryCtaLabel,
         heroSecondaryCtaLabel: homepage.heroSecondaryCtaLabel,
+        heroTrustItems: homepage.heroTrustItems,
       }} />
 
-      {/* About Section Snippet (Overlapping Layout) */}
+      {/* What I do & what you get */}
       <section className="py-24 bg-[#f4f7f9] dark:bg-[#111111] relative transition-colors duration-300">
         <div className="max-w-7xl mx-auto px-6">
-          <div className="flex flex-col md:flex-row items-center relative gap-8 md:gap-0">
-            <div className="w-full md:w-6/12 md:-mr-[10%] z-10 mt-12 md:mt-0">
-              <AnimatedText effect="slide-side" className="bg-white dark:bg-[#1a1a1a] p-10 md:p-14 rounded-3xl shadow-[0_20px_60px_rgba(0,0,0,0.06)] dark:shadow-none border border-gray-50 dark:border-white/5 relative transition-colors duration-300">
-                <h2 className="text-3xl lg:text-4xl font-bold mb-6 leading-tight text-[#1a1a1a] dark:text-white">{homepage.aboutHeading}</h2>
-                <div className="text-[#666666] dark:text-[#a1a1aa] text-lg space-y-6 leading-relaxed mb-8">
-                  <p>{homepage.aboutParagraph1}</p>
-                  <p>{homepage.aboutParagraph2}</p>
-                </div>
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+            <AnimatedText effect="slide-side">
+              <h2 className="text-3xl lg:text-5xl font-bold mb-6 leading-tight text-[#1a1a1a] dark:text-white text-balance">{homepage.aboutHeading}</h2>
+              <div className="text-[#666666] dark:text-[#a1a1aa] text-lg space-y-4 leading-relaxed mb-10">
+                <p>{homepage.aboutParagraph1}</p>
+                {homepage.aboutParagraph2 && <p>{homepage.aboutParagraph2}</p>}
+              </div>
+              {(homepage.aboutPoints || []).length > 0 && (
+                <ul className="grid sm:grid-cols-2 gap-x-8 gap-y-6 mb-10">
+                  {homepage.aboutPoints.map((point: { title: string; desc?: string }) => (
+                    <li key={point.title} className="flex gap-3">
+                      <span className="mt-0.5 shrink-0 flex items-center justify-center size-7 rounded-full bg-[#239ea0]/15 text-[#239ea0]">
+                        <Check className="size-4" strokeWidth={3} />
+                      </span>
+                      <div>
+                        <div className="font-bold text-[#1a1a1a] dark:text-white leading-snug mb-1">{point.title}</div>
+                        {point.desc && <p className="text-sm text-[#666666] dark:text-[#a1a1aa] leading-relaxed">{point.desc}</p>}
+                      </div>
+                    </li>
+                  ))}
+                </ul>
+              )}
+              <div className="flex flex-wrap gap-4">
+                <Link href="/contact" className="inline-block px-8 py-3 bg-[#239ea0] text-white font-bold rounded-md hover:bg-[#1c8486] shadow-[0_10px_20px_rgba(35,158,160,0.3)] hover:-translate-y-1 active:translate-y-0 transition-[background-color,transform]">
+                  Parlons de votre projet
+                </Link>
                 <Link href="/a-propos" className="inline-block px-8 py-3 bg-[#1a1a1a] dark:bg-white text-white dark:text-[#1a1a1a] font-bold rounded-md hover:bg-[#239ea0] dark:hover:bg-[#239ea0] dark:hover:text-white shadow-md hover:-translate-y-1 active:translate-y-0 transition-[background-color,transform]">
                   {homepage.aboutCtaLabel}
                 </Link>
-              </AnimatedText>
-            </div>
-            <div className="w-full md:w-7/12 z-0">
-              <AnimatedText effect="zoom-in" className="relative h-[400px] md:h-[650px] w-full rounded-3xl overflow-hidden shadow-xl">
-                <div className="absolute inset-0 bg-gray-200 dark:bg-gray-800 animate-pulse" />
-                <Image src="/assets/home_intro.png" fill sizes="(max-width: 768px) 100vw, 50vw" className="object-cover transition-transform duration-300 origin-center hover:scale-110" alt="Paysage des Hautes-Alpes, Embrun et lac de Serre-Ponçon" />
-              </AnimatedText>
-            </div>
+              </div>
+            </AnimatedText>
+            <AnimatedText effect="zoom-in" className="relative aspect-[5/4] w-full rounded-3xl overflow-hidden shadow-xl bg-[#145c5e]">
+              <Image src="/assets/home-realisations.webp" fill sizes="(max-width: 1024px) 100vw, 50vw" className="object-cover" alt="Sites internet réalisés par Face Nord Graphisme : La Montagne Guide, Voyageurs des Alpes et ÉvasionSki sur ordinateur et mobile" />
+            </AnimatedText>
           </div>
         </div>
       </section>
 
       {/* Services Section */}
       <section className="py-24 bg-white dark:bg-[#1a1a1a] relative transition-colors duration-300">
-        <div className="max-w-7xl mx-auto px-6 flex flex-col lg:flex-row gap-16">
-          <div className="lg:w-4/12 flex-shrink-0">
-            <AnimatedText effect="3d-flip" className="sticky top-12">
-              <h2 className="text-4xl md:text-5xl font-bold mb-6 text-[#1a1a1a] dark:text-white leading-tight">{homepage.servicesHeading}</h2>
-              <p className="text-[#666666] dark:text-[#a1a1aa] text-lg mb-8 leading-relaxed">
-                {homepage.servicesParagraph}
-              </p>
-              <Link href="/prestations" className="inline-block px-8 py-3 bg-[#239ea0] text-white font-bold rounded-md hover:bg-[#1c8486] transition-[background-color,transform] shadow-[0_10px_20px_rgba(35,158,160,0.3)] hover:-translate-y-1 active:translate-y-0">
-                {homepage.servicesCtaLabel}
-              </Link>
-            </AnimatedText>
+        <div className="max-w-7xl mx-auto px-6">
+          <AnimatedText effect="fade-up" className="max-w-3xl mx-auto text-center mb-14">
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-[#1a1a1a] dark:text-white leading-tight">{homepage.servicesHeading}</h2>
+            <p className="text-[#666666] dark:text-[#a1a1aa] text-lg leading-relaxed">{homepage.servicesParagraph}</p>
+          </AnimatedText>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {SERVICES.map((service, i) => (
+              <AnimatedText key={service.href} effect="fade-up" delay={(i % 3) * 0.1} className="h-full">
+                <ServiceCard service={service} showExample />
+              </AnimatedText>
+            ))}
           </div>
-          <div className="lg:w-8/12">
-            <div className="grid md:grid-cols-2 gap-6">
-              {services.map((service: any, i: number) => {
-                const href = service.slug?.current ? `/${service.slug.current}` : "/prestations";
-                const iconName = service.icon || "Briefcase";
-                const IconComponent = (LucideIcons as any)[iconName] || LucideIcons.Briefcase;
-
-                return (
-                  <Link href={href} key={i} className="block group h-full">
-                    <AnimatedText effect="fade-up" delay={i * 0.15} className="bg-[#f4f7f9] dark:bg-[#111111] h-full rounded-2xl p-8 shadow-sm hover:shadow-[0_20px_40px_rgba(0,0,0,0.05)] dark:shadow-none transition-[transform,box-shadow,border-color] duration-300 border border-transparent group-hover:border-[#239ea0]/30 flex flex-col items-start group-hover:-translate-y-2">
-                      <div className="text-[#239ea0] bg-white dark:bg-[#1a1a1a] p-3 rounded-full shadow-sm group-hover:scale-110 transition-transform duration-300 mb-6">
-                        <IconComponent size={36} strokeWidth={1.5} />
-                      </div>
-                      <h3 className="text-xl font-bold mb-3 text-[#1a1a1a] dark:text-white group-hover:text-[#239ea0] transition-colors">{service.title}</h3>
-                      <p className="text-[#666666] dark:text-[#a1a1aa] text-sm leading-relaxed">{service.description || service.desc}</p>
-                    </AnimatedText>
-                  </Link>
-                );
-              })}
-            </div>
+          <div className="mt-12 text-center">
+            <Link href="/prestations" className="inline-block px-8 py-3 bg-[#239ea0] text-white font-bold rounded-md hover:bg-[#1c8486] transition-[background-color,transform] shadow-[0_10px_20px_rgba(35,158,160,0.3)] hover:-translate-y-1 active:translate-y-0">
+              {homepage.servicesCtaLabel}
+            </Link>
           </div>
         </div>
       </section>

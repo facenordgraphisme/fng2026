@@ -668,8 +668,8 @@ export async function getLegalBySlug(slug: string) {
 // isn't reachable, so the live site never breaks while content is unconfigured.
 
 export const homepageQuery = groq`*[_type == "homepage" && _id == "homepage"][0] {
-  heroEyebrow, heroHeadline, heroSubtext, heroPrimaryCtaLabel, heroSecondaryCtaLabel,
-  aboutHeading, aboutParagraph1, aboutParagraph2, aboutCtaLabel,
+  heroEyebrow, heroHeadline, heroSubtext, heroPrimaryCtaLabel, heroSecondaryCtaLabel, heroTrustItems,
+  aboutHeading, aboutParagraph1, aboutParagraph2, aboutPoints[]{ title, desc }, aboutCtaLabel,
   servicesHeading, servicesParagraph, servicesCtaLabel,
   cityStripEyebrow, cityStripHeading, cities[]{ name, href, desc },
   portfolioHeading, portfolioCtaLabel,
@@ -686,17 +686,24 @@ export async function getHomepage() {
     throw new Error('Not Found');
   } catch {
     return {
-      heroEyebrow: "Création de sites internet",
-      heroHeadline: "Propulsez votre entreprise vers de nouveaux sommets",
-      heroSubtext: "Face Nord Graphisme propulse votre activité locale grâce à un site web performant, moderne et taillé sur-mesure pour vos clients.",
-      heroPrimaryCtaLabel: "Démarrer un projet",
-      heroSecondaryCtaLabel: "Voir les projets",
-      aboutHeading: "Passionné par le web, ancré à Embrun",
-      aboutParagraph1: "Au-delà de ma passion pour l'informatique et les nouvelles technologies, je suis un amoureux de la montagne et des sports outdoor. Je comprends et partage les valeurs de notre magnifique région des Hautes-Alpes.",
-      aboutParagraph2: "Professionnel du tourisme, commerce local ou association sportive, je saurai mettre en valeur votre activité en harmonie avec l'esprit et le cadre exceptionnel de notre territoire.",
-      aboutCtaLabel: "En savoir plus",
-      servicesHeading: "Ce que je peux faire pour vous",
-      servicesParagraph: "Un site web professionnel pour attirer, convaincre et développer votre activité localement ou à distance.",
+      heroEyebrow: "Développeur web freelance · Embrun (05)",
+      heroHeadline: "Création de sites internet *dans les Hautes-Alpes*",
+      heroSubtext: "Je suis François-Xavier, développeur web à Embrun. Je crée des sites vitrines, des boutiques en ligne et des applications web pour les artisans, commerçants et pros du tourisme du 05 — rapides, faciles à gérer et visibles sur Google comme sur les IA.",
+      heroPrimaryCtaLabel: "Demander un devis gratuit",
+      heroSecondaryCtaLabel: "Voir mes réalisations",
+      heroTrustItems: ["Basé à Embrun, interlocuteur unique", "Noté 5/5 sur Google", "Devis gratuit sous 48 h"],
+      aboutHeading: "Un site qui vous amène des clients, pas juste une vitrine",
+      aboutParagraph1: "Artisan, commerçant, guide, hébergeur ou association dans les Hautes-Alpes ? Je m'occupe de votre site de A à Z : design, textes, référencement, mise en ligne et suivi.",
+      aboutParagraph2: "Montagnard et passionné de web, je connais les réalités du territoire — saisonnalité, clientèle touristique, dépendance aux plateformes. Votre site est pensé pour ça.",
+      aboutPoints: [
+        { title: "Un seul interlocuteur, ici dans le 05", desc: "Vous parlez directement à la personne qui crée votre site. Rendez-vous possible à Embrun, Gap ou Briançon." },
+        { title: "Trouvé sur Google… et par les IA", desc: "Chaque site est optimisé pour le référencement local et structuré pour être cité par ChatGPT, Gemini ou Perplexity." },
+        { title: "Rapide et parfait sur mobile", desc: "La majorité de vos visiteurs arrivent depuis un téléphone : tout est conçu d'abord pour eux." },
+        { title: "Vous restez autonome", desc: "Vous modifiez vos textes, photos et produits vous-même — et je reste disponible si besoin." },
+      ],
+      aboutCtaLabel: "Qui suis-je ?",
+      servicesHeading: "Que puis-je faire pour vous ?",
+      servicesParagraph: "Partez de votre situation : chaque prestation répond à un besoin concret. Pas sûr de ce qu'il vous faut ? Je vous conseille gratuitement.",
       servicesCtaLabel: "Toutes les prestations",
       cityStripEyebrow: "Interventions locales",
       cityStripHeading: "Basé à Embrun, actif dans tout le 05",

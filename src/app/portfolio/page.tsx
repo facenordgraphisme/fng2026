@@ -8,7 +8,7 @@ import BreadcrumbSchema from "@/components/BreadcrumbSchema";
 
 export const metadata: Metadata = {
   title: "Portfolio — Réalisations web Hautes-Alpes | Face Nord Graphisme",
-  description: "Découvrez les sites internet créés par Face Nord Graphisme pour des entreprises locales des Hautes-Alpes et du Verdon : restaurants, outdoor, agriculture, événementiel.",
+  description: "Sites internet, boutiques en ligne et applications web créés par Face Nord Graphisme pour des entreprises des Hautes-Alpes et du Verdon : guides de montagne, tourisme outdoor, restaurants, producteurs.",
   alternates: { canonical: "https://www.facenordgraphisme.fr/portfolio" },
   openGraph: {
     title: "Portfolio — Réalisations web Hautes-Alpes | Face Nord Graphisme",
@@ -36,6 +36,14 @@ const TAG_COLORS: Record<string, string> = {
   "SEO": "bg-orange-50 text-orange-700 dark:bg-orange-900/30 dark:text-orange-300 border-orange-200 dark:border-orange-700/40",
   "Dark mode premium": "bg-gray-100 text-gray-700 dark:bg-white/10 dark:text-gray-300 border-gray-300 dark:border-white/20",
   "Identité visuelle": "bg-pink-50 text-pink-700 dark:bg-pink-900/30 dark:text-pink-300 border-pink-200 dark:border-pink-700/40",
+  "Application web": "bg-indigo-50 text-indigo-700 dark:bg-indigo-900/30 dark:text-indigo-300 border-indigo-200 dark:border-indigo-700/40",
+  "SaaS": "bg-violet-50 text-violet-700 dark:bg-violet-900/30 dark:text-violet-300 border-violet-200 dark:border-violet-700/40",
+  "Refonte": "bg-rose-50 text-rose-700 dark:bg-rose-900/30 dark:text-rose-300 border-rose-200 dark:border-rose-700/40",
+  "Guide de montagne": "bg-sky-50 text-sky-700 dark:bg-sky-900/30 dark:text-sky-300 border-sky-200 dark:border-sky-700/40",
+  "Ski de randonnée": "bg-sky-50 text-sky-700 dark:bg-sky-900/30 dark:text-sky-300 border-sky-200 dark:border-sky-700/40",
+  "Site vitrine": "bg-teal-50 text-teal-700 dark:bg-teal-900/30 dark:text-teal-300 border-teal-200 dark:border-teal-700/40",
+  "WooCommerce": "bg-emerald-50 text-emerald-700 dark:bg-emerald-900/30 dark:text-emerald-300 border-emerald-200 dark:border-emerald-700/40",
+  "Next.js & Sanity": "bg-gray-100 text-gray-700 dark:bg-white/10 dark:text-gray-300 border-gray-300 dark:border-white/20",
   "Formulaire devis": "bg-indigo-50 text-indigo-700 dark:bg-indigo-900/30 dark:text-indigo-300 border-indigo-200 dark:border-indigo-700/40",
 };
 

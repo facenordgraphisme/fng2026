@@ -8,18 +8,34 @@ export const homepageType = defineType({
   fields: [
     // Hero
     defineField({ name: 'heroEyebrow', title: 'Hero — Badge', type: 'string' }),
-    defineField({ name: 'heroHeadline', title: 'Hero — Titre (H1)', type: 'string' }),
+    defineField({ name: 'heroHeadline', title: 'Hero — Titre (H1)', type: 'string', description: "Entourez un passage d'astérisques pour le mettre en couleur, ex : Création de sites internet *dans les Hautes-Alpes*" }),
     defineField({ name: 'heroSubtext', title: 'Hero — Sous-texte', type: 'text', rows: 3 }),
     defineField({ name: 'heroPrimaryCtaLabel', title: 'Hero — Bouton principal (lien vers /contact)', type: 'string' }),
     defineField({ name: 'heroSecondaryCtaLabel', title: 'Hero — Bouton secondaire (lien vers /portfolio)', type: 'string' }),
+    defineField({ name: 'heroTrustItems', title: 'Hero — Arguments de réassurance (sous les boutons)', type: 'array', of: [{ type: 'string' }] }),
 
     // About snippet
     defineField({ name: 'aboutHeading', title: 'Section À propos — Titre', type: 'string' }),
     defineField({ name: 'aboutParagraph1', title: 'Section À propos — Paragraphe 1', type: 'text', rows: 3 }),
     defineField({ name: 'aboutParagraph2', title: 'Section À propos — Paragraphe 2', type: 'text', rows: 3 }),
+    defineField({
+      name: 'aboutPoints',
+      title: 'Section À propos — Points forts',
+      type: 'array',
+      of: [
+        {
+          type: 'object',
+          fields: [
+            { name: 'title', title: 'Titre', type: 'string', validation: Rule => Rule.required() },
+            { name: 'desc', title: 'Description', type: 'text', rows: 2 },
+          ],
+          preview: { select: { title: 'title', subtitle: 'desc' } },
+        },
+      ],
+    }),
     defineField({ name: 'aboutCtaLabel', title: 'Section À propos — Bouton (lien vers /a-propos)', type: 'string' }),
 
-    // Services intro (cards stay sourced from getServices())
+    // Services intro (cards come from src/lib/services.ts)
     defineField({ name: 'servicesHeading', title: 'Section Services — Titre', type: 'string' }),
     defineField({ name: 'servicesParagraph', title: 'Section Services — Paragraphe', type: 'text', rows: 2 }),
     defineField({ name: 'servicesCtaLabel', title: 'Section Services — Bouton (lien vers /prestations)', type: 'string' }),

@@ -3,6 +3,7 @@
 import React from 'react'
 import AnimatedText from './AnimatedText'
 import Link from 'next/link'
+import { Check } from 'lucide-react'
 
 export interface HomeHeroData {
   heroEyebrow: string;
@@ -10,6 +11,16 @@ export interface HomeHeroData {
   heroSubtext: string;
   heroPrimaryCtaLabel: string;
   heroSecondaryCtaLabel: string;
+  heroTrustItems?: string[];
+}
+
+// Text wrapped in *asterisks* in the Studio headline is rendered in the accent colour.
+function renderAccent(text: string) {
+  return text.split(/(\*[^*]+\*)/g).map((part, i) =>
+    part.startsWith('*') && part.endsWith('*') && part.length > 2
+      ? <span key={i} className="text-[#239ea0]">{part.slice(1, -1)}</span>
+      : part
+  )
 }
 
 export default function HomeHero({ heroData }: { heroData: HomeHeroData }) {
@@ -30,8 +41,8 @@ export default function HomeHero({ heroData }: { heroData: HomeHeroData }) {
         </AnimatedText>
 
         <AnimatedText effect="3d-flip" delay={baseDelay + 0.15}>
-          <h1 className="text-5xl md:text-7xl lg:text-7xl xl:text-8xl font-bold tracking-tight mb-8 text-[#1a1a1a] dark:text-white leading-[1.1] text-balance">
-            {heroData.heroHeadline}
+          <h1 className="text-[2.6rem] md:text-6xl xl:text-7xl font-bold tracking-tight mb-8 text-[#1a1a1a] dark:text-white leading-[1.08] text-balance">
+            {renderAccent(heroData.heroHeadline)}
           </h1>
         </AnimatedText>
 
@@ -52,6 +63,19 @@ export default function HomeHero({ heroData }: { heroData: HomeHeroData }) {
             </Link>
           </div>
         </AnimatedText>
+
+        {heroData.heroTrustItems && heroData.heroTrustItems.length > 0 && (
+          <AnimatedText effect="fade-up" delay={baseDelay + 0.6}>
+            <ul className="mt-10 flex flex-wrap justify-center gap-x-6 gap-y-2 text-sm font-semibold text-[#444] dark:text-[#a1a1aa]">
+              {heroData.heroTrustItems.map((item) => (
+                <li key={item} className="flex items-center gap-1.5">
+                  <Check className="size-4 text-[#239ea0]" strokeWidth={3} />
+                  {item}
+                </li>
+              ))}
+            </ul>
+          </AnimatedText>
+        )}
       </div>
 
       {/* Smooth gradient transition to next section */}

@@ -2,14 +2,11 @@
 
 import Link from 'next/link'
 import { MapPin } from 'lucide-react'
+import { SERVICES } from '@/lib/services'
 
 const services = [
-  { label: 'Création de site internet', href: '/creation-site-internet-hautes-alpes' },
-  { label: 'Boutique e-commerce', href: '/boutique-e-commerce-hautes-alpes' },
-  { label: 'Refonte AI-Friendly', href: '/refonte-ai-friendly' },
-  { label: 'Référencement SEO', href: '/referencement-seo-hautes-alpes' },
-  { label: 'Référencement IA', href: '/referencement-ia' },
-  { label: 'Maintenance', href: '/maintenance-site-internet-hautes-alpes' },
+  ...SERVICES.map((sv) => ({ label: sv.navLabel, href: sv.href })),
+  { label: 'Référencement IA (GEO)', href: '/referencement-ia' },
 ]
 
 const cities = [

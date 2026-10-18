@@ -27,6 +27,7 @@ const playfair = Playfair_Display({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.facenordgraphisme.fr"),
+  applicationName: "Face Nord Graphisme",
   title: {
     template: "%s | Face Nord Graphisme",
     default: "Face Nord Graphisme | Création de site internet Hautes-Alpes"
@@ -102,7 +103,8 @@ export default function RootLayout({
                   "@type": "Organization",
                   "@id": "https://www.facenordgraphisme.fr/#organization",
                   "name": "Face Nord Graphisme",
-                  "url": "https://www.facenordgraphisme.fr",
+                  "alternateName": "Face Nord",
+                  "url": "https://www.facenordgraphisme.fr/",
                   "logo": {
                     "@type": "ImageObject",
                     "url": "https://www.facenordgraphisme.fr/assets/logo.png",
@@ -121,10 +123,13 @@ export default function RootLayout({
                   ]
                 },
                 {
+                  // Site name shown by Google above results: the WebSite entity on
+                  // the home page, with url matching the home page canonical.
                   "@type": "WebSite",
                   "@id": "https://www.facenordgraphisme.fr/#website",
-                  "url": "https://www.facenordgraphisme.fr",
+                  "url": "https://www.facenordgraphisme.fr/",
                   "name": "Face Nord Graphisme",
+                  "alternateName": "Face Nord",
                   "publisher": {
                     "@id": "https://www.facenordgraphisme.fr/#organization"
                   },

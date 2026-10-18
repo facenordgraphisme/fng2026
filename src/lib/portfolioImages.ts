@@ -1,8 +1,39 @@
 // Source de vérité locale pour les images du portfolio.
-// Ces chemins pointent vers public/assets/portfolio/*.png
+// Ces chemins pointent vers public/assets/portfolio/*.(png|webp)
 // Utilisé en fallback si Sanity n'a pas encore d'image uploadée.
 
 export const PORTFOLIO_IMAGES: Record<string, { main: string; gallery: string[] }> = {
+  'la-montagne-guide': {
+    main: '/assets/portfolio/lamontagneguide-home.webp',
+    gallery: [
+      '/assets/portfolio/lamontagneguide-alpinisme.webp',
+      '/assets/portfolio/lamontagneguide-sorties.webp',
+      '/assets/portfolio/lamontagneguide-guide.webp',
+    ],
+  },
+  'evasionski': {
+    main: '/assets/portfolio/evasionski-home.webp',
+    gallery: [
+      '/assets/portfolio/evasionski-stages-raids.webp',
+      '/assets/portfolio/evasionski-niveau.webp',
+    ],
+  },
+  'voyageurs-des-alpes': {
+    main: '/assets/portfolio/voyageursdesalpes-home.webp',
+    gallery: [
+      '/assets/portfolio/voyageursdesalpes-sejours.webp',
+      '/assets/portfolio/voyageursdesalpes-sejour.webp',
+      '/assets/portfolio/voyageursdesalpes-apropos.webp',
+    ],
+  },
+  'outplanners': {
+    main: '/assets/portfolio/outplanners-home.webp',
+    gallery: [
+      '/assets/portfolio/outplanners-fonctionnalites.webp',
+      '/assets/portfolio/outplanners-metiers.webp',
+      '/assets/portfolio/outplanners-tarifs.webp',
+    ],
+  },
   'gaudineto': {
     main: '/assets/portfolio/gaudineto-home.png',
     gallery: [

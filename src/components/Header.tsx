@@ -8,6 +8,7 @@ import { useTheme } from '@/components/ThemeProvider'
 import Magnetic from '@/components/Magnetic'
 import gsap from 'gsap'
 import { useGSAP } from '@gsap/react'
+import { SERVICES } from '@/lib/services'
 
 interface SidebarProps {
   isCollapsed?: boolean;
@@ -61,14 +62,7 @@ export function Sidebar({ isCollapsed = false, onToggleCollapse }: SidebarProps)
       name: 'Prestations', 
       path: '/prestations', 
       icon: <Briefcase size={22} className="min-w-[22px]" />,
-      sublinks: [
-        { name: 'Site internet', path: '/creation-site-internet-hautes-alpes' },
-        { name: 'E-Commerce', path: '/boutique-e-commerce-hautes-alpes' },
-        { name: 'Refonte AI Friendly', path: '/refonte-ai-friendly' },
-        { name: 'SEO local', path: '/referencement-seo-hautes-alpes' },
-        { name: 'Référencement IA', path: '/referencement-ia' },
-        { name: 'Maintenance', path: '/maintenance-site-internet-hautes-alpes' },
-      ]
+      sublinks: SERVICES.map((sv) => ({ name: sv.navLabel, path: sv.href })),
     },
     { name: 'Portfolio', path: '/portfolio', icon: <ImageIcon size={22} className="min-w-[22px]" /> },
     { name: 'Blog', path: '/blog', icon: <FileText size={22} className="min-w-[22px]" /> },

@@ -30,6 +30,7 @@ export async function GET() {
     { url: `${BASE}/refonte-ai-friendly`,                     priority: 0.9, freq: 'monthly' },
     { url: `${BASE}/maintenance-site-internet-hautes-alpes`,  priority: 0.9, freq: 'monthly' },
     { url: `${BASE}/referencement-ia`,                        priority: 0.9, freq: 'monthly' },
+    { url: `${BASE}/developpement-application-web`,           priority: 0.9, freq: 'monthly' },
     { url: `${BASE}/portfolio`,                               priority: 0.8, freq: 'monthly' },
     { url: `${BASE}/blog`,                                    priority: 0.8, freq: 'weekly'  },
     { url: `${BASE}/a-propos`,                                priority: 0.7, freq: 'monthly' },
