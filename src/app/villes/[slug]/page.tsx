@@ -371,7 +371,7 @@ export default async function CityPage({
         {/* ── Services strip ── */}
         <section className="max-w-4xl mx-auto px-6 py-14">
           <h2 className="text-2xl font-bold text-[#1a1a1a] dark:text-white mb-8 text-center">
-            Nos prestations à {page.city}
+            Mes prestations à {page.city}
           </h2>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             {SERVICES.map((s) => (
@@ -400,7 +400,7 @@ export default async function CityPage({
             </h2>
             <p className="text-gray-300 text-lg mb-10">
               Décrivez votre projet en quelques lignes : type de site, nombre de pages, délai souhaité.
-              Nous vous répondons avec une estimation claire, sans engagement.
+              Je vous réponds avec une estimation claire, sans engagement.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
