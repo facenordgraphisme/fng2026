@@ -3,7 +3,7 @@ import ServicePageLayout, { type ServicePageData } from "@/components/ServicePag
 import { ShoppingCart, CreditCard, Package, CalendarCheck, Search, PencilLine } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Création de boutique en ligne & réservation — Hautes-Alpes",
+  title: { absolute: "Création de boutique en ligne Hautes-Alpes, dès 800 €" },
   description: "Création de site e-commerce et de réservation en ligne dans les Hautes-Alpes : WooCommerce, Sanity, paiement Stripe. Vendez vos produits et activités sans commission. Dès 800 € HT.",
   alternates: { canonical: "https://www.facenordgraphisme.fr/boutique-e-commerce-hautes-alpes" },
   openGraph: { title: "Boutique en ligne Hautes-Alpes | Face Nord Graphisme", description: "Vendez vos produits, séjours et activités en ligne, sans commission. WooCommerce, Sanity, paiement Stripe.", siteName: "Face Nord Graphisme", locale: "fr_FR", images: [{ url: "/assets/portfolio/gaecdesvalentins-home.png", width: 2560, height: 1048, alt: "Boutique en ligne du GAEC des Valentins réalisée par Face Nord Graphisme" }] },
@@ -11,7 +11,8 @@ export const metadata: Metadata = {
 
 const data: ServicePageData = {
   badge: "Boutique en ligne",
-  headline: "Vendez vos produits et vos activités en ligne, sans commission",
+  headline: "Création de boutique en ligne et de réservation dans les Hautes-Alpes",
+  tagline: "Vendez vos produits et vos activités en ligne, sans commission",
   intro: "Boutique en ligne ou réservation d'activités : vos clients choisissent, réservent et paient en ligne, 24 h/24. Vous gérez vos produits, stocks et commandes depuis une interface simple — et vous ne reversez rien à une plateforme.",
   path: "/boutique-e-commerce-hautes-alpes",
   breadcrumbLabel: "Boutique en ligne & réservation",

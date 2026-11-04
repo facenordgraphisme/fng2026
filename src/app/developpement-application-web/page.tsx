@@ -3,7 +3,7 @@ import ServicePageLayout, { type ServicePageData } from "@/components/ServicePag
 import { CalendarCheck, Users, CreditCard, LayoutDashboard, Smartphone, Layers } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Développement d'application web sur-mesure — Hautes-Alpes",
+  title: { absolute: "Développement d'application web sur-mesure (Hautes-Alpes)" },
   description: "Développement d'applications web et de logiciels SaaS sur-mesure : plateforme de réservation, planning, espace client, tableau de bord, paiements Stripe. Développeur Next.js à Embrun (Hautes-Alpes).",
   alternates: { canonical: "https://www.facenordgraphisme.fr/developpement-application-web" },
   openGraph: { title: "Application web sur-mesure | Face Nord Graphisme", description: "L'outil en ligne taillé pour votre métier : réservation, planning, espace client, SaaS. Exemple : Outplanners.", siteName: "Face Nord Graphisme", locale: "fr_FR", images: [{ url: "/assets/portfolio/outplanners-home.webp", width: 1920, height: 1200, alt: "Outplanners, plateforme SaaS développée par Face Nord Graphisme" }] },
@@ -11,7 +11,8 @@ export const metadata: Metadata = {
 
 const data: ServicePageData = {
   badge: "Application web",
-  headline: "L'outil en ligne taillé pour votre métier",
+  headline: "Développement d'application web sur-mesure dans les Hautes-Alpes",
+  tagline: "L'outil en ligne taillé pour votre métier",
   intro: "Plateforme de réservation, planning d'équipe, espace client, tableau de bord, logiciel en abonnement (SaaS) : je conçois et développe des applications web sur-mesure, utilisables partout, sur ordinateur comme sur mobile — de l'idée jusqu'à la mise en production.",
   path: "/developpement-application-web",
   breadcrumbLabel: "Application web sur-mesure",

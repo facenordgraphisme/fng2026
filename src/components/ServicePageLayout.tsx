@@ -24,6 +24,8 @@ export interface ServiceExample {
 export interface ServicePageData {
   badge: string
   headline: string
+  /** Accroche affichée sous le H1 */
+  tagline?: string
   intro: string
   path: string
   breadcrumbLabel: string
@@ -106,6 +108,9 @@ export default function ServicePageLayout({ data }: { data: ServicePageData }) {
             <h1 className="text-4xl md:text-5xl font-bold leading-tight tracking-tight mb-6 text-balance">
               {data.headline}
             </h1>
+            {data.tagline && (
+              <p className="text-white text-xl md:text-2xl font-semibold leading-snug mb-4 max-w-lg">{data.tagline}</p>
+            )}
             <p className="text-gray-300 text-lg leading-relaxed mb-10 max-w-lg">
               {data.intro}
             </p>

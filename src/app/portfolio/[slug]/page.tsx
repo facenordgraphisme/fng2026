@@ -23,7 +23,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
 
   // Avoid double "Face Nord Graphisme" suffix: the root layout title template
   // appends "| Face Nord Graphisme" to any title that isn't marked absolute.
-  const title = rawTitle.includes("Face Nord Graphisme") ? { absolute: rawTitle } : rawTitle;
+  const title = { absolute: rawTitle.replace(/\s*\|\s*Face Nord Graphisme$/, "") };
 
   return {
     title,

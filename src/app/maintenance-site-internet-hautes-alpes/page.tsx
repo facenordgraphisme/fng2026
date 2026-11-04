@@ -3,7 +3,7 @@ import ServicePageLayout, { type ServicePageData } from "@/components/ServicePag
 import { Shield, RefreshCcw, Clock, Bell, Lock, BarChart3 } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Maintenance de site internet — WordPress & Next.js | Hautes-Alpes",
+  title: { absolute: "Maintenance de site internet Hautes-Alpes, dès 20 €/mois" },
   description: "Maintenance de site internet dans les Hautes-Alpes : mises à jour, sauvegardes, sécurité, surveillance 24/7 et 1 h de modifications par mois. WordPress, WooCommerce et Next.js. Dès 20 € HT/mois, sans engagement.",
   alternates: { canonical: "https://www.facenordgraphisme.fr/maintenance-site-internet-hautes-alpes" },
   openGraph: { title: "Maintenance de site internet Hautes-Alpes | Face Nord Graphisme", description: "Un site toujours à jour, sauvegardé et sécurisé. WordPress et Next.js. Dès 20 € HT/mois, sans engagement.", siteName: "Face Nord Graphisme", locale: "fr_FR", images: [{ url: "/assets/home-realisations.webp", width: 1500, height: 1200, alt: "Sites internet maintenus par Face Nord Graphisme" }] },
@@ -11,7 +11,8 @@ export const metadata: Metadata = {
 
 const data: ServicePageData = {
   badge: "Maintenance",
-  headline: "Votre site toujours à jour, sauvegardé et sécurisé — sans y penser",
+  headline: "Maintenance de site internet dans les Hautes-Alpes",
+  tagline: "Votre site toujours à jour, sauvegardé et sécurisé — sans y penser",
   intro: "Un site, comme un véhicule, a besoin d'entretien : mises à jour, sauvegardes, surveillance, petites modifications. Je m'en occupe chaque mois pour que votre site reste rapide et fiable, et que vous puissiez vous concentrer sur votre métier.",
   path: "/maintenance-site-internet-hautes-alpes",
   breadcrumbLabel: "Maintenance de site internet",

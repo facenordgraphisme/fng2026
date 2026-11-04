@@ -3,7 +3,7 @@ import ServicePageLayout, { type ServicePageData } from "@/components/ServicePag
 import { Smartphone, Zap, Search, PencilLine, PenTool, BarChart3 } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Création de site internet vitrine — Hautes-Alpes",
+  title: { absolute: "Création de site vitrine Hautes-Alpes, dès 500 €" },
   description: "Création de site internet vitrine dans les Hautes-Alpes (Embrun, Gap, Briançon). Design sur-mesure, rapide sur mobile, modifiable par vous et optimisé pour Google. Dès 500 € HT, devis gratuit.",
   alternates: { canonical: "https://www.facenordgraphisme.fr/creation-site-internet-hautes-alpes" },
   openGraph: { title: "Création de site internet Hautes-Alpes | Face Nord Graphisme", description: "Un site vitrine clair et rapide qui transforme vos visiteurs en clients. Design sur-mesure, SEO local, mobile-first. Dès 500 € HT.", siteName: "Face Nord Graphisme", locale: "fr_FR", images: [{ url: "/assets/portfolio/lamontagneguide-home.webp", width: 1920, height: 1200, alt: "Site vitrine La Montagne Guide réalisé par Face Nord Graphisme" }] },
@@ -11,7 +11,8 @@ export const metadata: Metadata = {
 
 const data: ServicePageData = {
   badge: "Site vitrine",
-  headline: "Un site internet qui présente votre activité et vous amène des clients",
+  headline: "Création de site internet vitrine dans les Hautes-Alpes",
+  tagline: "Un site internet qui présente votre activité et vous amène des clients",
   intro: "Je conçois des sites vitrines sur-mesure pour les artisans, commerçants, guides et pros du tourisme des Hautes-Alpes : clairs, rapides sur mobile, faciles à modifier et optimisés pour Google dès le premier jour.",
   path: "/creation-site-internet-hautes-alpes",
   breadcrumbLabel: "Création de site internet",

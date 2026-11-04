@@ -3,7 +3,7 @@ import ServicePageLayout, { type ServicePageData } from "@/components/ServicePag
 import { MapPin, Star, FileText, BarChart3, Brain, Wrench } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Référencement Google & IA (SEO + GEO) — Hautes-Alpes",
+  title: { absolute: "Référencement SEO local et IA dans les Hautes-Alpes" },
   description: "Améliorez le référencement de votre site sur Google et dans les intelligences artificielles (ChatGPT, Gemini, Perplexity). SEO local et GEO pour les entreprises des Hautes-Alpes. Devis gratuit.",
   alternates: { canonical: "https://www.facenordgraphisme.fr/referencement-seo-hautes-alpes" },
   openGraph: { title: "Référencement Google & IA Hautes-Alpes | Face Nord Graphisme", description: "Soyez trouvé sur Google et recommandé par les IA. Audit, Google Business Profile, contenus et données structurées pour les PME du 05.", siteName: "Face Nord Graphisme", locale: "fr_FR", images: [{ url: "/assets/portfolio/evasionski-home.webp", width: 1920, height: 1200, alt: "Site ÉvasionSki réalisé par Face Nord Graphisme" }] },
@@ -11,7 +11,8 @@ export const metadata: Metadata = {
 
 const data: ServicePageData = {
   badge: "Référencement Google & IA",
-  headline: "Soyez trouvé sur Google… et recommandé par les intelligences artificielles",
+  headline: "Référencement SEO local et IA dans les Hautes-Alpes",
+  tagline: "Soyez trouvé sur Google… et recommandé par les intelligences artificielles",
   intro: "Vos clients vous cherchent sur Google, sur Maps, et de plus en plus en posant la question à ChatGPT ou Gemini. J'améliore votre position sur Google (SEO) et votre présence dans les réponses des IA (GEO), avec un plan d'action clair et des résultats suivis chaque mois.",
   path: "/referencement-seo-hautes-alpes",
   breadcrumbLabel: "Référencement Google & IA",

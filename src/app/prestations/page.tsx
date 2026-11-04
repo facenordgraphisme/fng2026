@@ -5,7 +5,7 @@ import ServiceCard from "@/components/ServiceCard";
 import { SERVICES } from "@/lib/services";
 
 export const metadata: Metadata = {
-  title: "Prestations web — Site vitrine, e-commerce, refonte, SEO | Hautes-Alpes",
+  title: { absolute: "Prestations web Hautes-Alpes : site, e-commerce, SEO" },
   description: "Site vitrine, boutique en ligne, refonte, référencement Google & IA, maintenance et application web sur-mesure. Développeur web à Embrun pour les entreprises des Hautes-Alpes. Devis gratuit.",
   alternates: { canonical: "https://www.facenordgraphisme.fr/prestations" },
   openGraph: { title: "Prestations Web & SEO Hautes-Alpes | Face Nord Graphisme", description: "6 prestations web pour développer votre présence en ligne dans les Hautes-Alpes. Devis gratuit sous 48 h.", siteName: "Face Nord Graphisme", locale: "fr_FR", images: [{ url: "/assets/home_intro.png", width: 1200, height: 630, alt: "Face Nord Graphisme - Création de site internet dans les Hautes-Alpes" }] },
@@ -28,8 +28,8 @@ export default function PrestationsPage() {
             Hautes-Alpes (05)
           </div>
           <h1 className="text-4xl md:text-5xl font-bold leading-tight tracking-tight mb-6">
-            Ce que je peux faire<br />
-            <span className="text-[#239ea0]">pour votre entreprise</span>
+            Prestations web<br />
+            <span className="text-[#239ea0]">pour les entreprises des Hautes-Alpes</span>
           </h1>
           <p className="text-gray-300 text-lg leading-relaxed max-w-2xl mx-auto mb-10">
             Créer votre site, vendre en ligne, moderniser un site vieillissant, être trouvé sur Google et par les IA, ou développer l&apos;outil métier qui vous manque. Choisissez votre situation — je vous réponds sous 48 h, sans engagement.

@@ -3,7 +3,7 @@ import ServicePageLayout, { type ServicePageData } from "@/components/ServicePag
 import { RefreshCcw, Zap, Brain, Search, Smartphone, PencilLine } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Refonte de site internet prête pour l'IA — Hautes-Alpes",
+  title: { absolute: "Refonte de site internet Hautes-Alpes, dès 400 €" },
   description: "Refonte de site internet vieillissant dans les Hautes-Alpes : design moderne, rapide sur mobile, référencement conservé et structure lisible par Google, ChatGPT et Gemini. Dès 400 € HT.",
   alternates: { canonical: "https://www.facenordgraphisme.fr/refonte-ai-friendly" },
   openGraph: { title: "Refonte de site internet prête pour l'IA | Face Nord Graphisme", description: "Modernisez un site vieillissant et rendez-le visible sur Google et dans les réponses des IA. Référencement conservé.", siteName: "Face Nord Graphisme", locale: "fr_FR", images: [{ url: "/assets/portfolio/voyageursdesalpes-home.webp", width: 1920, height: 1200, alt: "Refonte du site Voyageurs des Alpes par Face Nord Graphisme" }] },
@@ -11,7 +11,8 @@ export const metadata: Metadata = {
 
 const data: ServicePageData = {
   badge: "Refonte de site",
-  headline: "Redonnez une seconde vie à votre site — visible sur Google et par les IA",
+  headline: "Refonte de site internet dans les Hautes-Alpes",
+  tagline: "Redonnez une seconde vie à votre site — visible sur Google et par les IA",
   intro: "Votre site a quelques années, il est lent, mal affiché sur mobile ou il n'apparaît plus nulle part ? Je le modernise et je le restructure pour qu'il soit compris et recommandé par Google comme par ChatGPT, Gemini ou Perplexity — sans perdre le référencement acquis.",
   path: "/refonte-ai-friendly",
   breadcrumbLabel: "Refonte de site internet",
