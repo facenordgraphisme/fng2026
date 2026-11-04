@@ -19,6 +19,9 @@ export default function AnimatedText({ children, className, effect = 'fade-up', 
   const containerRef = useRef<HTMLDivElement>(null)
 
   useGSAP(() => {
+    // Déjà visible au chargement : ne pas cacher un texte peint avant l'hydratation.
+    if (containerRef.current && containerRef.current.getBoundingClientRect().top < window.innerHeight) return;
+
     let fromState: gsap.TweenVars = { opacity: 0 };
     let toState: gsap.TweenVars = { opacity: 1, duration: 1.2, delay, ease: 'power3.out' };
 

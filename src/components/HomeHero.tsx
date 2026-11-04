@@ -24,14 +24,12 @@ function renderAccent(text: string) {
 }
 
 export default function HomeHero({ heroData }: { heroData: HomeHeroData }) {
-  // Hero content animates in immediately (and renders behind the opaque
-  // preloader overlay) so it counts toward FCP/LCP without waiting for the
-  // multi-second preloader sequence to finish.
+  // Hero content animates in immediately so it counts toward FCP/LCP.
   const baseDelay = 0;
 
   return (
     <section className="relative h-screen min-h-[700px] w-full flex items-center justify-center overflow-hidden bg-transparent text-[#1a1a1a] dark:text-white">
-      {/* Mountain is perfectly integrated by Preloader's persistent background layer */}
+      {/* The mountain background is rendered by HomeMountain (see LayoutWrapper) */}
 
       <div className="z-10 text-center px-6 max-w-5xl pt-20">
         <AnimatedText effect="zoom-in" delay={baseDelay}>

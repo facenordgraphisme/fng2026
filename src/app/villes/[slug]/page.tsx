@@ -239,7 +239,7 @@ function renderBlocks(blocks: any[]) {
 // ── Page ──────────────────────────────────────────────────────────────────────
 
 const SERVICES = [
-  { icon: "💻", label: "Site vitrine", desc: "Dès 800 € HT" },
+  { icon: "💻", label: "Site vitrine", desc: "Dès 500 € HT" },
   { icon: "🛒", label: "E-commerce", desc: "Boutique & réservation" },
   { icon: "🔍", label: "SEO local", desc: "Visibilité Google Maps" },
   { icon: "🔧", label: "Refonte", desc: "Modernisation & performance" },
@@ -358,7 +358,7 @@ export default async function CityPage({
               <div className="text-sm text-gray-500 dark:text-[#a1a1aa] mt-1">Délai de réponse</div>
             </div>
             <div>
-              <div className="text-3xl font-bold text-[#239ea0]">dès 800€</div>
+              <div className="text-3xl font-bold text-[#239ea0]">dès 500€</div>
               <div className="text-sm text-gray-500 dark:text-[#a1a1aa] mt-1">Tarif site vitrine</div>
             </div>
             <div>

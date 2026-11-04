@@ -44,6 +44,26 @@ const nextConfig: NextConfig = {
         destination: '/refonte-ai-friendly',
         permanent: true,
       },
+      {
+        source: '/blog/gbp-artisans-hautes-alpes',
+        destination: '/blog/google-business-profile-artisans-hautes-alpes',
+        permanent: true,
+      },
+      {
+        source: '/blog/visibilite-en-ligne-artisans-commerces-hautes-alpes',
+        destination: '/blog/etre-visible-en-ligne-dans-les-hautes-alpes',
+        permanent: true,
+      },
+      {
+        source: '/blog/le-guide-complet-de-la-visibilite-en-ligne-pour-les-commercants-des-hautes-alpes',
+        destination: '/blog/etre-visible-en-ligne-dans-les-hautes-alpes',
+        permanent: true,
+      },
+      {
+        source: '/portfolio/reves-d-aventures',
+        destination: '/portfolio/reves-daventures',
+        permanent: true,
+      },
     ];
   },
   async headers() {

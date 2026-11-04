@@ -823,7 +823,7 @@ export async function getFaqPage() {
       items: [
         {
           question: "Quel est le prix pour la création d'un site internet ?",
-          answer: "Chaque projet est unique ! Le tarif dépend de vos besoins (site vitrine simple, e-commerce complexe, refonte, etc.). Un site vitrine de base peut démarrer autour de 1000€, tandis qu'une boutique en ligne complète nécessitera un budget plus important. Contactez-moi pour obtenir un devis gratuit et personnalisé.",
+          answer: "Chaque projet est unique ! Le tarif dépend de vos besoins (site vitrine simple, e-commerce complexe, refonte, etc.). Un site vitrine démarre à partir de 500 € HT, une boutique en ligne à partir de 800 € HT, une refonte à partir de 400 € HT et la maintenance à partir de 20 € HT/mois. Contactez-moi pour obtenir un devis gratuit et personnalisé.",
         },
         {
           question: "Combien de temps faut-il pour créer un site web ?",

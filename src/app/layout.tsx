@@ -89,6 +89,12 @@ export default function RootLayout({
   return (
     <html lang="fr" className={`scroll-smooth ${nunito.variable} ${jakarta.variable}`} suppressHydrationWarning>
       <head>
+        {/* Le rideau d'accueil (ordinateur uniquement) n'est joué qu'une fois par session. */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: "try{var d=document.documentElement;if(sessionStorage.getItem('fn-curtain')){d.dataset.curtainSeen='1'}else{sessionStorage.setItem('fn-curtain','1');setTimeout(function(){d.dataset.curtainSeen='1'},1800)}}catch(e){}",
+          }}
+        />
         <meta name="geo.region" content="FR-05" />
         <meta name="geo.placename" content="Puy Sanières" />
         <meta name="geo.position" content="44.5385;6.4328" />

@@ -59,7 +59,7 @@ function ProceduralMountain({ color, opacity }: { color: string, opacity: number
   )
 }
 
-export default function HeroScene({ className }: { className?: string }) {
+export default function HeroScene({ className, active = true }: { className?: string, active?: boolean }) {
   const { resolvedTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
   
@@ -75,7 +75,7 @@ export default function HeroScene({ className }: { className?: string }) {
 
   return (
     <div className={`absolute inset-0 z-0 pointer-events-none transition-colors duration-300 ${className || ''}`}>
-      <Canvas camera={{ position: [0, 2, 10], fov: 45 }}>
+      <Canvas camera={{ position: [0, 2, 10], fov: 45 }} dpr={[1, 1.5]} frameloop={active ? 'always' : 'never'}>
         <ambientLight intensity={1} />
         <ProceduralMountain color={mountainColor} opacity={mountainOpacity} />
         {/* Magic particles adapt perfectly to dark mode contrast */}

@@ -4,7 +4,7 @@ import { ShoppingCart, CreditCard, Package, CalendarCheck, Search, PencilLine } 
 
 export const metadata: Metadata = {
   title: "Création de boutique en ligne & réservation — Hautes-Alpes",
-  description: "Création de site e-commerce et de réservation en ligne dans les Hautes-Alpes : WooCommerce, Sanity, paiement Stripe. Vendez vos produits et activités sans commission. Dès 2 500 € HT.",
+  description: "Création de site e-commerce et de réservation en ligne dans les Hautes-Alpes : WooCommerce, Sanity, paiement Stripe. Vendez vos produits et activités sans commission. Dès 800 € HT.",
   alternates: { canonical: "https://www.facenordgraphisme.fr/boutique-e-commerce-hautes-alpes" },
   openGraph: { title: "Boutique en ligne Hautes-Alpes | Face Nord Graphisme", description: "Vendez vos produits, séjours et activités en ligne, sans commission. WooCommerce, Sanity, paiement Stripe.", siteName: "Face Nord Graphisme", locale: "fr_FR", images: [{ url: "/assets/portfolio/gaecdesvalentins-home.png", width: 2560, height: 1048, alt: "Boutique en ligne du GAEC des Valentins réalisée par Face Nord Graphisme" }] },
 };
@@ -15,10 +15,10 @@ const data: ServicePageData = {
   intro: "Boutique en ligne ou réservation d'activités : vos clients choisissent, réservent et paient en ligne, 24 h/24. Vous gérez vos produits, stocks et commandes depuis une interface simple — et vous ne reversez rien à une plateforme.",
   path: "/boutique-e-commerce-hautes-alpes",
   breadcrumbLabel: "Boutique en ligne & réservation",
-  pricingFrom: "dès 2 500 € HT",
+  pricingFrom: "dès 800 € HT",
   pricingLabel: "Boutique ou réservation en ligne",
   stats: [
-    { value: "dès 2 500 €", label: "Boutique clé en main" },
+    { value: "dès 800 €", label: "Boutique clé en main" },
     { value: "0 %", label: "Commission sur vos ventes" },
     { value: "4-8 sem.", label: "Délai de réalisation" },
     { value: "Stripe", label: "Paiement sécurisé" },
@@ -85,7 +85,7 @@ const data: ServicePageData = {
     { q: "Comment suis-je payé ?", a: "Les paiements passent par Stripe et arrivent directement sur votre compte bancaire, en général sous quelques jours. Stripe prélève uniquement ses frais de transaction (de l'ordre de 1,5 % + 0,25 € par paiement par carte européenne). Je ne prends aucune commission." },
     { q: "Puis-je gérer des réservations avec un nombre de places limité ?", a: "Oui : dates, créneaux, nombre de places, acompte ou paiement total, options (location de matériel, repas…). Les places restantes se mettent à jour automatiquement." },
     { q: "Ma boutique sera-t-elle bien référencée ?", a: "Oui : chaque produit ou activité dispose de sa propre page optimisée (titre, description, données structurées de prix et de disponibilité), ce qui permet à Google et aux IA de comprendre et d'afficher votre offre." },
-    { q: "Que se passe-t-il en cas de problème après le lancement ?", a: "30 jours de suivi sont inclus. Ensuite, le forfait maintenance (dès 50 € HT/mois) couvre les mises à jour, les sauvegardes, la vérification du tunnel de paiement et 1 h de modifications par mois." },
+    { q: "Que se passe-t-il en cas de problème après le lancement ?", a: "30 jours de suivi sont inclus. Ensuite, le forfait maintenance (dès 20 € HT/mois) couvre les mises à jour, les sauvegardes, la vérification du tunnel de paiement et 1 h de modifications par mois." },
   ],
   related: [
     { href: "/blog/reservation-directe-eviter-commissions-booking-hautes-alpes", badge: "Réservation", label: "Réservation directe : éviter les commissions", desc: "Comment récupérer vos marges face aux plateformes." },
@@ -100,7 +100,7 @@ const data: ServicePageData = {
     provider: { "@type": "ProfessionalService", "@id": "https://www.facenordgraphisme.fr/#localbusiness", name: "Face Nord Graphisme", url: "https://www.facenordgraphisme.fr" },
     areaServed: "Hautes-Alpes",
     description: "Création de boutiques en ligne (WooCommerce, Sanity, Stripe) et de systèmes de réservation pour les entreprises des Hautes-Alpes.",
-    offers: { "@type": "Offer", priceCurrency: "EUR", price: "2500", priceSpecification: { "@type": "UnitPriceSpecification", price: "2500", priceCurrency: "EUR", unitText: "à partir de" } },
+    offers: { "@type": "Offer", priceCurrency: "EUR", price: "800", priceSpecification: { "@type": "UnitPriceSpecification", minPrice: "800", priceCurrency: "EUR" } },
   },
 };
 

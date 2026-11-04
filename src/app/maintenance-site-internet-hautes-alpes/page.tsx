@@ -4,9 +4,9 @@ import { Shield, RefreshCcw, Clock, Bell, Lock, BarChart3 } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Maintenance de site internet — WordPress & Next.js | Hautes-Alpes",
-  description: "Maintenance de site internet dans les Hautes-Alpes : mises à jour, sauvegardes, sécurité, surveillance 24/7 et 1 h de modifications par mois. WordPress, WooCommerce et Next.js. Dès 50 € HT/mois, sans engagement.",
+  description: "Maintenance de site internet dans les Hautes-Alpes : mises à jour, sauvegardes, sécurité, surveillance 24/7 et 1 h de modifications par mois. WordPress, WooCommerce et Next.js. Dès 20 € HT/mois, sans engagement.",
   alternates: { canonical: "https://www.facenordgraphisme.fr/maintenance-site-internet-hautes-alpes" },
-  openGraph: { title: "Maintenance de site internet Hautes-Alpes | Face Nord Graphisme", description: "Un site toujours à jour, sauvegardé et sécurisé. WordPress et Next.js. Dès 50 € HT/mois, sans engagement.", siteName: "Face Nord Graphisme", locale: "fr_FR", images: [{ url: "/assets/home-realisations.webp", width: 1500, height: 1200, alt: "Sites internet maintenus par Face Nord Graphisme" }] },
+  openGraph: { title: "Maintenance de site internet Hautes-Alpes | Face Nord Graphisme", description: "Un site toujours à jour, sauvegardé et sécurisé. WordPress et Next.js. Dès 20 € HT/mois, sans engagement.", siteName: "Face Nord Graphisme", locale: "fr_FR", images: [{ url: "/assets/home-realisations.webp", width: 1500, height: 1200, alt: "Sites internet maintenus par Face Nord Graphisme" }] },
 };
 
 const data: ServicePageData = {
@@ -15,10 +15,10 @@ const data: ServicePageData = {
   intro: "Un site, comme un véhicule, a besoin d'entretien : mises à jour, sauvegardes, surveillance, petites modifications. Je m'en occupe chaque mois pour que votre site reste rapide et fiable, et que vous puissiez vous concentrer sur votre métier.",
   path: "/maintenance-site-internet-hautes-alpes",
   breadcrumbLabel: "Maintenance de site internet",
-  pricingFrom: "dès 50 € HT/mois",
+  pricingFrom: "dès 20 € HT/mois",
   pricingLabel: "Forfait essentiel, sans engagement",
   stats: [
-    { value: "50 €/mois", label: "Forfait essentiel" },
+    { value: "20 €/mois", label: "Forfait essentiel" },
     { value: "24/7", label: "Surveillance de disponibilité" },
     { value: "1 h", label: "De modifications incluse / mois" },
     { value: "0", label: "Engagement de durée" },
@@ -76,7 +76,7 @@ const data: ServicePageData = {
   ],
   related: [
     { href: "/refonte-ai-friendly", badge: "Refonte", label: "Votre site est trop ancien ?", desc: "Parfois, une refonte coûte moins cher que de maintenir l'existant." },
-    { href: "/creation-site-internet-hautes-alpes", badge: "Création", label: "Création de site vitrine", desc: "Un nouveau site, dès 800 € HT." },
+    { href: "/creation-site-internet-hautes-alpes", badge: "Création", label: "Création de site vitrine", desc: "Un nouveau site, dès 500 € HT." },
     { href: "/blog/prix-site-internet-artisan-pme-hautes-alpes", badge: "Tarifs", label: "Combien coûte un site internet ?", desc: "Création, refonte et maintenance : les tarifs 2026." },
   ],
   schema: {
@@ -87,7 +87,7 @@ const data: ServicePageData = {
     provider: { "@type": "ProfessionalService", "@id": "https://www.facenordgraphisme.fr/#localbusiness", name: "Face Nord Graphisme", url: "https://www.facenordgraphisme.fr" },
     areaServed: "Hautes-Alpes",
     description: "Maintenance de sites WordPress, WooCommerce et Next.js : mises à jour, sauvegardes, sécurité, surveillance et modifications mensuelles.",
-    offers: { "@type": "Offer", priceCurrency: "EUR", price: "50", priceSpecification: { "@type": "UnitPriceSpecification", price: "50", priceCurrency: "EUR", unitText: "par mois à partir de" } },
+    offers: { "@type": "Offer", priceCurrency: "EUR", price: "20", priceSpecification: { "@type": "UnitPriceSpecification", minPrice: "20", priceCurrency: "EUR", unitCode: "MON" } },
   },
 };
 

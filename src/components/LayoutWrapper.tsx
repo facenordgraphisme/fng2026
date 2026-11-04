@@ -5,7 +5,8 @@
 import { usePathname } from 'next/navigation'
 import { Sidebar } from './Header'
 import Footer from './Footer'
-import Preloader from './Preloader'
+import HomeCurtain from './HomeCurtain'
+import HomeMountain from './HomeMountain'
 import { useState } from 'react'
 
 export default function LayoutWrapper({ children }: { children: React.ReactNode }) {
@@ -19,7 +20,12 @@ export default function LayoutWrapper({ children }: { children: React.ReactNode 
 
   return (
     <>
-      <Preloader />
+      {pathname === '/' && (
+        <>
+          <HomeCurtain />
+          <HomeMountain />
+        </>
+      )}
       <Sidebar isCollapsed={isCollapsed} onToggleCollapse={() => setIsCollapsed(!isCollapsed)} />
       <main className={`flex-grow w-full ${isCollapsed ? 'md:pl-24' : 'md:pl-72'} md:pt-0 pt-16 min-h-screen relative z-10 transition-all duration-300 ease-in-out`}>
         {children}

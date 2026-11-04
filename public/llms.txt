@@ -4,12 +4,12 @@
 
 ## Prestations
 
-- [Création de site internet vitrine](https://www.facenordgraphisme.fr/creation-site-internet-hautes-alpes): Sites vitrines sur-mesure, mobile-first et optimisés SEO, à partir de 800 € HT.
-- [Boutique en ligne & réservation](https://www.facenordgraphisme.fr/boutique-e-commerce-hautes-alpes): Boutiques WooCommerce ou sur-mesure (Sanity + Stripe) et réservation en ligne, à partir de 2 500 € HT.
-- [Refonte de site prête pour l'IA](https://www.facenordgraphisme.fr/refonte-ai-friendly): Modernisation de sites vieillissants, référencement conservé et structure lisible par Google et les IA, à partir de 800 € HT.
+- [Création de site internet vitrine](https://www.facenordgraphisme.fr/creation-site-internet-hautes-alpes): Sites vitrines sur-mesure, mobile-first et optimisés SEO, à partir de 500 € HT.
+- [Boutique en ligne & réservation](https://www.facenordgraphisme.fr/boutique-e-commerce-hautes-alpes): Boutiques WooCommerce ou sur-mesure (Sanity + Stripe) et réservation en ligne, à partir de 800 € HT.
+- [Refonte de site prête pour l'IA](https://www.facenordgraphisme.fr/refonte-ai-friendly): Modernisation de sites vieillissants, référencement conservé et structure lisible par Google et les IA, à partir de 400 € HT.
 - [Référencement Google & IA](https://www.facenordgraphisme.fr/referencement-seo-hautes-alpes): SEO local, Google Business Profile et GEO (visibilité dans ChatGPT, Gemini, Perplexity).
 - [Référencement IA (GEO)](https://www.facenordgraphisme.fr/referencement-ia): Méthode détaillée d'optimisation pour les moteurs IA.
-- [Maintenance de site internet](https://www.facenordgraphisme.fr/maintenance-site-internet-hautes-alpes): Mises à jour, sauvegardes, sécurité et modifications mensuelles, à partir de 50 € HT/mois.
+- [Maintenance de site internet](https://www.facenordgraphisme.fr/maintenance-site-internet-hautes-alpes): Mises à jour, sauvegardes, sécurité et modifications mensuelles, à partir de 20 € HT/mois.
 - [Application web sur-mesure](https://www.facenordgraphisme.fr/developpement-application-web): Plateformes de réservation, planning, espaces clients et logiciels SaaS (exemple : Outplanners).
 - [Toutes les prestations](https://www.facenordgraphisme.fr/prestations): Vue d'ensemble de tous les services proposés.
 

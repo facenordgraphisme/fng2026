@@ -4,9 +4,9 @@ import { Smartphone, Zap, Search, PencilLine, PenTool, BarChart3 } from "lucide-
 
 export const metadata: Metadata = {
   title: "Création de site internet vitrine — Hautes-Alpes",
-  description: "Création de site internet vitrine dans les Hautes-Alpes (Embrun, Gap, Briançon). Design sur-mesure, rapide sur mobile, modifiable par vous et optimisé pour Google. Dès 800 € HT, devis gratuit.",
+  description: "Création de site internet vitrine dans les Hautes-Alpes (Embrun, Gap, Briançon). Design sur-mesure, rapide sur mobile, modifiable par vous et optimisé pour Google. Dès 500 € HT, devis gratuit.",
   alternates: { canonical: "https://www.facenordgraphisme.fr/creation-site-internet-hautes-alpes" },
-  openGraph: { title: "Création de site internet Hautes-Alpes | Face Nord Graphisme", description: "Un site vitrine clair et rapide qui transforme vos visiteurs en clients. Design sur-mesure, SEO local, mobile-first. Dès 800 € HT.", siteName: "Face Nord Graphisme", locale: "fr_FR", images: [{ url: "/assets/portfolio/lamontagneguide-home.webp", width: 1920, height: 1200, alt: "Site vitrine La Montagne Guide réalisé par Face Nord Graphisme" }] },
+  openGraph: { title: "Création de site internet Hautes-Alpes | Face Nord Graphisme", description: "Un site vitrine clair et rapide qui transforme vos visiteurs en clients. Design sur-mesure, SEO local, mobile-first. Dès 500 € HT.", siteName: "Face Nord Graphisme", locale: "fr_FR", images: [{ url: "/assets/portfolio/lamontagneguide-home.webp", width: 1920, height: 1200, alt: "Site vitrine La Montagne Guide réalisé par Face Nord Graphisme" }] },
 };
 
 const data: ServicePageData = {
@@ -15,10 +15,10 @@ const data: ServicePageData = {
   intro: "Je conçois des sites vitrines sur-mesure pour les artisans, commerçants, guides et pros du tourisme des Hautes-Alpes : clairs, rapides sur mobile, faciles à modifier et optimisés pour Google dès le premier jour.",
   path: "/creation-site-internet-hautes-alpes",
   breadcrumbLabel: "Création de site internet",
-  pricingFrom: "dès 800 € HT",
+  pricingFrom: "dès 500 € HT",
   pricingLabel: "Site one-page · vitrine complète dès 1 200 € HT",
   stats: [
-    { value: "dès 800 €", label: "Site one-page" },
+    { value: "dès 500 €", label: "Site one-page" },
     { value: "2-4 sem.", label: "Pour un site vitrine" },
     { value: "100 %", label: "Le site vous appartient" },
     { value: "30 j", label: "De suivi après la mise en ligne" },
@@ -81,7 +81,7 @@ const data: ServicePageData = {
     "Formation à l'administration + suivi 30 jours",
   ],
   faqs: [
-    { q: "Combien coûte un site vitrine dans les Hautes-Alpes ?", a: "Un site one-page (une seule page qui présente l'essentiel) démarre à 800 € HT. Un site vitrine de plusieurs pages (services, réalisations, à propos, contact, blog) démarre à 1 200 € HT. Le prix final dépend du nombre de pages, de la rédaction des textes et des fonctionnalités. Le devis est gratuit et détaillé." },
+    { q: "Combien coûte un site vitrine dans les Hautes-Alpes ?", a: "Un site one-page (une seule page qui présente l'essentiel) démarre à 500 € HT. Un site vitrine de plusieurs pages (services, réalisations, à propos, contact, blog) démarre à 1 200 € HT. Le prix final dépend du nombre de pages, de la rédaction des textes et des fonctionnalités. Le devis est gratuit et détaillé." },
     { q: "En combien de temps mon site sera-t-il en ligne ?", a: "Comptez 1 à 2 semaines pour un site one-page et 2 à 4 semaines pour un site vitrine complet. Le délai dépend surtout de la rapidité de validation des maquettes et de la fourniture des contenus (textes, photos, logo)." },
     { q: "Mon site apparaîtra-t-il sur Google ?", a: "Oui : le site est déclaré à Google dès sa mise en ligne et il est indexé en général sous 2 à 4 semaines. Être en première page sur des recherches comme « votre métier + votre ville » demande ensuite quelques mois ; tout ce qui accélère ce travail (structure, vitesse, fiche Google Business Profile) est intégré dès la création." },
     { q: "Puis-je modifier mon site moi-même ?", a: "Oui. Vous disposez d'une interface d'administration simple pour changer vos textes, photos, horaires ou actualités, depuis un ordinateur ou un téléphone. Une formation est incluse à la livraison." },
@@ -101,7 +101,7 @@ const data: ServicePageData = {
     provider: { "@type": "ProfessionalService", "@id": "https://www.facenordgraphisme.fr/#localbusiness", name: "Face Nord Graphisme", url: "https://www.facenordgraphisme.fr" },
     areaServed: "Hautes-Alpes",
     description: "Création de sites internet vitrines sur-mesure pour artisans, commerçants et professionnels du tourisme des Hautes-Alpes.",
-    offers: { "@type": "Offer", priceCurrency: "EUR", price: "800", priceSpecification: { "@type": "UnitPriceSpecification", price: "800", priceCurrency: "EUR", unitText: "à partir de" } },
+    offers: { "@type": "Offer", priceCurrency: "EUR", price: "500", priceSpecification: { "@type": "UnitPriceSpecification", minPrice: "500", priceCurrency: "EUR" } },
   },
 };
 

@@ -42,3 +42,22 @@ h1, h2, h3, h4, h5, h6 {
 .dark .bg-clip-text {
   filter: drop-shadow(0 0 10px rgba(35, 158, 160, 0.2));
 }
+
+/* Rideau d'accueil : CSS seul, ordinateur uniquement, une fois par session. */
+.fn-curtain { animation: fn-curtain-end 0s linear 1.5s forwards; }
+.fn-curtain-panel {
+  animation: fn-curtain-wipe 0.55s cubic-bezier(0.76, 0, 0.24, 1) forwards;
+  animation-delay: calc(0.7s + var(--i) * 0.05s);
+}
+.fn-curtain-text { animation: fn-curtain-text 0.85s ease-out forwards; opacity: 0; }
+html[data-curtain-seen] .fn-curtain { display: none !important; }
+@media (prefers-reduced-motion: reduce) {
+  .fn-curtain { display: none !important; }
+}
+@keyframes fn-curtain-end { to { visibility: hidden; } }
+@keyframes fn-curtain-wipe { to { transform: translateY(-100%); } }
+@keyframes fn-curtain-text {
+  0% { opacity: 0; transform: translateY(16px); }
+  40%, 70% { opacity: 1; transform: none; }
+  100% { opacity: 0; transform: translateY(-16px); }
+}
