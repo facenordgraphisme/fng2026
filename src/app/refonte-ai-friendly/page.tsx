@@ -4,7 +4,7 @@ import { RefreshCcw, Zap, Brain, Search, Smartphone, PencilLine } from "lucide-r
 
 export const metadata: Metadata = {
   title: { absolute: "Refonte de site internet Hautes-Alpes, dès 400 €" },
-  description: "Refonte de site internet vieillissant dans les Hautes-Alpes : design moderne, rapide sur mobile, référencement conservé et structure lisible par Google, ChatGPT et Gemini. Dès 400 € HT.",
+  description: "Refonte de site internet vieillissant dans les Hautes-Alpes : design moderne, rapide sur mobile, référencement conservé et structure lisible par Google, ChatGPT et Gemini. Dès 400 €.",
   alternates: { canonical: "https://www.facenordgraphisme.fr/refonte-ai-friendly" },
   openGraph: { title: "Refonte de site internet prête pour l'IA | Face Nord Graphisme", description: "Modernisez un site vieillissant et rendez-le visible sur Google et dans les réponses des IA. Référencement conservé.", siteName: "Face Nord Graphisme", locale: "fr_FR", images: [{ url: "/assets/portfolio/voyageursdesalpes-home.webp", width: 1920, height: 1200, alt: "Refonte du site Voyageurs des Alpes par Face Nord Graphisme" }] },
 };
@@ -16,7 +16,7 @@ const data: ServicePageData = {
   intro: "Votre site a quelques années, il est lent, mal affiché sur mobile ou il n'apparaît plus nulle part ? Je le modernise et je le restructure pour qu'il soit compris et recommandé par Google comme par ChatGPT, Gemini ou Perplexity — sans perdre le référencement acquis.",
   path: "/refonte-ai-friendly",
   breadcrumbLabel: "Refonte de site internet",
-  pricingFrom: "dès 400 € HT",
+  pricingFrom: "dès 400 €",
   pricingLabel: "Refonte one-page · site complet sur devis",
   stats: [
     { value: "dès 400 €", label: "Refonte one-page" },
@@ -85,7 +85,7 @@ const data: ServicePageData = {
     { q: "Que veut dire concrètement « visible par les IA » ?", a: "Les assistants comme ChatGPT, Gemini ou Perplexity recommandent des entreprises en s'appuyant sur les sites qu'ils comprennent bien. Je rends vos informations explicites (activité, zone d'intervention, services, tarifs), j'ajoute des réponses directes aux questions que se posent vos clients et des données structurées. Cela augmente vos chances d'être cité — sans garantie absolue, car ces outils évoluent en permanence." },
     { q: "Peut-on garder le contenu ou le design actuel ?", a: "Oui. On peut conserver votre identité visuelle, vos textes ou une partie de la structure si elle fonctionne. La refonte s'adapte à ce qui mérite d'être gardé." },
     { q: "Mon site actuel reste-t-il en ligne pendant les travaux ?", a: "Oui. Je travaille sur un site de test ; votre site actuel reste accessible jusqu'à la bascule, qui ne prend que quelques minutes." },
-    { q: "Combien coûte une refonte ?", a: "À partir de 400 € HT pour un site one-page, de 1 200 à 2 500 € HT pour un site vitrine de plusieurs pages, davantage pour un site e-commerce ou de réservation. Le devis est gratuit et détaillé après un premier audit rapide." },
+    { q: "Combien coûte une refonte ?", a: "À partir de 400 € pour un site one-page, de 1 200 à 2 500 € pour un site vitrine de plusieurs pages, davantage pour un site e-commerce ou de réservation. Le devis est gratuit et détaillé après un premier audit rapide." },
   ],
   related: [
     { href: "/blog/refonte-site-internet-5-signes", badge: "Refonte", label: "5 signes qu'il est temps de refaire votre site", desc: "La checklist des signaux d'alerte." },

@@ -620,14 +620,15 @@ export async function getLegalBySlug(slug: string) {
         content: [
           block("1. Éditeur du site", "h2"),
           block("Le site www.facenordgraphisme.fr est édité par la micro-entreprise Face Nord Graphisme, représentée par François-Xavier Pin."),
-          block("Siège social : 45 impasse du Serre 05200 Puy Sanières"),
-          block("SIRET : 919495200"),
+          block("Siège social : 45 impasse du Serre, 05200 Puy-Sanières"),
+          block("SIRET : 91949520000017"),
+          block("TVA non applicable, article 293 B du CGI."),
           block("Email de contact : contact@facenordgraphisme.fr"),
           block("2. Directeur de la publication", "h2"),
           block("François-Xavier Pin"),
           block("3. Hébergement du site", "h2"),
-          block("Ce site est hébergé par Hostinger."),
-          block("Adresse de l'hébergeur : 61 Lordou Vironos Street, 6023 Larnaca, Chypre"),
+          block("Ce site est hébergé par Vercel Inc."),
+          block("Adresse de l'hébergeur : 440 N Barranca Avenue #4133, Covina, CA 91723, États-Unis"),
           block("4. Propriété intellectuelle", "h2"),
           block("L'ensemble de ce site relève de la législation française et internationale sur le droit d'auteur et la propriété intellectuelle. Tous les droits de reproduction sont réservés, y compris pour les documents téléchargeables et les représentations iconographiques et photographiques."),
           block("La reproduction de tout ou partie de ce site sur quel que support que ce soit est formellement interdite sauf autorisation expresse du directeur de la publication."),
@@ -823,7 +824,7 @@ export async function getFaqPage() {
       items: [
         {
           question: "Quel est le prix pour la création d'un site internet ?",
-          answer: "Chaque projet est unique ! Le tarif dépend de vos besoins (site vitrine simple, e-commerce complexe, refonte, etc.). Un site vitrine démarre à partir de 500 € HT, une boutique en ligne à partir de 800 € HT, une refonte à partir de 400 € HT et la maintenance à partir de 20 € HT/mois. Contactez-moi pour obtenir un devis gratuit et personnalisé.",
+          answer: "Chaque projet est unique ! Le tarif dépend de vos besoins (site vitrine simple, e-commerce complexe, refonte, etc.). Un site vitrine démarre à partir de 500 €, une boutique en ligne à partir de 800 €, une refonte à partir de 400 € et la maintenance à partir de 20 €/mois. Contactez-moi pour obtenir un devis gratuit et personnalisé.",
         },
         {
           question: "Combien de temps faut-il pour créer un site web ?",

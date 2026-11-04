@@ -119,7 +119,7 @@ export default function Footer() {
 
       {/* Bottom bar */}
       <div className="max-w-6xl mx-auto mt-12 pt-8 border-t border-gray-100 dark:border-white/5 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-gray-400 dark:text-[#666]">
-        <div>&copy; {new Date().getFullYear()} Face Nord Graphisme — Création de site internet Hautes-Alpes</div>
+        <div>&copy; {new Date().getFullYear()} Face Nord Graphisme — Création de site internet Hautes-Alpes · TVA non applicable, article 293 B du CGI</div>
         <div className="flex flex-wrap gap-4 md:gap-6 justify-center md:justify-end">
           <Link href="/mentions-legales" className="hover:text-[#239ea0] transition-colors">Mentions légales</Link>
           <Link href="/politique-de-confidentialite" className="hover:text-[#239ea0] transition-colors">Politique de confidentialité</Link>

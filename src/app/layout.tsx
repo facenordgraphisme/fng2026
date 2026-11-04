@@ -96,7 +96,7 @@ export default function RootLayout({
           }}
         />
         <meta name="geo.region" content="FR-05" />
-        <meta name="geo.placename" content="Puy Sanières" />
+        <meta name="geo.placename" content="Puy-Sanières" />
         <meta name="geo.position" content="44.5385;6.4328" />
         <meta name="ICBM" content="44.5385, 6.4328" />
         <script
@@ -153,7 +153,7 @@ export default function RootLayout({
                   "address": {
                     "@type": "PostalAddress",
                     "streetAddress": "45 impasse du Serre",
-                    "addressLocality": "Puy Sanières",
+                    "addressLocality": "Puy-Sanières",
                     "postalCode": "05200",
                     "addressRegion": "Hautes-Alpes",
                     "addressCountry": "FR"

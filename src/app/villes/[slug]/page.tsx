@@ -239,7 +239,7 @@ function renderBlocks(blocks: any[]) {
 // ── Page ──────────────────────────────────────────────────────────────────────
 
 const SERVICES = [
-  { icon: "💻", label: "Site vitrine", desc: "Dès 500 € HT" },
+  { icon: "💻", label: "Site vitrine", desc: "Dès 500 €" },
   { icon: "🛒", label: "E-commerce", desc: "Boutique & réservation" },
   { icon: "🔍", label: "SEO local", desc: "Visibilité Google Maps" },
   { icon: "🔧", label: "Refonte", desc: "Modernisation & performance" },
