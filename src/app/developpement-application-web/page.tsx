@@ -90,7 +90,7 @@ const data: ServicePageData = {
   related: [
     { href: "/portfolio/outplanners", badge: "Étude de cas", label: "Outplanners en détail", desc: "La plateforme de réservation des pros du plein air." },
     { href: "/boutique-e-commerce-hautes-alpes", badge: "E-commerce", label: "Boutique en ligne & réservation", desc: "Un besoin plus simple ? Une boutique peut suffire." },
-    { href: "/blog/digitaliser-reservations-tourisme-hautes-alpes", badge: "Tourisme", label: "Digitaliser ses réservations", desc: "Les gains concrets pour les prestataires du 05." },
+    { href: "/blog/reservation-directe-eviter-commissions-booking-hautes-alpes", badge: "Tourisme", label: "Réservation directe : réduire les commissions", desc: "Hébergeurs et prestataires : garder la relation client et la marge." },
   ],
   schema: {
     "@context": "https://schema.org",

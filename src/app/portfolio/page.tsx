@@ -7,11 +7,11 @@ import { ArrowRight, ExternalLink } from "lucide-react";
 import BreadcrumbSchema from "@/components/BreadcrumbSchema";
 
 export const metadata: Metadata = {
-  title: "Portfolio — Réalisations web Hautes-Alpes | Face Nord Graphisme",
+  title: "Portfolio : réalisations web Hautes-Alpes",
   description: "Sites internet, boutiques en ligne et applications web créés par Face Nord Graphisme pour des entreprises des Hautes-Alpes et du Verdon : guides de montagne, tourisme outdoor, restaurants, producteurs.",
   alternates: { canonical: "https://www.facenordgraphisme.fr/portfolio" },
   openGraph: {
-    title: "Portfolio — Réalisations web Hautes-Alpes | Face Nord Graphisme",
+    title: "Portfolio : réalisations web Hautes-Alpes",
     description: "Découvrez les sites internet créés par Face Nord Graphisme pour des entreprises locales des Hautes-Alpes et du Verdon : restaurants, outdoor, agriculture, événementiel.",
     url: "https://www.facenordgraphisme.fr/portfolio",
     siteName: "Face Nord Graphisme",

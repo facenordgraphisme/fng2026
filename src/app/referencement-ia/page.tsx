@@ -76,7 +76,7 @@ const data: ServicePageData = {
     { q: "Le référencement IA est-il utile pour mon activité locale dans les Hautes-Alpes ?", a: "Oui — et particulièrement dans les Hautes-Alpes. La plupart des prestataires locaux n'ont pas de contenu structuré pour les IA. Être le premier artisan, restaurateur ou prestataire touristique du 05 à optimiser son contenu pour ChatGPT et Perplexity vous donne une avance de 2 à 3 ans sur vos concurrents." },
   ],
   related: [
-    { href: "/blog/seo-vs-referencement-sur-l-ia-quelle-strategie-adopter-en-2026", badge: "SEO + IA", label: "SEO classique vs référencement IA en 2026", desc: "Guide complet pour combiner les deux stratégies." },
+    { href: "/blog/4-signaux-citation-ia-artisans", badge: "SEO + IA", label: "Les 4 signaux de citation IA", desc: "Ce que les études disent, et ce qu'elles ne prouvent pas." },
     { href: "/referencement-seo-hautes-alpes", badge: "SEO + GEO", label: "Référencement Google & IA", desc: "L'accompagnement complet : Google, Maps et IA." },
     { href: "/refonte-ai-friendly", badge: "Refonte", label: "Refonte de site prête pour l'IA", desc: "Un site moderne, structuré pour Google et les IA." },
   ],

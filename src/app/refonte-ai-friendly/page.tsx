@@ -88,7 +88,7 @@ const data: ServicePageData = {
   ],
   related: [
     { href: "/blog/refonte-site-internet-5-signes", badge: "Refonte", label: "5 signes qu'il est temps de refaire votre site", desc: "La checklist des signaux d'alerte." },
-    { href: "/blog/seo-vs-referencement-sur-l-ia-quelle-strategie-adopter-en-2026", badge: "SEO + IA", label: "SEO classique vs référencement IA", desc: "Comment être visible sur Google et dans les IA." },
+    { href: "/blog/4-signaux-citation-ia-artisans", badge: "SEO + IA", label: "Les 4 signaux de citation IA", desc: "Ce que les études disent, et ce qu'elles ne prouvent pas." },
     { href: "/referencement-seo-hautes-alpes", badge: "Référencement", label: "Référencement Google & IA", desc: "Pour aller plus loin après la refonte." },
   ],
   schema: {

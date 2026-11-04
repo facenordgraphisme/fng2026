@@ -90,7 +90,7 @@ const data: ServicePageData = {
   related: [
     { href: "/referencement-ia", badge: "GEO", label: "Référencement IA : la méthode en détail", desc: "Les signaux qui font qu'une IA vous cite." },
     { href: "/blog/google-business-profile-artisans-hautes-alpes", badge: "Google Maps", label: "Optimiser sa fiche Google Business Profile", desc: "Le guide pour apparaître sur Maps." },
-    { href: "/blog/seo-local-hautes-alpes-artisans-pme", badge: "SEO local", label: "SEO local Hautes-Alpes : le guide complet", desc: "Toutes les étapes pour les recherches locales." },
+    { href: "/blog/etre-visible-en-ligne-dans-les-hautes-alpes", badge: "SEO local", label: "Être visible en ligne dans les Hautes-Alpes", desc: "Fiche Google, avis, site, balises : les leviers, dans le bon ordre." },
   ],
   schema: {
     "@context": "https://schema.org",

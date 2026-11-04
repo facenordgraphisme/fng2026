@@ -89,8 +89,9 @@ const data: ServicePageData = {
     { q: "Travaillez-vous en dehors d'Embrun ?", a: "Oui, dans tout le département : Gap, Briançon, Guillestre, Serre-Ponçon, Queyras… Les échanges se font en rendez-vous ou en visio selon votre préférence, et je travaille aussi avec des clients partout en France." },
   ],
   related: [
+    { href: "/villes/gap-hautes-alpes", badge: "Gap", label: "Création de site internet à Gap", desc: "Sites vitrines et boutiques pour les entreprises de Gap et du Gapençais." },
     { href: "/blog/prix-site-internet-artisan-pme-hautes-alpes", badge: "Tarifs", label: "Combien coûte un site internet dans les Hautes-Alpes ?", desc: "Les tarifs 2026 détaillés, avec exemples concrets." },
-    { href: "/blog/seo-local-hautes-alpes-artisans-pme", badge: "SEO local", label: "SEO local : le guide complet pour le 05", desc: "Comment apparaître en première page pour les recherches locales." },
+    { href: "/blog/etre-visible-en-ligne-dans-les-hautes-alpes", badge: "SEO local", label: "Être visible en ligne dans les Hautes-Alpes", desc: "Fiche Google, avis, site, balises : les leviers, dans le bon ordre." },
     { href: "/portfolio", badge: "Réalisations", label: "Voir tous les sites réalisés", desc: "Guides de montagne, restaurants, producteurs, prestataires outdoor." },
   ],
   schema: {

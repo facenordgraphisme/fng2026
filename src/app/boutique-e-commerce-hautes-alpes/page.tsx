@@ -89,7 +89,7 @@ const data: ServicePageData = {
   ],
   related: [
     { href: "/blog/reservation-directe-eviter-commissions-booking-hautes-alpes", badge: "Réservation", label: "Réservation directe : éviter les commissions", desc: "Comment récupérer vos marges face aux plateformes." },
-    { href: "/blog/digitaliser-reservations-tourisme-hautes-alpes", badge: "Tourisme", label: "Digitaliser ses réservations dans les Hautes-Alpes", desc: "Réduire les no-shows et automatiser les rappels." },
+    { href: "/blog/reservation-directe-eviter-commissions-booking-hautes-alpes", badge: "Tourisme", label: "Réservation directe : réduire les commissions", desc: "Hébergeurs et prestataires : garder la relation client et la marge." },
     { href: "/developpement-application-web", badge: "Sur-mesure", label: "Besoin d'un vrai outil de réservation ?", desc: "Planning, guides, paiements : découvrez les applications web sur-mesure." },
   ],
   schema: {

@@ -31,7 +31,7 @@ const nextConfig: NextConfig = {
     return [
       {
         source: '/blog/prestataires-de-tourisme-comment-digitaliser-vos-reservations-dans-les-hautes-alpes',
-        destination: '/blog/digitaliser-reservations-tourisme-hautes-alpes',
+        destination: '/blog/reservation-directe-eviter-commissions-booking-hautes-alpes',
         permanent: true,
       },
       {
@@ -42,6 +42,36 @@ const nextConfig: NextConfig = {
       {
         source: '/refonte-ia-friendly',
         destination: '/refonte-ai-friendly',
+        permanent: true,
+      },
+      {
+        source: '/blog/seo-local-hautes-alpes-artisans-pme',
+        destination: '/blog/etre-visible-en-ligne-dans-les-hautes-alpes',
+        permanent: true,
+      },
+      {
+        source: '/blog/balises-title-meta-description-pme-hautes-alpes',
+        destination: '/blog/etre-visible-en-ligne-dans-les-hautes-alpes',
+        permanent: true,
+      },
+      {
+        source: '/blog/gerer-avis-google-artisans-pme-hautes-alpes',
+        destination: '/blog/google-business-profile-artisans-hautes-alpes',
+        permanent: true,
+      },
+      {
+        source: '/blog/geo-referencement-ia-artisans-pme-hautes-alpes',
+        destination: '/blog/4-signaux-citation-ia-artisans',
+        permanent: true,
+      },
+      {
+        source: '/blog/seo-vs-referencement-sur-l-ia-quelle-strategie-adopter-en-2026',
+        destination: '/blog/4-signaux-citation-ia-artisans',
+        permanent: true,
+      },
+      {
+        source: '/blog/digitaliser-reservations-tourisme-hautes-alpes',
+        destination: '/blog/reservation-directe-eviter-commissions-booking-hautes-alpes',
         permanent: true,
       },
       {
