@@ -1,0 +1,380 @@
+{
+  "summary": {
+    "health_score": 60,
+    "business_type": "Service local / freelance web (zone d'intervention : Hautes-Alpes, 05)",
+    "top_findings": [
+      "10 articles sur 13 sont explorés mais non indexés par Google, et les positions sur les requêtes cibles reculent depuis septembre",
+      "Les prix se contredisent : homepage et /prestations affichent 500 / 800 / 400 / 20 €, les pages services, le schema, llms.txt et le blog affichent encore 800 / 2 500 / 800 / 50 €",
+      "Un préchargeur plein écran masque le contenu et bloque le défilement environ 4 à 5 s à chaque arrivée sur le site",
+      "Le canvas 3D reste monté en permanence : 40 s de travail sur le thread principal en test Lighthouse mobile",
+      "12 liens internes mènent vers 3 URL en 404, et /portfolio/reves-d-aventures est en 404 sans redirection",
+      "Autorité externe toujours faible, sans mesure possible : aucune donnée Search Console depuis septembre, GBP absent du schema"
+    ],
+    "quick_wins": [
+      "Ajouter 4 redirections 301 dans next.config.ts",
+      "Corriger les titres et descriptions cassés de 4 articles dans Sanity",
+      "Retirer le double suffixe du titre de /portfolio",
+      "Rendre absolues les images CreativeWork sur 10 pages portfolio",
+      "Demander le lien de crédit à Voyageurs des Alpes et l'ajouter sur Outplanners"
+    ]
+  },
+  "categories": [
+    {
+      "name": "Technical SEO",
+      "score": 72,
+      "what_works": [
+        "robots.txt valide, seul /studio/ est bloqué",
+        "Sitemap : 42 URL, toutes en 200 et auto-canoniques",
+        "Contenu principal présent dans le HTML sans JavaScript",
+        "HSTS, nosniff, X-Frame-Options, Referrer-Policy et Permissions-Policy en place",
+        "Les URL inconnues renvoient un vrai 404"
+      ],
+      "findings": [
+        {
+          "title": "Redirection manquante sur un slug portfolio",
+          "severity": "Low",
+          "description": "/portfolio/reves-d-aventures, l'URL conservée lors de l'audit d'août, renvoie 404. Le slug live est désormais /portfolio/reves-daventures. Le correctif d'août prévoyait le sens inverse et n'a pas été appliqué. Search Console indique que cette URL est inconnue de Google.",
+          "recommendation": "Ajouter une 301 de /portfolio/reves-d-aventures vers /portfolio/reves-daventures dans next.config.ts."
+        },
+        {
+          "title": "lastmod du sitemap toujours égal à la date du jour",
+          "severity": "Medium",
+          "description": "src/app/api/sitemap/route.ts:67 attribue la date courante aux 29 URL hors blog (statiques, villes, portfolio). Cette date ne reflète aucune modification réelle.",
+          "recommendation": "Utiliser le _updatedAt de Sanity ou une date codée en dur par page. Omettre lastmod si la date n'est pas fiable."
+        },
+        {
+          "title": "Deux redirections depuis http://",
+          "severity": "Low",
+          "description": "http://facenordgraphisme.fr redirige vers https://facenordgraphisme.fr, puis vers https://www. Trois sites clients pointent aussi vers le domaine sans www.",
+          "recommendation": "Rediriger http directement vers https://www dans les domaines Vercel si possible. Pas urgent."
+        },
+        {
+          "title": "Pas de Content-Security-Policy",
+          "severity": "Low",
+          "description": "Lighthouse signale l'absence de CSP. Aucun effet direct sur le classement.",
+          "recommendation": "À traiter comme bonne pratique de sécurité, sans priorité SEO."
+        }
+      ]
+    },
+    {
+      "name": "Content Quality",
+      "score": 50,
+      "what_works": [
+        "13 articles de 1 500 à 3 800 mots",
+        "Pages villes différenciées (19 à 23 % de similarité)",
+        "Pages services refaites avec témoignages nommés, process et FAQ",
+        "Auteur nommé et parcours local clair"
+      ],
+      "findings": [
+        {
+          "title": "10 articles sur 13 non indexés",
+          "severity": "Critical",
+          "description": "Search Console indique « Crawled - currently not indexed » pour 10 articles. Robots, indexation, récupération et canonique sont conformes : aucun blocage technique n'est en cause. Google ne donne pas la raison.",
+          "recommendation": "Suspendre les nouveaux articles, fusionner les sujets qui se recoupent, enrichir 3 ou 4 articles prioritaires avec des cas réels et des sources, puis demander leur indexation manuellement."
+        },
+        {
+          "title": "Tarifs contradictoires sur tout le site",
+          "severity": "High",
+          "description": "Le commit 2da1437 du 2026-10-18 a baissé les prix dans src/lib/services.ts uniquement. Vitrine : 500 € sur la homepage, 800 € sur la page service. Boutique : 800 € contre 2 500 €. Refonte : 400 € contre 800 €. Maintenance : 20 € contre 50 €, et 30 € sur /villes/gap. La FAQ indique environ 1000 €. Un prospect voit deux prix différents en un clic.",
+          "recommendation": "Fixer la grille officielle, puis aligner les pages services, /villes, /faq, le schema, public/llms.txt et l'article sur les prix."
+        },
+        {
+          "title": "Aucun nouvel article depuis le 2026-06-07",
+          "severity": "Medium",
+          "description": "Cinq mois sans publication. dateModified est égal à datePublished sur les 13 articles. Le cluster e-commerce reste vide alors qu'il figure au plan éditorial.",
+          "recommendation": "Actualiser d'abord les articles existants, en priorité l'article sur les prix, puis publier le pilier e-commerce."
+        },
+        {
+          "title": "Statistiques rarement sourcées",
+          "severity": "Medium",
+          "description": "10 articles sur 13 n'ont aucun lien externe, alors qu'ils contiennent de 3 à 34 mentions de pourcentages. Exemple : reservation-directe avec 34 mentions et 0 lien. Tous les pourcentages ne sont pas forcément des statistiques externes.",
+          "recommendation": "Lier chaque statistique à sa source d'origine ou la retirer si elle est introuvable."
+        },
+        {
+          "title": "Positionnement incohérent : je ou nous, freelance ou agence",
+          "severity": "Medium",
+          "description": "La homepage et les pages services parlent de « développeur web freelance » et utilisent « je ». Les pages villes utilisent « nous » (5 à 12 occurrences) et « agence web ». Cinq titres parlent d'« agence ».",
+          "recommendation": "Passer les pages villes à la première personne. Garder « agence web » seulement comme mot-clé assumé, avec une mention claire de l'interlocuteur unique."
+        }
+      ]
+    },
+    {
+      "name": "On-Page SEO",
+      "score": 60,
+      "what_works": [
+        "Un seul H1 par page",
+        "Titres et descriptions uniques, présents partout",
+        "Aucune page orpheline dans le crawl",
+        "Pages villes avec H1 ciblés (ville + service)"
+      ],
+      "findings": [
+        {
+          "title": "12 liens internes vers 3 URL en 404",
+          "severity": "High",
+          "description": "/blog/gbp-artisans-hautes-alpes (4 liens), /blog/visibilite-en-ligne-artisans-commerces-hautes-alpes (3 liens) et /blog/le-guide-complet-de-la-visibilite-en-ligne-pour-les-commercants-des-hautes-alpes (5 liens). Pages sources : /villes/gap, /villes/briancon et 5 articles.",
+          "recommendation": "Ajouter des 301 vers les articles actuels, puis corriger les href dans Sanity et dans les données des villes."
+        },
+        {
+          "title": "Caractères cassés dans les métadonnées de 4 articles",
+          "severity": "High",
+          "description": "Titres : « R�servations en ligne », « d�s 800 ? », « quelle strat�gie ». Descriptions : « cr�er » et « co�te … d�s 800 ? HT ». Ces textes sont visibles dans les résultats Google et le problème est ouvert depuis août.",
+          "recommendation": "Corriger seoTitle et metaDescription dans Sanity sur les 4 articles."
+        },
+        {
+          "title": "H1 de pages services sans service ni zone",
+          "severity": "Medium",
+          "description": "Depuis la refonte d'octobre, plusieurs H1 sont orientés bénéfice sans terme recherché : « L'outil en ligne taillé pour votre métier », « Vendez vos produits et vos activités en ligne, sans commission », « Soyez trouvé sur Google… ». Autres H1 génériques : « Prêt à atteindre de nouveaux sommets ? » (/contact), « Mon Portfolio ». Le lien avec le classement n'est pas mesuré.",
+          "recommendation": "Garder l'accroche en sous-titre et mettre service + Hautes-Alpes dans le H1, comme sur la homepage et les villes."
+        },
+        {
+          "title": "Titres trop longs",
+          "severity": "Medium",
+          "description": "21 pages sur 42 dépassent 70 caractères (jusqu'à 95), et seront probablement tronquées. /portfolio contient deux fois « | Face Nord Graphisme ».",
+          "recommendation": "Viser environ 60 caractères, retirer le suffixe de marque des pages longues et corriger le double suffixe dans src/app/portfolio/page.tsx:10."
+        },
+        {
+          "title": "Risque de cannibalisation sur « création site internet Hautes-Alpes »",
+          "severity": "Medium",
+          "description": "La homepage, /creation-site-internet-hautes-alpes et /blog/guide-creation-site-internet-artisan-hautes-alpes visent la même requête. /referencement-seo-hautes-alpes et /referencement-ia se chevauchent aussi sur le GEO. Hypothèse à vérifier dans Search Console.",
+          "recommendation": "Comparer les pages qui s'affichent par requête dans Search Console, puis désigner une page cible par intention."
+        },
+        {
+          "title": "Liens sociaux morts",
+          "severity": "Low",
+          "description": "Facebook et Instagram pointent vers href=\"#\" sur toutes les pages (src/components/Header.tsx:207 et 210).",
+          "recommendation": "Mettre les vraies URL ou supprimer les icônes."
+        }
+      ]
+    },
+    {
+      "name": "Schema / Structured Data",
+      "score": 68,
+      "what_works": [
+        "Graphe Organization, WebSite et ProfessionalService sur toutes les pages",
+        "BlogPosting, BreadcrumbList, Service et CreativeWork présents",
+        "JSON-LD analysable sur toutes les pages crawlées"
+      ],
+      "findings": [
+        {
+          "title": "Images CreativeWork en URL relative",
+          "severity": "Medium",
+          "description": "Les 10 pages portfolio déclarent une image du type /assets/portfolio/….",
+          "recommendation": "Préfixer avec https://www.facenordgraphisme.fr."
+        },
+        {
+          "title": "Entités d'auteur et d'entreprise incomplètes",
+          "severity": "Medium",
+          "description": "author.sameAs est vide sur les 13 articles, author.url pointe vers la homepage, et /a-propos ne publie aucune entité Person alors que l'@id #fxpin y renvoie. Le GBP est absent de sameAs.",
+          "recommendation": "Renseigner le LinkedIn de l'auteur dans Sanity, publier Person sur /a-propos et ajouter l'URL de la fiche GBP."
+        },
+        {
+          "title": "LocalBusiness des villes séparé de l'entité principale",
+          "severity": "Medium",
+          "description": "Les 3 pages villes déclarent un LocalBusiness sans @id, avec « Puy-Sanières », tandis que le graphe global indique « Puy Sanières ».",
+          "recommendation": "Réutiliser l'@id #localbusiness et unifier l'orthographe dans src/app/layout.tsx:93 et 150."
+        },
+        {
+          "title": "Prix du schema à revoir",
+          "severity": "Medium",
+          "description": "Service.offers reprend les anciens tarifs (800 € sur la page vitrine) et utilise unitText pour dire « à partir de », un usage inadapté.",
+          "recommendation": "Aligner sur la grille retenue et utiliser minPrice dans priceSpecification."
+        },
+        {
+          "title": "Ne pas ajouter AggregateRating sur le site",
+          "severity": "Info",
+          "description": "Les audits précédents le recommandaient. Google n'affiche pas d'étoiles pour des avis auto-publiés par un LocalBusiness sur son propre site.",
+          "recommendation": "Abandonner cette action et concentrer l'effort sur les avis de la fiche Google."
+        }
+      ]
+    },
+    {
+      "name": "Performance (CWV)",
+      "score": 45,
+      "what_works": [
+        "LCP mesuré à 1,0 s sur la homepage mobile et 2,9 s sur la page service",
+        "CLS de 0 à 0,009",
+        "Poids total de 700 à 810 Ko",
+        "TTFB de 200 à 450 ms sur la plupart des pages"
+      ],
+      "findings": [
+        {
+          "title": "Préchargeur plein écran à chaque arrivée",
+          "severity": "High",
+          "description": "Mesuré sur 3 modèles de page en mobile : le H1 reste couvert et le défilement bloqué à 4 s, puis la page est libre à 5 s. L'état isPreloaderDone est en mémoire et repart donc de zéro à chaque chargement complet, y compris pour tout visiteur venant de Google. Le LCP de 1,0 s de la homepage intervient avant la fin de ce rideau et ne traduit donc pas l'attente réelle.",
+          "recommendation": "Supprimer le préchargeur sur les pages d'entrée, ou le limiter à une version très courte, jouée une seule fois par session (sessionStorage) et désactivée avec prefers-reduced-motion."
+        },
+        {
+          "title": "Canvas WebGL actif pendant toute la visite",
+          "severity": "High",
+          "description": "HeroScene est monté dans LayoutWrapper, sur toutes les pages hors /studio, et ne se démonte jamais, même une fois invisible après le défilement. Lighthouse mobile : TBT de 8,1 à 15,1 s, TTI de 43 à 44 s, 40 s de thread principal dont 39,7 s en « Other » contre 1,2 s d'évaluation JS. La cause est très probablement cette boucle de rendu, aggravée par le rendu logiciel de PSI. Un vrai téléphone avec GPU fera mieux, mais il consomme aussi de la batterie.",
+          "recommendation": "Afficher la 3D sur la homepage uniquement, ou la remplacer par une image statique sur mobile. La mettre en pause hors écran (frameloop=\"demand\" ou démontage), puis relancer Lighthouse pour confirmer la cause."
+        },
+        {
+          "title": "Aucune donnée terrain",
+          "severity": "Info",
+          "description": "CrUX n'a pas de données pour ce site, faute de trafic Chrome suffisant. Tous les chiffres sont des mesures de laboratoire, et le TBT n'est pas comparable à celui d'août, mesuré avec un autre outil.",
+          "recommendation": "Ajouter le suivi web-vitals (INP en particulier) ou Vercel Speed Insights."
+        }
+      ]
+    },
+    {
+      "name": "AI Search Readiness",
+      "score": 55,
+      "what_works": [
+        "Aucun robot IA bloqué dans robots.txt",
+        "llms.txt conforme et à jour sur les services, villes et portfolio",
+        "Contenu disponible sans JavaScript",
+        "FAQ structurées et articles avec réponses directes"
+      ],
+      "findings": [
+        {
+          "title": "Peu de signaux de marque hors du site",
+          "severity": "High",
+          "description": "Domaine absent de la version de Common Crawl en cache (janvier à mars 2026). Backlinks vérifiés : surtout les crédits de sites clients. Les citations ne sont pas revérifiées : Pages Jaunes et LinkedIn renvoient 403 à l'outil.",
+          "recommendation": "Dérouler la phase citations et liens de la stratégie de septembre : Bing Places, Pages Jaunes, CCI, presse locale."
+        },
+        {
+          "title": "llms.txt sans les articles",
+          "severity": "Low",
+          "description": "Aucun article n'y figure, et les tarifs indiqués sont les anciens. Son effet sur la visibilité reste non démontré, Google ne l'utilise pas.",
+          "recommendation": "Ajouter les 2 ou 3 guides piliers et mettre à jour les prix."
+        }
+      ]
+    },
+    {
+      "name": "Images",
+      "score": 85,
+      "what_works": [
+        "100 % des images ont un attribut alt",
+        "next/image utilisé presque partout",
+        "Seulement 18 Kio d'économies possibles selon Lighthouse"
+      ],
+      "findings": [
+        {
+          "title": "Image og:image absente sur /portfolio",
+          "severity": "Low",
+          "description": "La page ne définit pas d'image de partage. Huit pages services n'ont pas non plus og:type ni og:url.",
+          "recommendation": "Compléter openGraph sur ces 9 pages."
+        },
+        {
+          "title": "Photos de stock sur les articles récents",
+          "severity": "Low",
+          "description": "Cinq articles utilisent une image Unsplash en visuel principal, ce qui ne montre ni le territoire ni le travail réalisé.",
+          "recommendation": "Utiliser progressivement des captures de projets ou des photos locales."
+        }
+      ]
+    },
+    {
+      "name": "Local SEO et autorité (hors score pondéré)",
+      "score": 45,
+      "what_works": [
+        "8 sites clients sur 10 créditent le site par un lien suivi depuis leur homepage",
+        "NAP complet avec téléphone sur /contact et dans le schema",
+        "3 pages villes distinctes"
+      ],
+      "findings": [
+        {
+          "title": "Fiche Google non reliée au site",
+          "severity": "High",
+          "description": "« Noté 5/5 sur Google » figure sur la homepage sans lien vers la fiche, et l'URL GBP n'est pas dans sameAs. Le lien Maps de /contact vise un lieu-dit et non la fiche. L'état de la fiche (catégorie, téléphone, nombre d'avis) n'a pas pu être revérifié depuis septembre.",
+          "recommendation": "Vérifier la catégorie principale, le téléphone et les avis dans GBP, puis fournir l'URL de la fiche pour l'intégrer au site."
+        },
+        {
+          "title": "Deux sites liés au projet sans crédit",
+          "severity": "Medium",
+          "description": "Ni la homepage de voyageurs-des-alpes.fr ni celle d'outplanners.com ne contiennent de lien vers le site. Outplanners est votre propre produit.",
+          "recommendation": "Ajouter un crédit sur Outplanners et le demander à Voyageurs des Alpes."
+        },
+        {
+          "title": "Lieu d'implantation ambigu",
+          "severity": "Low",
+          "description": "Le site dit « Basé à Embrun » et « développeur web à Embrun », alors que l'adresse et /a-propos indiquent Puy-Sanières.",
+          "recommendation": "Formuler « à Puy-Sanières, près d'Embrun » aux endroits clés et aligner avec GBP."
+        }
+      ]
+    },
+    {
+      "name": "Expérience visiteur et accessibilité (hors score pondéré)",
+      "score": 58,
+      "what_works": [
+        "Homepage désormais claire : qui, quoi, où dès le H1",
+        "Accessibilité Lighthouse de 87 à 91",
+        "Parcours de contact simple"
+      ],
+      "findings": [
+        {
+          "title": "Bouton d'appel à l'action masqué par le bandeau cookies sur mobile",
+          "severity": "Medium",
+          "description": "À 390 px, une fois le préchargeur terminé, le bandeau occupe le bas de l'écran et cache le bouton principal sur la homepage et la page service.",
+          "recommendation": "Réduire le bandeau à une ligne compacte, ou raccourcir le texte du hero."
+        },
+        {
+          "title": "Texte de consentement à faire vérifier",
+          "severity": "Medium",
+          "description": "Le bandeau dit « En continuant à naviguer, vous acceptez », alors que la CNIL ne considère pas la poursuite de la navigation comme un consentement valable. Sujet juridique plutôt que SEO.",
+          "recommendation": "Retirer cette phrase et vérifier qu'aucun traceur non exempté n'est déposé avant le choix."
+        },
+        {
+          "title": "Défauts d'accessibilité",
+          "severity": "Low",
+          "description": "Bouton de menu mobile sans nom accessible, contraste de 3,24:1 pour #239ea0 sur blanc en petit texte, liens distingués par la seule couleur.",
+          "recommendation": "Ajouter aria-label, foncer la teinte pour le petit texte et souligner les liens dans les paragraphes."
+        }
+      ]
+    }
+  ],
+  "action_plan": {
+    "phases": [
+      {
+        "name": "Phase 1 : Corrections rapides",
+        "timeframe": "Semaine 1",
+        "items": [
+          "Fixer la grille tarifaire officielle puis l'aligner partout",
+          "Ajouter 4 redirections 301 et corriger les 12 liens",
+          "Corriger les métadonnées cassées de 4 articles",
+          "Corriger le titre de /portfolio et les images CreativeWork",
+          "Vérifier GBP et fournir l'URL de la fiche"
+        ]
+      },
+      {
+        "name": "Phase 2 : Visiteurs et pages cibles",
+        "timeframe": "Semaines 2-3",
+        "items": [
+          "Retirer ou écourter le préchargeur",
+          "Limiter ou mettre en pause la 3D",
+          "Revoir H1 et titres des pages services",
+          "Compacter le bandeau cookies et corriger son texte",
+          "Renseigner Person, sameAs et @id",
+          "Corriger le lastmod du sitemap",
+          "Unifier Puy-Sanières et le « je »"
+        ]
+      },
+      {
+        "name": "Phase 3 : Autorité et contenu",
+        "timeframe": "Mois 2",
+        "items": [
+          "Récolter des avis Google auprès des clients récents",
+          "Réclamer Bing Places, Pages Jaunes et Apple Business Connect",
+          "Obtenir les crédits Outplanners et Voyageurs des Alpes",
+          "Viser un lien hors clients (CCI, presse locale)",
+          "Actualiser les articles et sourcer les statistiques",
+          "Publier le pilier e-commerce"
+        ]
+      },
+      {
+        "name": "Phase 4 : Suivi",
+        "timeframe": "Continu",
+        "items": [
+          "Connecter Search Console à l'outil d'audit ou exporter les données",
+          "Suivre position et clics sur les requêtes ville + service",
+          "Mesurer l'INP réel",
+          "Refaire un audit après 8 à 12 semaines"
+        ]
+      }
+    ]
+  },
+  "artifacts": {
+    "findings_dir": "findings-2026-11-04/",
+    "screenshots_dir": "screenshots-2026-11-04/"
+  }
+}

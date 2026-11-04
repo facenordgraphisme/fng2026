@@ -1,0 +1,887 @@
+{
+  "url": "https://www.facenordgraphisme.fr/creation-site-internet-hautes-alpes",
+  "psi": {
+    "desktop": {
+      "url": "https://www.facenordgraphisme.fr/creation-site-internet-hautes-alpes",
+      "strategy": "desktop",
+      "lighthouse_version": "13.6.0",
+      "lighthouse_scores": {
+        "performance": 61,
+        "accessibility": 91,
+        "best-practices": 96,
+        "seo": 100
+      },
+      "lab_metrics": {
+        "first-contentful-paint": {
+          "value": 297,
+          "display": "0.3\u00a0s",
+          "score": 1
+        },
+        "largest-contentful-paint": {
+          "value": 630,
+          "display": "0.6\u00a0s",
+          "score": 0.99
+        },
+        "total-blocking-time": {
+          "value": 21946,
+          "display": "21,950\u00a0ms",
+          "score": 0
+        },
+        "cumulative-layout-shift": {
+          "value": 0.00891358024691358,
+          "display": "0.009",
+          "score": 1
+        },
+        "speed-index": {
+          "value": 3602.814381084684,
+          "display": "3.6\u00a0s",
+          "score": 0.15
+        },
+        "interactive": {
+          "value": 34365.600000000006,
+          "display": "34.4\u00a0s",
+          "score": 0
+        }
+      },
+      "field_metrics": {},
+      "opportunities": [],
+      "diagnostics": [
+        {
+          "id": "total-byte-weight",
+          "title": "Avoids enormous network payloads",
+          "display": "Total size was 696\u00a0KiB",
+          "score": 1,
+          "description": "Large network payloads cost users real money and are highly correlated with long load times. [Learn how to reduce payload sizes](https://developer.chrome.com/docs/lighthouse/performance/total-byte-weight/)."
+        },
+        {
+          "id": "mainthread-work-breakdown",
+          "title": "Minimize main-thread work",
+          "display": "34.7\u00a0s",
+          "score": 0,
+          "description": "Consider reducing the time spent parsing, compiling and executing JS. You may find delivering smaller JS payloads helps with this. [Learn how to minimize main-thread work](https://developer.chrome.com/docs/lighthouse/performance/mainthread-work-breakdown/)"
+        },
+        {
+          "id": "bootup-time",
+          "title": "JavaScript execution time",
+          "display": "1.1\u00a0s",
+          "score": 1,
+          "description": "Consider reducing the time spent parsing, compiling, and executing JS. You may find delivering smaller JS payloads helps with this. [Learn how to reduce Javascript execution time](https://developer.chrome.com/docs/lighthouse/performance/bootup-time/)."
+        },
+        {
+          "id": "layout-shifts",
+          "title": "Avoid large layout shifts",
+          "display": "2 layout shifts found",
+          "score": 1,
+          "description": "These are the largest layout shifts observed on the page. Each table item represents a single layout shift, and shows the element that shifted the most. Below each item are possible root causes that led to the layout shift. Some of these layout shifts may not be included in the CLS metric value due to [windowing](https://web.dev/articles/cls#what_is_cls). [Learn how to improve CLS](https://web.dev/articles/optimize-cls)"
+        },
+        {
+          "id": "long-tasks",
+          "title": "Avoid long main-thread tasks",
+          "display": "20 long tasks found",
+          "score": 1,
+          "description": "Lists the longest tasks on the main thread, useful for identifying worst contributors to input delay. [Learn how to avoid long main-thread tasks](https://web.dev/articles/optimize-long-tasks)"
+        },
+        {
+          "id": "unused-javascript",
+          "title": "Reduce unused JavaScript",
+          "display": "Est savings of 153\u00a0KiB",
+          "score": 0.5,
+          "description": "Reduce unused JavaScript and defer loading scripts until they are required to decrease bytes consumed by network activity. [Learn how to reduce unused JavaScript](https://developer.chrome.com/docs/lighthouse/performance/unused-javascript/)."
+        },
+        {
+          "id": "unused-css-rules",
+          "title": "Reduce unused CSS",
+          "display": "",
+          "score": 1,
+          "description": "Reduce unused rules from stylesheets and defer CSS not used for above-the-fold content to decrease bytes consumed by network activity. [Learn how to reduce unused CSS](https://developer.chrome.com/docs/lighthouse/performance/unused-css-rules/)."
+        }
+      ],
+      "failed_audits": [
+        {
+          "id": "errors-in-console",
+          "title": "Browser errors were logged to the console",
+          "score": 0,
+          "display": "",
+          "description": "Errors logged to the console indicate unresolved problems. They can come from network request failures and other browser concerns. [Learn more about this errors in console diagnostic audit](https://developer.chrome.com/docs/lighthouse/best-practices/errors-in-console/)"
+        },
+        {
+          "id": "total-blocking-time",
+          "title": "Total Blocking Time",
+          "score": 0,
+          "display": "21,950\u00a0ms",
+          "description": "Sum of all time periods between FCP and Time to Interactive, when task length exceeded 50ms, expressed in milliseconds. [Learn more about the Total Blocking Time metric](https://developer.chrome.com/docs/lighthouse/performance/lighthouse-total-blocking-time/)."
+        },
+        {
+          "id": "button-name",
+          "title": "Buttons do not have an accessible name",
+          "score": 0,
+          "display": "",
+          "description": "When a button doesn't have an accessible name, screen readers announce it as \"button\", making it unusable for users who rely on screen readers. [Learn how to make buttons more accessible](https://dequeuniversity.com/rules/axe/4.14/button-name)."
+        },
+        {
+          "id": "mainthread-work-breakdown",
+          "title": "Minimize main-thread work",
+          "score": 0,
+          "display": "34.7\u00a0s",
+          "description": "Consider reducing the time spent parsing, compiling and executing JS. You may find delivering smaller JS payloads helps with this. [Learn how to minimize main-thread work](https://developer.chrome.com/docs/lighthouse/performance/mainthread-work-breakdown/)"
+        },
+        {
+          "id": "network-dependency-tree-insight",
+          "title": "Network dependency tree",
+          "score": 0,
+          "display": "",
+          "description": "[Avoid chaining critical requests](https://developer.chrome.com/docs/performance/insights/network-dependency-tree) by reducing the length of chains, reducing the download size of resources, or deferring the download of unnecessary resources to improve page load"
+        },
+        {
+          "id": "valid-source-maps",
+          "title": "Missing source maps for large first-party JavaScript",
+          "score": 0,
+          "display": "",
+          "description": "Source maps translate minified code to the original source code. This helps developers debug in production. In addition, Lighthouse is able to provide further insights. Consider deploying source maps to take advantage of these benefits. [Learn more about source maps](https://developer.chrome.com/docs/devtools/javascript/source-maps/)."
+        },
+        {
+          "id": "color-contrast",
+          "title": "Background and foreground colors do not have a sufficient contrast ratio.",
+          "score": 0,
+          "display": "",
+          "description": "Low-contrast text is difficult or impossible for many users to read. [Learn how to provide sufficient color contrast](https://dequeuniversity.com/rules/axe/4.14/color-contrast)."
+        },
+        {
+          "id": "interactive",
+          "title": "Time to Interactive",
+          "score": 0,
+          "display": "34.4\u00a0s",
+          "description": "Time to Interactive is the amount of time it takes for the page to become fully interactive. [Learn more about the Time to Interactive metric](https://developer.chrome.com/docs/lighthouse/performance/interactive/)."
+        },
+        {
+          "id": "max-potential-fid",
+          "title": "Max Potential First Input Delay",
+          "score": 0.08,
+          "display": "510\u00a0ms",
+          "description": "The maximum potential First Input Delay that your users could experience is the duration of the longest task. [Learn more about the Maximum Potential First Input Delay metric](https://developer.chrome.com/docs/lighthouse/performance/lighthouse-max-potential-fid/)."
+        },
+        {
+          "id": "speed-index",
+          "title": "Speed Index",
+          "score": 0.15,
+          "display": "3.6\u00a0s",
+          "description": "Speed Index shows how quickly the contents of a page are visibly populated. [Learn more about the Speed Index metric](https://developer.chrome.com/docs/lighthouse/performance/speed-index/)."
+        },
+        {
+          "id": "image-delivery-insight",
+          "title": "Improve image delivery",
+          "score": 0.5,
+          "display": "Est savings of 13\u00a0KiB",
+          "description": "Reducing the download time of images can improve the perceived load time of the page and LCP. [Learn more about optimizing image size](https://developer.chrome.com/docs/performance/insights/image-delivery)."
+        },
+        {
+          "id": "legacy-javascript-insight",
+          "title": "Legacy JavaScript",
+          "score": 0.5,
+          "display": "Est savings of 15\u00a0KiB",
+          "description": "Polyfills and transforms enable older browsers to use new JavaScript features. However, many aren\u2019t necessary for modern browsers. Consider modifying your JavaScript build process to not transpile [Baseline](https://web.dev/articles/baseline-and-polyfills) features, unless you know you must support older browsers. [Learn why most sites can deploy ES6+ code without transpiling](https://developer.chrome.com/docs/performance/insights/legacy-javascript)."
+        },
+        {
+          "id": "render-blocking-insight",
+          "title": "Render-blocking requests",
+          "score": 0.5,
+          "display": "",
+          "description": "Requests are blocking the page\u2019s initial render, which may delay LCP. [Deferring or inlining](https://developer.chrome.com/docs/performance/insights/render-blocking) can move these network requests out of the critical path."
+        },
+        {
+          "id": "unused-javascript",
+          "title": "Reduce unused JavaScript",
+          "score": 0.5,
+          "display": "Est savings of 153\u00a0KiB",
+          "description": "Reduce unused JavaScript and defer loading scripts until they are required to decrease bytes consumed by network activity. [Learn how to reduce unused JavaScript](https://developer.chrome.com/docs/lighthouse/performance/unused-javascript/)."
+        }
+      ],
+      "passed_audits_count": 78,
+      "seo_audits": [
+        {
+          "id": "is-crawlable",
+          "title": "Page isn\u2019t blocked from indexing",
+          "score": 1,
+          "pass": true
+        },
+        {
+          "id": "document-title",
+          "title": "Document has a `<title>` element",
+          "score": 1,
+          "pass": true
+        },
+        {
+          "id": "meta-description",
+          "title": "Document has a meta description",
+          "score": 1,
+          "pass": true
+        },
+        {
+          "id": "http-status-code",
+          "title": "Page has successful HTTP status code",
+          "score": 1,
+          "pass": true
+        },
+        {
+          "id": "link-text",
+          "title": "Links have descriptive text",
+          "score": 1,
+          "pass": true
+        },
+        {
+          "id": "crawlable-anchors",
+          "title": "Links are crawlable",
+          "score": 1,
+          "pass": true
+        },
+        {
+          "id": "robots-txt",
+          "title": "robots.txt is valid",
+          "score": 1,
+          "pass": true
+        },
+        {
+          "id": "image-alt",
+          "title": "Image elements have `[alt]` attributes",
+          "score": 1,
+          "pass": true
+        },
+        {
+          "id": "hreflang",
+          "title": "Document has a valid `hreflang`",
+          "score": 1,
+          "pass": true
+        },
+        {
+          "id": "canonical",
+          "title": "Document has a valid `rel=canonical`",
+          "score": 1,
+          "pass": true
+        }
+      ],
+      "accessibility_audits": [
+        {
+          "id": "button-name",
+          "title": "Buttons do not have an accessible name",
+          "score": 0,
+          "display": ""
+        },
+        {
+          "id": "color-contrast",
+          "title": "Background and foreground colors do not have a sufficient contrast ratio.",
+          "score": 0,
+          "display": ""
+        }
+      ],
+      "audit_details": {
+        "baseline": {
+          "title": "Baseline Features",
+          "headings": [
+            "featureId",
+            "displayStatus",
+            "source"
+          ],
+          "items": [
+            {
+              "featureId": "https://webstatus.dev/features/font-metric-overrides",
+              "displayStatus": "{'status': 'limited', 'type': 'baseline-status', 'displayString': 'Limited Availability'}",
+              "source": "https://www.facenordgraphisme.fr/creation-site-internet-hautes-alpes"
+            },
+            {
+              "featureId": "https://webstatus.dev/features/referencetarget",
+              "displayStatus": "{'displayString': 'Limited Availability', 'type': 'baseline-status', 'status': 'limited'}",
+              "source": "https://www.facenordgraphisme.fr/_next/static/chunks/0nbpqvxo7_4zm.js"
+            },
+            {
+              "featureId": "https://webstatus.dev/features/scrollend",
+              "displayStatus": "{'status': 'low', 'type': 'baseline-status', 'displayString': 'Newly Available (2025-12-12)'}",
+              "source": "https://www.facenordgraphisme.fr/_next/static/chunks/0rwwge57xnfls.js"
+            },
+            {
+              "featureId": "https://webstatus.dev/features/fetch-priority",
+              "displayStatus": "{'status': 'low', 'displayString': 'Newly Available (2024-10-29)', 'type': 'baseline-status'}",
+              "source": "https://www.facenordgraphisme.fr/creation-site-internet-hautes-alpes"
+            },
+            {
+              "featureId": "https://webstatus.dev/features/webgl2-color-management",
+              "displayStatus": "{'displayString': 'Newly Available (2024-10-29)', 'status': 'low', 'type': 'baseline-status'}",
+              "source": "https://www.facenordgraphisme.fr/_next/static/chunks/0ff~jl~lax~kd.js"
+            }
+          ],
+          "total_items": 38
+        },
+        "image-delivery-insight": {
+          "title": "Improve image delivery",
+          "headings": [
+            "node",
+            "url",
+            "totalBytes",
+            "wastedBytes"
+          ],
+          "items": [
+            {
+              "node": "{'lhId': 'page-9-IMG', 'selector': 'div.p-8 > a > div.relative > img.object-contain', 'path': '1,HTML,1,BODY,5,DIV,1,DIV,0,A,0,DIV,0,IMG', 'nodeLabel': 'Logo Face Nord Graphisme', 'boundingRect': {'le",
+              "url": "https://www.facenordgraphisme.fr/_next/image?url=%2Fassets%2Flogo.png&w=256&q=75",
+              "totalBytes": 14396,
+              "wastedBytes": 13329
+            }
+          ],
+          "total_items": 1
+        },
+        "errors-in-console": {
+          "title": "Browser errors were logged to the console",
+          "headings": [
+            "sourceLocation",
+            "description"
+          ],
+          "items": [
+            {
+              "sourceLocation": "https://www.facenordgraphisme.fr/portfolio/la-montagne-guide?_rsc=1ijps",
+              "description": "Failed to load resource: net::ERR_TIMED_OUT"
+            },
+            {
+              "sourceLocation": "https://www.facenordgraphisme.fr/faq?_rsc=1ijps",
+              "description": "Failed to load resource: net::ERR_TIMED_OUT"
+            },
+            {
+              "sourceLocation": "https://www.facenordgraphisme.fr/?_rsc=1ijps",
+              "description": "Failed to load resource: net::ERR_TIMED_OUT"
+            }
+          ],
+          "total_items": 3
+        },
+        "long-tasks": {
+          "title": "Avoid long main-thread tasks",
+          "headings": [
+            "url",
+            "startTime",
+            "duration"
+          ],
+          "items": [
+            {
+              "url": "https://www.facenordgraphisme.fr/_next/static/chunks/04onvbgbuob4j.js",
+              "startTime": 1287,
+              "duration": 505
+            },
+            {
+              "url": "https://www.facenordgraphisme.fr/_next/static/chunks/04onvbgbuob4j.js",
+              "startTime": 31036,
+              "duration": 220
+            },
+            {
+              "url": "https://www.facenordgraphisme.fr/_next/static/chunks/04onvbgbuob4j.js",
+              "startTime": 1792,
+              "duration": 218
+            },
+            {
+              "url": "https://www.facenordgraphisme.fr/_next/static/chunks/04onvbgbuob4j.js",
+              "startTime": 30822,
+              "duration": 214
+            },
+            {
+              "url": "https://www.facenordgraphisme.fr/_next/static/chunks/04onvbgbuob4j.js",
+              "startTime": 33214,
+              "duration": 206
+            }
+          ],
+          "total_items": 20
+        },
+        "origin-isolation": {
+          "title": "Ensure proper origin isolation with COOP",
+          "headings": [
+            "description",
+            "directive",
+            "severity"
+          ],
+          "items": [
+            {
+              "description": "No COOP header found",
+              "severity": "High"
+            }
+          ],
+          "total_items": 1
+        },
+        "resource-summary": {
+          "title": "Resources Summary",
+          "headings": [
+            "label",
+            "requestCount",
+            "transferSize"
+          ],
+          "items": [
+            {
+              "label": "Total",
+              "requestCount": 42,
+              "transferSize": 713168
+            },
+            {
+              "label": "Script",
+              "requestCount": 13,
+              "transferSize": 472574
+            },
+            {
+              "label": "Font",
+              "requestCount": 4,
+              "transferSize": 146967
+            },
+            {
+              "label": "Other",
+              "requestCount": 21,
+              "transferSize": 30612
+            },
+            {
+              "label": "Image",
+              "requestCount": 2,
+              "transferSize": 26163
+            }
+          ],
+          "total_items": 9
+        },
+        "main-thread-tasks": {
+          "title": "Tasks",
+          "headings": [
+            "startTime",
+            "duration"
+          ],
+          "items": [
+            {
+              "startTime": 212.97,
+              "duration": 21.032
+            },
+            {
+              "startTime": 234.633,
+              "duration": 9.124
+            },
+            {
+              "startTime": 278.682,
+              "duration": 5.028
+            },
+            {
+              "startTime": 300.85,
+              "duration": 10.403
+            },
+            {
+              "startTime": 314.97,
+              "duration": 9.542
+            }
+          ],
+          "total_items": 272
+        },
+        "button-name": {
+          "title": "Buttons do not have an accessible name",
+          "headings": [
+            "node"
+          ],
+          "items": [
+            {
+              "node": "{'type': 'node', 'path': '1,HTML,1,BODY,5,DIV,0,DIV,0,BUTTON', 'explanation': 'Fix any of the following:\\n  Element does not have inner text that is visible to screen readers\\n  aria-label attribute d"
+            }
+          ],
+          "total_items": 1
+        },
+        "dom-size-insight": {
+          "title": "Optimize DOM size",
+          "headings": [
+            "statistic",
+            "node",
+            "value"
+          ],
+          "items": [
+            {
+              "statistic": "Total elements",
+              "value": "{'granularity': 1, 'value': 537, 'type': 'numeric'}"
+            },
+            {
+              "statistic": "DOM depth",
+              "node": "{'nodeLabel': 'ul.space-y-3 > li.flex > svg.lucide > circle', 'selector': 'ul.space-y-3 > li.flex > svg.lucide > circle', 'snippet': '<circle cx=\"12\" cy=\"12\" r=\"10\">', 'lhId': 'page-12-circle', 'type'",
+              "value": "{'granularity': 1, 'value': 10, 'type': 'numeric'}"
+            },
+            {
+              "statistic": "Most children",
+              "node": "{'selector': 'body.antialiased', 'type': 'node', 'snippet': '<body class=\"antialiased min-h-screen flex flex-col md:flex-row transition-colors durat\u2026\" style=\"\">', 'path': '1,HTML,1,BODY', 'nodeLabel':",
+              "value": "{'granularity': 1, 'type': 'numeric', 'value': 41}"
+            }
+          ],
+          "total_items": 3
+        },
+        "trusted-types-xss": {
+          "title": "Mitigate DOM-based XSS with Trusted Types",
+          "headings": [
+            "description",
+            "severity"
+          ],
+          "items": [
+            {
+              "description": "No `Content-Security-Policy` header with Trusted Types directive found",
+              "severity": "High"
+            }
+          ],
+          "total_items": 1
+        },
+        "bootup-time": {
+          "title": "JavaScript execution time",
+          "headings": [
+            "url",
+            "total",
+            "scripting",
+            "scriptParseCompile"
+          ],
+          "items": [
+            {
+              "url": "https://www.facenordgraphisme.fr/_next/static/chunks/04onvbgbuob4j.js",
+              "total": 33337.25700000016,
+              "scripting": 86.680000000001,
+              "scriptParseCompile": 10.596000000000002
+            },
+            {
+              "url": "https://www.facenordgraphisme.fr/_next/static/chunks/0ff~jl~lax~kd.js",
+              "total": 530.612999999999,
+              "scripting": 445.42199999999906,
+              "scriptParseCompile": 73.964
+            },
+            {
+              "url": "https://www.facenordgraphisme.fr/_next/static/chunks/0rwwge57xnfls.js",
+              "total": 360.36199999999945,
+              "scripting": 305.92499999999944,
+              "scriptParseCompile": 17.636
+            },
+            {
+              "url": "https://www.facenordgraphisme.fr/creation-site-internet-hautes-alpes",
+              "total": 155.96499999999997,
+              "scripting": 4.271999999999998,
+              "scriptParseCompile": 7.025999999999995
+            },
+            {
+              "url": "Unattributable",
+              "total": 138.47400000000061,
+              "scripting": 23.059000000000008,
+              "scriptParseCompile": 0
+            }
+          ],
+          "total_items": 7
+        },
+        "mainthread-work-breakdown": {
+          "title": "Minimize main-thread work",
+          "headings": [
+            "groupLabel",
+            "duration"
+          ],
+          "items": [
+            {
+              "groupLabel": "Other",
+              "duration": 33325.04600000015
+            },
+            {
+              "groupLabel": "Script Evaluation",
+              "duration": 1009.0529999999809
+            },
+            {
+              "groupLabel": "Script Parsing & Compilation",
+              "duration": 142.58199999999997
+            },
+            {
+              "groupLabel": "Style & Layout",
+              "duration": 141.92099999999994
+            },
+            {
+              "groupLabel": "Rendering",
+              "duration": 77.67400000000004
+            }
+          ],
+          "total_items": 7
+        },
+        "viewport-insight": {
+          "title": "Optimize viewport for mobile",
+          "headings": [
+            "node"
+          ],
+          "items": [
+            {
+              "node": "{'selector': 'head > meta', 'lhId': 'page-10-META', 'boundingRect': {'bottom': 0, 'top': 0, 'height': 0, 'right': 0, 'left': 0, 'width': 0}, 'type': 'node', 'nodeLabel': 'head > meta', 'snippet': '<me"
+            }
+          ],
+          "total_items": 1
+        },
+        "total-byte-weight": {
+          "title": "Avoids enormous network payloads",
+          "headings": [
+            "url",
+            "totalBytes"
+          ],
+          "items": [
+            {
+              "url": "https://www.facenordgraphisme.fr/_next/static/chunks/0ff~jl~lax~kd.js",
+              "totalBytes": 236714
+            },
+            {
+              "url": "https://www.facenordgraphisme.fr/_next/static/chunks/0rwwge57xnfls.js",
+              "totalBytes": 66122
+            },
+            {
+              "url": "https://www.facenordgraphisme.fr/_next/static/chunks/04onvbgbuob4j.js",
+              "totalBytes": 46932
+            },
+            {
+              "url": "https://www.facenordgraphisme.fr/_next/static/media/07454f8ad8aaac57-s.p.0tqkxa-w3pk~c.woff2",
+              "totalBytes": 39951
+            },
+            {
+              "url": "https://www.facenordgraphisme.fr/_next/static/media/70e3db2de7f94926-s.p.0~0iy9faq3424.woff2",
+              "totalBytes": 39686
+            }
+          ],
+          "total_items": 10
+        },
+        "network-rtt": {
+          "title": "Network Round Trip Times",
+          "headings": [
+            "origin",
+            "rtt"
+          ],
+          "items": [
+            {
+              "origin": "https://www.facenordgraphisme.fr",
+              "rtt": 0.003094562391639786
+            }
+          ],
+          "total_items": 1
+        },
+        "network-server-latency": {
+          "title": "Server Backend Latencies",
+          "headings": [
+            "origin",
+            "serverResponseTime"
+          ],
+          "items": [
+            {
+              "origin": "https://www.facenordgraphisme.fr",
+              "serverResponseTime": 1
+            }
+          ],
+          "total_items": 1
+        },
+        "server-response-time": {
+          "title": "Initial server response time was short",
+          "headings": [
+            "url",
+            "responseTime"
+          ],
+          "items": [
+            {
+              "url": "https://www.facenordgraphisme.fr/creation-site-internet-hautes-alpes",
+              "responseTime": 4
+            }
+          ],
+          "total_items": 1
+        },
+        "valid-source-maps": {
+          "title": "Missing source maps for large first-party JavaScript",
+          "headings": [
+            "scriptUrl",
+            "sourceMapUrl"
+          ],
+          "items": [
+            {
+              "scriptUrl": "https://www.facenordgraphisme.fr/_next/static/chunks/0ff~jl~lax~kd.js"
+            }
+          ],
+          "total_items": 1
+        },
+        "network-requests": {
+          "title": "Network Requests",
+          "headings": [
+            "url",
+            "protocol",
+            "networkRequestTime",
+            "networkEndTime",
+            "transferSize",
+            "resourceSize",
+            "statusCode",
+            "mimeType",
+            "resourceType"
+          ],
+          "items": [
+            {
+              "url": "https://www.facenordgraphisme.fr/creation-site-internet-hautes-alpes",
+              "protocol": "h2",
+              "networkRequestTime": 2.7849998474121094,
+              "networkEndTime": 207.77099990844727,
+              "transferSize": 21455,
+              "resourceSize": 145700,
+              "statusCode": 200,
+              "mimeType": "text/html",
+              "resourceType": "Document"
+            },
+            {
+              "url": "https://www.facenordgraphisme.fr/_next/static/media/07454f8ad8aaac57-s.p.0tqkxa-w3pk~c.woff2",
+              "protocol": "h2",
+              "networkRequestTime": 221.97899961471558,
+              "networkEndTime": 283.14799976348877,
+              "transferSize": 39951,
+              "resourceSize": 39152,
+              "statusCode": 200,
+              "mimeType": "font/woff2",
+              "resourceType": "Font"
+            },
+            {
+              "url": "https://www.facenordgraphisme.fr/_next/static/media/2a65768255d6b625-s.p.14by5b4al-y~f.woff2",
+              "protocol": "h2",
+              "networkRequestTime": 222.14799976348877,
+              "networkEndTime": 282.05999994277954,
+              "transferSize": 39259,
+              "resourceSize": 38460,
+              "statusCode": 200,
+              "mimeType": "font/woff2",
+              "resourceType": "Font"
+            },
+            {
+              "url": "https://www.facenordgraphisme.fr/_next/static/media/70e3db2de7f94926-s.p.0~0iy9faq3424.woff2",
+              "protocol": "h2",
+              "networkRequestTime": 222.26200008392334,
+              "networkEndTime": 391.2569999694824,
+              "transferSize": 39686,
+              "resourceSize": 38888,
+              "statusCode": 200,
+              "mimeType": "font/woff2",
+              "resourceType": "Font"
+            },
+            {
+              "url": "https://www.facenordgraphisme.fr/_next/static/media/fba5a26ea33df6a3-s.p.0eehd8tgys7nv.woff2",
+              "protocol": "h2",
+              "networkRequestTime": 222.43300008773804,
+              "networkEndTime": 292.4470000267029,
+              "transferSize": 28071,
+              "resourceSize": 27272,
+              "statusCode": 200,
+              "mimeType": "font/woff2",
+              "resourceType": "Font"
+            }
+          ],
+          "total_items": 42
+        },
+        "legacy-javascript-insight": {
+          "title": "Legacy JavaScript",
+          "headings": [
+            "url",
+            "wastedBytes"
+          ],
+          "items": [
+            {
+              "url": "https://www.facenordgraphisme.fr/_next/static/chunks/0nbpqvxo7_4zm.js",
+              "wastedBytes": 15180
+            }
+          ],
+          "total_items": 1
+        },
+        "color-contrast": {
+          "title": "Background and foreground colors do not have a sufficient contrast ratio.",
+          "headings": [
+            "node"
+          ],
+          "items": [
+            {
+              "node": "{'lhId': '1-1-A', 'nodeLabel': 'politique de confidentialit\u00e9', 'boundingRect': {'top': 894, 'width': 170, 'right': 494, 'left': 324, 'height': 19, 'bottom': 913}, 'type': 'node', 'snippet': '<a class="
+            },
+            {
+              "node": "{'type': 'node', 'nodeLabel': 'Accepter', 'selector': 'div.fixed > div.max-w-6xl > div.flex > button.flex-1', 'path': '1,HTML,1,BODY,2,DIV,0,DIV,1,DIV,1,BUTTON', 'boundingRect': {'right': 1244, 'heigh"
+            },
+            {
+              "node": "{'type': 'node', 'snippet': '<span class=\"whitespace-nowrap tracking-wider\">', 'boundingRect': {'right': 202, 'width': 100, 'top': 401, 'left': 102, 'height': 24, 'bottom': 425}, 'path': '1,HTML,1,BOD"
+            },
+            {
+              "node": "{'selector': 'section.bg-[#1a1a1a] > div.max-w-6xl > div > div.inline-flex', 'lhId': '1-7-DIV', 'type': 'node', 'snippet': '<div class=\"inline-flex items-center gap-2 bg-[#239ea0]/15 text-[#239ea0] te"
+            },
+            {
+              "node": "{'boundingRect': {'height': 56, 'top': 589, 'bottom': 645, 'width': 269, 'left': 312, 'right': 581}, 'type': 'node', 'path': '1,HTML,1,BODY,7,MAIN,3,SECTION,1,DIV,0,DIV,3,DIV,0,A', 'lhId': '1-9-A', 's"
+            }
+          ],
+          "total_items": 37
+        },
+        "render-blocking-insight": {
+          "title": "Render-blocking requests",
+          "headings": [
+            "url",
+            "totalBytes",
+            "wastedMs"
+          ],
+          "items": [
+            {
+              "url": "https://www.facenordgraphisme.fr/_next/static/chunks/0uupsykilg3ta.css",
+              "totalBytes": 15397
+            }
+          ],
+          "total_items": 1
+        },
+        "unused-javascript": {
+          "title": "Reduce unused JavaScript",
+          "headings": [
+            "url",
+            "totalBytes",
+            "wastedBytes"
+          ],
+          "items": [
+            {
+              "url": "https://www.facenordgraphisme.fr/_next/static/chunks/0ff~jl~lax~kd.js",
+              "totalBytes": 235884,
+              "wastedBytes": 114508
+            },
+            {
+              "url": "https://www.facenordgraphisme.fr/_next/static/chunks/0rwwge57xnfls.js",
+              "totalBytes": 65284,
+              "wastedBytes": 21436
+            },
+            {
+              "url": "https://www.facenordgraphisme.fr/_next/static/chunks/04onvbgbuob4j.js",
+              "totalBytes": 46108,
+              "wastedBytes": 20505
+            }
+          ],
+          "total_items": 3
+        },
+        "csp-xss": {
+          "title": "Ensure CSP is effective against XSS attacks",
+          "headings": [
+            "description",
+            "directive",
+            "severity"
+          ],
+          "items": [
+            {
+              "description": "No CSP found in enforcement mode",
+              "severity": "High"
+            }
+          ],
+          "total_items": 1
+        },
+        "layout-shifts": {
+          "title": "Avoid large layout shifts",
+          "headings": [
+            "node",
+            "score"
+          ],
+          "items": [
+            {
+              "node": "{'selector': 'body.antialiased > main.flex-grow > section.bg-[#1a1a1a] > div.absolute', 'nodeLabel': 'body.antialiased > main.flex-grow > section.bg-[#1a1a1a] > div.absolute', 'path': '1,HTML,1,BODY,7",
+              "score": 0.00891358024691358
+            },
+            {
+              "node": "{'snippet': '<div class=\"absolute top-0 right-0 w-[600px] h-[600px] bg-[#239ea0]/10 rounded-full bl\u2026\">', 'lhId': 'page-1-DIV', 'type': 'node', 'selector': 'body.antialiased > main.flex-grow > section.",
+              "score": 0.005531494071330273
+            }
+          ],
+          "total_items": 2
+        }
+      },
+      "analysis_timestamp": "2026-11-04T17:42:39.425Z",
+      "error": null
+    }
+  },
+  "crux": {
+    "target": "https://www.facenordgraphisme.fr/creation-site-internet-hautes-alpes",
+    "metrics": {},
+    "collection_period": null,
+    "form_factor": "ALL",
+    "error": "No CrUX data for this URL. The site likely has insufficient Chrome traffic volume for eligibility."
+  },
+  "error": null
+}
