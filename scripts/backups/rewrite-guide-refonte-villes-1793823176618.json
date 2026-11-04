@@ -1,0 +1,4256 @@
+[
+  {
+    "_createdAt": "2026-06-06T10:04:04Z",
+    "_id": "post-guide-creation-site-internet-artisan-hautes-alpes",
+    "_rev": "sVRbqyTlZFpw4w50HM6o3x",
+    "_type": "post",
+    "_updatedAt": "2026-11-04T19:49:14Z",
+    "body": [
+      {
+        "_key": "p2_tldr",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "p2_tldr_s1",
+            "_type": "span",
+            "marks": [],
+            "text": "En 2026, 65 % des TPE-PME françaises ont un site web (Baromètre France Num, DGE, septembre 2025, 11 021 entreprises). Un site créé par un freelance expérimenté coûte entre 1 500 et 4 000 € — délai moyen 4 à 8 semaines. 76 % des recherches locales mobiles aboutissent à une visite physique le jour même (Google, 2024). Ce guide couvre les 4 types de sites adaptés aux artisans, les tarifs transparents 2026, les critères techniques indispensables et les étapes d'une création réussie dans les Hautes-Alpes."
+          }
+        ],
+        "markDefs": [],
+        "style": "capsule"
+      },
+      {
+        "_key": "p2_i01",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "p2_i01_s1",
+            "_type": "span",
+            "marks": [],
+            "text": "Chaque semaine, un artisan des Hautes-Alpes perd un client qu'il aurait pu avoir. Son concurrent a un site qui charge en 2 secondes, s'affiche parfaitement sur smartphone et répond directement à la question « plombier urgence Embrun ». Le client clique, appelle, commande. Votre numéro, lui, n'apparaît nulle part — ou pire, renvoie vers un site que vous avez créé en 2018, illisible sur mobile, sans adresse visible."
+          }
+        ],
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "p2_i02",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "p2_i02_s1",
+            "_type": "span",
+            "marks": [],
+            "text": "Selon le Baromètre France Num 2025 (DGE, 11 021 TPE-PME interrogées), 65 % des petites entreprises françaises disposent aujourd'hui d'un site web présentant leur activité — et 40 % déclarent que le numérique a contribué à augmenter leur chiffre d'affaires. Les 35 % restants ne sont pas en retard : ils sont invisibles. Dans les Hautes-Alpes, département rural où les distances sont grandes et les annuaires papier éteints, un site professionnel n'est plus un avantage concurrentiel. C'est le minimum attendu."
+          }
+        ],
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "p2_i03",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "p2_i03_s1",
+            "_type": "span",
+            "marks": [],
+            "text": "François-Xavier Pin accompagne les artisans et PME du 05 dans la création et l'optimisation de leurs sites depuis plusieurs années. Ce guide réunit ce qui fonctionne vraiment pour un artisan local dans un territoire rural de montagne — pas les conseils génériques qui s'appliquent à n'importe quelle boutique parisienne."
+          }
+        ],
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "p2_h01",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "p2_h01_s1",
+            "_type": "span",
+            "marks": [],
+            "text": "Pourquoi un artisan des Hautes-Alpes ne peut plus se passer d'un site en 2026"
+          }
+        ],
+        "markDefs": [],
+        "style": "h2"
+      },
+      {
+        "_key": "p2_img01",
+        "_type": "image",
+        "alt": "Smartphone affichant une application de carte locale pour une ville connectée, illustrant les recherches locales sur mobile en 2026",
+        "caption": "En 2026, 80 % du temps passé sur internet se fait sur mobile (Médiamétrie). Votre site doit d'abord être conçu pour l'écran de 6 pouces.",
+        "externalUrl": "https://images.unsplash.com/photo-1551650975-87deedd944c3?w=1200&h=630&fit=crop&q=80"
+      },
+      {
+        "_key": "p2_p01",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "p2_p01_s1",
+            "_type": "span",
+            "marks": [],
+            "text": "En février 2026, Médiamétrie publiait L'Année Internet 2025 : 80 % du temps passé sur internet en France se fait sur mobile. Parallèlement, selon les données Google reprises par Backlinko (2024), 46 % de toutes les recherches Google ont une intention locale — et 76 % des recherches « près de moi » sur smartphone aboutissent à une visite en boutique dans la journée, dont 28 % à un achat le jour même. Dans un territoire comme les Hautes-Alpes, où un client à Embrun ne se déplace pas à Gap sans avoir vérifié au préalable que vous existez et que vous répondez à son besoin, ces chiffres ne sont pas abstraits."
+          }
+        ],
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "p2_p02",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "p2_p02_s1",
+            "_type": "span",
+            "marks": [],
+            "text": "La fiche Google Maps ne suffit pas. Elle indique votre existence — votre site explique votre valeur. Un client qui découvre votre fiche Google Maps sans site associé cliquera sur votre concurrent suivant, qui lui, a une page avec ses réalisations, ses tarifs, ses zones d'intervention et ses avis. La fiche Maps capte l'attention — le site convertit. Les deux sont complémentaires, aucun ne remplace l'autre."
+          }
+        ],
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "p2_p03",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "p2_p03_s1",
+            "_type": "span",
+            "marks": [],
+            "text": "Dernier argument, spécifique à 2026 : les moteurs IA (ChatGPT, Perplexity, Google AI Overviews) citent des sources pour répondre aux requêtes de vos futurs clients. Sans site structuré, vous n'existez pas dans ces réponses. Avec un site optimisé pour le GEO, vous pouvez apparaître avant vos concurrents — y compris ceux mieux classés sur Google classique."
+          }
+        ],
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "p2_cap01",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "p2_cap01_s1",
+            "_type": "span",
+            "marks": [],
+            "text": "Selon le Baromètre France Num 2025 (DGE, septembre 2025, 11 021 TPE-PME françaises), 40 % des dirigeants affirment que le numérique a contribué à l'augmentation de leur chiffre d'affaires. Les 35 % de PME sans site web en 2026 ne sont pas simplement moins visibles sur Google — ils sont absents des réponses des moteurs IA, qui représentent une part croissante des décisions d'achat local."
+          }
+        ],
+        "markDefs": [],
+        "style": "citation"
+      },
+      {
+        "_key": "p2_h02",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "p2_h02_s1",
+            "_type": "span",
+            "marks": [],
+            "text": "Landing page, site vitrine ou e-commerce : quel type de site choisir selon votre activité ?"
+          }
+        ],
+        "markDefs": [],
+        "style": "h2"
+      },
+      {
+        "_key": "p2_p04",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "p2_p04_s1",
+            "_type": "span",
+            "marks": [],
+            "text": "La première erreur des artisans qui créent un site est de surestimer leurs besoins. Un plombier de Gap n'a pas besoin d'un e-commerce. Un moniteur de ski à Vars n'a pas besoin d'un blog de 50 articles. Choisir le bon type de site dès le départ évite de payer pour des fonctionnalités inutiles — et de sous-performer sur les fonctionnalités qui comptent vraiment."
+          }
+        ],
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "p2_tbl01",
+        "_type": "table",
+        "rows": [
+          {
+            "_key": "p2_tbl01_r01",
+            "cells": [
+              "Type de site",
+              "Pour qui",
+              "Budget indicatif",
+              "Délai"
+            ]
+          },
+          {
+            "_key": "p2_tbl01_r02",
+            "cells": [
+              "Landing page (1 page)",
+              "Artisan mono-service, débutant en ligne",
+              "800 – 1 500 €",
+              "2 – 3 semaines"
+            ]
+          },
+          {
+            "_key": "p2_tbl01_r03",
+            "cells": [
+              "Site vitrine (3-8 pages)",
+              "Artisan multi-services, PME locale",
+              "1 500 – 4 000 €",
+              "4 – 8 semaines"
+            ]
+          },
+          {
+            "_key": "p2_tbl01_r04",
+            "cells": [
+              "Site avec blog SEO",
+              "PME souhaitant se positionner sur Google et les IA",
+              "2 000 – 5 000 €",
+              "6 – 10 semaines"
+            ]
+          },
+          {
+            "_key": "p2_tbl01_r05",
+            "cells": [
+              "E-commerce",
+              "Artisan vendant des produits en ligne",
+              "3 500 – 10 000 €",
+              "8 – 16 semaines"
+            ]
+          }
+        ]
+      },
+      {
+        "_key": "p2_p05",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "p2_p05_s1",
+            "_type": "span",
+            "marks": [],
+            "text": "Pour 80 % des artisans des Hautes-Alpes, le site vitrine de 3 à 6 pages est le format optimal. Il couvre l'accueil (qui vous êtes, zone d'intervention), les prestations détaillées (une page par service principal), les réalisations (galerie photos), les avis clients et le contact. C'est suffisant pour apparaître sur Google local, être cité par les IA et convertir un visiteur en appel téléphonique."
+          }
+        ],
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "p2_p06",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "p2_p06_s1",
+            "_type": "span",
+            "marks": [],
+            "text": "La landing page est souvent sous-estimée. Pour un artisan avec un seul service phare — « Dépannage plomberie urgence Gap » — une page unique bien construite, rapide et structurée surpasse en résultats un site vitrine mal fait de 10 pages. Mieux vaut une page parfaite que dix pages médiocres. Le critère de choix n'est pas le nombre de pages, c'est la qualité de chaque page."
+          }
+        ],
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "p2_h03",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "p2_h03_s1",
+            "_type": "span",
+            "marks": [],
+            "text": "Combien coûte vraiment un site internet pour un artisan dans les Hautes-Alpes ?"
+          }
+        ],
+        "markDefs": [],
+        "style": "h2"
+      },
+      {
+        "_key": "p2_img02",
+        "_type": "image",
+        "alt": "Double écran de designer web affichant une interface de création de site, illustrant le processus professionnel de conception web pour artisans",
+        "caption": "Un site vitrine professionnel réalisé par un freelance expérimenté se situe entre 1 500 et 4 000 € en 2026 — maintenance et hébergement compris la première année.",
+        "externalUrl": "https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?w=1200&h=630&fit=crop&q=80"
+      },
+      {
+        "_key": "p2_p07",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "p2_p07_s1",
+            "_type": "span",
+            "marks": [],
+            "text": "Selon le Baromètre Sedigitaliser 2026 (mis à jour le 1er mars 2026, croisant les tarifs de 200+ prestataires français), un site vitrine professionnel coûte entre 1 500 et 4 000 € chez un freelance expérimenté, et entre 2 500 et 8 000 € en agence web. Des formules d'abonnement tout compris existent entre 30 et 80 €/mois. Ces fourchettes incluent généralement la conception graphique, le développement, l'intégration des contenus fournis par le client et la mise en ligne."
+          }
+        ],
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "p2_tbl02",
+        "_type": "table",
+        "rows": [
+          {
+            "_key": "p2_tbl02_r01",
+            "cells": [
+              "Prestataire",
+              "Budget moyen",
+              "Avantages",
+              "Limites"
+            ]
+          },
+          {
+            "_key": "p2_tbl02_r02",
+            "cells": [
+              "DIY (Wix, Webador)",
+              "0 – 500 €/an",
+              "Rapide, économique",
+              "Pas de SEO technique, pas de schema.org, pas de GEO"
+            ]
+          },
+          {
+            "_key": "p2_tbl02_r03",
+            "cells": [
+              "Freelance junior",
+              "500 – 1 500 €",
+              "Prix accessible",
+              "Suivi limité, qualité variable"
+            ]
+          },
+          {
+            "_key": "p2_tbl02_r04",
+            "cells": [
+              "Freelance expérimenté local",
+              "1 500 – 4 000 €",
+              "Connaissance du terrain, SEO local, suivi",
+              "Disponibilité limitée"
+            ]
+          },
+          {
+            "_key": "p2_tbl02_r05",
+            "cells": [
+              "Agence web",
+              "2 500 – 8 000 €",
+              "Process structuré, équipe",
+              "Coût élevé, moins de personnalisation locale"
+            ]
+          },
+          {
+            "_key": "p2_tbl02_r06",
+            "cells": [
+              "Abonnement tout compris",
+              "30 – 80 €/mois",
+              "Sans investissement initial",
+              "Dépendance, moins de propriété"
+            ]
+          }
+        ]
+      },
+      {
+        "_key": "p2_p08",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "p2_p08_s1",
+            "_type": "span",
+            "marks": [],
+            "text": "Le coût DIY est trompeur. Créer soi-même son site sur Wix ou Webador semble gratuit — mais représente 30 à 80 heures de travail pour un résultat rarement optimisé pour Google. Sans schema.org LocalBusiness, sans Core Web Vitals corrects, sans structure GEO, un site DIY est invisible sur les moteurs IA et peu compétitif sur Google local. Le vrai coût du DIY, c'est le chiffre d'affaires que vous ne générerez pas."
+          }
+        ],
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "p2_p09",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "p2_p09_s1",
+            "_type": "span",
+            "marks": [],
+            "text": "Des aides à la numérisation existent pour les artisans et PME — via la CMA des Hautes-Alpes (accompagnement numérique), les dispositifs régionaux PACA et certaines aides sectorielles. Renseignez-vous auprès de votre CMA05 ou de la chambre de commerce avant de signer tout devis : vous pouvez réduire significativement votre reste à charge."
+          }
+        ],
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "p2_cap02",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "p2_cap02_s1",
+            "_type": "span",
+            "marks": [],
+            "text": "D'après le Baromètre Sedigitaliser 2026 (mars 2026, 200+ prestataires analysés), un site vitrine professionnel pour artisan coûte entre 1 500 et 4 000 € chez un freelance expérimenté. C'est l'option la plus rentable à 3 ans pour un artisan des Hautes-Alpes : le coût est amorti dès 2 à 3 clients supplémentaires, et le prestataire local connaît la saisonnalité et les requêtes spécifiques au territoire."
+          }
+        ],
+        "markDefs": [],
+        "style": "citation"
+      },
+      {
+        "_key": "p2_h04",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "p2_h04_s1",
+            "_type": "span",
+            "marks": [],
+            "text": "Les 3 critères techniques que votre site doit respecter en 2026"
+          }
+        ],
+        "markDefs": [],
+        "style": "h2"
+      },
+      {
+        "_key": "p2_img03",
+        "_type": "image",
+        "alt": "MacBook ouvert avec lignes de code sur un bureau de développeur web, illustrant les critères techniques d'un site professionnel en 2026",
+        "caption": "Core Web Vitals, schema.org et mobile-first : les 3 piliers techniques d'un site artisan performant en 2026.",
+        "externalUrl": "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=1200&h=630&fit=crop&q=80"
+      },
+      {
+        "_key": "p2_h04a",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "p2_h04a_s1",
+            "_type": "span",
+            "marks": [],
+            "text": "1. Mobile-first : votre site est d'abord un site de smartphone"
+          }
+        ],
+        "markDefs": [],
+        "style": "h3"
+      },
+      {
+        "_key": "p2_p10",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "p2_p10_s1",
+            "_type": "span",
+            "marks": [],
+            "text": "En 2025, 80 % du temps passé sur internet en France se fait sur mobile (Médiamétrie, L'Année Internet 2025, publié le 12 février 2026). Votre site doit d'abord être parfait sur un écran de 6 pouces — lisible sans zoom, avec des boutons cliquables au doigt, un numéro de téléphone en lien direct et un formulaire de contact en moins de 3 champs. Le design desktop vient en second. Tout prestataire qui vous propose d'abord la maquette desktop travaille à l'envers."
+          }
+        ],
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "p2_h04b",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "p2_h04b_s1",
+            "_type": "span",
+            "marks": [],
+            "text": "2. Core Web Vitals : la vitesse comme critère de survie"
+          }
+        ],
+        "markDefs": [],
+        "style": "h3"
+      },
+      {
+        "_key": "p2_p11",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "p2_p11_s1",
+            "_type": "span",
+            "marks": [],
+            "text": "Les Core Web Vitals sont un facteur de classement Google confirmé (Google Search Central, mars 2024). Selon Kanuka Digital (septembre 2025), 53 % des utilisateurs mobiles abandonnent un site qui met plus de 3 secondes à charger. Et chaque seconde de délai supplémentaire réduit les conversions de 7 %, les pages vues de 11 % et la satisfaction client de 16 % (Reboot Online, 2025). Pour un artisan, ça signifie concrètement : une photo de couverture non compressée peut vous coûter 2 appels téléphoniques par semaine."
+          }
+        ],
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "p2_h04c",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "p2_h04c_s1",
+            "_type": "span",
+            "marks": [],
+            "text": "3. Schema.org LocalBusiness : le passeport pour les moteurs IA"
+          }
+        ],
+        "markDefs": [],
+        "style": "h3"
+      },
+      {
+        "_key": "p2_p12",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "p2_p12_s1",
+            "_type": "span",
+            "marks": [],
+            "text": "Le schema.org LocalBusiness est un balisage invisible pour vos visiteurs, mais parfaitement lisible par Google et par les moteurs IA (ChatGPT, Perplexity). Il indique qui vous êtes, ce que vous faites, où vous le faites, et depuis combien de temps. Sans ce balisage, votre site peut être parfait visuellement — les IA ne peuvent pas confirmer votre entité et ne vous citeront pas dans leurs réponses. C'est le critère technique le plus souvent absent des sites créés par des générateurs automatiques ou des agences non spécialisées en SEO local."
+          }
+        ],
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "p2_h05",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "p2_h05_s1",
+            "_type": "span",
+            "marks": [],
+            "text": "Faire soi-même ou faire appel à un prestataire local : ce que les chiffres disent"
+          }
+        ],
+        "markDefs": [],
+        "style": "h2"
+      },
+      {
+        "_key": "p2_p13",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "p2_p13_s1",
+            "_type": "span",
+            "marks": [],
+            "text": "La tentation du DIY est compréhensible. Wix, Webador et Jimdo permettent de créer un site en quelques heures sans coder. Mais pour un artisan dont le temps vaut entre 40 et 80 €/heure, investir 40 à 80 heures sur un site — soit 1 600 à 6 400 € de valeur temps — pour un résultat moins performant qu'un site professionnel à 2 000 € n'est pas rationnel. Le DIY a du sens uniquement si vous avez du temps disponible, une appétence pour le numérique, et si vous acceptez de sacrifier le SEO local et le GEO."
+          }
+        ],
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "p2_p14",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "p2_p14_s1",
+            "_type": "span",
+            "marks": [],
+            "text": "Le prestataire local présente un avantage souvent ignoré : il connaît le territoire. Un prestataire basé dans les Hautes-Alpes sait que « plombier Embrun » et « plombier Hautes-Alpes 05 » ne sont pas les mêmes requêtes. Il sait que la saisonnalité ski/été impacte les pics de recherche. Il peut intégrer des photos de vos réalisations en montagne et créer des pages pour chaque commune d'intervention. Cette connaissance du terrain ne s'achète pas dans un template Wix."
+          }
+        ],
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "p2_h06",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "p2_h06_s1",
+            "_type": "span",
+            "marks": [],
+            "text": "Les 5 questions à poser à votre prestataire web avant de signer"
+          }
+        ],
+        "markDefs": [],
+        "style": "h2"
+      },
+      {
+        "_key": "p2_p15",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "p2_p15_s1",
+            "_type": "span",
+            "marks": [],
+            "text": "Un devis de site internet peut aller du simple au triple pour une prestation équivalente. Ces 5 questions permettent de départager les offres et d'éviter les mauvaises surprises à la livraison."
+          }
+        ],
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "p2_p16",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "p2_p16_s1",
+            "_type": "span",
+            "marks": [],
+            "text": "« Le site sera-t-il optimisé pour le mobile en premier lieu, et quels sont vos scores Core Web Vitals habituels sur les sites livrés ? » — Un bon prestataire montre ses résultats Google PageSpeed Insights sur des projets réels. Refusez toute réponse vague."
+          }
+        ],
+        "level": 1,
+        "listItem": "number",
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "p2_p17",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "p2_p17_s1",
+            "_type": "span",
+            "marks": [],
+            "text": "« Intégrez-vous le schema.org LocalBusiness et le balisage JSON-LD pour le référencement IA ? » — Si votre interlocuteur ne sait pas ce qu'est le JSON-LD, votre site ne sera pas cité par ChatGPT ni optimisé pour Google AI Overviews."
+          }
+        ],
+        "level": 1,
+        "listItem": "number",
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "p2_p18",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "p2_p18_s1",
+            "_type": "span",
+            "marks": [],
+            "text": "« Le site m'appartient entièrement à la livraison — code source, nom de domaine, hébergement ? » — Certains prestataires gardent la main sur l'hébergement ou utilisent des CMS propriétaires. Exigez la propriété totale dès la signature."
+          }
+        ],
+        "level": 1,
+        "listItem": "number",
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "p2_p19",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "p2_p19_s1",
+            "_type": "span",
+            "marks": [],
+            "text": "« Assurez-vous le suivi après livraison — mises à jour, sécurité, modifications mineures ? » — Un site livré sans suivi est un site qui vieillit mal. Les mises à jour de sécurité et les corrections de bugs font partie d'un accompagnement sérieux."
+          }
+        ],
+        "level": 1,
+        "listItem": "number",
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "p2_p20",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "p2_p20_s1",
+            "_type": "span",
+            "marks": [],
+            "text": "« Pouvez-vous me montrer 3 sites récents que vous avez créés pour des artisans ou PME locaux, avec les performances SEO associées ? » — Un portfolio sans données de trafic ou de positionnement est insuffisant. Les résultats concrets sont la meilleure preuve de compétence."
+          }
+        ],
+        "level": 1,
+        "listItem": "number",
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "p2_h07",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "p2_h07_s1",
+            "_type": "span",
+            "marks": [],
+            "text": "Quels délais prévoir ? Les étapes réelles d'une création de site artisan"
+          }
+        ],
+        "markDefs": [],
+        "style": "h2"
+      },
+      {
+        "_key": "p2_p21",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "p2_p21_s1",
+            "_type": "span",
+            "marks": [],
+            "text": "La durée réelle d'une création de site dépend surtout de vous — plus précisément, de la rapidité avec laquelle vous fournissez vos textes, photos et validations. Un prestataire organisé livre en 4 à 8 semaines si le client est réactif. Le même projet s'étire à 4 mois si les retours tardent. Voici les étapes clés et les délais habituels pour un site vitrine de 5 pages :"
+          }
+        ],
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "p2_p22",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "p2_p22_s1",
+            "_type": "span",
+            "marks": [],
+            "text": "Semaine 1 — Cadrage : définition des objectifs, du public cible, des services à mettre en avant, collecte des contenus existants (textes, photos, logos). C'est l'étape la plus importante — elle conditionne tout le reste."
+          }
+        ],
+        "level": 1,
+        "listItem": "bullet",
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "p2_p23",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "p2_p23_s1",
+            "_type": "span",
+            "marks": [],
+            "text": "Semaines 2-3 — Maquette graphique : proposition de design (charte couleurs, typographies, mise en page). 1 à 2 allers-retours de validation. Le prestataire intègre vos retours et vous soumet la version définitive."
+          }
+        ],
+        "level": 1,
+        "listItem": "bullet",
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "p2_p24",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "p2_p24_s1",
+            "_type": "span",
+            "marks": [],
+            "text": "Semaines 3-5 — Développement et intégration : construction du site, intégration des contenus, optimisation mobile, schema.org, Core Web Vitals, référencement local de base (balises title, meta, Google Search Console)."
+          }
+        ],
+        "level": 1,
+        "listItem": "bullet",
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "p2_p25",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "p2_p25_s1",
+            "_type": "span",
+            "marks": [],
+            "text": "Semaines 6-8 — Tests et mise en ligne : vérification sur tous les appareils, tests de performance, soumission au Google Search Console, mise en ligne sur le nom de domaine définitif. Livraison avec documentation de prise en main."
+          }
+        ],
+        "level": 1,
+        "listItem": "bullet",
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "p2_h08",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "p2_h08_s1",
+            "_type": "span",
+            "marks": [],
+            "text": "Ce que votre site doit accomplir dans les 30 jours suivant la mise en ligne"
+          }
+        ],
+        "markDefs": [],
+        "style": "h2"
+      },
+      {
+        "_key": "p2_p26",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "p2_p26_s1",
+            "_type": "span",
+            "marks": [],
+            "text": "La mise en ligne n'est pas la fin du projet — c'est le début. Un site non suivi dans ses premières semaines perd 60 à 80 % de son potentiel SEO local. Voici les 4 actions à effectuer dans les 30 jours suivant la mise en ligne pour maximiser le retour sur investissement."
+          }
+        ],
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "p2_p27",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "p2_p27_s1",
+            "_type": "span",
+            "marks": [],
+            "text": "Synchroniser votre fiche Google Business Profile avec l'URL de votre nouveau site, vérifier que le nom de votre entreprise est strictement identique sur les deux plateformes — c'est le signal d'entité numéro 1 pour les moteurs IA."
+          }
+        ],
+        "level": 1,
+        "listItem": "bullet",
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "p2_p28",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "p2_p28_s1",
+            "_type": "span",
+            "marks": [],
+            "text": "Soumettre le sitemap à Google Search Console et demander l'indexation de vos 5 pages principales via l'outil Inspection d'URL — cela accélère l'apparition dans les résultats Google de 2 à 4 semaines."
+          }
+        ],
+        "level": 1,
+        "listItem": "bullet",
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "p2_p29",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "p2_p29_s1",
+            "_type": "span",
+            "marks": [],
+            "text": "Compléter votre fiche PagesJaunes avec l'URL de votre nouveau site et une description longue de 300 à 500 mots — PagesJaunes est régulièrement cité par les IA françaises dans leurs réponses aux requêtes d'artisans locaux."
+          }
+        ],
+        "level": 1,
+        "listItem": "bullet",
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "p2_p30",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "p2_p30_s1",
+            "_type": "span",
+            "marks": [],
+            "text": "Publier un premier article de blog ou une page « Réalisation » avec photos de chantier, description du projet et nom de la commune — c'est le premier signal de fraîcheur pour les crawlers IA et le premier contenu indexable en dehors de vos pages de service."
+          }
+        ],
+        "level": 1,
+        "listItem": "bullet",
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "p2_cta",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "p2_cta_s1",
+            "_type": "span",
+            "marks": [],
+            "text": "Vous êtes artisan ou PME dans les Hautes-Alpes et vous souhaitez créer ou refondre votre site ? Je propose un "
+          },
+          {
+            "_key": "p2_cta_s2",
+            "_type": "span",
+            "marks": [
+              "p2_cta_lnk"
+            ],
+            "text": "devis gratuit adapté à votre activité et à votre territoire"
+          },
+          {
+            "_key": "p2_cta_s3",
+            "_type": "span",
+            "marks": [],
+            "text": " — réponse sous 48 h."
+          }
+        ],
+        "markDefs": [
+          {
+            "_key": "p2_cta_lnk",
+            "_type": "link",
+            "href": "/contact"
+          }
+        ],
+        "style": "normal"
+      },
+      {
+        "_key": "p2_faq01",
+        "_type": "faq",
+        "items": [
+          {
+            "_key": "p2_faq_i01",
+            "answer": "Pour un site vitrine professionnel de 3 à 6 pages, comptez entre 1 500 et 4 000 € chez un freelance expérimenté local (Baromètre Sedigitaliser 2026). Ce budget inclut conception, développement, intégration des contenus et mise en ligne. Des aides à la numérisation sont disponibles via la CMA des Hautes-Alpes et les dispositifs régionaux PACA — renseignez-vous avant de signer.",
+            "question": "Quel budget prévoir pour un site internet artisan dans les Hautes-Alpes ?"
+          },
+          {
+            "_key": "p2_faq_i02",
+            "answer": "Entre 4 et 8 semaines pour un site vitrine de 5 pages, si vous fournissez rapidement vos contenus (textes, photos, logo). Le principal facteur de délai n'est pas le prestataire — c'est la réactivité du client lors des validations. Prévoyez de préparer vos textes et photos avant même de contacter un prestataire.",
+            "question": "Combien de temps faut-il pour créer un site artisan ?"
+          },
+          {
+            "_key": "p2_faq_i03",
+            "answer": "Non. La fiche Google Business Profile capte l'attention — votre site convertit le visiteur en client. Un client qui trouve votre fiche sans site associé cliquera sur le concurrent suivant qui en a un. De plus, sans site, vous n'existez pas dans les réponses des moteurs IA (ChatGPT, Perplexity), qui représentent une part croissante des décisions d'achat local en 2026.",
+            "question": "Est-ce qu'une fiche Google Maps suffit sans site internet ?"
+          },
+          {
+            "_key": "p2_faq_i04",
+            "answer": "Techniquement oui, mais avec des limites importantes en 2026 : les builders comme Wix ne génèrent pas de schema.org LocalBusiness correct, ne permettent pas un contrôle fin des Core Web Vitals, et produisent des sites rarement optimisés pour le référencement IA (GEO). Pour un artisan dont chaque heure vaut 40 à 80 €, 50 heures de DIY représentent 2 000 à 4 000 € de valeur temps — autant qu'un site professionnel.",
+            "question": "Peut-on créer son site soi-même avec Wix ou Webador ?"
+          },
+          {
+            "_key": "p2_faq_i05",
+            "answer": "Un prestataire local connaît votre territoire : les requêtes spécifiques (« plombier Gap 05 » vs « plombier Hautes-Alpes »), la saisonnalité ski/été, les communes à cibler (Embrun, Briançon, Guillestre, Vars). Il peut intervenir sur place pour photographier vos réalisations et comprend les contraintes du milieu rural de montagne — ce qu'une agence nationale ne peut pas faire depuis Paris.",
+            "question": "Pourquoi choisir un prestataire web local dans les Hautes-Alpes plutôt qu'une agence nationale ?"
+          }
+        ],
+        "title": "Questions fréquentes sur la création de site pour artisan"
+      },
+      {
+        "_key": "p2_c01",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "p2_c01_s1",
+            "_type": "span",
+            "marks": [],
+            "text": "Créer un site internet professionnel en 2026 n'est pas un luxe pour un artisan des Hautes-Alpes — c'est le fondement de votre visibilité locale, sur Google comme sur les moteurs IA. Un site bien construit, mobile-first, avec les Core Web Vitals corrects et le schema.org LocalBusiness en place, génère des contacts qualifiés de manière autonome, 24h/24, sans publicité payante."
+          }
+        ],
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "p2_c02",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "p2_c02_s1",
+            "_type": "span",
+            "marks": [],
+            "text": "L'investissement de départ — entre 1 500 et 4 000 € pour un freelance expérimenté — est amorti en 2 à 3 clients supplémentaires. Dans les Hautes-Alpes, où les acteurs locaux sont peu nombreux et la concurrence numérique faible, être parmi les premiers à avoir un site optimisé vous positionne durablement. Pour aller plus loin :"
+          }
+        ],
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "p2_spk01",
+        "_type": "spokeCard",
+        "badge": "Référencement IA",
+        "description": "Ce que les études disent sur les citations dans ChatGPT et Google, et ce qu’elles ne prouvent pas.",
+        "linkText": "Lire l'article",
+        "linkUrl": "/blog/4-signaux-citation-ia-artisans",
+        "title": "Les 4 signaux de citation IA"
+      },
+      {
+        "_key": "p2_spk03",
+        "_type": "spokeCard",
+        "badge": "Devis gratuit",
+        "description": "Site vitrine, landing page ou refonte : devis gratuit sous 48 h pour les artisans et PME des Hautes-Alpes. Tarifs transparents, propriété totale du site dès la livraison.",
+        "linkText": "Demander un devis",
+        "linkUrl": "/contact",
+        "title": "Création de site internet — Face Nord Graphisme"
+      }
+    ],
+    "mainImage": {
+      "_type": "image",
+      "alt": "Artisan travaillant sur un ordinateur portable dans son atelier, illustrant la transformation numérique des métiers manuels dans les Hautes-Alpes en 2026",
+      "externalUrl": "https://images.unsplash.com/photo-1676636810289-2ac22579d988?w=1200&h=630&fit=crop&q=80"
+    },
+    "publishedAt": "2026-06-06T08:00:00.000Z",
+    "seoDescription": "65 % des TPE-PME ont un site web en 2026. Guide complet pour les artisans des Hautes-Alpes : types de sites, tarifs réels, délais et critères techniques.",
+    "seoTitle": "Création Site Internet Artisan Hautes-Alpes 2026",
+    "slug": {
+      "_type": "slug",
+      "current": "guide-creation-site-internet-artisan-hautes-alpes"
+    },
+    "title": "Création de site internet pour artisan dans les Hautes-Alpes : le guide complet 2026"
+  },
+  {
+    "_createdAt": "2026-04-29T14:11:19Z",
+    "_id": "29d6e806-20e8-4f86-91fa-f41498aa4d59",
+    "_rev": "sVRbqyTlZFpw4w50HM72vl",
+    "_system": {
+      "base": {
+        "id": "29d6e806-20e8-4f86-91fa-f41498aa4d59",
+        "rev": "fOwcY0643jaGejaROhFuLE"
+      }
+    },
+    "_type": "post",
+    "_updatedAt": "2026-11-04T20:01:00Z",
+    "body": [
+      {
+        "_key": "ef26913eebf0",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "3f6f7b2f709e",
+            "_type": "span",
+            "marks": [],
+            "text": "Votre site internet a été créé il y a quelques années et, depuis, vous avez l'impression qu'il ne vous ressemble plus. Les contacts entrants se font rares, le taux de rebond grimpe, et vos concurrents semblent avoir pris une longueur d'avance. Faut-il rafraîchir quelques pages ou partir sur une refonte complète ? Ce guide vous donne les 5 signaux d'alarme à surveiller — et la marche à suivre si plusieurs d'entre eux s'allument en même temps."
+          }
+        ],
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "18c571927573",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "b220fc6b780c",
+            "_type": "span",
+            "marks": [],
+            "text": "En 2026, un site internet est votre premier commercial : il travaille 24 h/24, 7 j/7, même pendant la saison creuse. Dans les Hautes-Alpes, où la double saisonnalité (été vélo/randonnée, hiver ski) comprime les fenêtres d'activité, chaque visiteur perdu faute d'une expérience fluide représente un manque à gagner immédiat. Une refonte bien planifiée se rembourse généralement en 6 à 18 mois."
+          }
+        ],
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "740a868c71b1",
+        "_type": "image",
+        "alt": "Personne esquissant l'architecture d'un site web sur un tableau blanc lors d'un atelier de conception",
+        "caption": "La conception d'un site web commence par un audit de l'existant avant de (re)définir l'architecture et les parcours utilisateurs.",
+        "externalUrl": "https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?fm=jpg&q=80&w=1200&h=630&fit=crop"
+      },
+      {
+        "_key": "c6575c92fddb",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "92d1f645d683",
+            "_type": "span",
+            "marks": [],
+            "text": "Ce qu'il faut retenir"
+          }
+        ],
+        "markDefs": [],
+        "style": "h3"
+      },
+      {
+        "_key": "03a331c61709",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "a3ea7c49fa87",
+            "_type": "span",
+            "marks": [],
+            "text": "53 % des utilisateurs abandonnent un site qui met plus de 3 secondes à charger (Google, 2025)"
+          }
+        ],
+        "level": 1,
+        "listItem": "bullet",
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "8f03839c7f16",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "8bad00b3a123",
+            "_type": "span",
+            "marks": [],
+            "text": "Google indexe désormais en Mobile-First : un site non responsive perd du terrain dans les résultats chaque semaine"
+          }
+        ],
+        "level": 1,
+        "listItem": "bullet",
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "862bc4a57c31",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "36785fd200b9",
+            "_type": "span",
+            "marks": [],
+            "text": "Un site de plus de 3 ans peut perdre 10 à 30 % de son trafic organique par an sans mises à jour régulières"
+          }
+        ],
+        "level": 1,
+        "listItem": "bullet",
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "f2600656419c",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "25f27f878549",
+            "_type": "span",
+            "marks": [],
+            "text": "La refonte moyenne d'un site PME dans les Hautes-Alpes se rembourse en 8 à 14 mois via les nouveaux contacts générés"
+          }
+        ],
+        "level": 1,
+        "listItem": "bullet",
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "a5bf93eebfd9",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "cf5c299e6f2b",
+            "_type": "span",
+            "marks": [],
+            "text": "5 signaux cumulés = refonte urgente ; 2 à 3 signaux = optimisation ciblée suffisante dans un premier temps"
+          }
+        ],
+        "level": 1,
+        "listItem": "bullet",
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "7c762e156a3f",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "c04d06a5a430",
+            "_type": "span",
+            "marks": [],
+            "text": "Signe 1 — Votre site se charge lentement ou pénalise votre référencement"
+          }
+        ],
+        "markDefs": [],
+        "style": "h2"
+      },
+      {
+        "_key": "b65bf1bad740",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "94425e4e5372",
+            "_type": "span",
+            "marks": [],
+            "text": "La vitesse est devenue un critère de classement Google depuis 2021 avec Core Web Vitals. Les trois indicateurs clés — LCP (Largest Contentful Paint), FID/INP (réactivité), CLS (stabilité visuelle) — déterminent si votre site mérite d'apparaître en première page ou d'être relégué en deuxième. Un LCP supérieur à 4 secondes vous fait systématiquement descendre dans les résultats."
+          }
+        ],
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "978af716ab2b",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "7719cdbf3a55",
+            "_type": "span",
+            "marks": [],
+            "text": "Comment mesurer ? Tapez l'URL de votre site dans PageSpeed Insights (tools.google.com/pagespeed) et regardez votre score Mobile. En dessous de 50/100, votre site freine votre référencement de manière significative. Entre 50 et 75, des optimisations ciblées peuvent suffire. Au-dessus de 90, vous êtes dans le vert."
+          }
+        ],
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "15ac2987e36d",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "2ff892e95fef",
+            "_type": "span",
+            "marks": [],
+            "text": "Les causes fréquentes de lenteur sur les sites anciens :"
+          }
+        ],
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "ecfba740c446",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "542268de07e6",
+            "_type": "span",
+            "marks": [],
+            "text": "Images non compressées (JPEG 3 Mo au lieu de WebP 120 Ko)"
+          }
+        ],
+        "level": 1,
+        "listItem": "bullet",
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "bd1f26d0ca9e",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "03ef6fa8d8ac",
+            "_type": "span",
+            "marks": [],
+            "text": "Thèmes WordPress surchargés avec des dizaines de plugins actifs"
+          }
+        ],
+        "level": 1,
+        "listItem": "bullet",
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "a4d67e2fddc2",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "366e5a8d2ce4",
+            "_type": "span",
+            "marks": [],
+            "text": "Hébergement mutualisé bas de gamme (< 100 ms de TTFB)"
+          }
+        ],
+        "level": 1,
+        "listItem": "bullet",
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "1efdb2a71f6d",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "8202f2353ce6",
+            "_type": "span",
+            "marks": [],
+            "text": "Aucune mise en cache ni réseau de distribution de contenu (CDN)"
+          }
+        ],
+        "level": 1,
+        "listItem": "bullet",
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "6c1743ed23d8",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "7695b0f770a3",
+            "_type": "span",
+            "marks": [],
+            "text": "JavaScript bloquant le rendu de la page"
+          }
+        ],
+        "level": 1,
+        "listItem": "bullet",
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "33de34691d58",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "7599cea4f1f7",
+            "_type": "span",
+            "marks": [],
+            "text": "Dans les Hautes-Alpes, ce point est particulièrement sensible : les touristes qui recherchent un guide de randonnée ou un hébergement à Vars ou Orcières depuis leur smartphone ont souvent une connexion 4G limitée. Un site lent = un client perdu au profit du concurrent qui a soigné ses performances."
+          }
+        ],
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "f41438404cd9",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "8617b5f36966",
+            "_type": "span",
+            "marks": [],
+            "text": "Signe 2 — Votre site n'est pas (vraiment) adapté aux mobiles"
+          }
+        ],
+        "markDefs": [],
+        "style": "h2"
+      },
+      {
+        "_key": "a8faedcd9d4e",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "b2fe3a37f538",
+            "_type": "span",
+            "marks": [],
+            "text": "« Responsive » ne veut pas dire adapté. Beaucoup de sites anciens affichent théoriquement correctement sur mobile, mais l'expérience utilisateur reste pénible : boutons trop petits pour être tapotés, textes trop petits sans zoom, formulaires de contact impossibles à remplir sur iPhone, menus hamburger mal implémentés. Google le sait et pénalise ces sites dans ses résultats mobiles."
+          }
+        ],
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "7ee1dec01fe5",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "b4ac8fbae3a5",
+            "_type": "span",
+            "marks": [],
+            "text": "Depuis mars 2023, Google n'indexe plus que la version mobile de votre site (Mobile-First Indexing). Concrètement, si votre version mobile est pauvre en contenu ou mal structurée, c'est cette version appauvrie qui sera évaluée pour votre référencement — même si votre version desktop est parfaite."
+          }
+        ],
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "cd32e246e114",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "8ac7fb82971d",
+            "_type": "span",
+            "marks": [],
+            "text": "Test rapide : ouvrez votre site sur un iPhone ou Android et essayez de :"
+          }
+        ],
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "e45f91543e56",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "dfa6a8d4b992",
+            "_type": "span",
+            "marks": [],
+            "text": "Appeler depuis le numéro de téléphone (est-il cliquable ?)"
+          }
+        ],
+        "level": 1,
+        "listItem": "bullet",
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "f459cf98b32c",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "bdd6ea68a3eb",
+            "_type": "span",
+            "marks": [],
+            "text": "Remplir le formulaire de contact jusqu'au bout"
+          }
+        ],
+        "level": 1,
+        "listItem": "bullet",
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "833f619e8bdc",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "6d64bee7dcfb",
+            "_type": "span",
+            "marks": [],
+            "text": "Naviguer dans le menu sans pincer-zoomer"
+          }
+        ],
+        "level": 1,
+        "listItem": "bullet",
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "5975c442c92a",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "e594d6b9b150",
+            "_type": "span",
+            "marks": [],
+            "text": "Lire un article entier sans défilement horizontal"
+          }
+        ],
+        "level": 1,
+        "listItem": "bullet",
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "b38b37655858",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "9a7af4f263c1",
+            "_type": "span",
+            "marks": [],
+            "text": "Si l'une de ces actions est inconfortable, votre site rate le critère mobile — et Google le sait avant vous. En 2026, 67 % des recherches locales dans les Hautes-Alpes se font depuis un mobile selon les données Google Search Console agrégées."
+          }
+        ],
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "872e71beed39",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "34f88f793ab3",
+            "_type": "span",
+            "marks": [],
+            "text": "Signe 3 — Votre identité visuelle ne reflète plus votre positionnement"
+          }
+        ],
+        "markDefs": [],
+        "style": "h2"
+      },
+      {
+        "_key": "2d77588d3b87",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "e1e7ffb46004",
+            "_type": "span",
+            "marks": [],
+            "text": "Un site internet vieillit visuellement plus vite qu'une boutique ou un véhicule de société. Les codes graphiques évoluent rapidement : la police Arial sur fond blanc qui faisait tendance en 2015 trahit aujourd'hui un manque de soin perçu par vos visiteurs en quelques secondes. Cette première impression négative est difficile à rattraper — 75 % des internautes jugent la crédibilité d'une entreprise d'après le design de son site (Stanford Web Credibility Research)."
+          }
+        ],
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "405f9ce882a5",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "924b4f723e57",
+            "_type": "span",
+            "marks": [],
+            "text": "Ce signal est particulièrement critique pour les professions où la confiance est primordiale : artisans du bâtiment, experts-comptables, architectes, professionnels de santé, hôteliers. Vos clients potentiels comparent votre site à celui de vos concurrents, souvent dans les secondes qui suivent la recherche Google. Une identité visuelle dépassée peut vous faire perdre le lead avant même qu'ils aient lu votre contenu."
+          }
+        ],
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "0de7b7e2238a",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "fd3bd1301b22",
+            "_type": "span",
+            "marks": [],
+            "text": "Les signes d'un vieillissement visuel :"
+          }
+        ],
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "449f6851e2a1",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "c73cbe46454e",
+            "_type": "span",
+            "marks": [],
+            "text": "Stock photos génériques (poignées de mains en costume, appels téléphoniques en costume)"
+          }
+        ],
+        "level": 1,
+        "listItem": "bullet",
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "b8f6c1ffe376",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "683a57546250",
+            "_type": "span",
+            "marks": [],
+            "text": "Palette de couleurs saturée ou fond texturé des années 2010"
+          }
+        ],
+        "level": 1,
+        "listItem": "bullet",
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "4e462d18de14",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "742ae1187d07",
+            "_type": "span",
+            "marks": [],
+            "text": "Pas de cohérence entre le site et vos supports physiques (cartes de visite, enseigne)"
+          }
+        ],
+        "level": 1,
+        "listItem": "bullet",
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "f6bc74941d6f",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "0d8fff5ea73a",
+            "_type": "span",
+            "marks": [],
+            "text": "Logo pixélisé ou en basse résolution"
+          }
+        ],
+        "level": 1,
+        "listItem": "bullet",
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "1a32788958d5",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "a596c5ee3f6d",
+            "_type": "span",
+            "marks": [],
+            "text": "Formulaires de contact qui ressemblent à ceux de 2012"
+          }
+        ],
+        "level": 1,
+        "listItem": "bullet",
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "f91b7c7fb1e2",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "34e5c82638cf",
+            "_type": "span",
+            "marks": [],
+            "text": "Une refonte est aussi l'occasion d'aligner votre site avec votre positionnement actuel. Si vous avez monté en gamme, changé de spécialité ou élargi votre zone d'intervention dans les Hautes-Alpes, votre site doit le refléter immédiatement."
+          }
+        ],
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "c127f6a4cf26",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "37b56e9e834a",
+            "_type": "span",
+            "marks": [],
+            "text": "Signe 4 — Des signaux techniques inquiétants s'accumulent"
+          }
+        ],
+        "markDefs": [],
+        "style": "h2"
+      },
+      {
+        "_key": "f0681b61618c",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "05e1ef8b7ff6",
+            "_type": "span",
+            "marks": [],
+            "text": "Derrière l'aspect visible, un site internet repose sur une pile technologique qui vieillit aussi. Un CMS non mis à jour (WordPress 4.x, Joomla 2.x), des plugins obsolètes, un certificat SSL expiré ou un hébergement sans sauvegarde automatique sont des bombes à retardement — pour la sécurité de vos données et celles de vos clients, mais aussi pour votre référencement."
+          }
+        ],
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "2b1ce49d8b95",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "3969ecd257dd",
+            "_type": "span",
+            "marks": [],
+            "text": "Google pénalise activement les sites signalés comme « non sécurisés » (HTTP sans HTTPS). Depuis 2024, Chrome affiche un avertissement explicite sur tous les sites sans HTTPS, ce qui fait fuir une grande partie des visiteurs avant même qu'ils aient lu votre contenu. Si votre URL commence par http:// sans le « s », c'est une priorité absolue."
+          }
+        ],
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "48992c39409a",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "8ba1e9825828",
+            "_type": "span",
+            "marks": [],
+            "text": "Autres signaux techniques à vérifier :"
+          }
+        ],
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "b4e0f25f27f9",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "3ad1911a1b38",
+            "_type": "span",
+            "marks": [],
+            "text": "Erreurs 404 fréquentes (pages inexistantes qui font rater des opportunités SEO)"
+          }
+        ],
+        "level": 1,
+        "listItem": "bullet",
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "4dc0a7cf1e7d",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "d34023c01d01",
+            "_type": "span",
+            "marks": [],
+            "text": "Balises meta dupliquées (deux pages avec le même title tag ou la même meta description)"
+          }
+        ],
+        "level": 1,
+        "listItem": "bullet",
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "e445544b2698",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "ef54012b5e1c",
+            "_type": "span",
+            "marks": [],
+            "text": "Absence de sitemap XML soumis à Google Search Console"
+          }
+        ],
+        "level": 1,
+        "listItem": "bullet",
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "84dc3302cdcd",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "1d020a89a109",
+            "_type": "span",
+            "marks": [],
+            "text": "Score de sécurité bas sur Security Headers (securityheaders.com)"
+          }
+        ],
+        "level": 1,
+        "listItem": "bullet",
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "8541ff3d16d7",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "5db1c48ba18c",
+            "_type": "span",
+            "marks": [],
+            "text": "Plugins avec des failles connues non corrigées"
+          }
+        ],
+        "level": 1,
+        "listItem": "bullet",
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "ee9c5ce57943",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "08fd56ab4bdd",
+            "_type": "span",
+            "marks": [],
+            "text": "Pour les artisans et commerçants des Hautes-Alpes, un site piraté ou compromis peut entraîner une mise hors ligne pendant plusieurs jours — pendant la haute saison, cela peut représenter des milliers d'euros de contacts manqués. La maintenance préventive coûte toujours moins cher que le curatif."
+          }
+        ],
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "74d0c2ae1b59",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "0d857ba85457",
+            "_type": "span",
+            "marks": [],
+            "text": "Signe 5 — Votre site ne convertit pas (taux de rebond > 70 %, formulaires fantômes)"
+          }
+        ],
+        "markDefs": [],
+        "style": "h2"
+      },
+      {
+        "_key": "677ceb11ae92",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "52d20241ac35",
+            "_type": "span",
+            "marks": [],
+            "text": "Le taux de rebond mesure le pourcentage de visiteurs qui repartent sans interagir. Un taux supérieur à 70 % sur les pages clés (accueil, services, contact) signale que quelque chose cloche : le message ne correspond pas aux attentes du visiteur, la navigation est confuse, ou les appels à l'action sont absents ou mal placés."
+          }
+        ],
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "64fccd2b938b",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "ad53dec6e14e",
+            "_type": "span",
+            "marks": [],
+            "text": "Autre indicateur souvent ignoré : combien de formulaires de contact sont réellement envoyés et reçus ? Des bugs silencieux peuvent faire en sorte que vos formulaires semblent fonctionner mais n'envoient rien. Si vous recevez moins d'un message par semaine sur un site qui génère 500 visites mensuelles, vérifiez d'abord la délivrabilité de vos emails."
+          }
+        ],
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "9692e15dba84",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "816c85d41e16",
+            "_type": "span",
+            "marks": [],
+            "text": "Les leviers de conversion à évaluer :"
+          }
+        ],
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "58836ea81771",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "fb689c8dfd30",
+            "_type": "span",
+            "marks": [],
+            "text": "Un bouton « Appelez-nous » ou « Demandez un devis » visible dès le premier écran (above the fold)"
+          }
+        ],
+        "level": 1,
+        "listItem": "bullet",
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "c50d25705699",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "b5fcf81c93aa",
+            "_type": "span",
+            "marks": [],
+            "text": "Un numéro de téléphone cliquable en haut de chaque page"
+          }
+        ],
+        "level": 1,
+        "listItem": "bullet",
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "898cae635eff",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "300c0f6cd949",
+            "_type": "span",
+            "marks": [],
+            "text": "Des témoignages clients visibles avant le formulaire de contact"
+          }
+        ],
+        "level": 1,
+        "listItem": "bullet",
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "3ac0a4ee1bea",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "fef6a6f10183",
+            "_type": "span",
+            "marks": [],
+            "text": "Un délai de réponse annoncé (« Réponse sous 24 h »)"
+          }
+        ],
+        "level": 1,
+        "listItem": "bullet",
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "3b7da08cf9b4",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "253d01de97dc",
+            "_type": "span",
+            "marks": [],
+            "text": "Des pages de services organisées par problème client, pas par catégorie métier"
+          }
+        ],
+        "level": 1,
+        "listItem": "bullet",
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "4ab577f02ae9",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "8ea7ae0d768c",
+            "_type": "span",
+            "marks": [],
+            "text": "Dans les Hautes-Alpes, la saisonnalité crée des pics de demande intenses. En juillet-août pour le tourisme estival ou en décembre pour les stations de ski, un site qui ne convertit pas bien vous coûte le maximum — c'est précisément dans ces fenêtres que vos concurrents aussi sont actifs."
+          }
+        ],
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "f53a7f03538a",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "97758398b963",
+            "_type": "span",
+            "marks": [],
+            "text": "Comment se déroule une refonte de site réussie ?"
+          }
+        ],
+        "markDefs": [],
+        "style": "h2"
+      },
+      {
+        "_key": "5dfee0966dd5",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "e126130a921c",
+            "_type": "span",
+            "marks": [],
+            "text": "Une refonte n'est pas un simple « coup de peinture ». C'est un projet structuré qui touche le contenu, le design, la technique et le référencement. Voici les grandes étapes pour ne rien oublier et éviter de perdre votre positionnement SEO actuel au passage."
+          }
+        ],
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "3af9e249d1eb",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "13b20b92948f",
+            "_type": "span",
+            "marks": [],
+            "text": "Phase 1 — Audit de l'existant (1 à 2 semaines)"
+          }
+        ],
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "03d8121f8d39",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "181966e5dc42",
+            "_type": "span",
+            "marks": [],
+            "text": "Relevé de toutes vos URLs actuelles et de leur trafic organique (Google Search Console)"
+          }
+        ],
+        "level": 1,
+        "listItem": "number",
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "510a98088dd9",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "f55896fe6770",
+            "_type": "span",
+            "marks": [],
+            "text": "Inventaire des contenus à conserver, à améliorer ou à supprimer"
+          }
+        ],
+        "level": 1,
+        "listItem": "number",
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "31140dd674a7",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "ba4e9300f36d",
+            "_type": "span",
+            "marks": [],
+            "text": "Analyse des mots-clés sur lesquels vous êtes déjà positionnés (à ne pas perdre)"
+          }
+        ],
+        "level": 1,
+        "listItem": "number",
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "1fc9a264956c",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "a162d5592fb7",
+            "_type": "span",
+            "marks": [],
+            "text": "Audit technique : vitesse, mobile, sécurité, erreurs crawl"
+          }
+        ],
+        "level": 1,
+        "listItem": "number",
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "dbc2eca5e478",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "2d326cb75061",
+            "_type": "span",
+            "marks": [],
+            "text": "Phase 2 — Architecture & maquettage (2 à 3 semaines)"
+          }
+        ],
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "08e0a6abad76",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "1f733a699528",
+            "_type": "span",
+            "marks": [],
+            "text": "Définition de l'arborescence (pages services, blog, contact, à propos)"
+          }
+        ],
+        "level": 1,
+        "listItem": "number",
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "b7203616c4fa",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "006d2058c64f",
+            "_type": "span",
+            "marks": [],
+            "text": "Maquettes (wireframes) des pages clés avant tout travail graphique"
+          }
+        ],
+        "level": 1,
+        "listItem": "number",
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "d515a8fd2744",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "091ff606b42d",
+            "_type": "span",
+            "marks": [],
+            "text": "Validation du parcours utilisateur principal : visiteur → contact"
+          }
+        ],
+        "level": 1,
+        "listItem": "number",
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "204469142ca9",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "734f02b194a8",
+            "_type": "span",
+            "marks": [],
+            "text": "Phase 3 — Design & développement (4 à 8 semaines selon taille)"
+          }
+        ],
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "9c1ec2358c5c",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "f6098f8cc0ae",
+            "_type": "span",
+            "marks": [],
+            "text": "Charte graphique alignée avec votre identité de marque"
+          }
+        ],
+        "level": 1,
+        "listItem": "number",
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "1692a99b5536",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "d19086a71d9a",
+            "_type": "span",
+            "marks": [],
+            "text": "Développement sur CMS moderne (Next.js, Webflow, WordPress optimisé)"
+          }
+        ],
+        "level": 1,
+        "listItem": "number",
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "f8f3ceead134",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "a31318d6f1fb",
+            "_type": "span",
+            "marks": [],
+            "text": "Intégration du contenu optimisé SEO"
+          }
+        ],
+        "level": 1,
+        "listItem": "number",
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "792291624159",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "94b276228718",
+            "_type": "span",
+            "marks": [],
+            "text": "Tests cross-navigateurs et cross-appareils"
+          }
+        ],
+        "level": 1,
+        "listItem": "number",
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "63885da46e40",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "b0347977800e",
+            "_type": "span",
+            "marks": [],
+            "text": "Phase 4 — Migration & mise en ligne (1 semaine)"
+          }
+        ],
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "85626126c238",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "1334ce6e6027",
+            "_type": "span",
+            "marks": [],
+            "text": "Mise en place des redirections 301 pour toutes les URLs qui changent"
+          }
+        ],
+        "level": 1,
+        "listItem": "number",
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "3b533737b0bb",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "4e27f6b3169f",
+            "_type": "span",
+            "marks": [],
+            "text": "Soumission du nouveau sitemap à Google Search Console"
+          }
+        ],
+        "level": 1,
+        "listItem": "number",
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "54261c43997c",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "d9192f53d0d1",
+            "_type": "span",
+            "marks": [],
+            "text": "Vérification des balises meta, Schema.org et données structurées"
+          }
+        ],
+        "level": 1,
+        "listItem": "number",
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "c91ba5245e80",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "e0e3a3ba82ff",
+            "_type": "span",
+            "marks": [],
+            "text": "Test de vitesse (objectif : LCP < 2,5 s sur mobile)"
+          }
+        ],
+        "level": 1,
+        "listItem": "number",
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "0706118a5ba6",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "186ce6564444",
+            "_type": "span",
+            "marks": [],
+            "text": "Quel budget prévoir et quel retour sur investissement attendre ?"
+          }
+        ],
+        "markDefs": [],
+        "style": "h2"
+      },
+      {
+        "_key": "80a2908f523d",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "4e3596664d7e",
+            "_type": "span",
+            "marks": [],
+            "text": "Le budget d'une refonte dépend de la complexité du site, du volume de contenu et des fonctionnalités requises. Voici les fourchettes constatées en 2026 pour des entreprises de taille PME/artisan dans les Hautes-Alpes et en région PACA :"
+          }
+        ],
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "a646ef7a1603",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "637bdf904001",
+            "_type": "span",
+            "marks": [],
+            "text": "Landing page ou site vitrine simple (1 à 5 pages) : à partir de 500 €"
+          }
+        ],
+        "level": 1,
+        "listItem": "bullet",
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "81231525124e",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "2fbafee2a3e5",
+            "_type": "span",
+            "marks": [],
+            "text": "Site vitrine complet avec blog et gestion de contenu : 1 200 à 2 500 €"
+          }
+        ],
+        "level": 1,
+        "listItem": "bullet",
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "ca6cd9ce6518",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "37ecf4520f1d",
+            "_type": "span",
+            "marks": [],
+            "text": "Site avec réservation en ligne ou e-commerce léger : à partir de 800 €"
+          }
+        ],
+        "level": 1,
+        "listItem": "bullet",
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "d1c4a63dce33",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "96129969af7b",
+            "_type": "span",
+            "marks": [],
+            "text": "Site sur-mesure avec espace client ou fonctionnalités avancées : 4 000 à 10 000 €"
+          }
+        ],
+        "level": 1,
+        "listItem": "bullet",
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "5797a0c183b7",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "2febab1372d1",
+            "_type": "span",
+            "marks": [],
+            "text": "Le retour sur investissement se calcule simplement : combien vaut un nouveau contact qualifié pour vous ? Si un client moyen vous rapporte 1 200 € et que votre taux de conversion téléphonique est de 30 %, il suffit de 3 à 4 contacts supplémentaires générés par le nouveau site pour rentabiliser une refonte à 1 200 €. Pour la plupart des artisans et PME des Hautes-Alpes, cet objectif est atteint en 3 à 6 mois."
+          }
+        ],
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "795ea3750e5e",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "380208ade8aa",
+            "_type": "span",
+            "marks": [],
+            "text": "Ancien site vs site moderne : le comparatif"
+          }
+        ],
+        "markDefs": [],
+        "style": "h2"
+      },
+      {
+        "_key": "edc7202fbca2",
+        "_type": "table",
+        "rows": [
+          {
+            "_key": "fffb3a122ec3",
+            "cells": [
+              "Critère",
+              "Ancien site (> 3 ans)",
+              "Site moderne (2024-2026)"
+            ]
+          },
+          {
+            "_key": "3b6cb0b16e51",
+            "cells": [
+              "Vitesse mobile",
+              "4-8 secondes",
+              "< 2 secondes (LCP)"
+            ]
+          },
+          {
+            "_key": "614604666bfd",
+            "cells": [
+              "Score Mobile PageSpeed",
+              "20-50/100",
+              "85-100/100"
+            ]
+          },
+          {
+            "_key": "f2ce01ed7063",
+            "cells": [
+              "Affichage mobile",
+              "Zoom nécessaire",
+              "Responsive natif"
+            ]
+          },
+          {
+            "_key": "768e18f403e9",
+            "cells": [
+              "HTTPS / Sécurité",
+              "Parfois absent",
+              "Obligatoire + headers sécurité"
+            ]
+          },
+          {
+            "_key": "7049a35a51eb",
+            "cells": [
+              "SEO technique",
+              "Balises manquantes",
+              "Schema.org + Core Web Vitals OK"
+            ]
+          },
+          {
+            "_key": "41e335a7c5e8",
+            "cells": [
+              "Mise à jour contenu",
+              "Dépend du développeur",
+              "CMS autonome (Sanity, Webflow…)"
+            ]
+          },
+          {
+            "_key": "75dd62004c7f",
+            "cells": [
+              "Accessibilité WCAG",
+              "Non conforme",
+              "WCAG 2.1 AA compatible"
+            ]
+          },
+          {
+            "_key": "6687627d3b71",
+            "cells": [
+              "Connecté aux IA (Gemini, ChatGPT)",
+              "Non",
+              "Données structurées + FAQ"
+            ]
+          }
+        ]
+      },
+      {
+        "_key": "0f1784079aab",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "39aef6f80524",
+            "_type": "span",
+            "marks": [],
+            "text": "Plan d'action : quoi faire cette semaine"
+          }
+        ],
+        "markDefs": [],
+        "style": "h2"
+      },
+      {
+        "_key": "d34335824129",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "b982ec065144",
+            "_type": "span",
+            "marks": [],
+            "text": "Avant de contacter une agence ou un freelance, effectuez ces 4 diagnostics gratuits pour arriver avec des données concrètes :"
+          }
+        ],
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "748b9fc80776",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "5408863291c5",
+            "_type": "span",
+            "marks": [],
+            "text": "PageSpeed Insights (pagespeed.web.dev) — entrez votre URL, regardez le score Mobile"
+          }
+        ],
+        "level": 1,
+        "listItem": "number",
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "0a75915fa504",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "74e7137ba146",
+            "_type": "span",
+            "marks": [],
+            "text": "Google Search Console → Rapport Expérience de la page → vérifiez les URL en statut « Médiocre »"
+          }
+        ],
+        "level": 1,
+        "listItem": "number",
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "4cea3b04d6f7",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "69068c7bed15",
+            "_type": "span",
+            "marks": [],
+            "text": "Test mobile Google (search.google.com/test/mobile-friendly) — vérifiez la compatibilité"
+          }
+        ],
+        "level": 1,
+        "listItem": "number",
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "d00800454ff8",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "b1295c1cb3f6",
+            "_type": "span",
+            "marks": [],
+            "text": "Comptez vos formulaires complétés ce mois-ci — comparez au nombre de visiteurs"
+          }
+        ],
+        "level": 1,
+        "listItem": "number",
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "fc06ab257c8a",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "516a24587277",
+            "_type": "span",
+            "marks": [],
+            "text": "Si 2 signaux ou plus sur les 5 de ce guide s'appliquent à votre site, planifiez une réunion de cadrage avec une agence web locale pour obtenir un devis. Précisez dès le départ : les URLs à conserver, les mots-clés sur lesquels vous êtes positionné, et votre délai souhaité (attention aux pics saisonniers des Hautes-Alpes : évitez une mise en ligne en juillet ou en décembre)."
+          }
+        ],
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "725069b3a305",
+        "_type": "spokeCard",
+        "badge": "SEO Local",
+        "description": "Fiche Google, avis, site, balises : les leviers de la visibilité locale, dans le bon ordre.",
+        "linkText": "Lire le guide",
+        "linkUrl": "/blog/etre-visible-en-ligne-dans-les-hautes-alpes",
+        "title": "Être visible en ligne dans les Hautes-Alpes"
+      },
+      {
+        "_key": "25afbc2f59ee",
+        "_type": "spokeCard",
+        "badge": "SEO vs IA",
+        "description": "Ce que les études disent sur les citations dans ChatGPT et Google, et ce qu’elles ne prouvent pas.",
+        "linkText": "Lire l'article",
+        "linkUrl": "/blog/4-signaux-citation-ia-artisans",
+        "title": "Les 4 signaux de citation IA"
+      },
+      {
+        "_key": "4aa89c077afe",
+        "_type": "spokeCard",
+        "badge": "Google Business Profile",
+        "description": "Complémentaire à votre site : une fiche GBP bien optimisée multiplie par 7 le nombre de clics vers votre site.",
+        "linkText": "Optimiser ma fiche GBP →",
+        "linkUrl": "/blog/google-business-profile-artisans-hautes-alpes",
+        "title": "Créer et optimiser votre fiche Google Business Profile"
+      },
+      {
+        "_key": "a989afc424e2",
+        "_type": "image",
+        "alt": "5 signaux d'alerte pour une refonte de site internet : vitesse, mobile, identité visuelle, technique, conversion",
+        "asset": {
+          "_ref": "image-92ca06f231ec8a73763a5c1ea292f82a550ba00d-560x306-svg",
+          "_type": "reference"
+        },
+        "caption": "5 signaux à surveiller — 2 cumulés = refonte à planifier. Face Nord Graphisme, Hautes-Alpes."
+      },
+      {
+        "_key": "1ce76f569f88",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "e6d1d0d7fac3",
+            "_type": "span",
+            "marks": [],
+            "text": "Pour aller plus loin"
+          }
+        ],
+        "markDefs": [],
+        "style": "h2"
+      },
+      {
+        "_key": "1b4b8a4023df",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "97562d6e2cd7",
+            "_type": "span",
+            "marks": [],
+            "text": "📈 "
+          },
+          {
+            "_key": "340d72411295",
+            "_type": "span",
+            "marks": [
+              "a87612226339"
+            ],
+            "text": "Booster sa visibilité en ligne dans les Hautes-Alpes"
+          }
+        ],
+        "markDefs": [
+          {
+            "_key": "a87612226339",
+            "_type": "link",
+            "href": "/blog/etre-visible-en-ligne-dans-les-hautes-alpes"
+          }
+        ],
+        "style": "normal"
+      },
+      {
+        "_key": "3ac9a1774552",
+        "_type": "faq",
+        "items": [
+          {
+            "_key": "19c1e2b7664e",
+            "answer": "Une mise à jour corrige des éléments ponctuels (plugin, texte, photo) sans toucher à la structure. Une refonte reconstruit tout ou partie du site : architecture des pages, design, code, contenus. On parle de refonte quand au moins 3 des 5 signaux décrits dans cet article sont présents simultanément.",
+            "question": "Quelle est la différence entre une refonte et une mise à jour de site ?"
+          },
+          {
+            "_key": "c36f1226ac22",
+            "answer": "Non, si la migration est bien planifiée. La règle d'or : mettre en place des redirections 301 pour chaque URL qui change. Ainsi, Google transfère le « jus SEO » de l'ancienne URL vers la nouvelle. Une refonte bien exécutée améliore généralement le référencement dans les 3 à 6 mois qui suivent.",
+            "question": "Est-ce que je vais perdre mon référencement Google pendant la refonte ?"
+          },
+          {
+            "_key": "d8a2c74447a1",
+            "answer": "Pour un site vitrine de 5 à 10 pages, comptez 4 à 8 semaines. Pour un site avec blog, e-commerce ou réservation en ligne, 8 à 16 semaines. Ces délais incluent la collecte de vos contenus, les allers-retours de validation et les tests avant mise en ligne.",
+            "question": "Combien de temps dure une refonte de site pour une PME dans les Hautes-Alpes ?"
+          },
+          {
+            "_key": "b94085f3dd6f",
+            "answer": "WordPress reste un excellent choix si votre prestataire maîtrise son optimisation (Bedrock, Sage, Oxygen ou Bricks builder, sans plugin superflu). Pour des performances maximales et une sécurité renforcée, des alternatives comme Next.js + Sanity ou Webflow offrent des résultats supérieurs en 2026. Le CMS idéal est celui que vous pouvez mettre à jour vous-même sans développeur.",
+            "question": "Faut-il garder WordPress ou changer de CMS lors d'une refonte ?"
+          },
+          {
+            "_key": "acbe452aa69f",
+            "answer": "Demandez toujours : un accès admin à votre hébergement ET à votre CMS dès le départ, des exemples récents de sites avec leurs scores PageSpeed, une clause de propriété du code dans le contrat, et un engagement sur le délai de mise en ligne. Méfiez-vous des offres < 500 € qui livrent des thèmes achetés sans personnalisation réelle.",
+            "question": "Comment éviter les arnaques lors d'un appel d'offres pour une refonte ?"
+          },
+          {
+            "_key": "5992b3a2595e",
+            "answer": "Oui, si 1 ou 2 signaux seulement s'appliquent. Par exemple, si votre site est visuellement correct mais lent, une optimisation des images et un changement d'hébergement peuvent suffire. Si le design est dépassé mais la structure est saine, un « reskin » (changement graphique sans toucher au code) peut être une solution intermédiaire moins coûteuse.",
+            "question": "Puis-je me contenter d'une optimisation plutôt qu'une refonte complète ?"
+          }
+        ],
+        "title": "FAQ — Refonte de site internet"
+      },
+      {
+        "_key": "ef5af80a63f6",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "720314a55f31",
+            "_type": "span",
+            "text": "Refaire votre site avec une approche AI-Friendly"
+          }
+        ],
+        "markDefs": [],
+        "style": "h2"
+      },
+      {
+        "_key": "e76d4e98ed13",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "28c7c9d65948",
+            "_type": "span",
+            "text": "Une refonte bien faite améliore simultanément vos performances Google et votre présence dans les moteurs IA (ChatGPT, Perplexity). À partir de 400 € pour une refonte landing page."
+          }
+        ],
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "b8819fa429bf",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "04614d619753",
+            "_type": "span",
+            "marks": [
+              "bca2ac15dafa"
+            ],
+            "text": "→ Refonte site internet AI-Friendly"
+          },
+          {
+            "_key": "8b8bb5a2b43c",
+            "_type": "span",
+            "marks": [],
+            "text": " — Refonte technique + contenu, Core Web Vitals, schema.org IA-Ready — devis gratuit"
+          }
+        ],
+        "markDefs": [
+          {
+            "_key": "bca2ac15dafa",
+            "_type": "link",
+            "href": "https://www.facenordgraphisme.fr/refonte-ai-friendly"
+          }
+        ],
+        "style": "normal"
+      },
+      {
+        "_key": "82b5f4bf18f3",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "103f9f2f0a11",
+            "_type": "span",
+            "marks": [
+              "2a880e2a8c43"
+            ],
+            "text": "→ Création de site internet Hautes-Alpes"
+          },
+          {
+            "_key": "2ac792676e85",
+            "_type": "span",
+            "marks": [],
+            "text": " — Nouveau site vitrine sur-mesure à partir de 500 €"
+          }
+        ],
+        "markDefs": [
+          {
+            "_key": "2a880e2a8c43",
+            "_type": "link",
+            "href": "https://www.facenordgraphisme.fr/creation-site-internet-hautes-alpes"
+          }
+        ],
+        "style": "normal"
+      }
+    ],
+    "mainImage": {
+      "_type": "image",
+      "alt": "D�veloppeur web analysant un site internet vieillissant sur �cran d'ordinateur portable",
+      "asset": {
+        "_ref": "image-234f27d8b3ed3906e8ecb9b8357487c2d8511acb-940x788-webp",
+        "_type": "reference"
+      }
+    },
+    "publishedAt": "2026-04-24T14:11:00.000Z",
+    "seoDescription": "Votre site internet est-il devenu un obstacle à votre croissance ? Analyse des sites vieillissants, gains de performance et conseils d'expert à Embrun.",
+    "seoTitle": "5 signes pour refondre son site web",
+    "slug": {
+      "_type": "slug",
+      "current": "refonte-site-internet-5-signes"
+    },
+    "title": "Refonte de site internet : 5 signes qu'il est temps de changer"
+  },
+  {
+    "_createdAt": "2026-05-25T15:52:05Z",
+    "_id": "city-page-gap",
+    "_rev": "sVRbqyTlZFpw4w50HM72vl",
+    "_type": "cityPage",
+    "_updatedAt": "2026-11-04T20:01:00Z",
+    "body": [
+      {
+        "_key": "758800106b8f",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "02b7714e1b75",
+            "_type": "span",
+            "marks": [],
+            "text": "Pourquoi choisir une agence web locale à Gap ?"
+          }
+        ],
+        "markDefs": [],
+        "style": "h2"
+      },
+      {
+        "_key": "d148b0759696",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "db165f3be75a",
+            "_type": "span",
+            "marks": [],
+            "text": "Gap est la préfecture des Hautes-Alpes et le centre économique du département. Avec plus de 38 000 habitants et un bassin de vie qui dépasse les 60 000 personnes (communes de l'agglomération incluses), Gap concentre une densité d'artisans, commerçants, professions libérales et PME parmi les plus importantes du département. Pour ces entreprises, être visible sur Google dans les recherches locales — « plombier Gap », « restaurant Gap 05 », « architecte Gap » — est directement lié au chiffre d'affaires."
+          }
+        ],
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "8c0dd3fb690a",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "6cd3aff69a6f",
+            "_type": "span",
+            "marks": [],
+            "text": "Face Nord Graphisme est basée à Puy-Sanières (15 min d'Embrun, 45 min de Gap) et travaille régulièrement avec des entreprises gapençaises. Nous connaissons le tissu économique local, la saisonnalité des activités alpines et les spécificités du marché des Hautes-Alpes. Cette proximité se traduit concrètement : pas de délai de communication, disponibilité pour un rendez-vous en visio ou en présentiel, et une stratégie digitale adaptée à votre contexte local."
+          }
+        ],
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "ebd61b7fada8",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "f2319f635350",
+            "_type": "span",
+            "marks": [],
+            "text": "Les types d'entreprises que nous accompagnons à Gap"
+          }
+        ],
+        "markDefs": [],
+        "style": "h2"
+      },
+      {
+        "_key": "795a10ab721d",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "39bb78745fc1",
+            "_type": "span",
+            "marks": [],
+            "text": "Artisans du bâtiment (maçons, électriciens, plombiers, menuisiers, couvreurs) : site vitrine avec galerie de réalisations et formulaire de devis"
+          }
+        ],
+        "level": 1,
+        "listItem": "bullet",
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "a1b289d06079",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "d66f00d02a42",
+            "_type": "span",
+            "marks": [],
+            "text": "Commerces de centre-ville : boutiques, épiceries spécialisées, librairies, fleuristes — site avec catalogue produits ou click & collect"
+          }
+        ],
+        "level": 1,
+        "listItem": "bullet",
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "f38ceba60933",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "f51a383a786a",
+            "_type": "span",
+            "marks": [],
+            "text": "Professions libérales : médecins, kinésithérapeutes, ostéopathes, experts-comptables, avocats — page de présentation avec prise de rendez-vous"
+          }
+        ],
+        "level": 1,
+        "listItem": "bullet",
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "5f1ecebd7c8b",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "85b9d61f636a",
+            "_type": "span",
+            "marks": [],
+            "text": "Restaurateurs et traiteurs : menu en ligne, réservation de table, actualités et événements"
+          }
+        ],
+        "level": 1,
+        "listItem": "bullet",
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "159964f31b04",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "e5184b918245",
+            "_type": "span",
+            "marks": [],
+            "text": "Prestataires de services : agences immobilières, cabinets d'assurance, auto-écoles, centres de formation — site vitrine multi-services"
+          }
+        ],
+        "level": 1,
+        "listItem": "bullet",
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "9547dc7a5246",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "eff1713d0508",
+            "_type": "span",
+            "marks": [],
+            "text": "Associations et structures publiques : sites institutionnels, portails d'information locale"
+          }
+        ],
+        "level": 1,
+        "listItem": "bullet",
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "b73b73409c34",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "ccaa4f74f115",
+            "_type": "span",
+            "marks": [],
+            "text": "Création de site internet à Gap : ce qui est inclus"
+          }
+        ],
+        "markDefs": [],
+        "style": "h2"
+      },
+      {
+        "_key": "92d412d41a7c",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "efbe8f69c653",
+            "_type": "span",
+            "marks": [],
+            "text": "Quelle que soit la formule choisie, voici ce qui est systématiquement inclus dans nos projets pour les entreprises gapençaises :"
+          }
+        ],
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "b3c667ee2267",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "84cbe75f0628",
+            "_type": "span",
+            "marks": [],
+            "text": "Design graphique sur-mesure aligné avec votre identité visuelle (logo, couleurs, typographie)"
+          }
+        ],
+        "level": 1,
+        "listItem": "bullet",
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "fef9fc4501ef",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "1c991562302f",
+            "_type": "span",
+            "marks": [],
+            "text": "Responsive mobile natif — optimisé pour les recherches sur smartphone à Gap et dans l'agglo"
+          }
+        ],
+        "level": 1,
+        "listItem": "bullet",
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "f557d5e87f1f",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "6d98e8284373",
+            "_type": "span",
+            "marks": [],
+            "text": "SEO on-page : balises title et meta, H1 unique, images compressées en WebP, sitemap XML soumis à Google"
+          }
+        ],
+        "level": 1,
+        "listItem": "bullet",
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "cf88f0d1ad7a",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "3a67f3441285",
+            "_type": "span",
+            "marks": [],
+            "text": "Score PageSpeed Mobile > 85/100 garanti à la livraison (Core Web Vitals conformes)"
+          }
+        ],
+        "level": 1,
+        "listItem": "bullet",
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "64ec983786f6",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "955a2115b67e",
+            "_type": "span",
+            "marks": [],
+            "text": "HTTPS, mentions légales et politique de confidentialité conformes RGPD"
+          }
+        ],
+        "level": 1,
+        "listItem": "bullet",
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "e059accb4b66",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "d8b8ceb56b9e",
+            "_type": "span",
+            "marks": [],
+            "text": "Propriété totale du code et de l'hébergement — aucun abonnement obligatoire"
+          }
+        ],
+        "level": 1,
+        "listItem": "bullet",
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "c6c49f0d0d83",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "464e27d7fe94",
+            "_type": "span",
+            "marks": [],
+            "text": "Devis détaillé sous 48 h, sans engagement"
+          }
+        ],
+        "level": 1,
+        "listItem": "bullet",
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "b927708d4a9e",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "09516f6aabf5",
+            "_type": "span",
+            "marks": [],
+            "text": "Tarifs pour les entreprises de Gap"
+          }
+        ],
+        "markDefs": [],
+        "style": "h2"
+      },
+      {
+        "_key": "80aa6242ca52",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "00aadcfc95fa",
+            "_type": "span",
+            "marks": [],
+            "text": "Nos tarifs sont transparents et pensés pour être accessibles aux PME et artisans du 05 :"
+          }
+        ],
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "24f80913741e",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "476ee077cb17",
+            "_type": "span",
+            "marks": [],
+            "text": "Landing page ou site one-page : à partir de 500 € — idéal pour une activité simple ou une offre saisonnière"
+          }
+        ],
+        "level": 1,
+        "listItem": "bullet",
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "25833c880e66",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "10f934de3dac",
+            "_type": "span",
+            "marks": [],
+            "text": "Site vitrine complet (5 à 10 pages + blog) : 1 200 à 2 500 € — pour une présentation complète de votre activité"
+          }
+        ],
+        "level": 1,
+        "listItem": "bullet",
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "2c26445381ca",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "4893e0c0ab3d",
+            "_type": "span",
+            "marks": [],
+            "text": "Site avec réservation en ligne ou e-commerce léger : à partir de 800 €"
+          }
+        ],
+        "level": 1,
+        "listItem": "bullet",
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "eeb901a0ddfe",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "bef58069e475",
+            "_type": "span",
+            "marks": [],
+            "text": "Ces tarifs incluent le design, le développement, l'optimisation SEO de base et un mois de suivi après mise en ligne. Pour comparer avec le marché et comprendre ce qui fait varier le prix d'un projet web, consultez notre guide complet."
+          }
+        ],
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "77b899221b32",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "8ce862f69dd9",
+            "_type": "span",
+            "marks": [],
+            "text": "Gap et le SEO local : les requêtes à ne pas manquer"
+          }
+        ],
+        "markDefs": [],
+        "style": "h2"
+      },
+      {
+        "_key": "9cbae78cb9ca",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "8a928aec6ed6",
+            "_type": "span",
+            "marks": [],
+            "text": "Dans les Hautes-Alpes, les requêtes locales à fort intent d'achat (celles qui génèrent directement des appels et des contacts) suivent des patterns prévisibles. Pour une entreprise gapençaise, les recherches les plus fréquentes et les plus rentables à capturer sont :"
+          }
+        ],
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "c854cfa7873f",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "e8bb842fda4d",
+            "_type": "span",
+            "marks": [],
+            "text": "« [métier] Gap » — plombier Gap, électricien Gap, notaire Gap, restaurant Gap"
+          }
+        ],
+        "level": 1,
+        "listItem": "bullet",
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "c3f1b4f2101e",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "259e8fcee2ad",
+            "_type": "span",
+            "marks": [],
+            "text": "« [métier] Hautes-Alpes 05 » — artisan hautes-alpes, agence immobilière hautes-alpes"
+          }
+        ],
+        "level": 1,
+        "listItem": "bullet",
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "d7c032daeaf2",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "fae9c5a991b1",
+            "_type": "span",
+            "marks": [],
+            "text": "« [métier] près de Gap » — utilisée par les habitants des communes périphériques"
+          }
+        ],
+        "level": 1,
+        "listItem": "bullet",
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "2489ece7b5fc",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "d50461e2eb17",
+            "_type": "span",
+            "marks": [],
+            "text": "« [produit/service] Gap » — fenêtres PVC Gap, cuisine équipée Gap, cours de yoga Gap"
+          }
+        ],
+        "level": 1,
+        "listItem": "bullet",
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "91ec8de4280a",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "c59289c213c3",
+            "_type": "span",
+            "marks": [],
+            "text": "Pour chacune de ces requêtes, votre classement dépend de trois leviers : votre fiche Google Business Profile (GBP), les avis Google récents, et votre site web technique. Un site lent ou mal optimisé vous fera perdre des positions face à des concurrents qui ont fait l'effort d'optimiser le leur."
+          }
+        ],
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "6ef58dffaaf2",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "ba920d1104a7",
+            "_type": "span",
+            "marks": [],
+            "text": "Comment obtenir un devis pour votre projet à Gap ?"
+          }
+        ],
+        "markDefs": [],
+        "style": "h2"
+      },
+      {
+        "_key": "01168561738a",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "9e26cf4bfdb5",
+            "_type": "span",
+            "marks": [],
+            "text": "Complétez le formulaire de contact en décrivant votre projet (type de site, nombre de pages, fonctionnalités souhaitées)"
+          }
+        ],
+        "level": 1,
+        "listItem": "number",
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "11153abba981",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "e5db286662f9",
+            "_type": "span",
+            "marks": [],
+            "text": "Nous vous répondons sous 48 h avec une estimation détaillée et sans engagement"
+          }
+        ],
+        "level": 1,
+        "listItem": "number",
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "b8109a71bbf6",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "8245253561b4",
+            "_type": "span",
+            "marks": [],
+            "text": "Si le devis vous convient, nous planifions un appel de cadrage de 30 minutes pour préciser les détails"
+          }
+        ],
+        "level": 1,
+        "listItem": "number",
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "aea5682f74c9",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "09cfe3c5c857",
+            "_type": "span",
+            "marks": [],
+            "text": "Le projet démarre dès validation du devis — les délais typiques vont de 1 semaine (landing page) à 4 semaines (site complet)"
+          }
+        ],
+        "level": 1,
+        "listItem": "number",
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "52139c737d44",
+        "_type": "spokeCard",
+        "badge": "Guide tarifaire",
+        "description": "Tarifs détaillés par type de site, ce qui fait varier le prix et l'impact de l'IA sur les coûts en 2026.",
+        "linkText": "Voir les tarifs →",
+        "linkUrl": "/blog/prix-site-internet-artisan-pme-hautes-alpes",
+        "title": "Combien coûte un site internet dans les Hautes-Alpes ?"
+      },
+      {
+        "_key": "4455e30f5ba0",
+        "_type": "spokeCard",
+        "badge": "SEO Local",
+        "description": "Fiche Google, avis, site, balises : les leviers de la visibilité locale, dans le bon ordre.",
+        "linkText": "Lire le guide",
+        "linkUrl": "/blog/etre-visible-en-ligne-dans-les-hautes-alpes",
+        "title": "Être visible en ligne dans les Hautes-Alpes"
+      },
+      {
+        "_key": "503434362a62",
+        "_type": "spokeCard",
+        "badge": "Google Business Profile",
+        "description": "La fiche GBP est votre premier levier de visibilité locale à Gap — créez-la ou optimisez-la avec ce guide.",
+        "linkText": "Optimiser ma fiche →",
+        "linkUrl": "/blog/google-business-profile-artisans-hautes-alpes",
+        "title": "Optimiser sa fiche GBP à Gap"
+      },
+      {
+        "_key": "291f4392984b",
+        "_type": "faq",
+        "items": [
+          {
+            "_key": "a0fc9d32632d",
+            "answer": "Oui. Nous sommes basés à Puy-Sanières (entre Embrun et Gap) et travaillons régulièrement avec des entreprises gapençaises. Les échanges peuvent se faire entièrement à distance (visio, email) ou en présentiel à Gap pour les projets importants.",
+            "question": "Face Nord Graphisme intervient-elle directement à Gap ?"
+          },
+          {
+            "_key": "75937d372282",
+            "answer": "Pour une landing page ou un site one-page, comptez 5 à 10 jours ouvrés. Pour un site vitrine complet (5-10 pages + blog), 2 à 4 semaines. Ces délais démarrent dès que vous avez fourni vos textes et photos (ou dès que nous avons commencé la rédaction si vous nous la déléguez).",
+            "question": "Quel est le délai pour créer un site pour mon entreprise à Gap ?"
+          },
+          {
+            "_key": "baeeabb0ca3c",
+            "answer": "Oui, si les bonnes pratiques SEO sont respectées dès la création. Nous intégrons systématiquement l'optimisation on-page (balises, structure, vitesse) et vous guidons sur la configuration de Google Business Profile pour les recherches locales à Gap. Le positionnement dans le Local Pack de Google dépend aussi du nombre et de la qualité de vos avis Google.",
+            "question": "Est-ce qu'un site créé par Face Nord Graphisme apparaîtra sur Google pour les recherches à Gap ?"
+          },
+          {
+            "_key": "a9dad162a16a",
+            "answer": "Oui. Tous nos sites incluent un CMS (système de gestion de contenu) que vous pouvez utiliser sans connaissance technique. Nous faisons systématiquement une formation de 1 h à la prise en main après livraison.",
+            "question": "Puis-je modifier moi-même le contenu de mon site après livraison ?"
+          },
+          {
+            "_key": "5ec77973b022",
+            "answer": "Oui. Un suivi de 30 jours est inclus après chaque mise en ligne. Au-delà, des forfaits de maintenance mensuelle sont disponibles (mises à jour sécurité, sauvegardes, petites modifications) à partir de 20 €/mois.",
+            "question": "Proposez-vous un service de maintenance pour les sites des entreprises de Gap ?"
+          }
+        ],
+        "title": "FAQ — Agence web à Gap"
+      }
+    ],
+    "city": "Gap",
+    "headline": "Création de site internet à Gap",
+    "intro": "Face Nord Graphisme accompagne les artisans, commerçants et PME de Gap avec des sites web performants, optimisés SEO, livrés à partir de 500 €.",
+    "seoDescription": "Création de site internet à Gap dans les Hautes-Alpes. Site vitrine, e-commerce, SEO local : devis gratuit sous 48 h pour les artisans et PME de la préfecture du 05.",
+    "seoTitle": "Création de site internet à Gap (05) | Face Nord Graphisme",
+    "slug": {
+      "_type": "slug",
+      "current": "gap-hautes-alpes"
+    }
+  },
+  {
+    "_createdAt": "2026-05-25T15:52:06Z",
+    "_id": "city-page-briancon",
+    "_rev": "sVRbqyTlZFpw4w50HM72vl",
+    "_type": "cityPage",
+    "_updatedAt": "2026-11-04T20:01:00Z",
+    "body": [
+      {
+        "_key": "437b7b75c59d",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "44eda007f682",
+            "_type": "span",
+            "marks": [],
+            "text": "Briançon : une économie à double saisonnalité qui exige une présence en ligne solide"
+          }
+        ],
+        "markDefs": [],
+        "style": "h2"
+      },
+      {
+        "_key": "02fcbd9b5a24",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "5a2f338acf52",
+            "_type": "span",
+            "marks": [],
+            "text": "Briançon, ville fortifiée classée au patrimoine mondial de l'UNESCO, est l'une des villes d'altitude les plus hautes d'Europe (1 326 m). Avec environ 12 000 habitants et un bassin économique qui attire chaque année des centaines de milliers de touristes (ski en hiver à Serre-Chevalier, randonnée et vélo en été), les entreprises briançonnaises font face à un défi particulier : être trouvables en toutes saisons, par une clientèle à la fois locale et internationale."
+          }
+        ],
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "b2d8e9df6cb5",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "0e9d95d61571",
+            "_type": "span",
+            "marks": [],
+            "text": "La double saisonnalité — hiver décembre-avril / été juin-septembre — crée deux pics de demande intenses entrecoupés de périodes plus creuses. Un site web performant, mis à jour et bien positionné sur Google et Google Maps est l'outil le plus efficace pour capter les touristes qui planifient leur séjour en ligne, souvent 2 à 6 semaines à l'avance."
+          }
+        ],
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "8602c0c05166",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "6dfad0713ada",
+            "_type": "span",
+            "marks": [],
+            "text": "Les entreprises que nous accompagnons à Briançon"
+          }
+        ],
+        "markDefs": [],
+        "style": "h2"
+      },
+      {
+        "_key": "73913c0a96c1",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "639585af4255",
+            "_type": "span",
+            "marks": [],
+            "text": "Hôtels, gîtes, chalets et chambres d'hôtes : site de réservation directe pour réduire les commissions Booking/Airbnb"
+          }
+        ],
+        "level": 1,
+        "listItem": "bullet",
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "3b9784102df7",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "d1bb53ff4807",
+            "_type": "span",
+            "marks": [],
+            "text": "Moniteurs de ski, guides de haute montagne et prestataires outdoor : site vitrine avec module de réservation en ligne"
+          }
+        ],
+        "level": 1,
+        "listItem": "bullet",
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "226aefd1e273",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "f845cd5732cd",
+            "_type": "span",
+            "marks": [],
+            "text": "Restaurateurs et traiteurs : menu en ligne, réservation de table, actualités saison"
+          }
+        ],
+        "level": 1,
+        "listItem": "bullet",
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "ca19288b4d4c",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "cf7bffc4079a",
+            "_type": "span",
+            "marks": [],
+            "text": "Commerces de sport et de montagne (location, vente, réparation) : catalogue produits et horaires saisonniers"
+          }
+        ],
+        "level": 1,
+        "listItem": "bullet",
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "018e131ebd71",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "d7e8124345ca",
+            "_type": "span",
+            "marks": [],
+            "text": "Artisans du bâtiment : galerie de réalisations, formulaire de devis, mise en avant des avis Google"
+          }
+        ],
+        "level": 1,
+        "listItem": "bullet",
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "d08a7d419d08",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "a7842a3749a7",
+            "_type": "span",
+            "marks": [],
+            "text": "Professions libérales et de santé : médecins, kinésithérapeutes, dentistes — page de présentation et prise de rendez-vous"
+          }
+        ],
+        "level": 1,
+        "listItem": "bullet",
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "802dd3513d77",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "c173ca9a2658",
+            "_type": "span",
+            "marks": [],
+            "text": "Les enjeux spécifiques d'un site web pour Briançon"
+          }
+        ],
+        "markDefs": [],
+        "style": "h2"
+      },
+      {
+        "_key": "957be0b83f04",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "154480e5b7d3",
+            "_type": "span",
+            "marks": [],
+            "text": "Un site pour une entreprise briançonnaise doit répondre à plusieurs défis que n'ont pas les sites génériques :"
+          }
+        ],
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "ca6b84f97a6f",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "538df474fd02",
+            "_type": "span",
+            "marks": [],
+            "text": "Bilingue ou multilingue : une part significative de votre clientèle ski est anglophone, néerlandophone ou italienne (Briançon est à 20 min de la frontière italienne). Une version anglaise basique peut doubler vos contacts internationaux."
+          }
+        ],
+        "level": 1,
+        "listItem": "bullet",
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "816fe6f9bfd5",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "4cd56d1e6d72",
+            "_type": "span",
+            "marks": [],
+            "text": "Adapté aux recherches depuis les smartphones en montagne : connexion 4G parfois limitée, nécessité d'un site ultra-rapide (LCP < 2 s) pour ne pas perdre les visiteurs impatients."
+          }
+        ],
+        "level": 1,
+        "listItem": "bullet",
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "58178b343165",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "6a23c2e6a24a",
+            "_type": "span",
+            "marks": [],
+            "text": "Gestion de la saisonnalité dans le contenu : la même entreprise peut offrir des activités complètement différentes en été et en hiver — votre site doit le refléter clairement."
+          }
+        ],
+        "level": 1,
+        "listItem": "bullet",
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "379854aa98b2",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "8c8705368457",
+            "_type": "span",
+            "marks": [],
+            "text": "Liens vers les remontées mécaniques, offices du tourisme et stations partenaires pour crédibiliser votre offre."
+          }
+        ],
+        "level": 1,
+        "listItem": "bullet",
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "808366be9411",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "21e8b3d72362",
+            "_type": "span",
+            "marks": [],
+            "text": "Référencement local à Briançon : être trouvé sur Google Maps"
+          }
+        ],
+        "markDefs": [],
+        "style": "h2"
+      },
+      {
+        "_key": "613c94fae67c",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "36eeba3e3ac6",
+            "_type": "span",
+            "marks": [],
+            "text": "Pour une activité touristique à Briançon, l'enjeu principal est d'apparaître dans le Local Pack de Google (les 3 premiers résultats avec carte) pour les requêtes à fort intent comme « moniteur ski Briançon », « hôtel Serre-Chevalier », « restaurant Briançon » ou « guide randonnée Écrins ». Pour cela, trois leviers sont indispensables :"
+          }
+        ],
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "b258128eda73",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "d1bfe68037f5",
+            "_type": "span",
+            "marks": [],
+            "text": "Une fiche Google Business Profile complète, vérifiée et régulièrement mise à jour (photos, horaires saisonniers, publications)"
+          }
+        ],
+        "level": 1,
+        "listItem": "number",
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "dbedf1f8e1c1",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "4216d9622b21",
+            "_type": "span",
+            "marks": [],
+            "text": "Un site web rapide et mobile-first avec les balises SEO correctement renseignées et les données structurées Schema.org"
+          }
+        ],
+        "level": 1,
+        "listItem": "number",
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "222b3fbdec05",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "98ae6518bb0d",
+            "_type": "span",
+            "marks": [],
+            "text": "Un flux régulier d'avis Google authentiques — chaque avis récent génère en moyenne 600 impressions et améliore votre classement dans les résultats locaux"
+          }
+        ],
+        "level": 1,
+        "listItem": "number",
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "b099c4bb7c24",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "ba2f293768e0",
+            "_type": "span",
+            "marks": [],
+            "text": "Tarifs pour les entreprises du Briançonnais"
+          }
+        ],
+        "markDefs": [],
+        "style": "h2"
+      },
+      {
+        "_key": "141a330e801b",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "bd4c50033ee6",
+            "_type": "span",
+            "marks": [],
+            "text": "Landing page saisonnière (1 page, offre spécifique été ou hiver) : à partir de 500 €"
+          }
+        ],
+        "level": 1,
+        "listItem": "bullet",
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "1e63741c5764",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "50d435a50a66",
+            "_type": "span",
+            "marks": [],
+            "text": "Site vitrine complet (présentation, services, galerie, contact) : 1 200 à 2 500 €"
+          }
+        ],
+        "level": 1,
+        "listItem": "bullet",
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "72903c5fac48",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "414d0fda7a74",
+            "_type": "span",
+            "marks": [],
+            "text": "Site avec réservation en ligne intégrée (activités, hébergement) : à partir de 800 €"
+          }
+        ],
+        "level": 1,
+        "listItem": "bullet",
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "78bd6be60f8c",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "1cdd5571b01c",
+            "_type": "span",
+            "marks": [],
+            "text": "Option multilingue français + anglais : +30 à 40 % du tarif de base"
+          }
+        ],
+        "level": 1,
+        "listItem": "bullet",
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "3421f3228b25",
+        "_type": "spokeCard",
+        "badge": "Réservation en ligne",
+        "description": "Hébergeurs et prestataires d’activités : garder la relation client et la marge.",
+        "linkText": "Lire l'article",
+        "linkUrl": "/blog/reservation-directe-eviter-commissions-booking-hautes-alpes",
+        "title": "Réservation directe : réduire les commissions"
+      },
+      {
+        "_key": "0c2519117628",
+        "_type": "spokeCard",
+        "badge": "Visibilité en ligne",
+        "description": "La stratégie complète : GBP, avis Google, site mobile-first, SEO local — pour être trouvé toute l'année à Briançon.",
+        "linkText": "Voir la stratégie →",
+        "linkUrl": "/blog/etre-visible-en-ligne-dans-les-hautes-alpes",
+        "title": "Booster sa visibilité en ligne dans les Hautes-Alpes"
+      },
+      {
+        "_key": "2a69aaa9c319",
+        "_type": "spokeCard",
+        "badge": "Prix site internet",
+        "description": "Tarifs détaillés, ce qui fait varier le prix, impact de l'IA : le guide complet pour budgéter votre projet web.",
+        "linkText": "Voir les tarifs →",
+        "linkUrl": "/blog/prix-site-internet-artisan-pme-hautes-alpes",
+        "title": "Combien coûte un site internet dans les Hautes-Alpes ?"
+      },
+      {
+        "_key": "6c719e471538",
+        "_type": "faq",
+        "items": [
+          {
+            "_key": "12c414b05532",
+            "answer": "Oui. Nous proposons des sites bilingues français/anglais, avec une gestion séparée des contenus par langue depuis le CMS. Pour les entreprises qui accueillent une clientèle italienne (proche de la frontière), une version italienne est également possible. La traduction professionnelle est incluse ou facturée en option selon le volume de texte.",
+            "question": "Faites-vous des sites web en anglais pour les clients étrangers à Briançon ?"
+          },
+          {
+            "_key": "f1eb9f7825cc",
+            "answer": "Oui. Nous intégrons des modules de réservation directe compatibles avec les systèmes de disponibilités standards (iCal, PMS hôtelier). Un site avec réservation directe amortit son coût en quelques mois si vous capturez ne serait-ce que 5 à 10 réservations qui seraient autrement passées par Booking (à 15-18 % de commission).",
+            "question": "Pouvez-vous intégrer un système de réservation directe pour éviter les commissions Booking ou Airbnb ?"
+          },
+          {
+            "_key": "f6ff000a28de",
+            "answer": "Avec le CMS autonome fourni avec chaque site, vous pouvez modifier vos horaires, vos offres et vos tarifs vous-même, à tout moment, depuis votre téléphone. Nous vous formons à cette gestion lors de la livraison du site.",
+            "question": "Comment gérer les changements d'horaires entre la saison été et la saison hiver sur mon site ?"
+          },
+          {
+            "_key": "588320d9a3b8",
+            "answer": "Encore plus. Une activité saisonnière concentre ses revenus sur 3 à 5 mois — chaque client manqué pendant cette fenêtre représente un manque à gagner maximal. Un site performant, bien positionné sur Google, travaille 24 h/24 pendant et avant les saisons. Les touristes planifient leur séjour en ligne des semaines à l'avance : si vous n'êtes pas visible à ce moment-là, le concurrent l'est.",
+            "question": "Mon activité est très saisonnière — est-ce que ça vaut quand même la peine d'investir dans un site professionnel ?"
+          }
+        ],
+        "title": "FAQ — Agence web à Briançon"
+      }
+    ],
+    "city": "Briançon",
+    "headline": "Création de site internet à Briançon",
+    "intro": "Face Nord Graphisme crée des sites web pour les artisans, commerçants et hôteliers du secteur briançonnais. Présence locale, tarifs accessibles, sites optimisés pour les recherches estivales et hivernales.",
+    "seoDescription": "Création de site internet à Briançon dans les Hautes-Alpes. Sites vitrine, e-commerce et réservation pour artisans, commerçants et hôteliers du Briançonnais — devis gratuit sous 48 h.",
+    "seoTitle": "Création de site internet à Briançon (05) | Face Nord Graphisme",
+    "slug": {
+      "_type": "slug",
+      "current": "briancon-hautes-alpes"
+    }
+  },
+  {
+    "_createdAt": "2026-05-25T15:52:07Z",
+    "_id": "city-page-embrun",
+    "_rev": "sVRbqyTlZFpw4w50HM72vl",
+    "_system": {
+      "base": {
+        "id": "city-page-embrun",
+        "rev": "7cKXQJl3DcgD50vEk6F4ay"
+      }
+    },
+    "_type": "cityPage",
+    "_updatedAt": "2026-11-04T20:01:00Z",
+    "body": [
+      {
+        "_key": "e4be58256e7b",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "34568835b9fe",
+            "_type": "span",
+            "marks": [],
+            "text": "Face Nord Graphisme : votre agence web de proximité à Embrun"
+          }
+        ],
+        "markDefs": [],
+        "style": "h2"
+      },
+      {
+        "_key": "b41c0def99cc",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "4f2e9c262fc4",
+            "_type": "span",
+            "marks": [],
+            "text": "Nous ne sommes pas une agence parisienne qui prétend « accompagner les artisans locaux ». Face Nord Graphisme est basée à Puy-Sanières, à 5 minutes d'Embrun, sur les rives du lac de Serre-Ponçon. Depuis plus de 10 ans, nous accompagnons les entreprises locales — artisans, commerçants, hôteliers, prestataires de loisirs — pour construire leur présence en ligne avec des outils performants et des tarifs adaptés à la réalité économique des Hautes-Alpes."
+          }
+        ],
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "41936a457f98",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "2405fa10d091",
+            "_type": "span",
+            "marks": [],
+            "text": "Cette proximité n'est pas anecdotique. Nous pouvons rencontrer nos clients en présentiel à Embrun, Chorges, Savines-le-Lac, Guillestre ou Gap. Nous connaissons la saisonnalité du lac de Serre-Ponçon, les spécificités du tourisme nautique et de montagne, et les défis des entreprises locales face à une concurrence de plus en plus digitalisée."
+          }
+        ],
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "e60b602e15b7",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "d8f5ed79c848",
+            "_type": "span",
+            "marks": [],
+            "text": "Serre-Ponçon : un territoire touristique à fort potentiel digital"
+          }
+        ],
+        "markDefs": [],
+        "style": "h2"
+      },
+      {
+        "_key": "0fc48c419735",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "448c1cc4b17f",
+            "_type": "span",
+            "marks": [],
+            "text": "Le lac de Serre-Ponçon est l'un des plus grands lacs artificiels d'Europe occidentale et accueille plus de 500 000 visiteurs par an. En été, kitesurf, voile, kayak, randonnée et VTT ; en hiver, ski à Orcières-Merlette, ski de fond dans l'Embrunais et tourisme thermal à Chorges. Cette double saisonnalité crée des opportunités commerciales importantes pour les entreprises locales — à condition d'être trouvables en ligne au bon moment."
+          }
+        ],
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "cadd8feb296d",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "e331ab833f3c",
+            "_type": "span",
+            "marks": [],
+            "text": "Selon les données Google Trends pour le secteur, les recherches liées au lac de Serre-Ponçon atteignent leur pic 3 à 6 semaines avant les vacances d'été — principalement depuis des smartphones, souvent le soir après 20 h. Un prestataire de location de bateaux ou un hébergement qui n'apparaît pas dans ces recherches laisse passer des dizaines de réservations potentielles chaque semaine de haute saison."
+          }
+        ],
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "96542ba6b174",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "69a847dfd6df",
+            "_type": "span",
+            "marks": [],
+            "text": "Nos réalisations dans le secteur d'Embrun"
+          }
+        ],
+        "markDefs": [],
+        "style": "h2"
+      },
+      {
+        "_key": "59111bad6b9c",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "baf5dfab63be",
+            "_type": "span",
+            "marks": [],
+            "text": "Voici les types de projets que nous réalisons pour les entreprises du secteur :"
+          }
+        ],
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "8e46b8cb5684",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "7ff3f32afb13",
+            "_type": "span",
+            "marks": [],
+            "text": "Sites de prestataires nautiques et activités outdoor : location de paddles, clubs de voile, guides VTT, écoles de kitesurf sur le lac"
+          }
+        ],
+        "level": 1,
+        "listItem": "bullet",
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "8d6edcea8d01",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "582740a6a9c0",
+            "_type": "span",
+            "marks": [],
+            "text": "Hébergements et locations saisonnières : chambres d'hôtes, gîtes, camping, résidences de vacances — avec modules de réservation directe"
+          }
+        ],
+        "level": 1,
+        "listItem": "bullet",
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "a6af4a895b7a",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "095afaf739a6",
+            "_type": "span",
+            "marks": [],
+            "text": "Artisans du bâtiment et de la rénovation : maçons, charpentiers, électriciens — galerie de réalisations et formulaires de devis"
+          }
+        ],
+        "level": 1,
+        "listItem": "bullet",
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "8174e8b20419",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "fd530b81ebd9",
+            "_type": "span",
+            "marks": [],
+            "text": "Commerces et épiceries locales : présence en ligne, horaires, click & collect"
+          }
+        ],
+        "level": 1,
+        "listItem": "bullet",
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "63eef2f71f01",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "bbc8d1c2ad8e",
+            "_type": "span",
+            "marks": [],
+            "text": "Praticiens de santé et professions libérales basés à Embrun, Chorges, Guillestre"
+          }
+        ],
+        "level": 1,
+        "listItem": "bullet",
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "2fe034fa21a0",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "07d60a352347",
+            "_type": "span",
+            "marks": [],
+            "text": "Disponibilité et réactivité : l'avantage de l'agence locale"
+          }
+        ],
+        "markDefs": [],
+        "style": "h2"
+      },
+      {
+        "_key": "83be3d6b5dbb",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "2dddd280a869",
+            "_type": "span",
+            "marks": [],
+            "text": "Travailler avec une agence locale, c'est avoir un interlocuteur disponible rapidement et qui comprend votre contexte sans qu'on lui explique. Pas besoin de décrire ce qu'est le lac de Serre-Ponçon, la clientèle des Orres ou les enjeux de la saison estivale dans l'Embrunais : on le vit au quotidien, comme vous."
+          }
+        ],
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "7e53bb5f84f3",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "bd0844728d51",
+            "_type": "span",
+            "marks": [],
+            "text": "Concrètement, cela se traduit par :"
+          }
+        ],
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "00e83e914cae",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "47f007623d52",
+            "_type": "span",
+            "marks": [],
+            "text": "Réunion de cadrage possible en présentiel à Embrun ou en visio — à votre convenance"
+          }
+        ],
+        "level": 1,
+        "listItem": "bullet",
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "661cba8590b9",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "ac2594fa1271",
+            "_type": "span",
+            "marks": [],
+            "text": "Réactivité sur les modifications urgentes en haute saison (changement de tarifs, mise à jour des disponibilités, ajout d'une offre promotionnelle)"
+          }
+        ],
+        "level": 1,
+        "listItem": "bullet",
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "d60d002761c4",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "68025fedc519",
+            "_type": "span",
+            "marks": [],
+            "text": "Connaissance des annuaires et médias locaux pour votre référencement (Hautes-Alpes Tourisme, Serre-Ponçon Tourisme, Embrun Agglo, La Provence, Dauphiné Libéré)"
+          }
+        ],
+        "level": 1,
+        "listItem": "bullet",
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "37f4dd24155a",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "723b0cb96248",
+            "_type": "span",
+            "marks": [],
+            "text": "Accompagnement dans la durée : pas d'agence qui disparaît après livraison"
+          }
+        ],
+        "level": 1,
+        "listItem": "bullet",
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "14348617287c",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "9159d21aaffe",
+            "_type": "span",
+            "marks": [],
+            "text": "Tarifs pour les entreprises d'Embrun et du secteur Serre-Ponçon"
+          }
+        ],
+        "markDefs": [],
+        "style": "h2"
+      },
+      {
+        "_key": "2115edee2368",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "fbcc18f411c6",
+            "_type": "span",
+            "marks": [],
+            "text": "Landing page / site one-page (idéal pour une activité nautique ou saisonnière) : à partir de 500 €"
+          }
+        ],
+        "level": 1,
+        "listItem": "bullet",
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "408115a51c14",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "b8a56badb055",
+            "_type": "span",
+            "marks": [],
+            "text": "Site vitrine complet avec blog (hébergement, prestataire outdoor, artisan) : 1 200 à 2 500 €"
+          }
+        ],
+        "level": 1,
+        "listItem": "bullet",
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "723cfdbe8777",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "0ef8cd5d4675",
+            "_type": "span",
+            "marks": [],
+            "text": "Site avec réservation en ligne ou e-commerce (activités, locations, produits locaux) : à partir de 800 €"
+          }
+        ],
+        "level": 1,
+        "listItem": "bullet",
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "8cd519736c99",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "421057b02851",
+            "_type": "span",
+            "marks": [],
+            "text": "Un devis précis et gratuit vous sera communiqué sous 48 h après que vous nous ayez décrit votre projet. Pour les clients du secteur Embrun-Serre-Ponçon, un rendez-vous en présentiel est possible à tout moment."
+          }
+        ],
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "e7f8943a51f4",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "553cc086e4b7",
+            "_type": "span",
+            "marks": [],
+            "text": "\"Être à 5 minutes d'Embrun, c'est comprendre que votre pic de réservations arrive avant le 14 juillet, pas après. On optimise votre site pour que vous soyez trouvable quand vos clients planifient — pas quand ils sont déjà chez le concurrent.\""
+          }
+        ],
+        "markDefs": [],
+        "style": "blockquote"
+      },
+      {
+        "_key": "b7483202bcd9",
+        "_type": "spokeCard",
+        "badge": "Réservation en ligne",
+        "description": "Hébergeurs et prestataires d’activités : garder la relation client et la marge.",
+        "linkText": "Lire l'article",
+        "linkUrl": "/blog/reservation-directe-eviter-commissions-booking-hautes-alpes",
+        "title": "Réservation directe : réduire les commissions"
+      },
+      {
+        "_key": "ff22c5c756d6",
+        "_type": "spokeCard",
+        "badge": "Avis Google",
+        "description": "Créer sa fiche, la tenir à jour selon les saisons, obtenir des avis et y répondre.",
+        "linkText": "Lire le guide",
+        "linkUrl": "/blog/google-business-profile-artisans-hautes-alpes",
+        "title": "Google Business Profile et avis Google : le guide"
+      },
+      {
+        "_key": "6440a3d4ed45",
+        "_type": "spokeCard",
+        "badge": "Prix site internet",
+        "description": "Guide complet sur les tarifs, ce qui fait varier le prix et l'impact de l'IA sur les coûts de création web en 2026.",
+        "linkText": "Voir les tarifs →",
+        "linkUrl": "/blog/prix-site-internet-artisan-pme-hautes-alpes",
+        "title": "Combien coûte un site internet dans les Hautes-Alpes ?"
+      },
+      {
+        "_key": "01a7761d8de8",
+        "_type": "faq",
+        "items": [
+          {
+            "_key": "5a10dd725861",
+            "answer": "Oui, absolument. Étant basés à Puy-Sanières (5 min d'Embrun), nous proposons des rendez-vous en présentiel pour le cadrage du projet, la présentation des maquettes et la formation au CMS. La plupart des échanges se font à distance (visio, email, partage d'écran), mais la proximité géographique permet d'intervenir rapidement si besoin.",
+            "question": "Face Nord Graphisme peut-elle se déplacer à Embrun pour notre projet ?"
+          },
+          {
+            "_key": "5cff85e62390",
+            "answer": "Il faut être présent au moment où ils cherchent, c'est-à-dire 3 à 6 semaines avant les vacances. Cela passe par un site web rapide et bien indexé par Google, une fiche Google Business Profile complète avec photos récentes et activités, et des avis récents qui rassurent les futurs visiteurs. Nous configurons également les données structurées Schema.org pour que vos activités et vos horaires apparaissent directement dans les résultats Google.",
+            "question": "Mon activité est liée au lac de Serre-Ponçon — comment être visible en ligne pour les touristes qui planifient leur séjour ?"
+          },
+          {
+            "_key": "9fd96fe75aaa",
+            "answer": "Oui. Nous proposons des sites bilingues. Sur le secteur de Serre-Ponçon, une version anglaise de votre site peut faire la différence auprès des touristes néerlandais, anglais et allemands qui représentent une part significative des visiteurs estivaux du lac.",
+            "question": "Puis-je avoir un site en français ET en anglais pour capter les touristes étrangers ?"
+          },
+          {
+            "_key": "ed92e9ceb619",
+            "answer": "Oui. Un e-commerce léger (5 à 30 produits) est inclus dans notre offre \"réservation/e-commerce\" à partir de 800 €. Cela inclut un panier sécurisé (Stripe), la gestion des stocks depuis le CMS, et les emails automatiques de confirmation de commande. Idéal pour les producteurs locaux qui veulent vendre en direct sans passer par des plateformes comme Etsy ou Amazon.",
+            "question": "Je vends des produits locaux (miel, fromage, lavande) — pouvez-vous créer une boutique en ligne ?"
+          },
+          {
+            "_key": "6f690f388b5f",
+            "answer": "Pour une landing page simple (présentation + réservation directe via lien Airbnb/Booking ou formulaire), comptez 5 à 10 jours. Pour un site complet avec galerie, disponibilités en temps réel et paiement en ligne, 4 à 6 semaines. Nous planifions toujours les mises en ligne hors des pics saisonniers (pas en juillet ni en décembre) pour maximiser la stabilité au lancement.",
+            "question": "Combien de temps faut-il pour créer un site pour ma location saisonnière à Serre-Ponçon ?"
+          }
+        ],
+        "title": "FAQ — Agence web à Embrun et Serre-Ponçon"
+      }
+    ],
+    "city": "Embrun",
+    "headline": "Création de site internet à Embrun et Serre-Ponçon",
+    "intro": "Face Nord Graphisme est basée à Puy-Sanières, à 5 minutes d'Embrun. Nous créons des sites web pour les artisans, commerçants et prestataires touristiques du secteur Serre-Ponçon depuis plus de 10 ans.",
+    "seoDescription": "Agence web à Embrun / Serre-Ponçon (05). Création de site internet pour artisans et prestataires touristiques — devis gratuit, disponible en présentiel.",
+    "seoTitle": "Création de site à Embrun et Serre-Ponçon | Face Nord Graphisme",
+    "slug": {
+      "_type": "slug",
+      "current": "embrun-serre-poncon"
+    }
+  }
+]

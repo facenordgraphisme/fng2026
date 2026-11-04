@@ -5,7 +5,6 @@ import LayoutWrapper from "@/components/LayoutWrapper";
 import { ThemeProvider } from "@/components/ThemeProvider";
 import SmoothScroll from "@/components/SmoothScroll";
 import CustomCursor from "@/components/CustomCursor";
-import CookieBanner from "@/components/CookieBanner";
 
 const nunito = Nunito({ 
   subsets: ["latin"], 
@@ -186,7 +185,6 @@ export default function RootLayout({
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           <SmoothScroll>
             <CustomCursor />
-            <CookieBanner />
             <LayoutWrapper>
               {children}
             </LayoutWrapper>

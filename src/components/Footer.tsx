@@ -16,11 +16,6 @@ const cities = [
 ]
 
 export default function Footer() {
-  const openCookieSettings = (e: React.MouseEvent) => {
-    e.preventDefault()
-    window.dispatchEvent(new Event('show-cookie-banner'))
-  }
-
   return (
     <footer className="bg-white dark:bg-[#111111] border-t border-gray-200 dark:border-white/10 py-16 px-6 mt-32 transition-colors duration-300">
       <div className="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 text-sm">
@@ -123,9 +118,6 @@ export default function Footer() {
         <div className="flex flex-wrap gap-4 md:gap-6 justify-center md:justify-end">
           <Link href="/mentions-legales" className="hover:text-[#239ea0] transition-colors">Mentions légales</Link>
           <Link href="/politique-de-confidentialite" className="hover:text-[#239ea0] transition-colors">Politique de confidentialité</Link>
-          <button onClick={openCookieSettings} className="hover:text-[#239ea0] transition-colors cursor-pointer text-left focus:outline-none">
-            Cookies
-          </button>
         </div>
       </div>
     </footer>

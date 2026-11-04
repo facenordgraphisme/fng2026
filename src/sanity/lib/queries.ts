@@ -648,8 +648,9 @@ export async function getLegalBySlug(slug: string) {
           block("Les données personnelles sont conservées pendant une durée qui n'excède pas la durée nécessaire aux finalités pour lesquelles elles sont collectées et traitées. En règle générale, les informations liées à une prise de contact sont conservées pendant un maximum de 3 ans après notre dernier échange."),
           block("4. Partage des données", "h2"),
           block("Face Nord Graphisme s'engage à ne pas vendre, louer, ou céder vos données personnelles à des tiers. Les données peuvent seulement être traitées par nos partenaires techniques (hébergement, emails) dans le strict respect du RGPD."),
+          block("Le site est hébergé par Vercel Inc. et les messages du formulaire de contact sont envoyés via Resend, deux prestataires établis aux États-Unis. Vos données peuvent donc être traitées hors de l\'Union européenne."),
           block("5. Cookies", "h2"),
-          block("Ce site utilise des cookies strictement nécessaires à son bon fonctionnement et, le cas échéant, des outils d'analyse d'audience respectueux de la vie privée. Vous pouvez configurer vos préférences via le bandeau dédié."),
+          block("Ce site ne dépose aucun cookie publicitaire ni de mesure d'audience. Votre préférence de thème (clair ou sombre) peut être enregistrée dans votre navigateur, uniquement pour le fonctionnement du site."),
           block("6. Vos droits", "h2"),
           block("Conformément à la réglementation applicable (loi Informatique et Libertés et RGPD), vous disposez d'un droit d'accès, de rectification, de portabilité, d'effacement de vos données ou de limitation de leur traitement. Pour exercer ces droits, contactez : contact@facenordgraphisme.fr.")
         ]
